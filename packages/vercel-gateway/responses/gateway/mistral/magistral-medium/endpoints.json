@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "mistral/magistral-medium",
+    "name": "Magistral Medium 2509",
+    "created": 1755815280,
+    "description": "Complex thinking, backed by deep understanding, with transparent reasoning you can follow and verify. The model excels in maintaining high-fidelity reasoning across numerous languages, even when switching between languages mid-task.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "mistral | mistral/magistral-medium",
+        "model_name": "Magistral Medium 2509",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000005",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "mistral",
+        "tag": "mistral",
+        "quantization": null,
+        "max_completion_tokens": 64000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

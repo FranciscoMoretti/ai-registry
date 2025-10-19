@@ -1,0 +1,119 @@
+{
+  "data": {
+    "id": "anthropic/claude-opus-4.1",
+    "name": "Claude Opus 4.1",
+    "created": 1755815280,
+    "description": "Claude Opus 4.1 is a drop-in replacement for Opus 4 that delivers superior performance and precision for real-world coding and agentic tasks. Opus 4.1 advances state-of-the-art coding performance to 74.5% on SWE-bench Verified, and handles complex, multi-step problems with more rigor and attention to detail.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text",
+      "input_modalities": ["text", "image", "file"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "anthropic | anthropic/claude-opus-4.1",
+        "model_name": "Claude Opus 4.1",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000015",
+          "completion": "0.000075",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000015",
+          "input_cache_write": "0.00001875",
+          "discount": 0
+        },
+        "provider_name": "anthropic",
+        "tag": "anthropic",
+        "quantization": null,
+        "max_completion_tokens": 32000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "bedrock | anthropic/claude-opus-4.1",
+        "model_name": "Claude Opus 4.1",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000015",
+          "completion": "0.000075",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000015",
+          "input_cache_write": "0.00001875",
+          "discount": 0
+        },
+        "provider_name": "bedrock",
+        "tag": "bedrock",
+        "quantization": null,
+        "max_completion_tokens": 32000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "vertexAnthropic | anthropic/claude-opus-4.1",
+        "model_name": "Claude Opus 4.1",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000015",
+          "completion": "0.000075",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000015",
+          "input_cache_write": "0.00001875",
+          "discount": 0
+        },
+        "provider_name": "vertexAnthropic",
+        "tag": "vertexAnthropic",
+        "quantization": null,
+        "max_completion_tokens": 32000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

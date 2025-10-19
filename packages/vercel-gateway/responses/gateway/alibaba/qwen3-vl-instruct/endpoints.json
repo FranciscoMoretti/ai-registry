@@ -1,0 +1,41 @@
+{
+  "data": {
+    "id": "alibaba/qwen3-vl-instruct",
+    "name": "Qwen3 VL 235B A22B Instruct",
+    "created": 1755815280,
+    "description": "The Qwen3 series VL models has been comprehensively upgraded in areas such as visual coding and spatial perception. Its visual perception and recognition capabilities have significantly improved, supporting the understanding of ultra-long videos, and its OCR functionality has undergone a major enhancement.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "alibaba | alibaba/qwen3-vl-instruct",
+        "model_name": "Qwen3 VL 235B A22B Instruct",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.0000007",
+          "completion": "0.0000028",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "alibaba",
+        "tag": "alibaba",
+        "quantization": null,
+        "max_completion_tokens": 129024,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

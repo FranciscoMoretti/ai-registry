@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "cohere/command-a",
+    "name": "Command A",
+    "created": 1755815280,
+    "description": "Command A is Cohere's most performant model to date, excelling at tool use, agents, retrieval augmented generation (RAG), and multilingual use cases. Command A has a context length of 256K, only requires two GPUs to run, and has 150% higher throughput compared to Command R+ 08-2024.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "cohere | cohere/command-a",
+        "model_name": "Command A",
+        "context_length": 256000,
+        "pricing": {
+          "prompt": "0.0000025",
+          "completion": "0.00001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "cohere",
+        "tag": "cohere",
+        "quantization": null,
+        "max_completion_tokens": 8000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "openai/gpt-4-turbo",
+    "name": "GPT-4 Turbo",
+    "created": 1755815280,
+    "description": "gpt-4-turbo from OpenAI has broad general knowledge and domain expertise allowing it to follow complex instructions in natural language and solve difficult problems accurately. It has a knowledge cutoff of April 2023 and a 128,000 token context window.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "openai | openai/gpt-4-turbo",
+        "model_name": "GPT-4 Turbo",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.00001",
+          "completion": "0.00003",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 4096,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

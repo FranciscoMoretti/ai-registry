@@ -1,0 +1,197 @@
+{
+  "data": {
+    "id": "moonshotai/kimi-k2",
+    "name": "Kimi K2",
+    "created": 1755815280,
+    "description": "Kimi K2 is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32 billion active per forward pass. It is optimized for agentic capabilities, including advanced tool use, reasoning, and code synthesis. Kimi K2 excels across a broad range of benchmarks, particularly in coding (LiveCodeBench, SWE-bench), reasoning (ZebraLogic, GPQA), and tool-use (Tau2, AceBench) tasks.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "deepinfra | moonshotai/kimi-k2",
+        "model_name": "Kimi K2",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.000002",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "deepinfra",
+        "tag": "deepinfra",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "fireworks | moonshotai/kimi-k2",
+        "model_name": "Kimi K2",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "fireworks",
+        "tag": "fireworks",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "groq | moonshotai/kimi-k2",
+        "model_name": "Kimi K2",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000003",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "groq",
+        "tag": "groq",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "moonshotai | moonshotai/kimi-k2",
+        "model_name": "Kimi K2",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "moonshotai",
+        "tag": "moonshotai",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "novita | moonshotai/kimi-k2",
+        "model_name": "Kimi K2",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.00000057",
+          "completion": "0.0000023",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "novita",
+        "tag": "novita",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "parasail | moonshotai/kimi-k2",
+        "model_name": "Kimi K2",
+        "context_length": 130000,
+        "pricing": {
+          "prompt": "0.00000099",
+          "completion": "0.00000299",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "parasail",
+        "tag": "parasail",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

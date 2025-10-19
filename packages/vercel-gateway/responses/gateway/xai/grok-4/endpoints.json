@@ -1,0 +1,49 @@
+{
+  "data": {
+    "id": "xai/grok-4",
+    "name": "Grok 4",
+    "created": 1755815280,
+    "description": "xAI's latest and greatest flagship model, offering unparalleled performance in natural language, math and reasoning - the perfect jack of all trades.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "xai | xai/grok-4",
+        "model_name": "Grok 4",
+        "context_length": 256000,
+        "pricing": {
+          "prompt": "0.000003",
+          "completion": "0.000015",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "xai",
+        "tag": "xai",
+        "quantization": null,
+        "max_completion_tokens": 256000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

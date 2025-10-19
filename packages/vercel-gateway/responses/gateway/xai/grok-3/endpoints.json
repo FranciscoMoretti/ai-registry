@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "xai/grok-3",
+    "name": "Grok 3 Beta",
+    "created": 1755815280,
+    "description": "xAI's flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in finance, healthcare, law, and science.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "xai | xai/grok-3",
+        "model_name": "Grok 3 Beta",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.000003",
+          "completion": "0.000015",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "xai",
+        "tag": "xai",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

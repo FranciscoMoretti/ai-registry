@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "perplexity/sonar",
+    "name": "Sonar",
+    "created": 1755815280,
+    "description": "Perplexity's lightweight offering with search grounding, quicker and cheaper than Sonar Pro.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "perplexity | perplexity/sonar",
+        "model_name": "Sonar",
+        "context_length": 127000,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "perplexity",
+        "tag": "perplexity",
+        "quantization": null,
+        "max_completion_tokens": 8000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

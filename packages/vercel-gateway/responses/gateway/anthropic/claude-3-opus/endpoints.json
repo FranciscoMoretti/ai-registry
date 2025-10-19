@@ -1,0 +1,111 @@
+{
+  "data": {
+    "id": "anthropic/claude-3-opus",
+    "name": "Claude 3 Opus",
+    "created": 1755815280,
+    "description": "Claude 3 Opus is Anthropic's most intelligent model, with best-in-market performance on highly complex tasks. It can navigate open-ended prompts and sight-unseen scenarios with remarkable fluency and human-like understanding. Opus shows us the outer limits of what's possible with generative AI.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "anthropic | anthropic/claude-3-opus",
+        "model_name": "Claude 3 Opus",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000015",
+          "completion": "0.000075",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000015",
+          "input_cache_write": "0.00001875",
+          "discount": 0
+        },
+        "provider_name": "anthropic",
+        "tag": "anthropic",
+        "quantization": null,
+        "max_completion_tokens": 4096,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "bedrock | anthropic/claude-3-opus",
+        "model_name": "Claude 3 Opus",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000015",
+          "completion": "0.000075",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "bedrock",
+        "tag": "bedrock",
+        "quantization": null,
+        "max_completion_tokens": 8192,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "vertexAnthropic | anthropic/claude-3-opus",
+        "model_name": "Claude 3 Opus",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000015",
+          "completion": "0.000075",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000015",
+          "input_cache_write": "0.00001875",
+          "discount": 0
+        },
+        "provider_name": "vertexAnthropic",
+        "tag": "vertexAnthropic",
+        "quantization": null,
+        "max_completion_tokens": 4096,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

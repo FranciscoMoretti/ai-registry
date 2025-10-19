@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "moonshotai/kimi-k2-turbo",
+    "name": "Kimi K2 Turbo",
+    "created": 1755815280,
+    "description": "Kimi K2 Turbo is the high-speed version of kimi-k2, with the same model parameters as kimi-k2, but the output speed is increased to 60 tokens per second, with a maximum of 100 tokens per second, the context length is 256k",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "moonshotai | moonshotai/kimi-k2-turbo",
+        "model_name": "Kimi K2 Turbo",
+        "context_length": 256000,
+        "pricing": {
+          "prompt": "0.0000024",
+          "completion": "0.00001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "moonshotai",
+        "tag": "moonshotai",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "mistral/mistral-large",
+    "name": "Mistral Large",
+    "created": 1755815280,
+    "description": "Mistral Large is ideal for complex tasks that require large reasoning capabilities or are highly specialized - like Synthetic Text Generation, Code Generation, RAG, or Agents.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "mistral | mistral/mistral-large",
+        "model_name": "Mistral Large",
+        "context_length": 32000,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "mistral",
+        "tag": "mistral",
+        "quantization": null,
+        "max_completion_tokens": 4000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

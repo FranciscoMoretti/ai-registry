@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "cohere/command-r-plus",
+    "name": "Command R+",
+    "created": 1755815280,
+    "description": "Command R+ is Cohere's newest large language model, optimized for conversational interaction and long-context tasks. It aims at being extremely performant, enabling companies to move beyond proof of concept and into production.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "cohere | cohere/command-r-plus",
+        "model_name": "Command R+",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.0000025",
+          "completion": "0.00001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "cohere",
+        "tag": "cohere",
+        "quantization": null,
+        "max_completion_tokens": 4096,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

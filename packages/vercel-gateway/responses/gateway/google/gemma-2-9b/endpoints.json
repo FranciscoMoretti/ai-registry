@@ -1,0 +1,41 @@
+{
+  "data": {
+    "id": "google/gemma-2-9b",
+    "name": "Gemma 2 9B IT",
+    "created": 1755815280,
+    "description": "9 billion parameter open source model by Google fine-tuned for chat purposes. Served by Groq with their custom Language Processing Units (LPUs) hardware to provide fast and efficient inference.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "groq | google/gemma-2-9b",
+        "model_name": "Gemma 2 9B IT",
+        "context_length": 8192,
+        "pricing": {
+          "prompt": "0.0000002",
+          "completion": "0.0000002",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "groq",
+        "tag": "groq",
+        "quantization": null,
+        "max_completion_tokens": 8192,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

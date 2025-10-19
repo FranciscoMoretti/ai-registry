@@ -1,0 +1,81 @@
+{
+  "data": {
+    "id": "openai/gpt-4.1-nano",
+    "name": "GPT-4.1 nano",
+    "created": 1755815280,
+    "description": "GPT-4.1 nano is the fastest, most cost-effective GPT 4.1 model.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text",
+      "input_modalities": ["text", "image", "file"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "azure | openai/gpt-4.1-nano",
+        "model_name": "GPT-4.1 nano",
+        "context_length": 1047576,
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000004",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.000000025",
+          "input_cache_write": "0",
+          "discount": 0
+        },
+        "provider_name": "azure",
+        "tag": "azure",
+        "quantization": null,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "openai | openai/gpt-4.1-nano",
+        "model_name": "GPT-4.1 nano",
+        "context_length": 1047576,
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000004",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.000000025",
+          "input_cache_write": "0",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

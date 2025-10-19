@@ -1,0 +1,81 @@
+{
+  "data": {
+    "id": "deepseek/deepseek-r1-distill-llama-70b",
+    "name": "DeepSeek R1 Distill Llama 70B",
+    "created": 1755815280,
+    "description": "DeepSeek-R1 is a state-of-the-art reasoning model trained with reinforcement learning and cold-start data, delivering strong performance across math, code, and complex reasoning tasks. It offers improved stability, readability, and multilingual handling compared to earlier versions, and is available alongside several high-quality distilled variants.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "cerebras | deepseek/deepseek-r1-distill-llama-70b",
+        "model_name": "DeepSeek R1 Distill Llama 70B",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.0000022",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "cerebras",
+        "tag": "cerebras",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "groq | deepseek/deepseek-r1-distill-llama-70b",
+        "model_name": "DeepSeek R1 Distill Llama 70B",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.00000075",
+          "completion": "0.00000099",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "groq",
+        "tag": "groq",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

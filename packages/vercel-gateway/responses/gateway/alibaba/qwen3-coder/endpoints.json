@@ -1,0 +1,167 @@
+{
+  "data": {
+    "id": "alibaba/qwen3-coder",
+    "name": "Qwen3 Coder 480B A35B Instruct",
+    "created": 1755815280,
+    "description": "Mixture-of-experts LLM with advanced coding and reasoning capabilities",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "baseten | alibaba/qwen3-coder",
+        "model_name": "Qwen3 Coder 480B A35B Instruct",
+        "context_length": 262144,
+        "pricing": {
+          "prompt": "0.0000017",
+          "completion": "0.0000017",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "baseten",
+        "tag": "baseten",
+        "quantization": null,
+        "max_completion_tokens": 66536,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "cerebras | alibaba/qwen3-coder",
+        "model_name": "Qwen3 Coder 480B A35B Instruct",
+        "context_length": 131000,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000002",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "cerebras",
+        "tag": "cerebras",
+        "quantization": null,
+        "max_completion_tokens": 131000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "deepinfra | alibaba/qwen3-coder",
+        "model_name": "Qwen3 Coder 480B A35B Instruct",
+        "context_length": 262144,
+        "pricing": {
+          "prompt": "0.0000004",
+          "completion": "0.0000016",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "deepinfra",
+        "tag": "deepinfra",
+        "quantization": null,
+        "max_completion_tokens": 66536,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "novita | alibaba/qwen3-coder",
+        "model_name": "Qwen3 Coder 480B A35B Instruct",
+        "context_length": 262144,
+        "pricing": {
+          "prompt": "0.00000064",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "novita",
+        "tag": "novita",
+        "quantization": null,
+        "max_completion_tokens": 65536,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "parasail | alibaba/qwen3-coder",
+        "model_name": "Qwen3 Coder 480B A35B Instruct",
+        "context_length": 262144,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.0000035",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "parasail",
+        "tag": "parasail",
+        "quantization": null,
+        "max_completion_tokens": 66536,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

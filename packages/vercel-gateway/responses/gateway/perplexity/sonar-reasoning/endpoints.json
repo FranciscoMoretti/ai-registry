@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "perplexity/sonar-reasoning",
+    "name": "Sonar Reasoning",
+    "created": 1755815280,
+    "description": "A reasoning-focused model that outputs Chain of Thought (CoT) in responses, providing detailed explanations with search grounding.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "perplexity | perplexity/sonar-reasoning",
+        "model_name": "Sonar Reasoning",
+        "context_length": 127000,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "perplexity",
+        "tag": "perplexity",
+        "quantization": null,
+        "max_completion_tokens": 8000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

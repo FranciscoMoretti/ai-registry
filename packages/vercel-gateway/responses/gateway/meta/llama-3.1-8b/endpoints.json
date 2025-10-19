@@ -1,0 +1,107 @@
+{
+  "data": {
+    "id": "meta/llama-3.1-8b",
+    "name": "Llama 3.1 8B Instruct",
+    "created": 1755815280,
+    "description": "An update to Meta Llama 3 8B Instruct that includes an expanded 128K context length, multilinguality and improved reasoning capabilities.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "bedrock | meta/llama-3.1-8b",
+        "model_name": "Llama 3.1 8B Instruct",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.00000022",
+          "completion": "0.00000022",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "bedrock",
+        "tag": "bedrock",
+        "quantization": null,
+        "max_completion_tokens": 8192,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "cerebras | meta/llama-3.1-8b",
+        "model_name": "Llama 3.1 8B Instruct",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "cerebras",
+        "tag": "cerebras",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "groq | meta/llama-3.1-8b",
+        "model_name": "Llama 3.1 8B Instruct",
+        "context_length": 131000,
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.00000008",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "groq",
+        "tag": "groq",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

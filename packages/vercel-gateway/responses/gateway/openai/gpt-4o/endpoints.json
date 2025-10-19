@@ -1,0 +1,81 @@
+{
+  "data": {
+    "id": "openai/gpt-4o",
+    "name": "GPT-4o",
+    "created": 1755815280,
+    "description": "GPT-4o from OpenAI has broad general knowledge and domain expertise allowing it to follow complex instructions in natural language and solve difficult problems accurately. It matches GPT-4 Turbo performance with a faster and cheaper API.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text",
+      "input_modalities": ["text", "image", "file"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "azure | openai/gpt-4o",
+        "model_name": "GPT-4o",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.0000025",
+          "completion": "0.00001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000125",
+          "input_cache_write": "0",
+          "discount": 0
+        },
+        "provider_name": "azure",
+        "tag": "azure",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "openai | openai/gpt-4o",
+        "model_name": "GPT-4o",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.0000025",
+          "completion": "0.00001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000125",
+          "input_cache_write": "0",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

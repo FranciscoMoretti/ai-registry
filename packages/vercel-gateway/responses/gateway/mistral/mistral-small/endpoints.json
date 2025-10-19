@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "mistral/mistral-small",
+    "name": "Mistral Small",
+    "created": 1755815280,
+    "description": "Mistral Small is the ideal choice for simple tasks that one can do in bulk - like Classification, Customer Support, or Text Generation. It offers excellent performance at an affordable price point.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "mistral | mistral/mistral-small",
+        "model_name": "Mistral Small",
+        "context_length": 32000,
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000003",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "mistral",
+        "tag": "mistral",
+        "quantization": null,
+        "max_completion_tokens": 4000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

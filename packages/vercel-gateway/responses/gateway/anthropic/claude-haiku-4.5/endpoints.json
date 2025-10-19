@@ -1,0 +1,95 @@
+{
+  "data": {
+    "id": "anthropic/claude-haiku-4.5",
+    "name": "Claude Haiku 4.5",
+    "created": 1755815280,
+    "description": "Claude Haiku 4.5 matches Sonnet 4's performance on coding, computer use, and agent tasks at substantially lower cost and faster speeds. It delivers near-frontier performance and Claude’s unique character at a price point that works for scaled sub-agent deployments, free tier products, and intelligence-sensitive applications with budget constraints.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "anthropic | anthropic/claude-haiku-4.5",
+        "model_name": "Claude Haiku 4.5",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.00000125",
+          "discount": 0
+        },
+        "provider_name": "anthropic",
+        "tag": "anthropic",
+        "quantization": null,
+        "max_completion_tokens": 64000,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "bedrock | anthropic/claude-haiku-4.5",
+        "model_name": "Claude Haiku 4.5",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.00000125",
+          "discount": 0
+        },
+        "provider_name": "bedrock",
+        "tag": "bedrock",
+        "quantization": null,
+        "max_completion_tokens": 64000,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "vertexAnthropic | anthropic/claude-haiku-4.5",
+        "model_name": "Claude Haiku 4.5",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.00000125",
+          "discount": 0
+        },
+        "provider_name": "vertexAnthropic",
+        "tag": "vertexAnthropic",
+        "quantization": null,
+        "max_completion_tokens": 64000,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

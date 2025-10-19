@@ -1,0 +1,81 @@
+{
+  "data": {
+    "id": "zai/glm-4.5",
+    "name": "GLM-4.5",
+    "created": 1755815280,
+    "description": "GLM-4.5 Series Models are foundation models specifically engineered for intelligent agents. The flagship GLM-4.5 integrates 355 billion total parameters (32 billion active), unifying reasoning, coding, and agent capabilities to address complex application demands. As a hybrid reasoning system, it offers dual operational modes.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "novita | zai/glm-4.5",
+        "model_name": "GLM-4.5",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.0000022",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "novita",
+        "tag": "novita",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "zai | zai/glm-4.5",
+        "model_name": "GLM-4.5",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.0000022",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "zai",
+        "tag": "zai",
+        "quantization": null,
+        "max_completion_tokens": 96000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

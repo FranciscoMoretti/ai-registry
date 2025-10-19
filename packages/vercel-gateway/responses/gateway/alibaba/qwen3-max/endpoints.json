@@ -1,0 +1,48 @@
+{
+  "data": {
+    "id": "alibaba/qwen3-max",
+    "name": "Qwen3 Max",
+    "created": 1755815280,
+    "description": "The Qwen 3 series Max model has undergone specialized upgrades in agent programming and tool invocation compared to the preview version. The officially released model this time has achieved state-of-the-art (SOTA) performance in its field and is better suited to meet the demands of agents operating in more complex scenarios.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "alibaba | alibaba/qwen3-max",
+        "model_name": "Qwen3 Max",
+        "context_length": 262144,
+        "pricing": {
+          "prompt": "0.0000012",
+          "completion": "0.000006",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000024",
+          "discount": 0
+        },
+        "provider_name": "alibaba",
+        "tag": "alibaba",
+        "quantization": null,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

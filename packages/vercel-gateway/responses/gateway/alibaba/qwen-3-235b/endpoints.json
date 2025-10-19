@@ -1,0 +1,137 @@
+{
+  "data": {
+    "id": "alibaba/qwen-3-235b",
+    "name": "Qwen3 235B A22B Instruct 2507",
+    "created": 1755815280,
+    "description": "Mixture-of-experts LLM with math and reasoning capabilities",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "baseten | alibaba/qwen-3-235b",
+        "model_name": "Qwen3 235B A22B Instruct 2507",
+        "context_length": 262144,
+        "pricing": {
+          "prompt": "0.00000022",
+          "completion": "0.0000008",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "baseten",
+        "tag": "baseten",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "deepinfra | alibaba/qwen-3-235b",
+        "model_name": "Qwen3 235B A22B Instruct 2507",
+        "context_length": 40960,
+        "pricing": {
+          "prompt": "0.00000013",
+          "completion": "0.0000006",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "deepinfra",
+        "tag": "deepinfra",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "fireworks | alibaba/qwen-3-235b",
+        "model_name": "Qwen3 235B A22B Instruct 2507",
+        "context_length": 32768,
+        "pricing": {
+          "prompt": "0.0000009",
+          "completion": "0.0000009",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "fireworks",
+        "tag": "fireworks",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "novita | alibaba/qwen-3-235b",
+        "model_name": "Qwen3 235B A22B Instruct 2507",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.000003",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "novita",
+        "tag": "novita",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "data": {
+    "id": "stealth/sonoma-dusk-alpha",
+    "name": "Sonoma Dusk Alpha",
+    "created": 1755815280,
+    "description": "This model is no longer in stealth and gets responses from Grok 4 Fast Non-Reasoning–xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "stealth | stealth/sonoma-dusk-alpha",
+        "model_name": "Sonoma Dusk Alpha",
+        "context_length": 2000000,
+        "pricing": {
+          "prompt": "0.0000002",
+          "completion": "0.0000005",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000005",
+          "discount": 0
+        },
+        "provider_name": "stealth",
+        "tag": "stealth",
+        "quantization": null,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

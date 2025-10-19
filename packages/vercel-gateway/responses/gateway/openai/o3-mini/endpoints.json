@@ -1,0 +1,85 @@
+{
+  "data": {
+    "id": "openai/o3-mini",
+    "name": "o3-mini",
+    "created": 1755815280,
+    "description": "o3-mini is OpenAI's most recent small reasoning model, providing high intelligence at the same cost and latency targets of o1-mini.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+file→text",
+      "input_modalities": ["text", "file"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "azure | openai/o3-mini",
+        "model_name": "o3-mini",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.0000011",
+          "completion": "0.0000044",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000055",
+          "input_cache_write": "0",
+          "discount": 0
+        },
+        "provider_name": "azure",
+        "tag": "azure",
+        "quantization": null,
+        "max_completion_tokens": 100000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "openai | openai/o3-mini",
+        "model_name": "o3-mini",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.0000011",
+          "completion": "0.0000044",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000055",
+          "input_cache_write": "0",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 100000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

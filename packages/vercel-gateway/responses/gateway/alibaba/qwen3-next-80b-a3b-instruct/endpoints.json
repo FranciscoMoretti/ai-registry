@@ -1,0 +1,65 @@
+{
+  "data": {
+    "id": "alibaba/qwen3-next-80b-a3b-instruct",
+    "name": "Qwen3 Next 80B A3B Instruct",
+    "created": 1755815280,
+    "description": "A new generation of open-source, non-thinking mode model powered by Qwen3. This version demonstrates superior Chinese text understanding, augmented logical reasoning, and enhanced capabilities in text generation tasks over the previous iteration (Qwen3-235B-A22B-Instruct-2507).",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "alibaba | alibaba/qwen3-next-80b-a3b-instruct",
+        "model_name": "Qwen3 Next 80B A3B Instruct",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.000002",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "alibaba",
+        "tag": "alibaba",
+        "quantization": null,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "novita | alibaba/qwen3-next-80b-a3b-instruct",
+        "model_name": "Qwen3 Next 80B A3B Instruct",
+        "context_length": 65536,
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000015",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "novita",
+        "tag": "novita",
+        "quantization": null,
+        "max_completion_tokens": 65536,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "data": {
+    "id": "morph/morph-v3-large",
+    "name": "Morph V3 Large",
+    "created": 1755815280,
+    "description": "Morph offers a specialized AI model that applies code changes suggested by frontier models (like Claude or GPT-4o) to your existing code files FAST - 2500+ tokens/second. It acts as the final step in the AI coding workflow. Supports 16k input tokens and 16k output tokens.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "morph | morph/morph-v3-large",
+        "model_name": "Morph V3 Large",
+        "context_length": 81920,
+        "pricing": {
+          "prompt": "0.0000009",
+          "completion": "0.0000019",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "morph",
+        "tag": "morph",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

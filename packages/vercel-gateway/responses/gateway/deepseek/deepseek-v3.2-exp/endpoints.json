@@ -1,0 +1,82 @@
+{
+  "data": {
+    "id": "deepseek/deepseek-v3.2-exp",
+    "name": "DeepSeek V3.2 Exp",
+    "created": 1755815280,
+    "description": "DeepSeek-V3.2-Exp is an experimental model introducing the groundbreaking DeepSeek Sparse Attention (DSA) mechanism for enhanced long-context processing efficiency. Built on V3.1-Terminus, DSA achieves fine-grained sparse attention while maintaining identical output quality.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "deepseek | deepseek/deepseek-v3.2-exp",
+        "model_name": "DeepSeek V3.2 Exp",
+        "context_length": 163840,
+        "pricing": {
+          "prompt": "0.00000028",
+          "completion": "0.00000042",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.000000028",
+          "discount": 0
+        },
+        "provider_name": "deepseek",
+        "tag": "deepseek",
+        "quantization": null,
+        "max_completion_tokens": 8192,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": true
+      },
+      {
+        "name": "novita | deepseek/deepseek-v3.2-exp",
+        "model_name": "DeepSeek V3.2 Exp",
+        "context_length": 163840,
+        "pricing": {
+          "prompt": "0.00000027",
+          "completion": "0.00000041",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "novita",
+        "tag": "novita",
+        "quantization": null,
+        "max_completion_tokens": 65536,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": true
+      }
+    ]
+  }
+}

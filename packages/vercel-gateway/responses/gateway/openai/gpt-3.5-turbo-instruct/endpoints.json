@@ -1,0 +1,41 @@
+{
+  "data": {
+    "id": "openai/gpt-3.5-turbo-instruct",
+    "name": "GPT-3.5 Turbo Instruct",
+    "created": 1755815280,
+    "description": "Similar capabilities as GPT-3 era models. Compatible with legacy Completions endpoint and not Chat Completions.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "openai | openai/gpt-3.5-turbo-instruct",
+        "model_name": "GPT-3.5 Turbo Instruct",
+        "context_length": 8192,
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.000002",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 4096,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

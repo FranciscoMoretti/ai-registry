@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "mistral/pixtral-large",
+    "name": "Pixtral Large",
+    "created": 1755815280,
+    "description": "Pixtral Large is the second model in our multimodal family and demonstrates frontier-level image understanding. Particularly, the model is able to understand documents, charts and natural images, while maintaining the leading text-only understanding of Mistral Large 2.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image→text",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "mistral | mistral/pixtral-large",
+        "model_name": "Pixtral Large",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "mistral",
+        "tag": "mistral",
+        "quantization": null,
+        "max_completion_tokens": 4000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

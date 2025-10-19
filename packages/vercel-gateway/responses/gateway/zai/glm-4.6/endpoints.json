@@ -1,0 +1,50 @@
+{
+  "data": {
+    "id": "zai/glm-4.6",
+    "name": "GLM 4.6",
+    "created": 1755815280,
+    "description": "As the latest iteration in the GLM series, GLM-4.6 achieves comprehensive enhancements across multiple domains, including real-world coding, long-context processing, reasoning, searching, writing, and agentic applications.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "zai | zai/glm-4.6",
+        "model_name": "GLM 4.6",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.0000022",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000011",
+          "discount": 0
+        },
+        "provider_name": "zai",
+        "tag": "zai",
+        "quantization": null,
+        "max_completion_tokens": 96000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

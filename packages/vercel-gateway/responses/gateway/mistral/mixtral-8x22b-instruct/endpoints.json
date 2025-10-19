@@ -1,0 +1,41 @@
+{
+  "data": {
+    "id": "mistral/mixtral-8x22b-instruct",
+    "name": "Mixtral MoE 8x22B Instruct",
+    "created": 1755815280,
+    "description": "8x22b Instruct model. 8x22b is mixture-of-experts open source model by Mistral served by Fireworks.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "fireworks | mistral/mixtral-8x22b-instruct",
+        "model_name": "Mixtral MoE 8x22B Instruct",
+        "context_length": 65536,
+        "pricing": {
+          "prompt": "0.0000012",
+          "completion": "0.0000012",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "fireworks",
+        "tag": "fireworks",
+        "quantization": null,
+        "max_completion_tokens": 2048,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "data": {
+    "id": "amazon/nova-lite",
+    "name": "Nova Lite",
+    "created": 1755815280,
+    "description": "A very low cost multimodal model that is lightning fast for processing image, video, and text inputs.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "bedrock | amazon/nova-lite",
+        "model_name": "Nova Lite",
+        "context_length": 300000,
+        "pricing": {
+          "prompt": "0.00000006",
+          "completion": "0.00000024",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "bedrock",
+        "tag": "bedrock",
+        "quantization": null,
+        "max_completion_tokens": 8192,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

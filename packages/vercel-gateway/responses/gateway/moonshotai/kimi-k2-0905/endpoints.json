@@ -1,0 +1,113 @@
+{
+  "data": {
+    "id": "moonshotai/kimi-k2-0905",
+    "name": "Kimi K2 0905",
+    "created": 1755815280,
+    "description": "Kimi K2 0905 has shown strong performance on agentic tasks thanks to its tool calling, reasoning abilities, and long context handling. But as a large parameter model (1T parameters), it’s also resource-intensive. Running it in production requires a highly optimized inference stack to avoid excessive latency.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "baseten | moonshotai/kimi-k2-0905",
+        "model_name": "Kimi K2 0905",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "baseten",
+        "tag": "baseten",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "fireworks | moonshotai/kimi-k2-0905",
+        "model_name": "Kimi K2 0905",
+        "context_length": 256000,
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "fireworks",
+        "tag": "fireworks",
+        "quantization": null,
+        "max_completion_tokens": 128000,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "groq | moonshotai/kimi-k2-0905",
+        "model_name": "Kimi K2 0905",
+        "context_length": 262144,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000003",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "groq",
+        "tag": "groq",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "moonshotai | moonshotai/kimi-k2-0905",
+        "model_name": "Kimi K2 0905",
+        "context_length": 256000,
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "moonshotai",
+        "tag": "moonshotai",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

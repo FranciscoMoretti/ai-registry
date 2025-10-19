@@ -1,0 +1,49 @@
+{
+  "data": {
+    "id": "xai/grok-code-fast-1",
+    "name": "Grok Code Fast 1",
+    "created": 1755815280,
+    "description": "xAI's latest coding model that offers fast agentic coding with a 256K context window.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "xai | xai/grok-code-fast-1",
+        "model_name": "Grok Code Fast 1",
+        "context_length": 256000,
+        "pricing": {
+          "prompt": "0.0000002",
+          "completion": "0.0000015",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "xai",
+        "tag": "xai",
+        "quantization": null,
+        "max_completion_tokens": 256000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

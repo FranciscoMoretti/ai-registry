@@ -1,0 +1,41 @@
+{
+  "data": {
+    "id": "meta/llama-3.2-1b",
+    "name": "Llama 3.2 1B Instruct",
+    "created": 1755815280,
+    "description": "Text-only model, supporting on-device use cases such as multilingual local knowledge retrieval, summarization, and rewriting.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": ["text"],
+      "output_modalities": ["text"]
+    },
+    "endpoints": [
+      {
+        "name": "bedrock | meta/llama-3.2-1b",
+        "model_name": "Llama 3.2 1B Instruct",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "bedrock",
+        "tag": "bedrock",
+        "quantization": null,
+        "max_completion_tokens": 8192,
+        "max_prompt_tokens": null,
+        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

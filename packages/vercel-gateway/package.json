@@ -1,0 +1,46 @@
+{
+  "name": "@ai-registry/vercel-gateway",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "homepage": "https://ai-registry.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciscoMoretti/ai-registry.git",
+    "directory": "packages/vercel-gateway"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:ui": "vitest --ui run",
+    "test:coverage": "vitest --coverage run"
+  },
+  "author": "Francisco Moretti <franciscoemoretti@gmail.com>",
+  "license": "Apache-2.0",
+  "description": "Data for all the models in Vercel AI Gateway",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.2",
+    "@vitest/coverage-v8": "^3.2.4",
+    
+    "tsup": "^8.5.0",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+  },
+  "dependencies": {
+    
+  }
+}
