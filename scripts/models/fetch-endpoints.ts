@@ -8,11 +8,11 @@ import pRetry from "p-retry";
 import type {
   AiGatewayEndpointsResponse,
   AiGatewayModelsResponse,
-} from "../../packages/models/ai-sdk-models-schemas";
+} from "../../packages/vercel-gateway/ai-sdk-models-schemas";
 import {
   AiGatewayEndpointsResponseSchema,
   AiGatewayModelsResponseSchema,
-} from "../../packages/models/ai-sdk-models-schemas";
+} from "../../packages/vercel-gateway/ai-sdk-models-schemas";
 
 async function fetchJson<T>(url: string): Promise<T> {
   const res = await fetch(url);

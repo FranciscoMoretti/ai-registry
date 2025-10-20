@@ -1,6 +1,6 @@
-import type { ImageModelId, ModelId } from "./model-id";
+import type { ModelId } from "./model-id";
 
-export function getModelAndProvider(modelId: ModelId | ImageModelId) {
+export function getModelAndProvider(modelId: ModelId) {
   const [provider, model] = modelId.split("/");
   if (!(provider && model)) {
     throw new Error(`Invalid model ID: ${modelId}`);

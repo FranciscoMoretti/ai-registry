@@ -29,7 +29,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
       className={cn(
         geistSans.variable,
         geistMono.variable,
-        "overflow-x-hidden font-sans antialiased sm:px-4"
+        "overflow-x-hidden font-sans antialiased"
       )}
     >
       <Providers>
