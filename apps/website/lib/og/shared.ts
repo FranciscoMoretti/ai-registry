@@ -1,27 +1,27 @@
 // Shared utilities and constants for Open Graph image generation
 
-import type { ModelDefinition } from '@ai-registry/vercel-gateway';
-import { formatNumberCompact } from '@/lib/format-number-compact';
+import type { ModelDefinition } from "@ai-registry/vercel-gateway";
+import { formatNumberCompact } from "@/lib/format-number-compact";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
-export const OG_SITE_NAME = 'AI Registry';
+export const OG_SITE_NAME = "AI Registry";
 
 export function getBaseUrl(): string {
-  return `http://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? 'localhost:3000'}`;
+  return `http://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "localhost:3000"}`;
 }
 
 export function getAppIconUrl(baseUrl: string = getBaseUrl()): string {
-  return `${baseUrl}/icon.png`;
+  return `${baseUrl}/icon.svg`;
 }
 
 export const OG_BACKGROUND_IMAGE =
-  'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0) 55%), radial-gradient(1000px 520px at 15% -10%, rgba(99,102,241,0.16), transparent), radial-gradient(1200px 680px at 85% 120%, rgba(59,130,246,0.14), transparent), radial-gradient(900px 420px at 50% 110%, rgba(16,185,129,0.10), transparent)';
+  "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0) 55%), radial-gradient(1000px 520px at 15% -10%, rgba(99,102,241,0.16), transparent), radial-gradient(1200px 680px at 85% 120%, rgba(59,130,246,0.14), transparent), radial-gradient(900px 420px at 50% 110%, rgba(16,185,129,0.10), transparent)";
 
 export function titleCase(input: string): string {
   return input
     .split(/\s+/)
     .map((w) => w.slice(0, 1).toUpperCase() + w.slice(1))
-    .join(' ');
+    .join(" ");
 }
 
 export function capitalizeFirst(input: string): string {
@@ -61,36 +61,36 @@ export function buildBulletItems(model: ModelDefinition | null | undefined) {
   const pricingOut = model?.pricing?.output || null;
   const releaseDate = model?.releaseDate || null;
   const releaseDateDisplay = releaseDate
-    ? releaseDate.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
+    ? releaseDate.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
       })
     : null;
 
   const bulletItems: Array<{ label: string; value: string }> = [];
   if (releaseDateDisplay) {
-    bulletItems.push({ label: 'Released', value: releaseDateDisplay });
+    bulletItems.push({ label: "Released", value: releaseDateDisplay });
   }
   if (contextWindow) {
     bulletItems.push({
-      label: 'Context',
+      label: "Context",
       value: formatNumberCompact(contextWindow),
     });
   }
   if (maxOut) {
-    bulletItems.push({ label: 'Max out', value: formatNumberCompact(maxOut) });
+    bulletItems.push({ label: "Max out", value: formatNumberCompact(maxOut) });
   }
   if (pricingIn) {
     bulletItems.push({
-      label: 'Input',
-      value: (prettyUsdPerMTokens(pricingIn) as string) || '',
+      label: "Input",
+      value: (prettyUsdPerMTokens(pricingIn) as string) || "",
     });
   }
   if (pricingOut) {
     bulletItems.push({
-      label: 'Output',
-      value: (prettyUsdPerMTokens(pricingOut) as string) || '',
+      label: "Output",
+      value: (prettyUsdPerMTokens(pricingOut) as string) || "",
     });
   }
 
@@ -98,18 +98,18 @@ export function buildBulletItems(model: ModelDefinition | null | undefined) {
 }
 
 export const inputModalitiesOrder: Array<
-  'text' | 'image' | 'pdf' | 'audio' | 'video'
-> = ['text', 'image', 'pdf', 'audio', 'video'];
+  "text" | "image" | "pdf" | "audio" | "video"
+> = ["text", "image", "pdf", "audio", "video"];
 
-export const outputModalitiesOrder: Array<'text' | 'image' | 'audio'> = [
-  'text',
-  'image',
-  'audio',
+export const outputModalitiesOrder: Array<"text" | "image" | "audio"> = [
+  "text",
+  "image",
+  "audio",
 ];
 
 export function getCapabilityIcons(
-  baseUrl: string = getBaseUrl(),
-): Record<'text' | 'image' | 'pdf' | 'audio' | 'video', string> {
+  baseUrl: string = getBaseUrl()
+): Record<"text" | "image" | "pdf" | "audio" | "video", string> {
   return {
     text: `${baseUrl}/modalities/type.svg`,
     image: `${baseUrl}/modalities/image.svg`,

@@ -1,8 +1,9 @@
-import type { ProviderId } from '@ai-registry/vercel-gateway';
+import type { ProviderId } from "@ai-registry/vercel-gateway";
 
-import { allModels } from '@ai-registry/vercel-gateway';
-import { ImageResponse } from '@vercel/og';
-import { OGCard, OGContainer, OGFooter, OGTitle } from '@/lib/og/components';
+import { allModels } from "@ai-registry/vercel-gateway";
+import { ImageResponse } from "@vercel/og";
+import { formatNumberCompact } from "@/lib/format-number-compact";
+import { OGCard, OGContainer, OGFooter, OGTitle } from "@/lib/og/components";
 import {
   getAppIconUrl,
   getBaseUrl,
@@ -10,22 +11,21 @@ import {
   OG_SITE_NAME,
   OG_SIZE,
   titleCase,
-} from '@/lib/og/shared';
-import { formatNumberCompact } from '@/lib/format-number-compact';
-import { getProviderIconUrl } from '../../../lib/get-provider-icon-url';
+} from "@/lib/og/shared";
+import { getProviderIconUrl } from "../../lib/get-provider-icon-url";
 
-export const runtime = 'edge';
-export const contentType = 'image/png';
+export const runtime = "edge";
+export const contentType = "image/png";
 export const size = OG_SIZE;
 
-export default async function OGImage() {
+export default function OGImage() {
   const numModels = allModels.length;
   const providers = Array.from(
     new Set(
       allModels
-        .map((m) => (m.owned_by || '').trim())
-        .filter((p): p is string => Boolean(p)),
-    ),
+        .map((m) => (m.owned_by || "").trim())
+        .filter((p): p is string => Boolean(p))
+    )
   );
 
   const numProviders = providers.length;
@@ -36,29 +36,29 @@ export default async function OGImage() {
     }))
     .filter((p) => p.iconUrl);
 
-  const pageTitle = 'Browse AI Models';
+  const pageTitle = "Browse AI Models";
   const pageDescription =
-    'Explore models across providers from Vercel AI Gateway. Filter and compare by provider, context window, and pricing.';
+    "Explore models across providers from Vercel AI Gateway. Filter and compare by provider, context window, and pricing.";
   const baseUrl = getBaseUrl();
   const appIcon = getAppIconUrl(baseUrl);
 
   return new ImageResponse(
     <OGContainer backgroundImage={OG_BACKGROUND_IMAGE}>
       <OGCard paddingTw="p-14">
-        <div style={{ display: 'flex' }} tw="flex items-center">
-          <div style={{ display: 'flex' }} tw="flex flex-col">
+        <div style={{ display: "flex" }} tw="flex items-center">
+          <div style={{ display: "flex" }} tw="flex flex-col">
             <OGTitle
               largeTw="text-[64px]"
               smallTw="text-[64px]"
               text={pageTitle}
             />
             <div
-              style={{ display: 'flex' }}
+              style={{ display: "flex" }}
               tw="text-[22px] text-slate-200 mt-3 max-w-[900px]"
             >
               {pageDescription}
             </div>
-            <div style={{ display: 'flex' }} tw="mt-5 text-2xl text-slate-300">
+            <div style={{ display: "flex" }} tw="mt-5 text-2xl text-slate-300">
               <span>Providers</span>
               <span tw="text-white ml-1">
                 {formatNumberCompact(numProviders)}
@@ -73,18 +73,18 @@ export default async function OGImage() {
         <div tw="mt-10 h-[1px] bg-white/10" />
 
         <div
-          style={{ display: 'flex' }}
+          style={{ display: "flex" }}
           tw="mt-8 flex items-center justify-start text-slate-300"
         >
           {topProviderIcons.length > 0 && (
             <div
-              style={{ display: 'flex', gap: '.625rem' }}
+              style={{ display: "flex", gap: ".625rem" }}
               tw="flex flex-wrap items-center justify-center max-w-[960px]"
             >
               {topProviderIcons.slice(0, 18).map((p) => (
                 <span
                   key={p.name}
-                  style={{ display: 'flex' }}
+                  style={{ display: "flex" }}
                   title={titleCase(p.name)}
                   tw="p-2.5 w-[52px] h-[52px] rounded-xl bg-white/10 flex items-center justify-center"
                 >
@@ -119,6 +119,6 @@ export default async function OGImage() {
     {
       width: size.width,
       height: size.height,
-    },
+    }
   );
 }

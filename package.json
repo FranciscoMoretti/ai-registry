@@ -1,5 +1,5 @@
 {
-  "name": "streamdown-monorepo",
+  "name": "ai-registry-monorepo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -12,14 +12,20 @@
     "check-types": "turbo run check-types",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:publish": "pnpm build && changeset publish"
+    "changeset:publish": "pnpm build && changeset publish",
+    "models:base": "tsx scripts/models/fetch-base.ts",
+    "models:endpoints": "tsx scripts/models/fetch-endpoints.ts",
+    "models:extra": "bun scripts/models/fetch-extra.ts",
+    "models:sync": "SKIP_EXISTING=1 tsx scripts/models/sync.ts",
+    "models:sync:all": "OVERWRITE_MODELS=1 tsx scripts/models/sync.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
     "@changesets/cli": "^2.29.7",
     "turbo": "^2.5.6",
     "typescript": "5.9.2",
-    "ultracite": "5.3.4"
+    "ultracite": "5.3.4",
+    "tsx": "4.20.6"
   },
   "packageManager": "pnpm@10.16.1",
   "engines": {

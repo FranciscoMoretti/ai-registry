@@ -29,18 +29,15 @@
     "test:coverage": "vitest --coverage run"
   },
   "author": "Francisco Moretti <franciscoemoretti@gmail.com>",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "description": "Data for all the models in Vercel AI Gateway",
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.2",
     "@vitest/coverage-v8": "^3.2.4",
-    
+
     "tsup": "^8.5.0",
     "vitest": "^3.2.4"
   },
-  "peerDependencies": {
-  },
-  "dependencies": {
-    
-  }
+  "peerDependencies": {},
+  "dependencies": {}
 }

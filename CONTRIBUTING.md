@@ -1,6 +1,6 @@
-# Contributing to Streamdown
+# Contributing to AI Registry
 
-Thank you for your interest in contributing to Streamdown! We welcome contributions from the community.
+Thank you for your interest in contributing to AI Registry! We welcome contributions from the community.
 
 ## Getting Started
 
@@ -14,8 +14,8 @@ Thank you for your interest in contributing to Streamdown! We welcome contributi
 1. Fork the repository
 2. Clone your fork:
    ```bash
-   git clone https://github.com/your-username/streamdown.git
-   cd streamdown
+   git clone https://github.com/your-username/ai-registry.git
+   cd ai-registry
    ```
 3. Install dependencies:
    ```bash
@@ -31,7 +31,8 @@ Thank you for your interest in contributing to Streamdown! We welcome contributi
 ### Project Structure
 
 This is a monorepo managed with Turbo. The main package is located at:
-- `packages/streamdown/` - The core Streamdown React component library
+
+- `packages/vercel-gateway/` - The core Vercel AI Gateway library
 
 ### Available Scripts
 
@@ -47,11 +48,13 @@ This is a monorepo managed with Turbo. The main package is located at:
 ### Making Changes
 
 1. Create a new branch for your feature or fix:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
 2. Make your changes and ensure:
+
    - All tests pass (`pnpm test`)
    - Code is properly formatted (`pnpm format`)
    - Type checking passes (`pnpm check-types`)
@@ -80,6 +83,7 @@ We follow conventional commits for clear commit history:
 - `chore:` Maintenance tasks
 
 Examples:
+
 ```
 feat: add support for custom code block themes
 fix: resolve markdown parsing issue with nested lists
@@ -89,6 +93,7 @@ docs: update README with new API examples
 ## Pull Request Process
 
 1. Ensure your PR:
+
    - Has a clear, descriptive title
    - Includes a changeset (run `pnpm changeset` if you haven't)
    - Passes all CI checks
@@ -96,38 +101,13 @@ docs: update README with new API examples
    - Updates documentation if needed
 
 2. PR Description should include:
+
    - What changes were made
    - Why these changes were necessary
    - Any breaking changes
    - Screenshots/demos for UI changes
 
 3. Link any related issues using keywords like `Fixes #123` or `Closes #456`
-
-## Testing
-
-### Running Tests
-
-```bash
-# Run all tests
-pnpm test
-
-# Run tests with coverage
-pnpm test:coverage
-
-# Run tests with UI
-pnpm test:ui
-
-# Run tests in watch mode (in package directory)
-cd packages/streamdown
-pnpm vitest
-```
-
-### Writing Tests
-
-- Tests are located in `packages/streamdown/__tests__/`
-- Use descriptive test names
-- Test both success and error cases
-- Ensure good coverage for new features
 
 ## Release Process
 
@@ -153,4 +133,4 @@ Releases are automated through GitHub Actions and changesets:
 
 ## License
 
-By contributing to Streamdown, you agree that your contributions will be licensed under the Apache-2.0 License.
+By contributing to AI Registry, you agree that your contributions will be licensed under the MIT License.
