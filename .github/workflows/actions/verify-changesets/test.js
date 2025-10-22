@@ -14,7 +14,7 @@ test("happy path", async () => {
   };
 
   const readFile = mock.fn(async (_path) => {
-    return "---\nai: patch\n@ai-sdk/provider: patch\n---\n## Test changeset";
+    return await "---\nai: patch\n@ai-sdk/provider: patch\n---\n## Test changeset";
   });
 
   await verifyChangesets(event, env, readFile);
