@@ -1,17 +1,17 @@
-'use client';
-import type { ModelId } from '@ai-registry/vercel-gateway';
-import { ExternalLink, MessageSquare, Scale } from 'lucide-react';
-import type React from 'react';
-import type { ComponentProps } from 'react';
-import { useMemo } from 'react';
-import { cn } from '@/lib/utils';
-import { LinkButton } from '@/components/link-button';
+"use client";
+import type { ModelId } from "@airegistry/vercel-gateway";
+import { ExternalLink, MessageSquare, Scale } from "lucide-react";
+import type React from "react";
+import type { ComponentProps } from "react";
+import { useMemo } from "react";
 import {
   OpenIn,
   OpenInContent,
+  OpenInSparka,
   OpenInTrigger,
-} from '@/components/ai-elements/open-in-chat';
-import { OpenInSparka } from '@/components/ai-elements/open-in-chat';
+} from "@/components/ai-elements/open-in-chat";
+import { LinkButton } from "@/components/link-button";
+import { cn } from "@/lib/utils";
 
 export function ChatModelButton({
   modelId,
@@ -19,21 +19,21 @@ export function ChatModelButton({
   children,
   hideIcon,
   size,
-  variant = 'default',
+  variant = "default",
 }: {
   modelId?: ModelId | string | null;
   className?: string;
   children?: React.ReactNode;
   hideIcon?: boolean;
-  size?: ComponentProps<typeof LinkButton>['size'];
-  variant?: 'default' | 'outline';
+  size?: ComponentProps<typeof LinkButton>["size"];
+  variant?: "default" | "outline";
 }) {
-  const query = useMemo(() => String(modelId ?? ''), [modelId]);
+  const query = useMemo(() => String(modelId ?? ""), [modelId]);
 
   return (
     <OpenIn query={query}>
       <OpenInTrigger />
-      <OpenInContent >
+      <OpenInContent>
         <OpenInSparka />
       </OpenInContent>
     </OpenIn>
@@ -50,19 +50,19 @@ export function CompareModelButton({
 }: {
   modelId: string | ModelId;
   className?: string;
-  size?: ComponentProps<typeof LinkButton>['size'];
+  size?: ComponentProps<typeof LinkButton>["size"];
   children?: React.ReactNode;
   hideIcon?: boolean;
-} & Omit<ComponentProps<typeof LinkButton>, 'href'>) {
+} & Omit<ComponentProps<typeof LinkButton>, "href">) {
   return (
     <LinkButton
-      className={cn('gap-2', className)}
+      className={cn("gap-2", className)}
       href={`/compare/${String(modelId)}`}
       size={size}
       {...props}
     >
       {hideIcon ? null : <Scale className="h-4 w-4" />}
-      {children ?? 'Compare'}
+      {children ?? "Compare"}
     </LinkButton>
   );
 }
@@ -73,25 +73,25 @@ export function GoToModelButton({
   children,
   hideIcon,
   size,
-  variant = 'outline',
+  variant = "outline",
   ...props
 }: {
   modelId: string | ModelId;
   className?: string;
   children?: React.ReactNode;
   hideIcon?: boolean;
-  size?: ComponentProps<typeof LinkButton>['size'];
-  variant?: ComponentProps<typeof LinkButton>['variant'];
-} & Omit<ComponentProps<typeof LinkButton>, 'variant' | 'children' | 'href'>) {
+  size?: ComponentProps<typeof LinkButton>["size"];
+  variant?: ComponentProps<typeof LinkButton>["variant"];
+} & Omit<ComponentProps<typeof LinkButton>, "variant" | "children" | "href">) {
   return (
     <LinkButton
-      className={cn('gap-2', className)}
+      className={cn("gap-2", className)}
       href={`/models/${String(modelId)}`}
       size={size}
       variant={variant}
       {...props}
     >
-      <span>{children ?? 'Go to model'}</span>
+      <span>{children ?? "Go to model"}</span>
       {hideIcon ? null : <ExternalLink className="ml-0 h-4 w-4" />}
     </LinkButton>
   );

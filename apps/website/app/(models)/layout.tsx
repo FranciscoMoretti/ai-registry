@@ -1,4 +1,4 @@
-import { allModels, providers } from "@ai-registry/vercel-gateway";
+import { allModels, providers } from "@airegistry/vercel-gateway";
 import type { Metadata } from "next";
 import { ModelsHeader } from "./models-header";
 

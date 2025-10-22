@@ -1,6 +1,6 @@
-import type { ProviderId } from "@ai-registry/vercel-gateway";
+import type { ProviderId } from "@airegistry/vercel-gateway";
 
-import { allModels } from "@ai-registry/vercel-gateway";
+import { allModels } from "@airegistry/vercel-gateway";
 import { ImageResponse } from "@vercel/og";
 import { formatNumberCompact } from "@/lib/format-number-compact";
 import { OGCard, OGContainer, OGFooter, OGTitle } from "@/lib/og/components";

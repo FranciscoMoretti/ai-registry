@@ -1,6 +1,6 @@
 'use client';
 
-import { allModels, type ModelDefinition } from '@ai-registry/vercel-gateway';
+import { allModels, type ModelDefinition } from '@airegistry/vercel-gateway';
 import { createContext, useContext, useRef } from 'react';
 import { useStoreWithEqualityFn } from 'zustand/traditional';
 import { createStore } from 'zustand/vanilla';

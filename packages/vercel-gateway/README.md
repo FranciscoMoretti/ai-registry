@@ -1,11 +1,11 @@
-# @ai-registry/vercel-gateway
+# @airegistry/vercel-gateway
 
 Typed model registry and helpers for the Vercel AI Gateway. Gives you a stable set of `ProviderId`, `ModelId`, rich `ModelDefinition` metadata (context window, pricing, modalities, tags), and small utilities for working with model ids.
 
 ## Install
 
 ```bash
-npm i @ai-registry/vercel-gateway
+npm i @airegistry/vercel-gateway
 ```
 
 ## Quick start
@@ -18,7 +18,7 @@ import {
   getModelAndProvider,
   type ModelId,
   type ProviderId,
-} from "@ai-registry/vercel-gateway";
+} from "@airegistry/vercel-gateway";
 
 // list providers
 providers; // readonly ProviderId[]

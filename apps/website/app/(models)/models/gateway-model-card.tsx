@@ -1,5 +1,5 @@
 'use client';
-import type { ModelDefinition, ProviderId } from '@ai-registry/vercel-gateway';
+import type { ModelDefinition, ProviderId } from '@airegistry/vercel-gateway';
 import Link from 'next/link';
 import { type ComponentType, memo, type SVGProps } from 'react';
 import { getProviderIcon } from '@/lib/get-provider-icon';

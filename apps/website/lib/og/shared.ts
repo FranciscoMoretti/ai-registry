@@ -1,6 +1,6 @@
 // Shared utilities and constants for Open Graph image generation
 
-import type { ModelDefinition } from "@ai-registry/vercel-gateway";
+import type { ModelDefinition } from "@airegistry/vercel-gateway";
 import { formatNumberCompact } from "@/lib/format-number-compact";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;

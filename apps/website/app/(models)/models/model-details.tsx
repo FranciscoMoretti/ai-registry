@@ -1,6 +1,6 @@
 'use client';
-import type { ModelDefinition } from '@ai-registry/vercel-gateway';
-import { allModels, getModelDefinition } from '@ai-registry/vercel-gateway';
+import type { ModelDefinition } from '@airegistry/vercel-gateway';
+import { allModels, getModelDefinition } from '@airegistry/vercel-gateway';
 import { ModelDetailsCard } from '@/app/(models)/compare/model-details-card';
 import { ChatModelButton } from '@/components/model-action-buttons';
 import { ModelSelectorBase } from '@/components/model-selector-base';

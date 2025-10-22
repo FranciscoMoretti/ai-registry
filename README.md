@@ -5,7 +5,7 @@ Typed model registry, utilities, and a model explorer website for Vercel AI Gate
 This monorepo contains:
 
 - packages: reusable libraries published to npm
-  - `@ai-registry/vercel-gateway`: typed model list/metadata and small helpers for Vercel AI Gateway
+  - `@airegistry/vercel-gateway`: typed model list/metadata and small helpers for Vercel AI Gateway
 - apps: end-user applications
   - `website`: a Next.js model explorer to browse all gateway models, compare specs/pricing, and discover capabilities
 
@@ -35,22 +35,22 @@ Run a single workspace:
 pnpm --filter website dev
 
 # vercel-gateway package
-pnpm --filter @ai-registry/vercel-gateway build
-pnpm --filter @ai-registry/vercel-gateway test
+pnpm --filter @airegistry/vercel-gateway build
+pnpm --filter @airegistry/vercel-gateway test
 ```
 
 ## Packages
 
-### @ai-registry/vercel-gateway
+### @airegistry/vercel-gateway
 
 Typed model registry and helpers for the Vercel AI Gateway. Provides a stable set of `ProviderId`, `ModelId`, rich `ModelDefinition` metadata (context window, pricing, modalities, tags), and utilities.
 
 Install:
 
 ```bash
-npm i @ai-registry/vercel-gateway
+npm i @airegistry/vercel-gateway
 # or
-pnpm add @ai-registry/vercel-gateway
+pnpm add @airegistry/vercel-gateway
 ```
 
 Quick start:
@@ -63,7 +63,7 @@ import {
   getModelAndProvider,
   type ModelId,
   type ProviderId,
-} from "@ai-registry/vercel-gateway";
+} from "@airegistry/vercel-gateway";
 
 providers; // readonly ProviderId[]
 allModels; // ModelDefinition[]
@@ -119,5 +119,5 @@ MIT. See `LICENSE` for details.
 
 ## Links
 
-- Homepage: `https://ai-registry.dev`
-- Package: `@ai-registry/vercel-gateway`
+- Homepage: `https://airegistry.dev`
+- Package: `@airegistry/vercel-gateway`

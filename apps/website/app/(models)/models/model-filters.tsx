@@ -1,6 +1,6 @@
 'use client';
 
-import { providers } from '@ai-registry/vercel-gateway';
+import { providers } from '@airegistry/vercel-gateway';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import {

@@ -12,7 +12,7 @@ function PureHeaderActions() {
       <Button asChild size="icon" type="button" variant="ghost">
         <a
           className="flex items-center justify-center"
-          href="https://github.com/franciscomoretti/ai-registry"
+          href="https://github.com/franciscomoretti/airegistry"
           rel="noopener noreferrer"
           target="_blank"
         >

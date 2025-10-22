@@ -1,4 +1,4 @@
-import { allModels } from '@ai-registry/vercel-gateway';
+import { allModels } from '@airegistry/vercel-gateway';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { WideModelDetails } from '@/app/(models)/models/wide-model-details';

@@ -1,6 +1,6 @@
 'use client';
 
-import type { ModelDefinition, ProviderId } from '@ai-registry/vercel-gateway';
+import type { ModelDefinition, ProviderId } from '@airegistry/vercel-gateway';
 import { useMemo } from 'react';
 import { ButtonCopy } from '@/components/button-copy';
 import { getProviderIcon } from '@/lib/get-provider-icon';

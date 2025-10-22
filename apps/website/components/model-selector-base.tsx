@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
 import type {
   ModelDefinition,
   ModelId,
   ProviderId,
-} from '@ai-registry/vercel-gateway';
-import { ChevronUpIcon, FilterIcon } from 'lucide-react';
+} from "@airegistry/vercel-gateway";
+import { ChevronUpIcon, FilterIcon } from "lucide-react";
 import {
   type ComponentProps,
   memo,
@@ -14,10 +14,10 @@ import {
   useMemo,
   useOptimistic,
   useState,
-} from 'react';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
+} from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Command,
   CommandEmpty,
@@ -25,17 +25,17 @@ import {
   CommandInput,
   CommandList,
   CommandItem as UICommandItem,
-} from '@/components/ui/command';
-import { Label } from '@/components/ui/label';
+} from "@/components/ui/command";
+import { Label } from "@/components/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { getEnabledFeatures } from '@/lib/features-config';
-import { cn } from '@/lib/utils';
-import { getProviderIcon } from '@/lib/get-provider-icon';
+} from "@/components/ui/popover";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { getEnabledFeatures } from "@/lib/features-config";
+import { getProviderIcon } from "@/lib/get-provider-icon";
+import { cn } from "@/lib/utils";
 
 type FeatureFilter = Record<string, boolean>;
 
@@ -72,19 +72,19 @@ function getFeatureIcons(modelDefinition: ModelDefinitionLike) {
   const enabled = getEnabledFeatures();
   const featureIconMap = [
     {
-      key: 'functionCalling',
+      key: "functionCalling",
       condition: features.toolCall,
-      config: enabled.find((f) => f.key === 'functionCalling'),
+      config: enabled.find((f) => f.key === "functionCalling"),
     },
     {
-      key: 'imageInput',
+      key: "imageInput",
       condition: features.input?.image,
-      config: enabled.find((f) => f.key === 'imageInput'),
+      config: enabled.find((f) => f.key === "imageInput"),
     },
     {
-      key: 'pdfInput',
+      key: "pdfInput",
       condition: features.input?.pdf,
-      config: enabled.find((f) => f.key === 'pdfInput'),
+      config: enabled.find((f) => f.key === "pdfInput"),
     },
   ];
 
@@ -98,7 +98,7 @@ function getFeatureIcons(modelDefinition: ModelDefinitionLike) {
           title={config.description}
         >
           <IconComponent className="h-3 w-3 text-muted-foreground" />
-        </div>,
+        </div>
       );
     }
   });
@@ -127,16 +127,16 @@ function PureCommandItem<
   const hasReasoning = useMemo(() => definition.reasoning, [definition]);
   const searchValue = useMemo(
     () =>
-      `${definition.name} ${hasReasoning ? 'reasoning' : ''} ${definition.owned_by} `.toLowerCase(),
-    [definition, hasReasoning],
+      `${definition.name} ${hasReasoning ? "reasoning" : ""} ${definition.owned_by} `.toLowerCase(),
+    [definition, hasReasoning]
   );
 
   return (
     <UICommandItem
       className={cn(
-        'flex h-9 cursor-pointer items-center justify-between px-3 py-1.5 transition-all',
-        isSelected && 'border-l-2 border-l-primary bg-primary/10',
-        disabled && 'cursor-not-allowed opacity-50',
+        "flex h-9 cursor-pointer items-center justify-between px-3 py-1.5 transition-all",
+        isSelected && "border-l-2 border-l-primary bg-primary/10",
+        disabled && "cursor-not-allowed opacity-50"
       )}
       onSelect={() => {
         if (disabled) {
@@ -153,7 +153,7 @@ function PureCommandItem<
           {hasReasoning
             ? (() => {
                 const cfg = getEnabledFeatures().find(
-                  (f) => f.key === 'reasoning',
+                  (f) => f.key === "reasoning"
                 );
                 if (!cfg) {
                   return null;
@@ -186,7 +186,7 @@ const CommandItem = memo(
     prevProps.id === nextProps.id &&
     prevProps.disabled === nextProps.disabled &&
     prevProps.isSelected === nextProps.isSelected &&
-    prevProps.definition === nextProps.definition,
+    prevProps.definition === nextProps.definition
 ) as typeof PureCommandItem;
 function PureModelSelectorPopoverContent<
   TModelId extends string,
@@ -212,7 +212,7 @@ function PureModelSelectorPopoverContent<
   clearFilters: () => void;
   featureFilters: FeatureFilter;
   onUpdateFeatureFilters: (
-    updater: (prev: FeatureFilter) => FeatureFilter,
+    updater: (prev: FeatureFilter) => FeatureFilter
   ) => void;
   topContent?: React.ReactNode;
   filteredModels: Array<{
@@ -245,8 +245,8 @@ function PureModelSelectorPopoverContent<
             <PopoverTrigger asChild>
               <Button
                 className={cn(
-                  'relative mr-3 h-8 w-8 p-0',
-                  activeFilterCount > 0 && 'text-primary',
+                  "relative mr-3 h-8 w-8 p-0",
+                  activeFilterCount > 0 && "text-primary"
                 )}
                 size="sm"
                 variant="ghost"
@@ -346,7 +346,7 @@ export const ModelSelectorPopoverContent = memo(
   PureModelSelectorPopoverContent as typeof PureModelSelectorPopoverContent<
     string,
     ModelDefinitionLike
-  >,
+  >
 ) as typeof PureModelSelectorPopoverContent;
 
 export type ModelSelectorBaseItem<
@@ -369,7 +369,7 @@ export function PureModelSelectorBase<
   placeholder,
   topContent,
   enableFilters = true,
-  initialChevronDirection = 'up',
+  initialChevronDirection = "up",
 }: {
   models: ModelSelectorBaseItem<TModelId, TModelDefinition>[];
   selectedModelId?: TModelId;
@@ -377,7 +377,7 @@ export function PureModelSelectorBase<
   placeholder?: string;
   topContent?: React.ReactNode;
   enableFilters?: boolean;
-  initialChevronDirection?: 'up' | 'down';
+  initialChevronDirection?: "up" | "down";
 } & ComponentProps<typeof Button>) {
   const [open, setOpen] = useState(false);
   const [filterOpen, setFilterOpen] = useState(false);
@@ -403,19 +403,19 @@ export function PureModelSelectorBase<
           return true;
         }
         switch (key) {
-          case 'reasoning':
+          case "reasoning":
             return features.reasoning;
-          case 'functionCalling':
+          case "functionCalling":
             return features.toolCall;
-          case 'imageInput':
+          case "imageInput":
             return features.input?.image;
-          case 'pdfInput':
+          case "pdfInput":
             return features.input?.pdf;
-          case 'audioInput':
+          case "audioInput":
             return features.input?.audio;
-          case 'imageOutput':
+          case "imageOutput":
             return features.output?.image;
-          case 'audioOutput':
+          case "audioOutput":
             return features.output?.audio;
           default:
             return true;
@@ -426,7 +426,7 @@ export function PureModelSelectorBase<
 
   const selectedItem = useMemo(
     () => models.find((m) => m.id === optimisticModelId),
-    [models, optimisticModelId],
+    [models, optimisticModelId]
   );
 
   const selectedProviderIcon = useMemo(() => {
@@ -438,13 +438,13 @@ export function PureModelSelectorBase<
   }, [selectedItem]);
 
   const reasoningFeatureConfig = useMemo(
-    () => getEnabledFeatures().find((f) => f.key === 'reasoning'),
-    [],
+    () => getEnabledFeatures().find((f) => f.key === "reasoning"),
+    []
   );
 
   const activeFilterCount = useMemo(
     () => Object.values(featureFilters).filter(Boolean).length,
-    [featureFilters],
+    [featureFilters]
   );
 
   const clearFilters = () => setFeatureFilters(initialFilters);
@@ -457,7 +457,7 @@ export function PureModelSelectorBase<
         setOpen(false);
       });
     },
-    [onModelChange, setOptimisticModelId],
+    [onModelChange, setOptimisticModelId]
   );
 
   return (
@@ -465,7 +465,7 @@ export function PureModelSelectorBase<
       <PopoverTrigger asChild>
         <Button
           aria-expanded={open}
-          className={cn('flex justify-between gap-2 md:px-2', className)}
+          className={cn("flex justify-between gap-2 md:px-2", className)}
           data-testid="model-selector"
           role="combobox"
           variant="ghost"
@@ -475,7 +475,7 @@ export function PureModelSelectorBase<
               <div className="shrink-0">{selectedProviderIcon}</div>
             )}
             <p className="inline-flex items-center gap-1.5 truncate">
-              {selectedItem?.definition.name || placeholder || 'Select model'}
+              {selectedItem?.definition.name || placeholder || "Select model"}
               {selectedItem?.definition.reasoning && reasoningFeatureConfig
                 ? (() => {
                     const IconComponent = reasoningFeatureConfig.icon;
@@ -493,8 +493,8 @@ export function PureModelSelectorBase<
           </div>
           <ChevronUpIcon
             className={cn(
-              'h-4 w-4 shrink-0 opacity-50 transition-transform',
-              (initialChevronDirection === 'up') === open && 'rotate-180',
+              "h-4 w-4 shrink-0 opacity-50 transition-transform",
+              (initialChevronDirection === "up") === open && "rotate-180"
             )}
           />
         </Button>
@@ -532,5 +532,5 @@ export const ModelSelectorBase = memo(
     prevProps.onModelChange === nextProps.onModelChange &&
     prevProps.placeholder === nextProps.placeholder &&
     prevProps.models === nextProps.models &&
-    prevProps.enableFilters === nextProps.enableFilters,
+    prevProps.enableFilters === nextProps.enableFilters
 ) as typeof PureModelSelectorBase;

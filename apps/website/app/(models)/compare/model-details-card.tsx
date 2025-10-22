@@ -1,30 +1,35 @@
-'use client';
+"use client";
 
-import type { ModelDefinition, ProviderId } from '@ai-registry/vercel-gateway';
-import { Check, ChevronDown, Minus, SquareDashed, X } from 'lucide-react';
-import type React from 'react';
-import { useEffect, useRef, useState } from 'react';
-import { getProviderIcon } from '@/lib/get-provider-icon';
+import type { ModelDefinition, ProviderId } from "@airegistry/vercel-gateway";
+import { Check, ChevronDown, Minus, SquareDashed, X } from "lucide-react";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ChatModelButton,
   CompareModelButton,
   GoToModelButton,
-} from '@/components/model-action-buttons';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+} from "@/components/model-action-buttons";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible';
-import { Separator } from '@/components/ui/separator';
+} from "@/components/ui/collapsible";
+import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
-import { MODEL_CAPABILITIES } from '@/lib/model-explorer/model-capabilities';
-import { MODEL_CATEGORIES } from '@/lib/model-explorer/model-categories';
-import { formatNumberCompact } from '../../../lib/format-number-compact';
+} from "@/components/ui/tooltip";
+import { getProviderIcon } from "@/lib/get-provider-icon";
+import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
+import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
+import { formatNumberCompact } from "../../../lib/format-number-compact";
 
 type ModelComparisonCardProps = {
   model: ModelDefinition | null;
@@ -48,7 +53,7 @@ const ModalityIcon = ({
       <span
         aria-label={label}
         className={
-          'grid size-6 place-items-center rounded-md border bg-muted text-foreground/80'
+          "grid size-6 place-items-center rounded-md border bg-muted text-foreground/80"
         }
         role="img"
       >
@@ -74,7 +79,7 @@ const CapabilityIcon = ({
 const NotAvailableIcon = () => (
   <span
     aria-label="Not available"
-    className={'grid size-6 place-items-center text-foreground/80'}
+    className={"grid size-6 place-items-center text-foreground/80"}
     role="img"
   >
     <Minus className="h-4 w-4" />
@@ -119,10 +124,10 @@ export function ModelDetailsCard({
     measure();
     const ro = new ResizeObserver(measure);
     ro.observe(el);
-    window.addEventListener('resize', measure);
+    window.addEventListener("resize", measure);
     return () => {
       ro.disconnect();
-      window.removeEventListener('resize', measure);
+      window.removeEventListener("resize", measure);
     };
   }, []);
 
@@ -165,11 +170,11 @@ export function ModelDetailsCard({
           </div>
         </div>
         <div className="mt-1 text-muted-foreground text-sm">
-          Released{' '}
-          {model.releaseDate.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
+          Released{" "}
+          {model.releaseDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
           })}
         </div>
         <Separator className="my-2" />
@@ -224,7 +229,7 @@ export function ModelDetailsCard({
               <span className="font-medium text-sm">
                 {model.max_tokens
                   ? formatNumberCompact(Number(model.max_tokens))
-                  : '--'}
+                  : "--"}
               </span>
             </div>
           </Section>
@@ -241,7 +246,7 @@ export function ModelDetailsCard({
               <span className="font-medium text-sm">
                 $
                 {(Number.parseFloat(model.pricing.input) * 1_000_000).toFixed(
-                  2,
+                  2
                 )}
                 /M tokens
               </span>
@@ -253,7 +258,7 @@ export function ModelDetailsCard({
               <span className="font-medium text-sm">
                 $
                 {(Number.parseFloat(model.pricing.output) * 1_000_000).toFixed(
-                  2,
+                  2
                 )}
                 /M tokens
               </span>
@@ -438,10 +443,9 @@ export function ModelDetailsCard({
             </div>
           </Section>
         </div>
-
       </CardContent>
       <CardFooter className="pt-2">
-        <div className="flex w-full items-stretch justify-center m-auto max-w-[200px] flex-col gap-2">
+        <div className="m-auto flex w-full max-w-[200px] flex-col items-stretch justify-center gap-2">
           {actions.goToModel ? (
             <GoToModelButton
               className="bg-transparent transition-colors hover:bg-accent"
@@ -458,6 +462,96 @@ export function ModelDetailsCard({
           {actions.chat ? <ChatModelButton modelId={model.id} /> : null}
         </div>
       </CardFooter>
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
+    </Card>
+  );
+}
     </Card>
   );
 }

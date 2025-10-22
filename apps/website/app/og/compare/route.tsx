@@ -1,4 +1,4 @@
-import { allModels } from '@ai-registry/vercel-gateway';
+import { allModels } from '@airegistry/vercel-gateway';
 import { ImageResponse } from '@vercel/og';
 import {
   OGCard,

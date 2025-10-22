@@ -16,11 +16,15 @@
     "dist",
     "README.md"
   ],
-  "homepage": "https://ai-registry.dev",
+  "homepage": "https://ai-registry.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FranciscoMoretti/ai-registry.git",
     "directory": "packages/vercel-gateway"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "tsup",

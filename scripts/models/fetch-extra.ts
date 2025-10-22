@@ -59,7 +59,7 @@ async function main() {
   writeFileSync(MODELS_DEV_RESPONSE_JSON, JSON.stringify(raw, null, 2));
 
   const lines: string[] = [];
-  lines.push("import type { ModelId } from '@ai-registry/vercel-gateway';");
+  lines.push("import type { ModelId } from '@airegistry/vercel-gateway';");
   lines.push('');
   lines.push('type GeneratedExtraDelta = {');
   lines.push('  releaseDate: Date;');

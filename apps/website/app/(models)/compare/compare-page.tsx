@@ -1,6 +1,6 @@
 'use client';
 
-import { allModels, type ModelDefinition } from '@ai-registry/vercel-gateway';
+import { allModels, type ModelDefinition } from '@airegistry/vercel-gateway';
 import { useParams } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import { ModelDetails } from '@/app/(models)/models/model-details';

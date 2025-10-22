@@ -14,8 +14,8 @@ Thank you for your interest in contributing to AI Registry! We welcome contribut
 1. Fork the repository
 2. Clone your fork:
    ```bash
-   git clone https://github.com/your-username/ai-registry.git
-   cd ai-registry
+   git clone https://github.com/your-username/airegistry.git
+   cd airegistry
    ```
 3. Install dependencies:
    ```bash

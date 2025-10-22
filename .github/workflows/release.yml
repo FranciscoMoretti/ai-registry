@@ -26,8 +26,8 @@ jobs:
 
       - name: Setup Git User
         run: |
-          git config --global user.email "ai-registry-bot[bot]@users.noreply.github.com"
-          git config --global user.name "ai-registry-bot[bot]"
+          git config --global user.email "airegistry-bot[bot]@users.noreply.github.com"
+          git config --global user.name "airegistry-bot[bot]"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -42,7 +42,7 @@ jobs:
         run: pnpm i
 
       - name: Build Packages
-        run: pnpm build --filter @ai-registry/vercel-gateway
+        run: pnpm build --filter @airegistry/vercel-gateway
 
       - name: Run Tests
         run: pnpm test
