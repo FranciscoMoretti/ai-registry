@@ -1,5 +1,5 @@
 ---
-"@ai-registry/vercel-gateway": patch
+"@airegistry/vercel-gateway": patch
 ---
 
 fix release flow

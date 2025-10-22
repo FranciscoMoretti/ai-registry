@@ -1,4 +1,4 @@
-# @ai-registry/vercel-gateway
+# @airegistry/vercel-gateway
 
 ## 0.0.2
 
