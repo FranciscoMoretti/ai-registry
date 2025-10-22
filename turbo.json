@@ -10,6 +10,15 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
+    "test": {
+      "dependsOn": ["^test"]
+    },
+    "test:coverage": {
+      "dependsOn": ["^test:coverage"]
+    },
+    "test:ui": {
+      "dependsOn": ["^test:ui"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
