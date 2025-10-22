@@ -2,13 +2,13 @@
 
 import { memo } from "react";
 import { GitIcon } from "@/components/icons";
+import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 
-
 function PureHeaderActions() {
-
   return (
     <div className="flex items-center gap-2">
+      <ModeToggle />
       <Button asChild size="icon" type="button" variant="ghost">
         <a
           className="flex items-center justify-center"
@@ -19,7 +19,6 @@ function PureHeaderActions() {
           <GitIcon size={20} />
         </a>
       </Button>
-
     </div>
   );
 }
