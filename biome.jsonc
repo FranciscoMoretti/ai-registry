@@ -3,5 +3,12 @@
   "extends": ["ultracite"],
   "files": {
     "includes": ["!**/components/ui", "!**/lib/utils.ts"]
+  },
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noConsole": "off"
+      }
+    }
   }
 }
