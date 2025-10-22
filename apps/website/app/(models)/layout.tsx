@@ -30,9 +30,6 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
   },
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,
