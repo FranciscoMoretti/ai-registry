@@ -111,7 +111,7 @@ This repo uses Changesets and GitHub Actions to version and publish packages. Me
 
 ## Contributing
 
-Issues and PRs welcome. See `CONTRIBUTING.md` for setup, workflow, and commit conventions, and `CODE_OF_CONDUCT.md` for community guidelines.
+Issues and PRs welcome. See `CONTRIBUTING.md` for setup, workflow, and commit conventions.
 
 ## License
 
