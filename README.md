@@ -109,10 +109,6 @@ pnpm --filter website start
 
 This repo uses Changesets and GitHub Actions to version and publish packages. Merging PRs with changesets will trigger a version PR; publishing happens automatically on merge to `main`.
 
-## Contributing
-
-Issues and PRs welcome. See `CONTRIBUTING.md` for setup, workflow, and commit conventions.
-
 ## License
 
 MIT. See `LICENSE` for details.
