@@ -116,8 +116,3 @@ Issues and PRs welcome. See `CONTRIBUTING.md` for setup, workflow, and commit co
 ## License
 
 MIT. See `LICENSE` for details.
-
-## Links
-
-- Homepage: `https://airegistry.dev`
-- Package: `@airegistry/vercel-gateway`
