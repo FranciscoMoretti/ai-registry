@@ -1,6 +1,10 @@
 # AI Registry
 
+https://github.com/user-attachments/assets/9487a1bc-812c-4047-9feb-411896a35d85
+
 Typed model registry, utilities, and a model explorer website for Vercel AI Gateway.
+
+## Monorepo Info
 
 This monorepo contains:
 
