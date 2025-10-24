@@ -1,6 +1,6 @@
 # AI Registry
 
-https://github.com/user-attachments/assets/c69b0962-a028-4e3c-a31e-20f4138c3896
+https://github.com/user-attachments/assets/bfc21467-2d39-47fd-8667-cc359269175d
 
 Typed model registry, utilities, and a model explorer website for Vercel AI Gateway.
 
