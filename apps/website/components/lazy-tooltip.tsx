@@ -19,8 +19,14 @@ export function LazyTooltip({
   const [enabled, setEnabled] = useState(false);
 
   const triggerProps = {
-    onPointerEnter: () => setEnabled(true),
-    onTouchStart: () => setEnabled(true),
+    onPointerEnter: () => {
+      console.log("pointer enter");
+      setEnabled(true);
+    },
+    onTouchStart: () => {
+      setEnabled(true);
+      console.log("touch start");
+    },
   } as const;
 
   if (!enabled) {

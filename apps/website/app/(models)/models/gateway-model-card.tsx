@@ -13,22 +13,26 @@ import {
 import { formatUsdPerMTokens } from "@/lib/format-usd-per-m-tokens";
 import { getProviderIcon } from "@/lib/get-provider-icon";
 import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
+import { cn } from "@/lib/utils";
 import { formatNumberCompact } from "../../../lib/format-number-compact";
 
 function ModalityIcon({
   label,
+  className,
   children,
 }: {
   label: string;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <LazyTooltip content={label}>
       <span
         aria-label={label}
-        className={
-          "grid size-6 place-items-center rounded-md border bg-muted text-foreground/80"
-        }
+        className={cn(
+          "grid size-6 place-items-center rounded-md border bg-muted text-foreground/80",
+          className
+        )}
         role="img"
       >
         {children}
@@ -45,7 +49,7 @@ function CapabilityIcon({
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
 }) {
   return (
-    <ModalityIcon label={label}>
+    <ModalityIcon className={"z-20"} label={label}>
       <Icon className="size-3.5" />
     </ModalityIcon>
   );
