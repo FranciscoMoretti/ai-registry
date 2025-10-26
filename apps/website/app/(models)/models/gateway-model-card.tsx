@@ -182,6 +182,13 @@ function ModelMetaRow({ model }: { model: ModelDefinition }) {
   return (
     <div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
       <span>
+        by {""}
+        <span className="font-medium text-foreground">
+          {model.owned_by.toLowerCase()}
+        </span>
+      </span>
+      <span>•</span>
+      <span>
         Context{" "}
         <span className="font-medium text-foreground">
           {formatNumberCompact(model.context_window)}
@@ -242,16 +249,15 @@ function PureModelCard({ model }: { model: ModelDefinition }) {
             <div className="grid size-10 place-items-center rounded-lg bg-muted">
               {getProviderIcon(provider, PROVIDER_ICON_SIZE)}
             </div>
-            <div className="">
-              <h3 className="text-balance font-semibold text-foreground transition-colors group-hover:text-primary">
+            <div className="flex items-center gap-2">
+              <h3 className="text-balance font-semibold text-foreground text-xl transition-colors group-hover:text-primary">
                 {model.name}
               </h3>
-              <div className="relative z-20 flex items-center gap-2 text-muted-foreground text-sm">
-                <span>by {model.owned_by.toLowerCase()}</span>
-                <span>•</span>
-                <span className="font-mono text-foreground">{model.id}</span>
-                <ButtonCopy className="-ml-1" code={model.id} />
-              </div>
+              <LazyTooltip asChild content={`Copy model id: ${model.id}`}>
+                <span className="z-20">
+                  <ButtonCopy className="ml-1" code={model.id} />
+                </span>
+              </LazyTooltip>
             </div>
           </div>
           <div className="z-20 hidden shrink-0 items-center gap-2 sm:block">
