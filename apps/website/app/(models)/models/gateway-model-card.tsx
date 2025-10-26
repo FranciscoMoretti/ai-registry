@@ -10,7 +10,7 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-
+import { formatUsdPerMTokens } from "@/lib/format-usd-per-m-tokens";
 import { getProviderIcon } from "@/lib/get-provider-icon";
 import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
 import { formatNumberCompact } from "../../../lib/format-number-compact";
@@ -118,17 +118,14 @@ function PureModelCard({ model }: { model: ModelDefinition }) {
           <span>
             Input{" "}
             <span className="font-medium text-foreground">
-              ${(Number.parseFloat(model.pricing.input) * 1_000_000).toFixed(2)}
-              /M
+              {formatUsdPerMTokens(model.pricing.input)}
             </span>
           </span>
           <span>•</span>
           <span>
             Output{" "}
             <span className="font-medium text-foreground">
-              $
-              {(Number.parseFloat(model.pricing.output) * 1_000_000).toFixed(2)}
-              /M
+              {formatUsdPerMTokens(model.pricing.output)}
             </span>
           </span>
           <span>•</span>
