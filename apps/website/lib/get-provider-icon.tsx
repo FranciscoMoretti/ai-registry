@@ -1,5 +1,5 @@
-'use client';
-import type { ProviderId } from '@airegistry/vercel-gateway';
+"use client";
+import type { ProviderId } from "@airegistry/vercel-gateway";
 import {
   Alibaba,
   Anthropic,
@@ -15,42 +15,44 @@ import {
   Vercel,
   XAI,
   ZAI,
-} from '@lobehub/icons';
+} from "@lobehub/icons";
 
 export function getProviderIcon(provider: ProviderId, size = 16) {
   const iconProps = { size };
   switch (provider) {
-    case 'openai':
+    case "openai":
       return <OpenAI {...iconProps} />;
-    case 'anthropic':
+    case "anthropic":
       return <Anthropic {...iconProps} />;
-    case 'xai':
+    case "xai":
       return <XAI {...iconProps} />;
-    case 'google':
+    case "google":
       return <Gemini {...iconProps} />;
-    case 'meta':
+    case "meta":
       return <Meta {...iconProps} />;
-    case 'mistral':
+    case "mistral":
       return <Mistral {...iconProps} />;
-    case 'alibaba':
+    case "alibaba":
       return <Alibaba {...iconProps} />;
-    case 'amazon':
+    case "amazon":
       return <Aws {...iconProps} />;
-    case 'cohere':
+    case "cohere":
       return <Cohere {...iconProps} />;
-    case 'deepseek':
+    case "deepseek":
       return <DeepSeek {...iconProps} />;
-    case 'perplexity':
+    case "perplexity":
       return <Perplexity {...iconProps} />;
-    case 'vercel':
+    case "vercel":
       return <Vercel {...iconProps} />;
-    case 'inception':
+    case "inception":
       return <OpenAI {...iconProps} />; // Using OpenAI as fallback
-    case 'moonshotai':
+    case "moonshotai":
       return <Moonshot {...iconProps} />;
-    case 'morph':
+    case "morph":
       return <OpenAI {...iconProps} />; // Using OpenAI as fallback
-    case 'zai':
+    case "zai":
       return <ZAI {...iconProps} />;
+    default:
+      return null;
   }
 }

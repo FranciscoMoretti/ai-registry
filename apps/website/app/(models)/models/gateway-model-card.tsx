@@ -51,6 +51,8 @@ function CapabilityIcon({
   );
 }
 
+const PROVIDER_ICON_SIZE = 28;
+
 function PureModelCard({ model }: { model: ModelDefinition }) {
   const provider = model.owned_by as ProviderId;
   const hasInput = Boolean(
@@ -77,7 +79,7 @@ function PureModelCard({ model }: { model: ModelDefinition }) {
         <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center sm:gap-0">
           <div className="flex flex-1 items-center gap-2">
             <div className="grid size-10 place-items-center rounded-lg bg-muted">
-              {getProviderIcon(provider, 28)}
+              {getProviderIcon(provider, PROVIDER_ICON_SIZE)}
             </div>
             <div className="">
               <h3 className="text-balance font-semibold text-foreground transition-colors group-hover:text-primary">
