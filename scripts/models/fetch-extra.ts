@@ -1,15 +1,16 @@
 #!/usr/bin/env bun
 
-import { execSync } from 'node:child_process';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { execSync } from "node:child_process";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   type ModelsDevModel,
   type ModelsDevResponse,
   ModelsDevResponseSchema,
-} from '../../packages/models/models-dev-schemas';
+} from "../../packages/vercel-gateway/models-dev-schemas";
 
-const MODELS_DEV_URL = 'https://models.dev/api.json';
+const MODELS_DEV_URL = "https://models.dev/api.json";
 
 async function fetchModelsDev(): Promise<{
   raw: ModelsDevResponse;
@@ -20,7 +21,7 @@ async function fetchModelsDev(): Promise<{
     throw new Error(`Failed to fetch ${MODELS_DEV_URL}: ${res.status}`);
   }
   const data = ModelsDevResponseSchema.parse(
-    await res.json(),
+    await res.json()
   ) as ModelsDevResponse;
   const byId: Record<string, ModelsDevModel> = {};
   for (const providerKey of Object.keys(data)) {
@@ -35,20 +36,20 @@ async function fetchModelsDev(): Promise<{
 }
 
 async function main() {
-  const ROOT = join(__dirname, '..', '..');
-  const MODELS_LIST = join(ROOT, 'lib/models/outputs/models-list.json');
-  const OUTPUT_TS = join(ROOT, 'lib/models/model-extra.generated.ts');
+  const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
+  const MODELS_LIST = join(ROOT, "lib/models/outputs/models-list.json");
+  const OUTPUT_TS = join(ROOT, "lib/models/model-extra.generated.ts");
   const MODELS_DEV_RESPONSE_JSON = join(
     ROOT,
-    'lib/models/responses/models-dev/models.json',
+    "lib/models/responses/models-dev/models.json"
   );
   const MISSING_MODEL_EXTRA_JSON = join(
     ROOT,
-    'lib/models/outputs/missing-model-extra.json',
+    "lib/models/outputs/missing-model-extra.json"
   );
 
   const supportedIds: string[] = JSON.parse(
-    readFileSync(MODELS_LIST, 'utf8'),
+    readFileSync(MODELS_LIST, "utf8")
   ) as string[];
 
   console.log(`Supported: ${supportedIds.length}`);
@@ -60,12 +61,12 @@ async function main() {
 
   const lines: string[] = [];
   lines.push("import type { ModelId } from '@airegistry/vercel-gateway';");
-  lines.push('');
-  lines.push('type GeneratedExtraDelta = {');
-  lines.push('  releaseDate: Date;');
-  lines.push('};');
-  lines.push('');
-  lines.push('export const generatedModelExtra = {');
+  lines.push("");
+  lines.push("type GeneratedExtraDelta = {");
+  lines.push("  releaseDate: Date;");
+  lines.push("};");
+  lines.push("");
+  lines.push("export const generatedModelExtra = {");
 
   const stillMissing: string[] = [];
 
@@ -78,35 +79,35 @@ async function main() {
     const entry: string[] = [];
     entry.push(`  '${id}': {`);
     entry.push(`    releaseDate: new Date('${m.release_date}'),`);
-    entry.push('  },');
-    lines.push(entry.join('\n'));
+    entry.push("  },");
+    lines.push(entry.join("\n"));
   }
 
-  lines.push('} satisfies Partial<Record<ModelId, GeneratedExtraDelta>>;');
-  lines.push('');
+  lines.push("} satisfies Partial<Record<ModelId, GeneratedExtraDelta>>;");
+  lines.push("");
 
-  const tsOut = lines.join('\n');
+  const tsOut = lines.join("\n");
   writeFileSync(OUTPUT_TS, tsOut);
-  console.log('Wrote', OUTPUT_TS);
+  console.log("Wrote", OUTPUT_TS);
 
   writeFileSync(
     MISSING_MODEL_EXTRA_JSON,
-    JSON.stringify(stillMissing, null, 2),
+    JSON.stringify(stillMissing, null, 2)
   );
-  console.log('Wrote missing extra list:', MISSING_MODEL_EXTRA_JSON);
+  console.log("Wrote missing extra list:", MISSING_MODEL_EXTRA_JSON);
 
   try {
-    console.log('Formatting with biome...');
+    console.log("Formatting with biome...");
     execSync(`npx biome format --write "${OUTPUT_TS}"`, {
       cwd: ROOT,
-      stdio: 'inherit',
+      stdio: "inherit",
     });
   } catch (err) {
-    console.warn('Warning: biome format failed:', err);
+    console.warn("Warning: biome format failed:", err);
   }
 }
 
 main().catch((err) => {
-  console.error('Error generating model-extra.ts:', err);
+  console.error("Error generating model-extra.ts:", err);
   process.exit(1);
 });

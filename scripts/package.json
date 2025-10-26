@@ -1,0 +1,25 @@
+{
+  "name": "@ai-registry/scripts",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "models:base": "tsx models/fetch-base.ts",
+    "models:endpoints": "tsx models/fetch-endpoints.ts",
+    "models:extra": "bun models/fetch-extra.ts",
+    "models:sync": "SKIP_EXISTING=1 tsx models/sync.ts",
+    "models:sync:all": "OVERWRITE_MODELS=1 tsx models/sync.ts"
+  },
+  "dependencies": {
+    "p-limit": "^6.1.0",
+    "p-retry": "^6.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "tsx": "4.20.6",
+    "typescript": "5.9.2"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

@@ -1,15 +1,18 @@
 #!/usr/bin/env tsx
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import type { AiGatewayModelsResponse } from "../../packages/models/ai-sdk-models-schemas";
-import { AiGatewayModelsResponseSchema } from "../../packages/models/ai-sdk-models-schemas";
+import { fileURLToPath } from "node:url";
+import {
+  type AiGatewayModelsResponse,
+  AiGatewayModelsResponseSchema,
+} from "../../packages/vercel-gateway/ai-sdk-models-schemas";
 
 function ensureDir(filePath: string) {
   mkdirSync(dirname(filePath), { recursive: true });
 }
 
 async function main() {
-  const ROOT = join(__dirname, "..", "..");
+  const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
   const MODELS_URL = "https://ai-gateway.vercel.sh/v1/models";
   const snapshotPath = join(ROOT, "lib/models/responses/gateway/models.json");
   const listPath = join(ROOT, "lib/models/outputs/models-list.json");

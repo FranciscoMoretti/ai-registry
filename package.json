@@ -13,11 +13,8 @@
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:publish": "pnpm build && changeset publish",
-    "models:base": "tsx scripts/models/fetch-base.ts",
-    "models:endpoints": "tsx scripts/models/fetch-endpoints.ts",
-    "models:extra": "bun scripts/models/fetch-extra.ts",
-    "models:sync": "SKIP_EXISTING=1 tsx scripts/models/sync.ts",
-    "models:sync:all": "OVERWRITE_MODELS=1 tsx scripts/models/sync.ts"
+    "models:sync": "pnpm --filter @ai-registry/scripts models:sync",
+    "models:sync:all": "pnpm --filter @ai-registry/scripts models:sync:all"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",

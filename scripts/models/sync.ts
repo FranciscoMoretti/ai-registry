@@ -1,10 +1,8 @@
-#!/usr/bin/env tsx
-
 import { execSync } from "node:child_process";
-import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-async function main() {
-  const ROOT = join(__dirname, "..", "..");
+function main() {
+  const ROOT = fileURLToPath(new URL("../../", import.meta.url));
   const run = (cmd: string) =>
     execSync(cmd, { cwd: ROOT, stdio: "inherit", env: process.env });
 
@@ -21,7 +19,9 @@ async function main() {
   run("bun run test:types");
 }
 
-main().catch((err) => {
+try {
+  main();
+} catch (err) {
   console.error(err);
   process.exit(1);
-});
+}

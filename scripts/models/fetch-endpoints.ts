@@ -2,7 +2,8 @@
 
 import { execSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import pLimit from "p-limit";
 import pRetry from "p-retry";
 import type {
@@ -22,14 +23,17 @@ async function fetchJson<T>(url: string): Promise<T> {
   return (await res.json()) as T;
 }
 
+const MODELS_FETCH_CONCURRENCY = 6;
 async function main() {
-  const ROOT = join(__dirname, "..", "..");
+  const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
   const listPath = join(ROOT, "lib/models/outputs/models-list.json");
   const ids: string[] = JSON.parse(readFileSync(listPath, "utf8")) as string[];
   const overwriteAll = process.env.OVERWRITE_MODELS === "1";
   const skipExisting = process.env.SKIP_EXISTING === "1" && !overwriteAll;
-  const concurrency = Number(process.env.MODELS_FETCH_CONCURRENCY ?? 6);
+  const concurrency = Number(
+    process.env.MODELS_FETCH_CONCURRENCY ?? MODELS_FETCH_CONCURRENCY
+  );
 
   const limit = pLimit(Math.max(1, concurrency));
 
@@ -179,7 +183,9 @@ async function main() {
       );
       toolCall = params.has("tools") || params.has("tool_choice");
       reasoning = params.has("reasoning") || params.has("include_reasoning");
-    } catch {}
+    } catch (err) {
+      console.error(`Error fetching endpoints for ${m.id}:`, err);
+    }
 
     lines.push("  {");
     lines.push(`    id: '${m.id}',`);
@@ -204,7 +210,9 @@ async function main() {
   writeFileSync(outTs, lines.join("\n"));
   try {
     execSync(`npx biome format --write ${outTs}`);
-  } catch {}
+  } catch (err) {
+    console.error(`Error formatting ${outTs}:`, err);
+  }
 }
 
 main().catch((err) => {
