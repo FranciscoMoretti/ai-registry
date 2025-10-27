@@ -6,7 +6,7 @@
   },
   "formatter": {
     "includes": ["!**/components/ui", "!**/lib/utils.ts"]
-  },  
+  },
   "linter": {
     "includes": ["!**/components/ui", "!**/lib/utils.ts"],
     "rules": {

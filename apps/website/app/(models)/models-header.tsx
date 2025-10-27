@@ -39,7 +39,6 @@ function PureModelsHeader({ className }: { className?: string }) {
       </Link>
 
       <nav className="-translate-x-1/2 absolute left-1/2 hidden items-center gap-6 sm:flex">
-  
         <Link
           className={cn(
             "font-medium text-sm transition-colors hover:text-foreground",
@@ -80,12 +79,8 @@ function PureModelsHeader({ className }: { className?: string }) {
               side="bottom"
               sideOffset={8}
             >
-
               <DropdownMenuItem asChild>
-                <Link
-                  className={cn(isActive("/") && "font-semibold")}
-                  href="/"
-                >
+                <Link className={cn(isActive("/") && "font-semibold")} href="/">
                   Models
                 </Link>
               </DropdownMenuItem>

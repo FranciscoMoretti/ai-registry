@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { allModels, type ModelDefinition } from '@airegistry/vercel-gateway';
-import { useParams } from 'next/navigation';
-import { useMemo, useState } from 'react';
-import { ModelDetails } from '@/app/(models)/models/model-details';
-import { Container } from '@/components/container';
+import { allModels, type ModelDefinition } from "@airegistry/vercel-gateway";
+import { useParams } from "next/navigation";
+import { useMemo, useState } from "react";
+import { ModelDetails } from "@/app/(models)/models/model-details";
+import { Container } from "@/components/container";
 
 export default function ComparePage() {
   const params = useParams<{ slug?: string[] | string }>();
@@ -21,11 +21,11 @@ export default function ComparePage() {
   }, [params]);
 
   const [leftModelId, setLeftModelId] = useState<string | null>(() =>
-    segments.length >= 2 ? `${segments[0]}/${segments[1]}` : null,
+    segments.length >= 2 ? `${segments[0]}/${segments[1]}` : null
   );
 
   const [rightModelId, setRightModelId] = useState<string | null>(() =>
-    segments.length >= 4 ? `${segments[2]}/${segments[3]}` : null,
+    segments.length >= 4 ? `${segments[2]}/${segments[3]}` : null
   );
 
   const leftModel: ModelDefinition | null = useMemo(() => {
@@ -45,7 +45,7 @@ export default function ComparePage() {
   function pushCompareUrl(leftId: string | null, rightId: string | null) {
     const parts: string[] = [];
     const pushId = (id: string) => {
-      const [a, b] = id.split('/');
+      const [a, b] = id.split("/");
       if (a && b) {
         parts.push(a, b);
       }
@@ -56,9 +56,9 @@ export default function ComparePage() {
     if (rightId) {
       pushId(rightId);
     }
-    const path = parts.length > 0 ? `/compare/${parts.join('/')}` : '/compare';
-    if (typeof window !== 'undefined') {
-      window.history.pushState({}, '', path);
+    const path = parts.length > 0 ? `/compare/${parts.join("/")}` : "/compare";
+    if (typeof window !== "undefined") {
+      window.history.pushState({}, "", path);
     }
   }
 

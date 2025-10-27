@@ -1,13 +1,13 @@
-import { allModels } from '@airegistry/vercel-gateway';
-import { ImageResponse } from '@vercel/og';
+import { allModels } from "@airegistry/vercel-gateway";
+import { ImageResponse } from "@vercel/og";
 import {
   OGCard,
   OGContainer,
   OGFooter,
   OGIcon,
   OGTitle,
-} from '@/lib/og/components';
-import { ModalitiesRow } from '@/lib/og/ModalitiesRow';
+} from "@/lib/og/components";
+import { ModalitiesRow } from "@/lib/og/ModalitiesRow";
 import {
   buildBulletItems,
   capitalizeFirst,
@@ -20,17 +20,17 @@ import {
   OG_SITE_NAME,
   OG_SIZE,
   outputModalitiesOrder,
-} from '@/lib/og/shared';
-import { getProviderIconUrl } from '../../../../../lib/get-provider-icon-url';
+} from "@/lib/og/shared";
+import { getProviderIconUrl } from "../../../../../lib/get-provider-icon-url";
 
-export const runtime = 'edge';
-export const contentType = 'image/png';
+export const runtime = "edge";
+export const contentType = "image/png";
 export const size = OG_SIZE;
 const TITLE_MAX_LENGTH = 30;
 const DESCRIPTION_MAX_LENGTH = 165;
 
 export default async function OGImage(
-  props: PageProps<'/models/[provider]/[id]'>,
+  props: PageProps<"/models/[provider]/[id]">
 ) {
   const { provider, id } = await props.params;
   const modelId = `${provider}/${id}`;
@@ -44,12 +44,12 @@ export default async function OGImage(
       {
         width: size.width,
         height: size.height,
-      },
+      }
     );
   }
 
   const providerDisplay = capitalizeFirst(
-    (model?.owned_by || provider) as string,
+    (model?.owned_by || provider) as string
   );
   const modelDisplay = model?.name || id;
 
@@ -69,16 +69,16 @@ export default async function OGImage(
   const _pricingOut = model?.pricing?.output || null;
   const releaseDate = model?.releaseDate || null;
   const _releaseDateDisplay = releaseDate
-    ? releaseDate.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
+    ? releaseDate.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
       })
     : null;
 
   const bulletItems = buildBulletItems(model);
 
-  const descriptionRaw = model?.description || '';
+  const descriptionRaw = model?.description || "";
   const description =
     descriptionRaw.length > DESCRIPTION_MAX_LENGTH
       ? `${descriptionRaw.slice(0, DESCRIPTION_MAX_LENGTH - 3)}...`
@@ -88,10 +88,10 @@ export default async function OGImage(
   const arrowRight = getArrowRightUrl(baseUrl);
 
   const enabledInputKeys = inputModalitiesOrder.filter(
-    (key) => model?.input?.[key],
+    (key) => model?.input?.[key]
   );
   const enabledOutputKeys = outputModalitiesOrder.filter(
-    (key) => model?.output?.[key],
+    (key) => model?.output?.[key]
   );
 
   const appIcon = getAppIconUrl(baseUrl);
@@ -99,37 +99,37 @@ export default async function OGImage(
   return new ImageResponse(
     <OGContainer backgroundImage={OG_BACKGROUND_IMAGE}>
       <OGCard roundedTw="rounded-2xl">
-        <div style={{ display: 'flex', gap: '1.5rem' }} tw="flex items-center">
+        <div style={{ display: "flex", gap: "1.5rem" }} tw="flex items-center">
           {iconUrl ? (
             <OGIcon alt={`${providerDisplay} logo`} size="lg" src={iconUrl} />
           ) : (
             <div
-              style={{ display: 'flex' }}
+              style={{ display: "flex" }}
               tw="w-[96px] h-[96px] rounded-xl bg-white/10 flex items-center justify-center text-white/80 text-5xl font-bold"
             >
               {providerDisplay.slice(0, 1)}
             </div>
           )}
 
-          <div style={{ display: 'flex' }} tw="flex flex-col">
+          <div style={{ display: "flex" }} tw="flex flex-col">
             <OGTitle
               largeTw="text-[64px]"
               smallTw="text-[52px]"
               text={title}
               threshold={22}
             />
-            <div style={{ display: 'flex' }} tw="text-xl text-slate-200 mt-1">
+            <div style={{ display: "flex" }} tw="text-xl text-slate-200 mt-1">
               by {providerDisplay.toLowerCase()}
             </div>
           </div>
         </div>
 
         {bulletItems.length > 0 && (
-          <div style={{ display: 'flex' }} tw="mt-6 text-xl text-slate-300">
+          <div style={{ display: "flex" }} tw="mt-6 text-xl text-slate-300">
             {bulletItems.map((item, idx) => (
               <span
                 key={`${item.label}-${idx}`}
-                style={{ display: 'flex', gap: '.25rem' }}
+                style={{ display: "flex", gap: ".25rem" }}
               >
                 <span>{`${item.label}`}</span>
                 <span tw="text-white">{item.value}</span>
@@ -140,14 +140,14 @@ export default async function OGImage(
         )}
 
         {description && (
-          <div style={{ display: 'flex' }} tw="mt-6 text-2xl text-slate-200">
+          <div style={{ display: "flex" }} tw="mt-6 text-2xl text-slate-200">
             {description}
           </div>
         )}
 
         {(enabledInputKeys.length > 0 || enabledOutputKeys.length > 0) && (
           <div
-            style={{ display: 'flex' }}
+            style={{ display: "flex" }}
             tw="mt-4 flex items-center text-slate-300"
           >
             <ModalitiesRow
@@ -155,11 +155,11 @@ export default async function OGImage(
               capabilityIcons={capabilityIcons}
               inputKeys={
                 enabledInputKeys as Array<
-                  'text' | 'image' | 'pdf' | 'audio' | 'video'
+                  "text" | "image" | "pdf" | "audio" | "video"
                 >
               }
               outputKeys={
-                enabledOutputKeys as Array<'text' | 'image' | 'audio'>
+                enabledOutputKeys as Array<"text" | "image" | "audio">
               }
               size="md"
             />
@@ -176,6 +176,6 @@ export default async function OGImage(
     {
       width: size.width,
       height: size.height,
-    },
+    }
   );
 }

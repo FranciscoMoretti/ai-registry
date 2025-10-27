@@ -1,10 +1,10 @@
-'use client';
-import type { ModelDefinition } from '@airegistry/vercel-gateway';
-import { allModels, getModelDefinition } from '@airegistry/vercel-gateway';
-import { ModelDetailsCard } from '@/app/(models)/compare/model-details-card';
-import { ChatModelButton } from '@/components/model-action-buttons';
-import { ModelSelectorBase } from '@/components/model-selector-base';
-import { cn } from '@/lib/utils';
+"use client";
+import type { ModelDefinition } from "@airegistry/vercel-gateway";
+import { allModels, getModelDefinition } from "@airegistry/vercel-gateway";
+import { ModelDetailsCard } from "@/app/(models)/compare/model-details-card";
+import { ChatModelButton } from "@/components/model-action-buttons";
+import { ModelSelectorBase } from "@/components/model-selector-base";
+import { cn } from "@/lib/utils";
 
 export function ModelDetails({
   className,
@@ -23,7 +23,7 @@ export function ModelDetails({
 }) {
   return (
     <div
-      className={cn('mb-6 flex w-full max-w-[450px] flex-col gap-4', className)}
+      className={cn("mb-6 flex w-full max-w-[450px] flex-col gap-4", className)}
     >
       <div className="flex items-center gap-2">
         <ModelSelectorBase
@@ -37,7 +37,6 @@ export function ModelDetails({
           onModelChange={onModelChangeAction}
           selectedModelId={modelDefinition?.id}
         />
-        
       </div>
       <ModelDetailsCard
         enabledActions={enabledActions}

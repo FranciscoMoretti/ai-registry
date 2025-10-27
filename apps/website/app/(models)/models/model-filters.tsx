@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { providers } from '@airegistry/vercel-gateway';
-import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { providers } from "@airegistry/vercel-gateway";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 import {
   MODEL_RANGE_LIMITS,
   useModels,
-} from '@/app/(models)/models/models-store-context';
-import { Checkbox } from '@/components/ui/checkbox';
+} from "@/app/(models)/models/models-store-context";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible';
-import { Slider } from '@/components/ui/slider';
-import { MODEL_CATEGORIES } from '@/lib/model-explorer/model-categories';
-import { cn } from '@/lib/utils';
-import { formatNumberCompact } from '@/lib/format-number-compact';
+} from "@/components/ui/collapsible";
+import { Slider } from "@/components/ui/slider";
+import { formatNumberCompact } from "@/lib/format-number-compact";
+import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
+import { cn } from "@/lib/utils";
 
 export type FilterState = {
   inputModalities: string[];
@@ -50,7 +50,7 @@ function InputModalitiesFilter() {
 
   return (
     <CollapsibleContent className="space-y-2 pt-3 pb-2">
-      {['text', 'image', 'audio', 'pdf', 'video'].map((modality) => (
+      {["text", "image", "audio", "pdf", "video"].map((modality) => (
         <div className="flex items-center space-x-2" key={modality}>
           <Checkbox
             checked={inputModalities.includes(modality)}
@@ -82,7 +82,7 @@ function OutputModalitiesFilter() {
 
   return (
     <CollapsibleContent className="space-y-2 pt-3 pb-2">
-      {['text', 'image', 'audio'].map((modality) => (
+      {["text", "image", "audio"].map((modality) => (
         <div className="flex items-center space-x-2" key={modality}>
           <Checkbox
             checked={outputModalities.includes(modality)}
@@ -230,30 +230,30 @@ function FeaturesFilter() {
   const features = useModels((s) => s.filters.features);
   const updateFilters = useModels((s) => s.updateFilters);
   const toggle = (
-    key: 'reasoning' | 'toolCall' | 'temperatureControl',
-    checked: boolean,
+    key: "reasoning" | "toolCall" | "temperatureControl",
+    checked: boolean
   ) => {
     updateFilters({ features: { ...features, [key]: !!checked } });
   };
   return (
     <CollapsibleContent className="space-y-2 pt-3 pb-2">
       {[
-        { key: 'reasoning', label: 'Reasoning' },
-        { key: 'toolCall', label: 'Tools' },
-        { key: 'temperatureControl', label: 'Temperature control' },
+        { key: "reasoning", label: "Reasoning" },
+        { key: "toolCall", label: "Tools" },
+        { key: "temperatureControl", label: "Temperature control" },
       ].map((f) => (
         <div className="flex items-center space-x-2" key={f.key}>
           <Checkbox
             checked={
               !!features[
-                f.key as 'reasoning' | 'toolCall' | 'temperatureControl'
+                f.key as "reasoning" | "toolCall" | "temperatureControl"
               ]
             }
             id={`feature-${f.key}`}
             onCheckedChange={(checked) =>
               toggle(
-                f.key as 'reasoning' | 'toolCall' | 'temperatureControl',
-                !!checked,
+                f.key as "reasoning" | "toolCall" | "temperatureControl",
+                !!checked
               )
             }
           />
@@ -285,10 +285,10 @@ export function ModelFilters({ className }: { className?: string }) {
   };
 
   return (
-    <div className={cn('h-full w-full border-r bg-background p-4', className)}>
+    <div className={cn("h-full w-full border-r bg-background p-4", className)}>
       <div className="sticky top-4 space-y-4 pr-2">
         <Collapsible
-          onOpenChange={() => toggleSection('inputModalities')}
+          onOpenChange={() => toggleSection("inputModalities")}
           open={openSections.inputModalities}
         >
           <CollapsibleTrigger className="flex w-full items-center justify-between border-b py-2 font-medium text-sm transition-colors hover:text-primary">
@@ -297,14 +297,14 @@ export function ModelFilters({ className }: { className?: string }) {
               <span>Input Modalities</span>
             </div>
             <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${openSections.inputModalities ? 'rotate-180' : ''}`}
+              className={`h-4 w-4 transition-transform duration-200 ${openSections.inputModalities ? "rotate-180" : ""}`}
             />
           </CollapsibleTrigger>
           <InputModalitiesFilter />
         </Collapsible>
 
         <Collapsible
-          onOpenChange={() => toggleSection('outputModalities')}
+          onOpenChange={() => toggleSection("outputModalities")}
           open={openSections.outputModalities}
         >
           <CollapsibleTrigger className="flex w-full items-center justify-between border-b py-2 font-medium text-sm transition-colors hover:text-primary">
@@ -313,14 +313,14 @@ export function ModelFilters({ className }: { className?: string }) {
               <span>Output Modalities</span>
             </div>
             <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${openSections.outputModalities ? 'rotate-180' : ''}`}
+              className={`h-4 w-4 transition-transform duration-200 ${openSections.outputModalities ? "rotate-180" : ""}`}
             />
           </CollapsibleTrigger>
           <OutputModalitiesFilter />
         </Collapsible>
 
         <Collapsible
-          onOpenChange={() => toggleSection('limits')}
+          onOpenChange={() => toggleSection("limits")}
           open={openSections.limits}
         >
           <CollapsibleTrigger className="flex w-full items-center justify-between border-b py-2 font-medium text-sm transition-colors hover:text-primary">
@@ -329,14 +329,14 @@ export function ModelFilters({ className }: { className?: string }) {
               <span>Limits</span>
             </div>
             <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${openSections.limits ? 'rotate-180' : ''}`}
+              className={`h-4 w-4 transition-transform duration-200 ${openSections.limits ? "rotate-180" : ""}`}
             />
           </CollapsibleTrigger>
           <LimitsFilter />
         </Collapsible>
 
         <Collapsible
-          onOpenChange={() => toggleSection('providers')}
+          onOpenChange={() => toggleSection("providers")}
           open={openSections.providers}
         >
           <CollapsibleTrigger className="flex w-full items-center justify-between border-b py-2 font-medium text-sm transition-colors hover:text-primary">
@@ -345,14 +345,14 @@ export function ModelFilters({ className }: { className?: string }) {
               <span>Providers</span>
             </div>
             <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${openSections.providers ? 'rotate-180' : ''}`}
+              className={`h-4 w-4 transition-transform duration-200 ${openSections.providers ? "rotate-180" : ""}`}
             />
           </CollapsibleTrigger>
           <ProvidersFilter />
         </Collapsible>
 
         <Collapsible
-          onOpenChange={() => toggleSection('pricing')}
+          onOpenChange={() => toggleSection("pricing")}
           open={openSections.pricing}
         >
           <CollapsibleTrigger className="flex w-full items-center justify-between border-b py-2 font-medium text-sm transition-colors hover:text-primary">
@@ -361,14 +361,14 @@ export function ModelFilters({ className }: { className?: string }) {
               <span>{MODEL_CATEGORIES.pricing.label}</span>
             </div>
             <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${openSections.pricing ? 'rotate-180' : ''}`}
+              className={`h-4 w-4 transition-transform duration-200 ${openSections.pricing ? "rotate-180" : ""}`}
             />
           </CollapsibleTrigger>
           <PricingFilter />
         </Collapsible>
 
         <Collapsible
-          onOpenChange={() => toggleSection('features')}
+          onOpenChange={() => toggleSection("features")}
           open={openSections.features}
         >
           <CollapsibleTrigger className="flex w-full items-center justify-between border-b py-2 font-medium text-sm transition-colors hover:text-primary">
@@ -377,7 +377,7 @@ export function ModelFilters({ className }: { className?: string }) {
               <span>Features</span>
             </div>
             <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${openSections.features ? 'rotate-180' : ''}`}
+              className={`h-4 w-4 transition-transform duration-200 ${openSections.features ? "rotate-180" : ""}`}
             />
           </CollapsibleTrigger>
           <FeaturesFilter />

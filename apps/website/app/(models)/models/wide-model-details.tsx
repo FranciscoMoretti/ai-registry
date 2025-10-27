@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import type { ModelDefinition, ProviderId } from '@airegistry/vercel-gateway';
-import { useMemo } from 'react';
-import { ButtonCopy } from '@/components/button-copy';
-import { getProviderIcon } from '@/lib/get-provider-icon';
+import type { ModelDefinition, ProviderId } from "@airegistry/vercel-gateway";
+import { useMemo } from "react";
+import { ButtonCopy } from "@/components/button-copy";
 import {
   ChatModelButton,
   CompareModelButton,
-} from '@/components/model-action-buttons';
-import { Card, CardContent } from '@/components/ui/card';
-import { MODEL_CAPABILITIES } from '@/lib/model-explorer/model-capabilities';
-import { MODEL_CATEGORIES } from '@/lib/model-explorer/model-categories';
-import { formatNumberCompact } from '@/lib/format-number-compact';
+} from "@/components/model-action-buttons";
+import { Card, CardContent } from "@/components/ui/card";
+import { formatNumberCompact } from "@/lib/format-number-compact";
+import { getProviderIcon } from "@/lib/get-provider-icon";
+import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
+import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
 
 export function WideModelDetails({
   model,
@@ -26,8 +26,8 @@ export function WideModelDetails({
 }) {
   const provider = model?.owned_by as ProviderId | undefined;
   const contextCompact = useMemo(
-    () => (model ? formatNumberCompact(model.context_window) : '--'),
-    [model?.id, model?.context_window, model],
+    () => (model ? formatNumberCompact(model.context_window) : "--"),
+    [model?.id, model?.context_window, model]
   );
 
   const actions = {
@@ -45,10 +45,10 @@ export function WideModelDetails({
             {provider ? getProviderIcon(provider, 48) : null}
             <div className="min-w-0">
               <div className="mb-0.5 font-semibold text-2xl tracking-tight sm:text-3xl">
-                {model?.name ?? 'Model'}
+                {model?.name ?? "Model"}
               </div>
               <div className="font-medium text-muted-foreground text-sm capitalize">
-                {`By ${provider || 'Unknown Provider'}`}
+                {`By ${provider || "Unknown Provider"}`}
               </div>
             </div>
           </div>
@@ -79,11 +79,11 @@ export function WideModelDetails({
           </span>
           <span className="text-muted-foreground text-xs">|</span>
           <span className="text-muted-foreground text-xs">
-            Released{' '}
-            {model.releaseDate.toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
+            Released{" "}
+            {model.releaseDate.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
             })}
           </span>
         </div>
@@ -101,7 +101,7 @@ export function WideModelDetails({
             value={
               model
                 ? `$${(Number.parseFloat(model.pricing.input) * 1_000_000).toFixed(2)}/M tokens`
-                : '--'
+                : "--"
             }
           />
           <KeyValue
@@ -109,7 +109,7 @@ export function WideModelDetails({
             value={
               model
                 ? `$${(Number.parseFloat(model.pricing.output) * 1_000_000).toFixed(2)}/M tokens`
-                : '--'
+                : "--"
             }
           />
           <KeyValue
@@ -118,8 +118,8 @@ export function WideModelDetails({
               model &&
               (model.pricing.input_cache_read ||
                 model.pricing.input_cache_write)
-                ? 'Yes'
-                : 'No'
+                ? "Yes"
+                : "No"
             }
           />
         </div>
@@ -137,7 +137,7 @@ export function WideModelDetails({
             value={
               model?.max_tokens
                 ? formatNumberCompact(Number(model.max_tokens))
-                : '--'
+                : "--"
             }
           />
         </div>
@@ -274,21 +274,21 @@ function ModalityRow({
     <div className="flex items-center gap-3 py-1">
       <div
         className={`flex h-8 w-8 items-center justify-center rounded-md ${
-          enabled ? 'bg-muted' : 'bg-muted/40'
+          enabled ? "bg-muted" : "bg-muted/40"
         }`}
       >
         <Icon
-          className={`h-4 w-4 ${enabled ? '' : 'text-muted-foreground/50'}`}
+          className={`h-4 w-4 ${enabled ? "" : "text-muted-foreground/50"}`}
         />
       </div>
       <div className="flex flex-col">
         <span
-          className={`text-sm ${enabled ? 'text-foreground' : 'text-muted-foreground'}`}
+          className={`text-sm ${enabled ? "text-foreground" : "text-muted-foreground"}`}
         >
           {label}
         </span>
-        <span className={'text-muted-foreground text-xs'}>
-          {enabled ? 'Supported' : 'Not supported'}
+        <span className={"text-muted-foreground text-xs"}>
+          {enabled ? "Supported" : "Not supported"}
         </span>
       </div>
     </div>
