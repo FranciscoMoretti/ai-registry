@@ -17,11 +17,11 @@
     "models:sync:all": "pnpm --filter @ai-registry/scripts models:sync:all"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.4",
+    "@biomejs/biome": "2.3.1",
     "@changesets/cli": "^2.29.7",
     "turbo": "^2.5.6",
     "typescript": "5.9.2",
-    "ultracite": "5.3.4",
+    "ultracite": "6.0.3",
     "tsx": "4.20.6"
   },
   "packageManager": "pnpm@10.16.1",

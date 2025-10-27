@@ -1,10 +1,14 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite"],
+  "extends": ["ultracite/core", "ultracite/react", "ultracite/next"],
   "files": {
     "includes": ["!**/components/ui", "!**/lib/utils.ts"]
   },
+  "formatter": {
+    "includes": ["!**/components/ui", "!**/lib/utils.ts"]
+  },  
   "linter": {
+    "includes": ["!**/components/ui", "!**/lib/utils.ts"],
     "rules": {
       "suspicious": {
         "noConsole": "off"
