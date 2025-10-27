@@ -14,11 +14,11 @@ function ensureDir(filePath: string) {
 async function main() {
   const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
   const MODELS_URL = "https://ai-gateway.vercel.sh/v1/models";
-  const snapshotPath = join(ROOT, "lib/models/responses/gateway/models.json");
-  const listPath = join(ROOT, "lib/models/outputs/models-list.json");
+  const snapshotPath = join(ROOT, "packages/vercel-gateway/responses/gateway/models.json");
+  const listPath = join(ROOT, "packages/vercel-gateway/outputs/models-list.json");
   const providersJsonPath = join(
     ROOT,
-    "lib/models/outputs/providers-list.json"
+    "packages/vercel-gateway/outputs/providers-list.json"
   );
 
   console.log("Fetching models from API...", MODELS_URL);

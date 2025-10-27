@@ -27,7 +27,7 @@ const MODELS_FETCH_CONCURRENCY = 6;
 async function main() {
   const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
-  const listPath = join(ROOT, "lib/models/outputs/models-list.json");
+  const listPath = join(ROOT, "packages/vercel-gateway/outputs/models-list.json");
   const ids: string[] = JSON.parse(readFileSync(listPath, "utf8")) as string[];
   const overwriteAll = process.env.OVERWRITE_MODELS === "1";
   const skipExisting = process.env.SKIP_EXISTING === "1" && !overwriteAll;
@@ -40,7 +40,7 @@ async function main() {
   async function fetchAndSaveEndpoint(id: string): Promise<void> {
     const [provider, ...rest] = id.split("/");
     const modelName = rest.join("/");
-    const dir = join(ROOT, "lib/models/responses/gateway", provider, modelName);
+    const dir = join(ROOT, "packages/vercel-gateway/responses/gateway", provider, modelName);
     const file = join(dir, "endpoints.json");
     if (!overwriteAll && skipExisting && existsSync(file)) {
       return;
@@ -63,7 +63,7 @@ async function main() {
   // Build models.generated.ts by joining gateway snapshot + endpoints
   const gatewaySnapshotPath = join(
     ROOT,
-    "lib/models/responses/gateway/models.json"
+    "packages/vercel-gateway/responses/gateway/models.json"
   );
   const gateway = AiGatewayModelsResponseSchema.parse(
     JSON.parse(readFileSync(gatewaySnapshotPath, "utf8")) as unknown
@@ -144,7 +144,7 @@ async function main() {
     const modelName = rest.join("/");
     const epPath = join(
       ROOT,
-      "lib/models/responses/gateway",
+      "packages/vercel-gateway/responses/gateway",
       provider,
       modelName,
       "endpoints.json"
@@ -206,7 +206,7 @@ async function main() {
   }
   lines.push("];");
 
-  const outTs = join(ROOT, "lib/models/models.generated.ts");
+  const outTs = join(ROOT, "packages/vercel-gateway/models.generated.ts");
   writeFileSync(outTs, lines.join("\n"));
   try {
     execSync(`npx biome format --write ${outTs}`);

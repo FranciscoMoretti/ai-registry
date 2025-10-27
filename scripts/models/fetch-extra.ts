@@ -37,15 +37,15 @@ async function fetchModelsDev(): Promise<{
 
 async function main() {
   const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
-  const MODELS_LIST = join(ROOT, "lib/models/outputs/models-list.json");
-  const OUTPUT_TS = join(ROOT, "lib/models/model-extra.generated.ts");
+  const MODELS_LIST = join(ROOT, "packages/vercel-gateway/outputs/models-list.json");
+  const OUTPUT_TS = join(ROOT, "packages/vercel-gateway/model-extra.generated.ts");
   const MODELS_DEV_RESPONSE_JSON = join(
     ROOT,
-    "lib/models/responses/models-dev/models.json"
+    "packages/vercel-gateway/responses/models-dev/models.json"
   );
   const MISSING_MODEL_EXTRA_JSON = join(
     ROOT,
-    "lib/models/outputs/missing-model-extra.json"
+    "packages/vercel-gateway/outputs/missing-model-extra.json"
   );
 
   const supportedIds: string[] = JSON.parse(
