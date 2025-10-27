@@ -146,7 +146,7 @@
         "context_length": 131072,
         "pricing": {
           "prompt": "0.00000015",
-          "completion": "0.00000075",
+          "completion": "0.0000006",
           "request": "0",
           "image": "0",
           "image_output": "0",

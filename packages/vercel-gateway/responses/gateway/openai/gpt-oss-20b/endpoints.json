@@ -81,8 +81,8 @@
         "model_name": "gpt-oss-20b",
         "context_length": 131072,
         "pricing": {
-          "prompt": "0.0000001",
-          "completion": "0.0000005",
+          "prompt": "0.000000075",
+          "completion": "0.0000003",
           "request": "0",
           "image": "0",
           "image_output": "0",

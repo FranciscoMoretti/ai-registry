@@ -13,6 +13,36 @@
     },
     "endpoints": [
       {
+        "name": "google | google/gemini-2.0-flash-lite",
+        "model_name": "Gemini 2.0 Flash Lite",
+        "context_length": 1048576,
+        "pricing": {
+          "prompt": "0.000000075",
+          "completion": "0.0000003",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "google",
+        "tag": "google",
+        "quantization": null,
+        "max_completion_tokens": 8192,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
         "name": "vertex | google/gemini-2.0-flash-lite",
         "model_name": "Gemini 2.0 Flash Lite",
         "context_length": 1048576,

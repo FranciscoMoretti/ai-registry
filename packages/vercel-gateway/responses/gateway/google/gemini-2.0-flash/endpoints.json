@@ -3,7 +3,7 @@
     "id": "google/gemini-2.0-flash",
     "name": "Gemini 2.0 Flash",
     "created": 1755815280,
-    "description": "Gemini 2.0 Flash delivers next-gen features and improved capabilities, including superior speed, built-in tool use, multimodal generation, and a 1M token context window.",
+    "description": "Gemini 2.0 Flash delivers next-gen features and improved capabilities, including superior speed, native tool use, multimodal generation, and a 1M token context window.",
     "architecture": {
       "tokenizer": null,
       "instruct_type": null,
@@ -12,6 +12,36 @@
       "output_modalities": ["text"]
     },
     "endpoints": [
+      {
+        "name": "google | google/gemini-2.0-flash",
+        "model_name": "Gemini 2.0 Flash",
+        "context_length": 1000000,
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000004",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "google",
+        "tag": "google",
+        "quantization": null,
+        "max_completion_tokens": 8192,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
       {
         "name": "vertex | google/gemini-2.0-flash",
         "model_name": "Gemini 2.0 Flash",

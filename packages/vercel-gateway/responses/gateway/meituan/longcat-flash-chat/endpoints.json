@@ -3,7 +3,7 @@
     "id": "meituan/longcat-flash-chat",
     "name": "LongCat Flash Chat",
     "created": 1755815280,
-    "description": "LongCat-Flash-Chat is a high-throughput MoE chat model (128k context) optimized for agentic tasks.",
+    "description": "LongCat-Flash-Chat is a high-throughput MoE chat model (128k context) designed for agentic tasks.",
     "architecture": {
       "tokenizer": null,
       "instruct_type": null,

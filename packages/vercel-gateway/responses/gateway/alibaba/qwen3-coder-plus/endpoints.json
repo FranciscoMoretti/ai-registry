@@ -3,7 +3,7 @@
     "id": "alibaba/qwen3-coder-plus",
     "name": "Qwen3 Coder Plus",
     "created": 1755815280,
-    "description": "Powered by Qwen3, this is a powerful Coding Agent that excels in tool calling and environment interaction to achieve autonomous programming. It combines outstanding coding proficiency with versatile general-purpose abilities.",
+    "description": "Powered by Qwen3 this is a powerful Coding Agent that excels in tool calling and environment interaction to achieve autonomous programming. It combines outstanding coding proficiency with versatile general-purpose abilities.",
     "architecture": {
       "tokenizer": null,
       "instruct_type": null,
