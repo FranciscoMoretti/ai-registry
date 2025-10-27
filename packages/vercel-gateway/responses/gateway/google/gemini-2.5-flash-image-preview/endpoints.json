@@ -1,0 +1,77 @@
+{
+  "data": {
+    "id": "google/gemini-2.5-flash-image-preview",
+    "name": "Gemini 2.5 Flash Image Preview (Code name: Nano Banana)",
+    "created": 1755815280,
+    "description": "Gemini 2.5 Flash Image Preview is our first fully hybrid reasoning model, letting developers turn thinking on or off and set thinking budgets to balance quality, cost, and latency. Upgraded for rapid creative workflows, it can generate interleaved text and images and supports conversational, multi‑turn image editing in natural language. It’s also locale‑aware, enabling culturally and linguistically appropriate image generation for audiences worldwide.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "google | google/gemini-2.5-flash-image-preview",
+        "model_name": "Gemini 2.5 Flash Image Preview (Code name: Nano Banana)",
+        "context_length": 32768,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "google",
+        "tag": "google",
+        "quantization": null,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "vertex | google/gemini-2.5-flash-image-preview",
+        "model_name": "Gemini 2.5 Flash Image Preview (Code name: Nano Banana)",
+        "context_length": 32768,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000025",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "vertex",
+        "tag": "vertex",
+        "quantization": null,
+        "max_completion_tokens": 65536,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}
