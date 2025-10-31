@@ -8,11 +8,6 @@
     "includes": ["!**/components/ui", "!**/lib/utils.ts", "**/*.json"]
   },
   "linter": {
-    "includes": ["!**/components/ui", "!**/lib/utils.ts", "**/*.json"],
-    "rules": {
-      "suspicious": {
-        "noConsole": "off"
-      }
-    }
+    "includes": ["!**/components/ui", "!**/lib/utils.ts", "**/*.json"]
   }
 }
