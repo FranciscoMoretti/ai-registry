@@ -24,6 +24,7 @@ type RootLayoutProps = {
 };
 
 import type { Metadata } from "next";
+import Script from "next/script";
 
 const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -35,6 +36,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en" suppressHydrationWarning>
+     {process.env.NODE_ENV === "development" && <Script src="https://unpkg.com/react-scan/dist/auto.global.js" />}
     <body
       className={cn(
         geistSans.variable,
@@ -45,6 +47,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
       <Providers>
         {children}
         <Analytics />
+
       </Providers>
     </body>
   </html>
