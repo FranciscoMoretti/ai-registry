@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { generateStaticParams as generateCompareStaticParams } from "@/app/(models)/compare/[[...slug]]/page";
+import { generateStaticParamsForSitemap as generateCompareStaticParams } from "@/app/(models)/compare/[[...slug]]/page";
 import { generateStaticParams as generateModelStaticParams } from "@/app/(models)/models/[provider]/[id]/page";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
