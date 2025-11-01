@@ -26,12 +26,15 @@
   },
   "packageManager": "pnpm@10.16.1",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.2.2",
-      "@types/react-dom": "19.2.2"
-    }
-  }
+  "overrides": {
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "scripts"
+  ]
 }

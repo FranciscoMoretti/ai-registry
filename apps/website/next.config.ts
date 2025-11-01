@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   transpilePackages: ["shiki"],
   reactCompiler: true,
   experimental: {
+    optimizePackageImports: [
+       "@lobehub/icons",
+       "lucide-react"
+     ],
     turbopackFileSystemCacheForDev: true,
   }
 };
