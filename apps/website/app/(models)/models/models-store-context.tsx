@@ -2,13 +2,12 @@
 
 import { allModels, type ModelDefinition } from "@airegistry/vercel-gateway";
 import { createSelectorHooks, type ZustandHookSelectors } from "auto-zustand-selectors-hook";
-import { useEffect, useRef } from "react";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import type { FilterState } from "@/app/(models)/models/model-filters";
-import { useModelsQueryStates } from "./model-query-parsers";
 import { MODEL_RANGE_LIMITS } from "./models-constants";
 import type { SortOption } from "./models-types";
+import { createUseModelsNuqsSync } from "./use-models-nuqs-sync";
 
 export { MODEL_RANGE_LIMITS } from "./models-constants";
 export type { SortOption } from "./models-types";
@@ -528,69 +527,9 @@ export const useModels = createSelectorHooks(
   
 ) as typeof useModelsBase & ZustandHookSelectors<ModelsStore>;
 
+const useModelsNuqsSync = createUseModelsNuqsSync(useModels);
+
 export function ModelsProvider({ children }: { children: React.ReactNode }) {
-  const [qs, setQs] = useModelsQueryStates();
-  const syncingRef = useRef(false);
-
-  // URL -> store
-  useEffect(() => {
-    if (syncingRef.current) return;
-    syncingRef.current = true;
-    const s = useModels.getState();
-      const nextFilters: FilterState = {
-        inputModalities: qs.im,
-        outputModalities: qs.om,
-        providers: qs.prov,
-        series: qs.ser,
-        categories: qs.cat,
-        supportedParameters: qs.params,
-        features: {
-          reasoning: qs.rz,
-          toolCall: qs.tc,
-          temperatureControl: qs.tctl,
-        },
-        contextLength: [qs.cmin, qs.cmax],
-        maxTokens: [qs.tmin, qs.tmax],
-        inputPricing: [qs.ipmin, qs.ipmax],
-        outputPricing: [qs.opmin, qs.opmax],
-      };
-      if (s.searchQuery !== qs.q) s.setSearchQuery(qs.q);
-      if (s.sortBy !== qs.sort) s.setSortBy(qs.sort as SortOption);
-    const current = assembleFilters(s);
-    if (!filtersEqual(current, nextFilters)) s.setFilters(nextFilters);
-    syncingRef.current = false;
-  }, [qs]);
-
-  // store -> URL
-  useEffect(() => {
-    const unsub = useModels.subscribe((s) => {
-      if (syncingRef.current) return;
-      syncingRef.current = true;
-      void setQs({
-        q: s.searchQuery,
-        sort: s.sortBy,
-        im: s.inputModalities,
-        om: s.outputModalities,
-        prov: s.providers,
-        ser: s.series,
-        cat: s.categories,
-        params: s.supportedParameters,
-        rz: s.features.reasoning,
-        tc: s.features.toolCall,
-        tctl: s.features.temperatureControl,
-        cmin: s.contextLength[0],
-        cmax: s.contextLength[1],
-        tmin: s.maxTokens[0],
-        tmax: s.maxTokens[1],
-        ipmin: s.inputPricing[0],
-        ipmax: s.inputPricing[1],
-        opmin: s.outputPricing[0],
-        opmax: s.outputPricing[1],
-      });
-      syncingRef.current = false;
-    });
-    return unsub;
-  }, []);
-
+  useModelsNuqsSync();
   return children;
 }
