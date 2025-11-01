@@ -20,8 +20,8 @@ export function SortSelect({
 }) {
   return (
     <Select onValueChange={(v: SortOption) => onChangeAction(v)} value={value}>
-      <SelectTrigger className={`max-w-40 ${className ?? ""}`}>
-        <SelectValue placeholder="Sort" />
+      <SelectTrigger className={`data-[size=default]:h-10 data-[size=sm]:h-10 max-w-40 ${className ?? ""}`}>
+        <SelectValue  placeholder="Sort" />
       </SelectTrigger>
       <SelectContent className="text-sm">
         <SelectItem value="newest">Newest</SelectItem>
