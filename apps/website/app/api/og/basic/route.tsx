@@ -7,7 +7,7 @@ import {
   OG_SIZE,
 } from "@/lib/og/shared";
 
-export const runtime = "edge";
+export const dynamic = 'force-static'
 
 const size = OG_SIZE;
 
