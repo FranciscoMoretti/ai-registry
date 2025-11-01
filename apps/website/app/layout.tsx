@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import type { ReactNode } from "react";
+import type { Metadata } from "next";
+import type { ReactNode as _ReactNode, ReactNode } from "react";
 import { Providers } from "@/components/providers";
 import { cn } from "@/lib/utils";
 
@@ -23,8 +24,8 @@ type RootLayoutProps = {
   children: ReactNode;
 };
 
-import type { Metadata } from "next";
-import Script from "next/script";
+
+
 
 const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en" suppressHydrationWarning>
-     {process.env.NODE_ENV === "development" && <Script src="https://unpkg.com/react-scan/dist/auto.global.js" />}
+     {process.env.NODE_ENV === "development" &&  <script src="https://unpkg.com/react-scan/dist/auto.global.js" />}
     <body
       className={cn(
         geistSans.variable,

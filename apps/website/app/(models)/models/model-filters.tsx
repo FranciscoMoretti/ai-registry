@@ -3,10 +3,7 @@
 import { providers } from "@airegistry/vercel-gateway";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import {
-  MODEL_RANGE_LIMITS,
-  useModels,
-} from "@/app/(models)/models/models-store-context";
+import { MODEL_RANGE_LIMITS, useModels } from "@/app/(models)/models/models-store-context";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Collapsible,
@@ -38,14 +35,15 @@ export type FilterState = {
 };
 
 function InputModalitiesFilter() {
-  const inputModalities = useModels((s) => s.filters.inputModalities);
-  const updateFilters = useModels((s) => s.updateFilters);
+  const inputModalities = useModels.useInputModalities();
+  const setInputModalities = useModels.useSetInputModalities();
+  console.log("inputModalities", inputModalities);
 
   const toggle = (modality: string, checked: boolean) => {
     const next = checked
       ? [...inputModalities, modality]
       : inputModalities.filter((m) => m !== modality);
-    updateFilters({ inputModalities: next });
+    setInputModalities(next);
   };
 
   return (
@@ -70,14 +68,14 @@ function InputModalitiesFilter() {
 }
 
 function OutputModalitiesFilter() {
-  const outputModalities = useModels((s) => s.filters.outputModalities);
-  const updateFilters = useModels((s) => s.updateFilters);
+  const outputModalities = useModels.useOutputModalities();
+  const setOutputModalities = useModels.useSetOutputModalities();
 
   const toggle = (modality: string, checked: boolean) => {
     const next = checked
       ? [...outputModalities, modality]
       : outputModalities.filter((m) => m !== modality);
-    updateFilters({ outputModalities: next });
+    setOutputModalities(next);
   };
 
   return (
@@ -102,9 +100,10 @@ function OutputModalitiesFilter() {
 }
 
 function LimitsFilter() {
-  const contextLength = useModels((s) => s.filters.contextLength);
-  const maxTokens = useModels((s) => s.filters.maxTokens);
-  const updateFilters = useModels((s) => s.updateFilters);
+  const contextLength = useModels.useContextLength();
+  const maxTokens = useModels.useMaxTokens();
+  const setContextLength = useModels.useSetContextLength();
+  const setMaxTokens = useModels.useSetMaxTokens();
   return (
     <CollapsibleContent className="space-y-4 pt-3 pb-2">
       <div className="space-y-2">
@@ -115,9 +114,7 @@ function LimitsFilter() {
           className="w-full"
           max={MODEL_RANGE_LIMITS.context[1]}
           min={MODEL_RANGE_LIMITS.context[0]}
-          onValueChange={(value) =>
-            updateFilters({ contextLength: value as [number, number] })
-          }
+          onValueChange={(value) => setContextLength(value as [number, number])}
           step={1000}
           value={contextLength}
         />
@@ -134,9 +131,7 @@ function LimitsFilter() {
           className="w-full"
           max={MODEL_RANGE_LIMITS.maxTokens[1]}
           min={MODEL_RANGE_LIMITS.maxTokens[0]}
-          onValueChange={(value) =>
-            updateFilters({ maxTokens: value as [number, number] })
-          }
+          onValueChange={(value) => setMaxTokens(value as [number, number])}
           step={512}
           value={maxTokens}
         />
@@ -150,8 +145,8 @@ function LimitsFilter() {
 }
 
 function ProvidersFilter() {
-  const selectedProviders = useModels((s) => s.filters.providers);
-  const updateFilters = useModels((s) => s.updateFilters);
+  const selectedProviders = useModels.useProviders();
+  const setProviders = useModels.useSetProviders();
   return (
     <CollapsibleContent className="space-y-2 pt-3 pb-2">
       {providers.map((provider) => (
@@ -163,7 +158,7 @@ function ProvidersFilter() {
               const next = checked
                 ? [...selectedProviders, provider]
                 : selectedProviders.filter((p) => p !== provider);
-              updateFilters({ providers: next });
+              setProviders(next);
             }}
           />
           <label
@@ -179,9 +174,10 @@ function ProvidersFilter() {
 }
 
 function PricingFilter() {
-  const inputPricing = useModels((s) => s.filters.inputPricing);
-  const outputPricing = useModels((s) => s.filters.outputPricing);
-  const updateFilters = useModels((s) => s.updateFilters);
+  const inputPricing = useModels.useInputPricing();
+  const outputPricing = useModels.useOutputPricing();
+  const setInputPricing = useModels.useSetInputPricing();
+  const setOutputPricing = useModels.useSetOutputPricing();
   return (
     <CollapsibleContent className="space-y-4 pt-3 pb-2">
       <div className="space-y-2">
@@ -192,9 +188,7 @@ function PricingFilter() {
           className="w-full"
           max={MODEL_RANGE_LIMITS.inputPricing[1]}
           min={MODEL_RANGE_LIMITS.inputPricing[0]}
-          onValueChange={(value) =>
-            updateFilters({ inputPricing: value as [number, number] })
-          }
+          onValueChange={(value) => setInputPricing(value as [number, number])}
           step={0.01}
           value={inputPricing}
         />
@@ -211,9 +205,7 @@ function PricingFilter() {
           className="w-full"
           max={MODEL_RANGE_LIMITS.outputPricing[1]}
           min={MODEL_RANGE_LIMITS.outputPricing[0]}
-          onValueChange={(value) =>
-            updateFilters({ outputPricing: value as [number, number] })
-          }
+          onValueChange={(value) => setOutputPricing(value as [number, number])}
           step={0.01}
           value={outputPricing}
         />
@@ -227,13 +219,13 @@ function PricingFilter() {
 }
 
 function FeaturesFilter() {
-  const features = useModels((s) => s.filters.features);
-  const updateFilters = useModels((s) => s.updateFilters);
+  const features = useModels.useFeatures();
+  const setFeatures = useModels.useSetFeatures();
   const toggle = (
     key: "reasoning" | "toolCall" | "temperatureControl",
     checked: boolean
   ) => {
-    updateFilters({ features: { ...features, [key]: !!checked } });
+    setFeatures({ [key]: !!checked });
   };
   return (
     <CollapsibleContent className="space-y-2 pt-3 pb-2">
