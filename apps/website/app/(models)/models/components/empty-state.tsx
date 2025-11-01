@@ -1,11 +1,11 @@
 "use client";
 
 import { memo } from "react";
+import { useModels } from "@/app/(models)/models/models-store-context";
 import { Button } from "@/components/ui/button";
-import { useModels } from "../models-store-context";
 
 export const PureEmptyState = memo(function PureEmptyState() {
-  const reset = useModels((s) => s.resetFiltersAndSearch);
+  const reset = useModels.useResetFiltersAndSearch();
 
   return (
     <div className="py-12 text-center">

@@ -66,12 +66,10 @@ export type ModelsStore = {
   setFilters: (v: FilterState) => void;
   updateFilters: (v: Partial<FilterState>) => void;
   resetFiltersAndSearch: () => void;
-  // Cached derived data to avoid infinite loops with getServerSnapshot
-  _results: ModelDefinition[];
-  // Derived selectors
-  resultModels: () => ModelDefinition[];
-  hasActiveFilters: () => boolean;
-  activeFiltersCount: () => number;
+  // Derived values (non-function for hook reactivity)
+  resultModels: ModelDefinition[];
+  activeFiltersCount: number;
+  hasActiveFilters: boolean;
 };
 
 const defaultSortBy: SortOption = "newest";
@@ -162,6 +160,26 @@ const assembleFilters = (s: Pick<
 });
 
 // ----- Store implementation (hook-based) -----
+
+const computeActiveFiltersCount = (f: FilterState): number => {
+  const rangeEquals = (a: [number, number], b: [number, number]): boolean =>
+    a[0] === b[0] && a[1] === b[1];
+  let count = 0;
+  count += f.inputModalities.length;
+  count += f.outputModalities.length;
+  count += f.providers.length;
+  count += f.series.length;
+  count += f.categories.length;
+  count += f.supportedParameters.length;
+  count += f.features.reasoning ? 1 : 0;
+  count += f.features.toolCall ? 1 : 0;
+  count += f.features.temperatureControl ? 1 : 0;
+  count += rangeEquals(f.contextLength, DEFAULT_FILTERS.contextLength) ? 0 : 1;
+  count += rangeEquals(f.inputPricing, DEFAULT_FILTERS.inputPricing) ? 0 : 1;
+  count += rangeEquals(f.outputPricing, DEFAULT_FILTERS.outputPricing) ? 0 : 1;
+  count += rangeEquals(f.maxTokens, DEFAULT_FILTERS.maxTokens) ? 0 : 1;
+  return count;
+};
   const computeResults = (
     searchQuery: string,
     filters: FilterState,
@@ -276,56 +294,76 @@ const useModelsBase = create<ModelsStore>()(
   devtools(
     (set, get) => ({
     ...initialState,
-    _results: computeResults(
+    resultModels: computeResults(
       initialState.searchQuery,
       assembleFilters(initialState as unknown as ModelsStore),
       initialState.sortBy
     ),
+    activeFiltersCount: computeActiveFiltersCount(assembleFilters(initialState as unknown as ModelsStore)),
+    hasActiveFilters: computeActiveFiltersCount(assembleFilters(initialState as unknown as ModelsStore)) > 0,
     setSearchQuery: (v: string) =>
       set((state) => ({
         searchQuery: v,
-        _results: computeResults(v, assembleFilters(state), state.sortBy),
+        resultModels: computeResults(v, assembleFilters(state), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters(state)),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters(state)) > 0,
       })),
     setSortBy: (v: SortOption) =>
       set((state) => ({
         sortBy: v,
-        _results: computeResults(state.searchQuery, assembleFilters(state), v),
+        resultModels: computeResults(state.searchQuery, assembleFilters(state), v),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters(state)),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters(state)) > 0,
       })),
     // Granular setters
     setInputModalities: (v: string[]) =>
       set((state) => ({
         inputModalities: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, inputModalities: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, inputModalities: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, inputModalities: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, inputModalities: v })) > 0,
       })),
     setOutputModalities: (v: string[]) =>
       set((state) => ({
         outputModalities: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, outputModalities: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, outputModalities: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, outputModalities: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, outputModalities: v })) > 0,
       })),
     setContextLength: (v: [number, number]) =>
       set((state) => ({
         contextLength: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, contextLength: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, contextLength: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, contextLength: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, contextLength: v })) > 0,
       })),
     setInputPricing: (v: [number, number]) =>
       set((state) => ({
         inputPricing: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, inputPricing: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, inputPricing: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, inputPricing: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, inputPricing: v })) > 0,
       })),
     setOutputPricing: (v: [number, number]) =>
       set((state) => ({
         outputPricing: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, outputPricing: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, outputPricing: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, outputPricing: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, outputPricing: v })) > 0,
       })),
     setMaxTokens: (v: [number, number]) =>
       set((state) => ({
         maxTokens: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, maxTokens: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, maxTokens: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, maxTokens: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, maxTokens: v })) > 0,
       })),
     setProviders: (v: string[]) =>
       set((state) => ({
         providers: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, providers: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, providers: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, providers: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, providers: v })) > 0,
       })),
     setFeatures: (v: Partial<ModelsStore["features"]>) =>
       set((state) => {
@@ -334,25 +372,35 @@ const useModelsBase = create<ModelsStore>()(
           toolCall: v.toolCall ?? state.features.toolCall,
           temperatureControl: v.temperatureControl ?? state.features.temperatureControl,
         };
+        const nextFilters = assembleFilters({ ...state, features: next });
+        const count = computeActiveFiltersCount(nextFilters);
         return {
           features: next,
-          _results: computeResults(state.searchQuery, assembleFilters({ ...state, features: next }), state.sortBy),
+          resultModels: computeResults(state.searchQuery, nextFilters, state.sortBy),
+          activeFiltersCount: count,
+          hasActiveFilters: count > 0,
         };
       }),
     setSeries: (v: string[]) =>
       set((state) => ({
         series: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, series: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, series: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, series: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, series: v })) > 0,
       })),
     setCategories: (v: string[]) =>
       set((state) => ({
         categories: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, categories: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, categories: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, categories: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, categories: v })) > 0,
       })),
     setSupportedParameters: (v: string[]) =>
       set((state) => ({
         supportedParameters: v,
-        _results: computeResults(state.searchQuery, assembleFilters({ ...state, supportedParameters: v }), state.sortBy),
+        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, supportedParameters: v }), state.sortBy),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, supportedParameters: v })),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, supportedParameters: v })) > 0,
       })),
     setFilters: (v: FilterState) =>
       set((state) => {
@@ -365,6 +413,7 @@ const useModelsBase = create<ModelsStore>()(
           if (filtersEqual(prev, next)) {
             return {};
           }
+          const count = computeActiveFiltersCount(next);
           return {
             inputModalities: next.inputModalities,
             outputModalities: next.outputModalities,
@@ -377,7 +426,9 @@ const useModelsBase = create<ModelsStore>()(
             series: next.series,
             categories: next.categories,
             supportedParameters: next.supportedParameters,
-            _results: computeResults(state.searchQuery, next, state.sortBy),
+            resultModels: computeResults(state.searchQuery, next, state.sortBy),
+            activeFiltersCount: count,
+            hasActiveFilters: count > 0,
           } as Partial<ModelsStore>;
         }),
       updateFilters: (v: Partial<FilterState>) =>
@@ -427,6 +478,7 @@ const useModelsBase = create<ModelsStore>()(
           if (filtersEqual(prev, nextFilters)) {
             return {};
           }
+          const count = computeActiveFiltersCount(nextFilters);
         return {
           inputModalities: nextFilters.inputModalities,
           outputModalities: nextFilters.outputModalities,
@@ -439,7 +491,9 @@ const useModelsBase = create<ModelsStore>()(
           series: nextFilters.series,
           categories: nextFilters.categories,
           supportedParameters: nextFilters.supportedParameters,
-            _results: computeResults(state.searchQuery, nextFilters, state.sortBy),
+          resultModels: computeResults(state.searchQuery, nextFilters, state.sortBy),
+          activeFiltersCount: count,
+          hasActiveFilters: count > 0,
           } as Partial<ModelsStore>;
         }),
       resetFiltersAndSearch: () =>
@@ -457,56 +511,15 @@ const useModelsBase = create<ModelsStore>()(
           series: initialState.series,
           categories: initialState.categories,
           supportedParameters: initialState.supportedParameters,
-          _results: computeResults(
+          resultModels: computeResults(
             initialState.searchQuery,
             assembleFilters(initialState as unknown as ModelsStore),
             initialState.sortBy
           ),
+        activeFiltersCount: computeActiveFiltersCount(assembleFilters(initialState as unknown as ModelsStore)),
+        hasActiveFilters: computeActiveFiltersCount(assembleFilters(initialState as unknown as ModelsStore)) > 0,
         } as Partial<ModelsStore>),
-    resultModels: () => get()._results,
-    hasActiveFilters: () => {
-      const f = assembleFilters(get());
-      const rangeEquals = (a: [number, number], b: [number, number]): boolean =>
-        a[0] === b[0] && a[1] === b[1];
-      const anyArraysActive =
-        f.inputModalities.length > 0 ||
-        f.outputModalities.length > 0 ||
-        f.providers.length > 0 ||
-        f.series.length > 0 ||
-        f.categories.length > 0 ||
-        f.supportedParameters.length > 0;
-      const anyFeaturesActive =
-        !!f.features.reasoning ||
-        !!f.features.toolCall ||
-        !!f.features.temperatureControl;
-      const anyRangesActive = !(
-        rangeEquals(f.contextLength, DEFAULT_FILTERS.contextLength) &&
-        rangeEquals(f.inputPricing, DEFAULT_FILTERS.inputPricing) &&
-        rangeEquals(f.outputPricing, DEFAULT_FILTERS.outputPricing) &&
-        rangeEquals(f.maxTokens, DEFAULT_FILTERS.maxTokens)
-      );
-      return anyArraysActive || anyFeaturesActive || anyRangesActive;
-    },
-    activeFiltersCount: () => {
-      const f = assembleFilters(get());
-      const rangeEquals = (a: [number, number], b: [number, number]): boolean =>
-        a[0] === b[0] && a[1] === b[1];
-      let count = 0;
-      count += f.inputModalities.length;
-      count += f.outputModalities.length;
-      count += f.providers.length;
-      count += f.series.length;
-      count += f.categories.length;
-      count += f.supportedParameters.length;
-      count += f.features.reasoning ? 1 : 0;
-      count += f.features.toolCall ? 1 : 0;
-      count += f.features.temperatureControl ? 1 : 0;
-        count += rangeEquals(f.contextLength, DEFAULT_FILTERS.contextLength) ? 0 : 1;
-        count += rangeEquals(f.inputPricing, DEFAULT_FILTERS.inputPricing) ? 0 : 1;
-        count += rangeEquals(f.outputPricing, DEFAULT_FILTERS.outputPricing) ? 0 : 1;
-      count += rangeEquals(f.maxTokens, DEFAULT_FILTERS.maxTokens) ? 0 : 1;
-      return count;
-    },
+    // derived values are kept up to date in each setter
   }), { name: "models-store" })
   );
 

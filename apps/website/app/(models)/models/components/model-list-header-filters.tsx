@@ -42,8 +42,8 @@ export function ModelListHeaderFilters() {
 }
 
 function ConnectedSearchInput() {
-  const value = useModels((s) => s.searchQuery);
-  const setValue = useModels((s) => s.setSearchQuery);
+  const value = useModels.useSearchQuery();
+  const setValue = useModels.useSetSearchQuery();
   return (
     <SearchInput
       onChange={setValue}
@@ -54,14 +54,14 @@ function ConnectedSearchInput() {
 }
 
 function ConnectedSortSelect() {
-  const value = useModels((s) => s.sortBy);
-  const setValue = useModels((s) => s.setSortBy);
+  const value = useModels.useSortBy();
+  const setValue = useModels.useSetSortBy();
   return <SortSelect onChangeAction={setValue} value={value} />;
 }
 
 function ResetFiltersButton() {
-  const hasActive = useModels((s) => s.hasActiveFilters());
-  const reset = useModels((s) => s.resetFiltersAndSearch);
+  const hasActive = useModels.useHasActiveFilters();
+  const reset = useModels.useResetFiltersAndSearch();
   if (!hasActive) {
     return null;
   }
@@ -73,11 +73,11 @@ function ResetFiltersButton() {
 }
 
 function ConnectedFilterSheet() {
-  const activeFiltersCount = useModels((s) => s.activeFiltersCount());
-  const resetFiltersAndSearch = useModels((s) => s.resetFiltersAndSearch);
+  const hasActiveFilters = useModels.useHasActiveFilters();
+  const resetFiltersAndSearch = useModels.useResetFiltersAndSearch();
   return (
     <FilterSheet
-      activeFiltersCount={activeFiltersCount}
+      hasActiveFilters={hasActiveFilters}
       onClearAll={resetFiltersAndSearch}
     />
   );

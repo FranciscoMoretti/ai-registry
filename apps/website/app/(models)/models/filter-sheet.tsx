@@ -11,20 +11,18 @@ import {
 
 export function FilterSheet({
   onClearAll,
-  activeFiltersCount,
+  hasActiveFilters,
 }: {
   onClearAll: () => void;
-  activeFiltersCount: number;
+  hasActiveFilters: boolean;
 }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
         <Button className="relative" size="icon" variant="secondary">
           <FilterIcon className="h-4 w-4" />
-          {activeFiltersCount > 0 && (
-            <span className="-top-1 -right-1 absolute h-4 min-w-[1rem] rounded-full bg-primary px-0.5 text-center text-[10px] text-primary-foreground leading-4">
-              {activeFiltersCount}
-            </span>
+          {hasActiveFilters && (
+            <span aria-hidden="true" className="-top-1 -right-1 absolute h-2 w-2 rounded-full bg-primary" />
           )}
         </Button>
       </SheetTrigger>

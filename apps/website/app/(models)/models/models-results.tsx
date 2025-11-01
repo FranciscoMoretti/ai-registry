@@ -1,11 +1,11 @@
 "use client";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { useLayoutEffect, useRef, useState } from "react";
+import { useModels } from "@/app/(models)/models/models-store-context";
 import { Container } from "@/components/container";
 import { PureEmptyState } from "./components/empty-state";
 import { ModelResultsHeader } from "./components/model-results-header";
 import { ModelCard } from "./gateway-model-card";
-import { useModels } from "./models-store-context";
 
 export function ModelsResults() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
@@ -42,7 +42,7 @@ export function ModelsResults() {
       window.removeEventListener("resize", measure);
     };
   }, []);
-  const models = useModels((s) => s.resultModels());
+  const models = useModels.useResultModels();
   const rowVirtualizer = useVirtualizer({
     count: models.length,
     getScrollElement: () => viewportRef.current,
