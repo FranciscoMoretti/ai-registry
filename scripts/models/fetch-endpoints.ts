@@ -208,11 +208,7 @@ async function main() {
 
   const outTs = join(ROOT, "packages/vercel-gateway/models.generated.ts");
   writeFileSync(outTs, lines.join("\n"));
-  try {
-    execSync(`npx biome format --write ${outTs}`);
-  } catch (err) {
-    console.error(`Error formatting ${outTs}:`, err);
-  }
+
 }
 
 main().catch((err) => {

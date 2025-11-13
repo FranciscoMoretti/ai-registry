@@ -31,7 +31,8 @@ function getProviderIconSlug(provider: ProviderId): string | null {
       return "moonshotai";
     case "zai":
       return "zai";
-
+    case "minimax":
+      return "minimax";
     case "stealth":
       return "stealth";
     // Slug with no images (yet)

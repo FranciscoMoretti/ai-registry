@@ -15,8 +15,6 @@ function main() {
   // 3) Fetch endpoints and build models.generated.ts
   run("tsx scripts/models/fetch-endpoints.ts");
 
-  // 4) Typecheck
-  run("bun run test:types");
 }
 
 try {

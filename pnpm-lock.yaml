@@ -173,6 +173,10 @@ importers:
         version: 5.9.2
 
   packages/vercel-gateway:
+    dependencies:
+      zod:
+        specifier: ^4.1.12
+        version: 4.1.12
     devDependencies:
       '@vitejs/plugin-react':
         specifier: ^5.0.2

@@ -8,6 +8,7 @@ import {
   DeepSeek,
   Gemini,
   Meta,
+  Minimax,
   Mistral,
   Moonshot,
   OpenAI,
@@ -48,6 +49,8 @@ export function getProviderIcon(provider: ProviderId, size = 16) {
       return <OpenAI {...iconProps} />; // Using OpenAI as fallback
     case "moonshotai":
       return <Moonshot {...iconProps} />;
+    case "minimax":
+      return <Minimax {...iconProps} />;
     case "morph":
       return <OpenAI {...iconProps} />; // Using OpenAI as fallback
     case "zai":

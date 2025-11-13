@@ -29,12 +29,6 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   "cohere/command-a": {
     releaseDate: new Date("2024-10-21"),
   },
-  "cohere/command-r": {
-    releaseDate: new Date("2024-03-12"),
-  },
-  "cohere/command-r-plus": {
-    releaseDate: new Date("2024-03-12"),
-  },
 
   // Meta Llama 3.2 Vision Instruct (official: ai.meta.com)
   "meta/llama-3.2-11b": {
@@ -51,14 +45,6 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   "deepseek/deepseek-v3.1": {
     releaseDate: new Date("2025-07-10"),
   },
-  "deepseek/deepseek-v3.1-base": {
-    releaseDate: new Date("2025-07-10"),
-  },
-
-  // Google Gemma
-  "google/gemma-2-9b": {
-    releaseDate: new Date("2024-06-27"),
-  },
 
   // Inception
   "inception/mercury-coder-small": {
@@ -66,12 +52,6 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   },
 
   // Meta Llama (text-only)
-  "meta/llama-3-70b": {
-    releaseDate: new Date("2024-04-18"),
-  },
-  "meta/llama-3-8b": {
-    releaseDate: new Date("2024-04-18"),
-  },
   "meta/llama-3.1-70b": {
     releaseDate: new Date("2024-07-23"),
   },
@@ -117,6 +97,9 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   },
 
   // Google Gemini flash image
+  "google/gemini-2.5-flash-image-preview": {
+    releaseDate: new Date("2025-08-26"),
+  },
   "google/gemini-2.5-flash-image": {
     releaseDate: new Date("2025-06-17"),
     knowledgeCutoff: new Date("2025-06-01"),
@@ -125,6 +108,20 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   // Anthropic Claude
   "anthropic/claude-3.5-sonnet-20240620": {
     releaseDate: new Date("2024-06-20"),
+  },
+
+  // OpenAI
+  "openai/gpt-5.1-instant": {
+    releaseDate: new Date("2025-10-01"),
+  },
+  "openai/gpt-5.1-thinking": {
+    releaseDate: new Date("2025-10-01"),
+  },
+  "openai/gpt-oss-safeguard-20b": {
+    releaseDate: new Date("2025-08-05"),
+  },
+  "openai/o3-deep-research": {
+    releaseDate: new Date("2024-06-26"),
   },
   // Meituan LongCat Flash
   "meituan/longcat-flash-chat": {
@@ -143,13 +140,11 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   },
 
   // Moonshot Kimi
+  "moonshotai/kimi-k2-thinking-turbo": {
+    releaseDate: new Date("2025-11-06"),
+  },
   "moonshotai/kimi-k2-turbo": {
     releaseDate: new Date("2025-09-05"),
-  },
-
-  // OpenAI GPT-5 Pro (approximate GA window)
-  "openai/gpt-5-pro": {
-    releaseDate: new Date("2025-07-30"),
   },
 
   // Stealth Sonoma

@@ -65,9 +65,6 @@ export const generatedModelExtra = {
   'deepseek/deepseek-r1': {
     releaseDate: new Date('2025-01-20'),
   },
-  'deepseek/deepseek-r1-distill-llama-70b': {
-    releaseDate: new Date('2025-01-23'),
-  },
   'deepseek/deepseek-v3.1-terminus': {
     releaseDate: new Date('2025-09-22'),
   },
@@ -107,6 +104,9 @@ export const generatedModelExtra = {
   'meta/llama-4-scout': {
     releaseDate: new Date('2025-04-05'),
   },
+  'minimax/minimax-m2': {
+    releaseDate: new Date('2025-10-27'),
+  },
   'mistral/codestral': {
     releaseDate: new Date('2024-05-29'),
   },
@@ -141,7 +141,10 @@ export const generatedModelExtra = {
     releaseDate: new Date('2025-07-11'),
   },
   'moonshotai/kimi-k2-0905': {
-    releaseDate: new Date('2025-09-05'),
+    releaseDate: new Date('2025-09-04'),
+  },
+  'moonshotai/kimi-k2-thinking': {
+    releaseDate: new Date('2025-11-06'),
   },
   'morph/morph-v3-fast': {
     releaseDate: new Date('2024-08-15'),
@@ -170,14 +173,20 @@ export const generatedModelExtra = {
   'openai/gpt-5': {
     releaseDate: new Date('2025-08-07'),
   },
+  'openai/gpt-5-chat': {
+    releaseDate: new Date('2025-08-07'),
+  },
   'openai/gpt-5-codex': {
-    releaseDate: new Date('2025-09-15'),
+    releaseDate: new Date('2025-09-23'),
   },
   'openai/gpt-5-mini': {
     releaseDate: new Date('2025-08-07'),
   },
   'openai/gpt-5-nano': {
     releaseDate: new Date('2025-08-07'),
+  },
+  'openai/gpt-5-pro': {
+    releaseDate: new Date('2025-10-06'),
   },
   'openai/gpt-oss-120b': {
     releaseDate: new Date('2025-08-23'),
@@ -234,7 +243,7 @@ export const generatedModelExtra = {
     releaseDate: new Date('2025-02-17'),
   },
   'xai/grok-4': {
-    releaseDate: new Date('2025-07-09'),
+    releaseDate: new Date('2025-09-09'),
   },
   'xai/grok-4-fast-non-reasoning': {
     releaseDate: new Date('2025-09-19'),

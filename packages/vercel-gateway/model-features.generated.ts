@@ -44,9 +44,6 @@ export const generatedModelFeatures = {
   "deepseek/deepseek-r1": {
     releaseDate: new Date("2025-01-20"),
   },
-  "deepseek/deepseek-r1-distill-llama-70b": {
-    releaseDate: new Date("2025-01-23"),
-  },
   "deepseek/deepseek-v3.1-terminus": {
     releaseDate: new Date("2025-09-22"),
   },

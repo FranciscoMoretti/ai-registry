@@ -2,7 +2,12 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["ultracite/core", "ultracite/react", "ultracite/next"],
   "files": {
-    "includes": ["!**/components/ui", "!**/lib/utils.ts", "**/*.json"]
+    "includes": [
+      "!**/components/ui",
+      "!**/lib/utils.ts",
+      "**/*.json",
+      "!packages/vercel-gateway/responses/**/*.json"
+    ]
   },
   "formatter": {
     "includes": ["!**/components/ui", "!**/lib/utils.ts", "**/*.json"]

@@ -96,15 +96,7 @@ async function main() {
   );
   console.log("Wrote missing extra list:", MISSING_MODEL_EXTRA_JSON);
 
-  try {
-    console.log("Formatting with biome...");
-    execSync(`npx biome format --write "${OUTPUT_TS}"`, {
-      cwd: ROOT,
-      stdio: "inherit",
-    });
-  } catch (err) {
-    console.warn("Warning: biome format failed:", err);
-  }
+  
 }
 
 main().catch((err) => {
