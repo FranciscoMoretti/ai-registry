@@ -1,3 +1,3 @@
-import type { ModelId as GatewayGeneratedModelId } from "./models.generated";
+import type { models } from "./models.generated";
 
-export type ModelId = GatewayGeneratedModelId;
+export type ModelId = keyof typeof models;

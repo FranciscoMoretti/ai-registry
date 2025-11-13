@@ -60,7 +60,7 @@ async function main() {
   writeFileSync(MODELS_DEV_RESPONSE_JSON, JSON.stringify(raw, null, 2));
 
   const lines: string[] = [];
-  lines.push("import type { ModelId } from '@airegistry/vercel-gateway';");
+  lines.push("import type { ModelId } from '../model-id';");
   lines.push("");
   lines.push("type GeneratedExtraDelta = {");
   lines.push("  releaseDate: Date;");
@@ -95,16 +95,6 @@ async function main() {
     JSON.stringify(stillMissing, null, 2)
   );
   console.log("Wrote missing extra list:", MISSING_MODEL_EXTRA_JSON);
-
-  try {
-    console.log("Formatting with biome...");
-    execSync(`npx biome format --write "${OUTPUT_TS}"`, {
-      cwd: ROOT,
-      stdio: "inherit",
-    });
-  } catch (err) {
-    console.warn("Warning: biome format failed:", err);
-  }
 }
 
 main().catch((err) => {

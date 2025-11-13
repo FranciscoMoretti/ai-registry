@@ -1,6 +1,6 @@
 "use client";
 import type { ModelDefinition } from "@airegistry/vercel-gateway";
-import { allModels, getModelDefinition } from "@airegistry/vercel-gateway";
+import { allModels, getModel } from "@airegistry/vercel-gateway";
 import { ModelDetailsCard } from "@/app/(models)/compare/model-details-card";
 import { ChatModelButton } from "@/components/model-action-buttons";
 import { ModelSelectorBase } from "@/components/model-selector-base";
@@ -32,7 +32,7 @@ export function ModelDetails({
           initialChevronDirection="down"
           models={allModels.map((m) => ({
             id: m.id,
-            definition: getModelDefinition(m.id),
+            definition: getModel(m.id),
           }))}
           onModelChange={onModelChangeAction}
           selectedModelId={modelDefinition?.id}
