@@ -27,6 +27,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
+    "dev": "tsup --watch",
     "build": "tsup",
     "test": "vitest run",
     "test:ui": "vitest --ui run",
