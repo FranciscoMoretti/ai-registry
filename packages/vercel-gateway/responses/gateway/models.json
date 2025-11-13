@@ -11,7 +11,10 @@
       "context_window": 40960,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000006",
         "output": "0.00000024"
@@ -27,7 +30,9 @@
       "context_window": 40960,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000013",
         "output": "0.0000006"
@@ -43,7 +48,10 @@
       "context_window": 40960,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000008",
         "output": "0.00000029"
@@ -59,7 +67,10 @@
       "context_window": 40960,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000001",
         "output": "0.0000003"
@@ -75,7 +86,9 @@
       "context_window": 262144,
       "max_tokens": 66536,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000004",
         "output": "0.0000016"
@@ -91,7 +104,10 @@
       "context_window": 262144,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000015",
         "output": "0.0000006"
@@ -105,9 +121,11 @@
       "name": "Qwen3 Coder Plus",
       "description": "Powered by Qwen3 this is a powerful Coding Agent that excels in tool calling and environment interaction to achieve autonomous programming. It combines outstanding coding proficiency with versatile general-purpose abilities.",
       "context_window": 1000000,
-      "max_tokens": 1000000,
+      "max_tokens": 65536,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.000001",
         "output": "0.000005"
@@ -123,7 +141,9 @@
       "context_window": 262144,
       "max_tokens": 32768,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000012",
         "output": "0.000006",
@@ -140,7 +160,9 @@
       "context_window": 262144,
       "max_tokens": 32768,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000012",
         "output": "0.000006",
@@ -168,13 +190,13 @@
       "created": 1755815280,
       "owned_by": "alibaba",
       "name": "Qwen3 Next 80B A3B Thinking",
-      "description": "Over the past few months, we have observed increasingly clear trends toward scaling both total parameters and context lengths in the pursuit of more powerful and agentic artificial intelligence (AI). We are excited to share our latest advancements in addressing these demands, centered on improving scaling efficiency through innovative model architecture. We call this next-generation foundation models Qwen3-Next.",
-      "context_window": 163840,
-      "max_tokens": 32768,
+      "description": "Qwen3-Next uses a highly sparse MoE design: 80B total parameters, but only ~3B activated per inference step. Experiments show that, with global load balancing, increasing total expert parameters while keeping activated experts fixed steadily reduces training loss.Compared to Qwen3’s MoE (128 total experts, 8 routed), Qwen3-Next expands to 512 total experts, combining 10 routed experts + 1 shared expert — maximizing resource usage without hurting performance. The Qwen3-Next-80B-A3B-Thinking excels at complex reasoning tasks — outperforming higher-cost models like Qwen3-30B-A3B-Thinking-2507 and Qwen3-32B-Thinking, outpeforming the closed-source Gemini-2.5-Flash-Thinking on multiple benchmarks, and approaching the performance of our top-tier model Qwen3-235B-A22B-Thinking-2507.",
+      "context_window": 65536,
+      "max_tokens": 65536,
       "type": "language",
       "pricing": {
-        "input": "0.00000014",
-        "output": "0.0000014"
+        "input": "0.00000015",
+        "output": "0.0000015"
       }
     },
     {
@@ -187,7 +209,9 @@
       "context_window": 131072,
       "max_tokens": 129024,
       "type": "language",
-      "tags": ["vision"],
+      "tags": [
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000007",
         "output": "0.0000028"
@@ -201,9 +225,11 @@
       "name": "Qwen3 VL 235B A22B Thinking",
       "description": "Qwen3 series VL models feature significantly enhanced multimodal reasoning capabilities, with a particular focus on optimizing the model for STEM and mathematical reasoning. Visual perception and recognition abilities have been comprehensively improved, and OCR capabilities have undergone a major upgrade.",
       "context_window": 131072,
-      "max_tokens": 129024,
+      "max_tokens": 32768,
       "type": "language",
-      "tags": ["vision"],
+      "tags": [
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000007",
         "output": "0.0000084"
@@ -279,7 +305,10 @@
       "context_window": 200000,
       "max_tokens": 4096,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000025",
         "output": "0.00000125",
@@ -297,7 +326,10 @@
       "context_window": 200000,
       "max_tokens": 4096,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000015",
         "output": "0.000075",
@@ -315,7 +347,11 @@
       "context_window": 200000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000008",
         "output": "0.000004",
@@ -329,11 +365,15 @@
       "created": 1755815280,
       "owned_by": "anthropic",
       "name": "Claude 3.5 Sonnet",
-      "description": "Claude 3.5 Sonnet strikes the ideal balance between intelligence and speed—particularly for enterprise workloads. It delivers strong performance at a lower cost compared to its peers, and is engineered for high endurance in large-scale AI deployments.",
+      "description": "The upgraded Claude 3.5 Sonnet is now state-of-the-art for a variety of tasks including real-world software engineering, agentic capabilities and computer use. The new Claude 3.5 Sonnet delivers these advancements at the same price and speed as its predecessor.",
       "context_window": 200000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015",
@@ -351,7 +391,11 @@
       "context_window": 200000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015"
@@ -367,7 +411,12 @@
       "context_window": 200000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015",
@@ -385,6 +434,12 @@
       "context_window": 200000,
       "max_tokens": 64000,
       "type": "language",
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000001",
         "output": "0.000005",
@@ -402,7 +457,12 @@
       "context_window": 200000,
       "max_tokens": 32000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000015",
         "output": "0.000075",
@@ -420,7 +480,12 @@
       "context_window": 200000,
       "max_tokens": 32000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000015",
         "output": "0.000075",
@@ -438,7 +503,12 @@
       "context_window": 200000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015",
@@ -456,7 +526,12 @@
       "context_window": 200000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015",
@@ -474,39 +549,9 @@
       "context_window": 256000,
       "max_tokens": 8000,
       "type": "language",
-      "tags": ["tool-use"],
-      "pricing": {
-        "input": "0.0000025",
-        "output": "0.00001"
-      }
-    },
-    {
-      "id": "cohere/command-r",
-      "object": "model",
-      "created": 1755815280,
-      "owned_by": "cohere",
-      "name": "Command R",
-      "description": "Command R is a large language model optimized for conversational interaction and long context tasks. It targets the \"scalable\" category of models that balance high performance with strong accuracy, enabling companies to move beyond proof of concept and into production.",
-      "context_window": 128000,
-      "max_tokens": 4096,
-      "type": "language",
-      "tags": ["tool-use"],
-      "pricing": {
-        "input": "0.00000015",
-        "output": "0.0000006"
-      }
-    },
-    {
-      "id": "cohere/command-r-plus",
-      "object": "model",
-      "created": 1755815280,
-      "owned_by": "cohere",
-      "name": "Command R+",
-      "description": "Command R+ is Cohere's newest large language model, optimized for conversational interaction and long-context tasks. It aims at being extremely performant, enabling companies to move beyond proof of concept and into production.",
-      "context_window": 128000,
-      "max_tokens": 4096,
-      "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000025",
         "output": "0.00001"
@@ -537,26 +582,12 @@
       "context_window": 163840,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning"
+      ],
       "pricing": {
         "input": "0.00000079",
         "output": "0.000004"
-      }
-    },
-    {
-      "id": "deepseek/deepseek-r1-distill-llama-70b",
-      "object": "model",
-      "created": 1755815280,
-      "owned_by": "deepseek",
-      "name": "DeepSeek R1 Distill Llama 70B",
-      "description": "DeepSeek-R1-Distill-Llama-70B is a distilled, more efficient variant of the 70B Llama model. It preserves strong performance across text-generation tasks, reducing computational overhead for easier deployment and research. Served by Groq with their custom Language Processing Units (LPUs) hardware to provide fast and efficient inference.",
-      "context_window": 131072,
-      "max_tokens": 131072,
-      "type": "language",
-      "tags": ["reasoning", "tool-use"],
-      "pricing": {
-        "input": "0.00000075",
-        "output": "0.00000099"
       }
     },
     {
@@ -569,7 +600,9 @@
       "context_window": 163840,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000077",
         "output": "0.00000077"
@@ -581,30 +614,17 @@
       "created": 1755815280,
       "owned_by": "deepseek",
       "name": "DeepSeek-V3.1",
-      "description": "DeepSeek-V3.1 is post-trained on the top of DeepSeek-V3.1-Base, which is built upon the original V3 base checkpoint through a two-phase long context extension approach, following the methodology outlined in the original DeepSeek-V3 report. DeepSeek has expanded their dataset by collecting additional long documents and substantially extending both training phases.",
+      "description": "DeepSeek-V3.1 is post-trained on the top of DeepSeek-V3.1-Base, which is built upon the original V3 base checkpoint through a two-phase long context extension approach, following the methodology outlined in the original DeepSeek-V3 report. We have expanded our dataset by collecting additional long documents and substantially extending both training phases. The 32K extension phase has been increased 10-fold to 630B tokens, while the 128K extension phase has been extended by 3.3x to 209B tokens. Additionally, DeepSeek-V3.1 is trained using the UE8M0 FP8 scale data format to ensure compatibility with microscaling data formats.",
       "context_window": 163840,
-      "max_tokens": 8192,
+      "max_tokens": 128000,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
-        "input": "0.0000001999",
-        "output": "0.0000008001"
-      }
-    },
-    {
-      "id": "deepseek/deepseek-v3.1-base",
-      "object": "model",
-      "created": 1755815280,
-      "owned_by": "deepseek",
-      "name": "DeepSeek V3.1 Base",
-      "description": "DeepSeek V3.1 Base is an improved version of the DeepSeek V3 model.",
-      "context_window": 128000,
-      "max_tokens": 8192,
-      "type": "language",
-      "tags": ["tool-use"],
-      "pricing": {
-        "input": "0.0000001999",
-        "output": "0.0000008001"
+        "input": "0.0000003",
+        "output": "0.000001"
       }
     },
     {
@@ -617,7 +637,10 @@
       "context_window": 131072,
       "max_tokens": 65536,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000027",
         "output": "0.000001"
@@ -633,7 +656,10 @@
       "context_window": 163840,
       "max_tokens": 65536,
       "type": "language",
-      "tags": ["implicit-caching", "reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000027",
         "output": "0.00000041"
@@ -649,7 +675,11 @@
       "context_window": 163840,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["implicit-caching", "reasoning", "tool-use"],
+      "tags": [
+        "implicit-caching",
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000028",
         "output": "0.00000042",
@@ -666,10 +696,15 @@
       "context_window": 1000000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000001",
-        "output": "0.0000004"
+        "output": "0.0000004",
+        "input_cache_read": "0.000000025"
       }
     },
     {
@@ -682,7 +717,11 @@
       "context_window": 1048576,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000000075",
         "output": "0.0000003"
@@ -698,10 +737,16 @@
       "context_window": 1000000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000003",
-        "output": "0.0000025"
+        "output": "0.0000025",
+        "input_cache_read": "0.00000003"
       }
     },
     {
@@ -714,7 +759,9 @@
       "context_window": 32768,
       "max_tokens": 32768,
       "type": "language",
-      "tags": ["image-generation"],
+      "tags": [
+        "image-generation"
+      ],
       "pricing": {
         "input": "0.0000003",
         "output": "0.0000025"
@@ -730,6 +777,9 @@
       "context_window": 32768,
       "max_tokens": 32768,
       "type": "language",
+      "tags": [
+        "image-generation"
+      ],
       "pricing": {
         "input": "0.0000003",
         "output": "0.0000025"
@@ -745,10 +795,16 @@
       "context_window": 1048576,
       "max_tokens": 65536,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000001",
-        "output": "0.0000004"
+        "output": "0.0000004",
+        "input_cache_read": "0.00000001"
       }
     },
     {
@@ -761,7 +817,12 @@
       "context_window": 1048576,
       "max_tokens": 65536,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000001",
         "output": "0.0000004"
@@ -786,7 +847,8 @@
       ],
       "pricing": {
         "input": "0.0000003",
-        "output": "0.0000025"
+        "output": "0.0000025",
+        "input_cache_read": "0.00000003"
       }
     },
     {
@@ -797,12 +859,18 @@
       "name": "Gemini 2.5 Pro",
       "description": "Gemini 2.5 Pro is our most advanced reasoning Gemini model, capable of solving complex problems. Gemini 2.5 Pro can comprehend vast datasets and challenging problems from different information sources, including text, audio, images, video, and even entire code repositories.",
       "context_window": 1048576,
-      "max_tokens": 8192,
+      "max_tokens": 65536,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
-        "input": "0.0000025",
-        "output": "0.000015"
+        "input": "0.00000125",
+        "output": "0.00001",
+        "input_cache_read": "0.000000125"
       }
     },
     {
@@ -818,21 +886,6 @@
       "pricing": {
         "input": "0.00000015",
         "output": "0"
-      }
-    },
-    {
-      "id": "google/gemma-2-9b",
-      "object": "model",
-      "created": 1755815280,
-      "owned_by": "google",
-      "name": "Gemma 2 9B IT",
-      "description": "9 billion parameter open source model by Google fine-tuned for chat purposes. Served by Groq with their custom Language Processing Units (LPUs) hardware to provide fast and efficient inference.",
-      "context_window": 8192,
-      "max_tokens": 8192,
-      "type": "language",
-      "pricing": {
-        "input": "0.0000002",
-        "output": "0.0000002"
       }
     },
     {
@@ -875,7 +928,9 @@
       "context_window": 32000,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000025",
         "output": "0.000001"
@@ -891,7 +946,9 @@
       "context_window": 128000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0",
         "output": "0"
@@ -907,40 +964,13 @@
       "context_window": 128000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000015",
         "output": "0.0000015"
-      }
-    },
-    {
-      "id": "meta/llama-3-70b",
-      "object": "model",
-      "created": 1755815280,
-      "owned_by": "meta",
-      "name": "Llama 3 70B Instruct",
-      "description": "Llama is a 70 billion parameter open source model by Meta fine-tuned for instruction following purposes. Served by Groq with their custom Language Processing Units (LPUs) hardware to provide fast and efficient inference.",
-      "context_window": 8192,
-      "max_tokens": 8192,
-      "type": "language",
-      "pricing": {
-        "input": "0.00000059",
-        "output": "0.00000079"
-      }
-    },
-    {
-      "id": "meta/llama-3-8b",
-      "object": "model",
-      "created": 1755815280,
-      "owned_by": "meta",
-      "name": "Llama 3 8B Instruct",
-      "description": "Llama is a 8 billion parameter open source model by Meta fine-tuned for instruction following purposes. Served by Groq with their custom Language Processing Units (LPUs) hardware to provide fast and efficient inference.",
-      "context_window": 8192,
-      "max_tokens": 8192,
-      "type": "language",
-      "pricing": {
-        "input": "0.00000005",
-        "output": "0.00000008"
       }
     },
     {
@@ -953,7 +983,9 @@
       "context_window": 128000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000072",
         "output": "0.00000072"
@@ -969,7 +1001,9 @@
       "context_window": 131000,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000005",
         "output": "0.00000008"
@@ -985,7 +1019,10 @@
       "context_window": 128000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000016",
         "output": "0.00000016"
@@ -1031,7 +1068,10 @@
       "context_window": 128000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000072",
         "output": "0.00000072"
@@ -1047,7 +1087,9 @@
       "context_window": 128000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000072",
         "output": "0.00000072"
@@ -1063,7 +1105,10 @@
       "context_window": 131072,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000015",
         "output": "0.0000006"
@@ -1079,10 +1124,32 @@
       "context_window": 131072,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000008",
         "output": "0.0000003"
+      }
+    },
+    {
+      "id": "minimax/minimax-m2",
+      "object": "model",
+      "created": 1755815280,
+      "owned_by": "minimax",
+      "name": "MiniMax M2",
+      "description": "MiniMax-M2 redefines efficiency for agents. It is a compact, fast, and cost-effective MoE model (230 billion total parameters with 10 billion active parameters) built for elite performance in coding and agentic tasks, all while maintaining powerful general intelligence.",
+      "context_window": 205000,
+      "max_tokens": 205000,
+      "type": "language",
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
+      "pricing": {
+        "input": "0",
+        "output": "0"
       }
     },
     {
@@ -1095,7 +1162,9 @@
       "context_window": 256000,
       "max_tokens": 4000,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000003",
         "output": "0.0000009"
@@ -1126,7 +1195,9 @@
       "context_window": 128000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000001",
         "output": "0.0000003"
@@ -1142,7 +1213,10 @@
       "context_window": 128000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["reasoning", "vision"],
+      "tags": [
+        "reasoning",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.000005"
@@ -1158,7 +1232,9 @@
       "context_window": 128000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["reasoning"],
+      "tags": [
+        "reasoning"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.000005"
@@ -1174,7 +1250,10 @@
       "context_window": 128000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["reasoning", "vision"],
+      "tags": [
+        "reasoning",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000005",
         "output": "0.0000015"
@@ -1190,7 +1269,9 @@
       "context_window": 128000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["reasoning"],
+      "tags": [
+        "reasoning"
+      ],
       "pricing": {
         "input": "0.0000005",
         "output": "0.0000015"
@@ -1206,7 +1287,9 @@
       "context_window": 128000,
       "max_tokens": 4000,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000004",
         "output": "0.00000004"
@@ -1222,7 +1305,9 @@
       "context_window": 128000,
       "max_tokens": 4000,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000001",
         "output": "0.0000001"
@@ -1253,7 +1338,9 @@
       "context_window": 32000,
       "max_tokens": 4000,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.000006"
@@ -1269,7 +1356,10 @@
       "context_window": 128000,
       "max_tokens": 64000,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000004",
         "output": "0.000002"
@@ -1285,7 +1375,10 @@
       "context_window": 32000,
       "max_tokens": 4000,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000001",
         "output": "0.0000003"
@@ -1316,7 +1409,10 @@
       "context_window": 128000,
       "max_tokens": 4000,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000015",
         "output": "0.00000015"
@@ -1332,7 +1428,10 @@
       "context_window": 128000,
       "max_tokens": 4000,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.000006"
@@ -1348,7 +1447,9 @@
       "context_window": 131072,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000005",
         "output": "0.000002"
@@ -1370,6 +1471,48 @@
       }
     },
     {
+      "id": "moonshotai/kimi-k2-thinking",
+      "object": "model",
+      "created": 1755815280,
+      "owned_by": "moonshotai",
+      "name": "Kimi K2 Thinking",
+      "description": "Kimi K2 Thinking is an advanced open-source thinking model by Moonshot AI. It can execute up to 200 – 300 sequential tool calls without human interference, reasoning coherently across hundreds of steps to solve complex problems. Built as a thinking agent, it reasons step by step while using tools, achieving state-of-the-art performance on Humanity's Last Exam (HLE), BrowseComp, and other benchmarks, with major gains in reasoning, agentic search, coding, writing, and general capabilities.",
+      "context_window": 262114,
+      "max_tokens": 262114,
+      "type": "language",
+      "tags": [
+        "reasoning",
+        "tool-use",
+        "implicit-caching"
+      ],
+      "pricing": {
+        "input": "0.0000006",
+        "output": "0.0000025",
+        "input_cache_read": "0.00000015"
+      }
+    },
+    {
+      "id": "moonshotai/kimi-k2-thinking-turbo",
+      "object": "model",
+      "created": 1755815280,
+      "owned_by": "moonshotai",
+      "name": "Kimi K2 Thinking Turbo",
+      "description": "High-speed version of kimi-k2-thinking, suitable for scenarios requiring both deep reasoning and extremely fast responses",
+      "context_window": 262114,
+      "max_tokens": 262114,
+      "type": "language",
+      "tags": [
+        "reasoning",
+        "tool-use",
+        "implicit-caching"
+      ],
+      "pricing": {
+        "input": "0.00000115",
+        "output": "0.000008",
+        "input_cache_read": "0.00000015"
+      }
+    },
+    {
       "id": "moonshotai/kimi-k2-turbo",
       "object": "model",
       "created": 1755815280,
@@ -1379,7 +1522,9 @@
       "context_window": 256000,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000024",
         "output": "0.00001"
@@ -1455,7 +1600,10 @@
       "context_window": 128000,
       "max_tokens": 4096,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00001",
         "output": "0.00003"
@@ -1471,7 +1619,11 @@
       "context_window": 1047576,
       "max_tokens": 32768,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.000008",
@@ -1489,7 +1641,11 @@
       "context_window": 1047576,
       "max_tokens": 32768,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000004",
         "output": "0.0000016",
@@ -1507,7 +1663,11 @@
       "context_window": 1047576,
       "max_tokens": 32768,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000001",
         "output": "0.0000004",
@@ -1525,7 +1685,11 @@
       "context_window": 128000,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000025",
         "output": "0.00001",
@@ -1543,7 +1707,11 @@
       "context_window": 128000,
       "max_tokens": 16384,
       "type": "language",
-      "tags": ["file-input", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000015",
         "output": "0.0000006",
@@ -1561,12 +1729,35 @@
       "context_window": 400000,
       "max_tokens": 128000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision",
+        "image-generation"
+      ],
       "pricing": {
         "input": "0.00000125",
         "output": "0.00001",
         "input_cache_read": "0.00000013",
         "input_cache_write": "0"
+      }
+    },
+    {
+      "id": "openai/gpt-5-chat",
+      "object": "model",
+      "created": 1755815280,
+      "owned_by": "openai",
+      "name": "GPT-5 Chat",
+      "description": "GPT-5 Chat points to the GPT-5 snapshot currently used in ChatGPT.",
+      "context_window": 128000,
+      "max_tokens": 16384,
+      "type": "language",
+      "tags": [],
+      "pricing": {
+        "input": "0.00000125",
+        "output": "0.00001",
+        "input_cache_read": "0.000000125"
       }
     },
     {
@@ -1579,7 +1770,12 @@
       "context_window": 400000,
       "max_tokens": 128000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000125",
         "output": "0.00001",
@@ -1597,7 +1793,12 @@
       "context_window": 400000,
       "max_tokens": 128000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.00000025",
         "output": "0.000002",
@@ -1615,7 +1816,13 @@
       "context_window": 400000,
       "max_tokens": 128000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision",
+        "image-generation"
+      ],
       "pricing": {
         "input": "0.00000005",
         "output": "0.0000004",
@@ -1638,7 +1845,8 @@
         "implicit-caching",
         "reasoning",
         "tool-use",
-        "vision"
+        "vision",
+        "image-generation"
       ],
       "pricing": {
         "input": "0.000015",
@@ -1655,7 +1863,10 @@
       "context_window": 131072,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000001",
         "output": "0.0000005"
@@ -1671,10 +1882,33 @@
       "context_window": 128000,
       "max_tokens": 8192,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.00000007",
         "output": "0.0000003"
+      }
+    },
+    {
+      "id": "openai/gpt-oss-safeguard-20b",
+      "object": "model",
+      "created": 1755815280,
+      "owned_by": "openai",
+      "name": "gpt-oss-safeguard-20b",
+      "description": "OpenAI's first open weight reasoning model specifically trained for safety classification tasks. Fine-tuned from GPT-OSS, this model helps classify text content based on customizable policies, enabling bring-your-own-policy Trust & Safety AI where your own taxonomy, definitions, and thresholds guide classification decisions.",
+      "context_window": 131072,
+      "max_tokens": 65536,
+      "type": "language",
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
+      "pricing": {
+        "input": "0.000000075",
+        "output": "0.0000003",
+        "input_cache_read": "0.000000037"
       }
     },
     {
@@ -1687,7 +1921,12 @@
       "context_window": 200000,
       "max_tokens": 100000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000015",
         "output": "0.00006",
@@ -1705,12 +1944,39 @@
       "context_window": 200000,
       "max_tokens": 100000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.000008",
         "input_cache_read": "0.0000005",
         "input_cache_write": "0"
+      }
+    },
+    {
+      "id": "openai/o3-deep-research",
+      "object": "model",
+      "created": 1755815280,
+      "owned_by": "openai",
+      "name": "o3-deep-research",
+      "description": "o3-deep-research is OpenAI's most advanced model for deep research, designed to tackle complex, multi-step research tasks. It can search and synthesize information from across the internet as well as from your own data—brought in through MCP connectors.",
+      "context_window": 200000,
+      "max_tokens": 100000,
+      "type": "language",
+      "tags": [
+        "reasoning",
+        "file-input",
+        "tool-use",
+        "vision"
+      ],
+      "pricing": {
+        "input": "0.00001",
+        "output": "0.00004",
+        "input_cache_read": "0.0000025"
       }
     },
     {
@@ -1723,7 +1989,11 @@
       "context_window": 200000,
       "max_tokens": 100000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000011",
         "output": "0.0000044",
@@ -1741,7 +2011,12 @@
       "context_window": 200000,
       "max_tokens": 100000,
       "type": "language",
-      "tags": ["file-input", "reasoning", "tool-use", "vision"],
+      "tags": [
+        "file-input",
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000011",
         "output": "0.0000044",
@@ -1804,7 +2079,10 @@
       "context_window": 127000,
       "max_tokens": 8000,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000001",
         "output": "0.000001"
@@ -1820,7 +2098,10 @@
       "context_window": 200000,
       "max_tokens": 8000,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015"
@@ -1836,7 +2117,9 @@
       "context_window": 127000,
       "max_tokens": 8000,
       "type": "language",
-      "tags": ["reasoning"],
+      "tags": [
+        "reasoning"
+      ],
       "pricing": {
         "input": "0.000001",
         "output": "0.000005"
@@ -1852,7 +2135,9 @@
       "context_window": 127000,
       "max_tokens": 8000,
       "type": "language",
-      "tags": ["reasoning"],
+      "tags": [
+        "reasoning"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.000008"
@@ -1868,7 +2153,10 @@
       "context_window": 2000000,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000002",
         "output": "0.0000005",
@@ -1885,7 +2173,10 @@
       "context_window": 2000000,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000002",
         "output": "0.0000005",
@@ -1902,7 +2193,10 @@
       "context_window": 128000,
       "max_tokens": 32000,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015"
@@ -1918,7 +2212,10 @@
       "context_window": 128000,
       "max_tokens": 32768,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015"
@@ -2039,7 +2336,9 @@
       "context_window": 131072,
       "max_tokens": 4000,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.00001"
@@ -2055,7 +2354,10 @@
       "context_window": 32768,
       "max_tokens": 32768,
       "type": "language",
-      "tags": ["tool-use", "vision"],
+      "tags": [
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000002",
         "output": "0.00001"
@@ -2071,7 +2373,9 @@
       "context_window": 131072,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015"
@@ -2087,7 +2391,9 @@
       "context_window": 131072,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.000005",
         "output": "0.000025"
@@ -2103,7 +2409,9 @@
       "context_window": 131072,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000003",
         "output": "0.0000005"
@@ -2119,7 +2427,9 @@
       "context_window": 131072,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000006",
         "output": "0.000004"
@@ -2135,7 +2445,11 @@
       "context_window": 256000,
       "max_tokens": 256000,
       "type": "language",
-      "tags": ["reasoning", "tool-use", "vision"],
+      "tags": [
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.000003",
         "output": "0.000015"
@@ -2151,7 +2465,9 @@
       "context_window": 2000000,
       "max_tokens": 256000,
       "type": "language",
-      "tags": ["tool-use"],
+      "tags": [
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000002",
         "output": "0.0000005",
@@ -2168,7 +2484,10 @@
       "context_window": 2000000,
       "max_tokens": 256000,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000002",
         "output": "0.0000005",
@@ -2185,7 +2504,10 @@
       "context_window": 256000,
       "max_tokens": 256000,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000002",
         "output": "0.0000015"
@@ -2201,7 +2523,10 @@
       "context_window": 131072,
       "max_tokens": 131072,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000006",
         "output": "0.0000022"
@@ -2217,7 +2542,10 @@
       "context_window": 128000,
       "max_tokens": 96000,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
         "input": "0.0000002",
         "output": "0.0000011"
@@ -2233,7 +2561,11 @@
       "context_window": 65536,
       "max_tokens": 66000,
       "type": "language",
-      "tags": ["reasoning", "tool-use", "vision"],
+      "tags": [
+        "reasoning",
+        "tool-use",
+        "vision"
+      ],
       "pricing": {
         "input": "0.0000006",
         "output": "0.0000018"
@@ -2249,10 +2581,13 @@
       "context_window": 200000,
       "max_tokens": 96000,
       "type": "language",
-      "tags": ["reasoning", "tool-use"],
+      "tags": [
+        "reasoning",
+        "tool-use"
+      ],
       "pricing": {
-        "input": "0.0000006",
-        "output": "0.0000022",
+        "input": "0.00000045",
+        "output": "0.0000018",
         "input_cache_read": "0.00000011"
       }
     }

@@ -1,8 +1,3 @@
-import type { ModelId } from '@airegistry/vercel-gateway';
-
-type GeneratedExtraDelta = {
-  releaseDate: Date;
-};
 
 export const generatedModelExtra = {
   'alibaba/qwen3-coder-plus': {
@@ -254,4 +249,4 @@ export const generatedModelExtra = {
   'zai/glm-4.6': {
     releaseDate: new Date('2025-09-30'),
   },
-} satisfies Partial<Record<ModelId, GeneratedExtraDelta>>;
+} as const

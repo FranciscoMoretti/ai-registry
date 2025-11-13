@@ -1,4 +1,4 @@
-[
+export const providers = [
   "alibaba",
   "amazon",
   "anthropic",
@@ -18,4 +18,6 @@
   "vercel",
   "xai",
   "zai"
-]
+] as const;
+
+export type ProviderId = (typeof providers)[number];
