@@ -1,0 +1,56 @@
+{
+  "data": {
+    "id": "openai/o3-deep-research",
+    "name": "o3-deep-research",
+    "created": 1755815280,
+    "description": "o3-deep-research is OpenAI's most advanced model for deep research, designed to tackle complex, multi-step research tasks. It can search and synthesize information from across the internet as well as from your own data—brought in through MCP connectors.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text",
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "openai | openai/o3-deep-research",
+        "model_name": "o3-deep-research",
+        "context_length": 200000,
+        "pricing": {
+          "prompt": "0.00001",
+          "completion": "0.00004",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.0000025",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 100000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "data": {
+    "id": "openai/gpt-5-chat",
+    "name": "GPT-5 Chat",
+    "created": 1755815280,
+    "description": "GPT-5 Chat points to the GPT-5 snapshot currently used in ChatGPT.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text+image",
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "openai | openai/gpt-5-chat",
+        "model_name": "GPT-5 Chat",
+        "context_length": 128000,
+        "pricing": {
+          "prompt": "0.00000125",
+          "completion": "0.00001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.000000125",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": true
+      }
+    ]
+  }
+}

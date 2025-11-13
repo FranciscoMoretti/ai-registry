@@ -8,8 +8,12 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text→text",
-      "input_modalities": ["text"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {
@@ -43,36 +47,6 @@
         "supports_implicit_caching": false
       },
       {
-        "name": "fireworks | deepseek/deepseek-v3",
-        "model_name": "DeepSeek V3 0324",
-        "context_length": 128000,
-        "pricing": {
-          "prompt": "0.0000009",
-          "completion": "0.0000009",
-          "request": "0",
-          "image": "0",
-          "image_output": "0",
-          "web_search": "0",
-          "internal_reasoning": "0",
-          "discount": 0
-        },
-        "provider_name": "fireworks",
-        "tag": "fireworks",
-        "quantization": null,
-        "max_completion_tokens": 8192,
-        "max_prompt_tokens": null,
-        "supported_parameters": [
-          "max_tokens",
-          "temperature",
-          "stop",
-          "tools",
-          "tool_choice"
-        ],
-        "status": 0,
-        "uptime_last_30m": null,
-        "supports_implicit_caching": false
-      },
-      {
         "name": "novita | deepseek/deepseek-v3",
         "model_name": "DeepSeek V3 0324",
         "context_length": 163840,
@@ -90,36 +64,6 @@
         "tag": "novita",
         "quantization": null,
         "max_completion_tokens": 163840,
-        "max_prompt_tokens": null,
-        "supported_parameters": [
-          "max_tokens",
-          "temperature",
-          "stop",
-          "tools",
-          "tool_choice"
-        ],
-        "status": 0,
-        "uptime_last_30m": null,
-        "supports_implicit_caching": false
-      },
-      {
-        "name": "parasail | deepseek/deepseek-v3",
-        "model_name": "DeepSeek V3 0324",
-        "context_length": 163840,
-        "pricing": {
-          "prompt": "0.00000079",
-          "completion": "0.00000115",
-          "request": "0",
-          "image": "0",
-          "image_output": "0",
-          "web_search": "0",
-          "internal_reasoning": "0",
-          "discount": 0
-        },
-        "provider_name": "parasail",
-        "tag": "parasail",
-        "quantization": null,
-        "max_completion_tokens": 16384,
         "max_prompt_tokens": null,
         "supported_parameters": [
           "max_tokens",

@@ -8,8 +8,13 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text+image→text",
-      "input_modalities": ["text", "image"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {
@@ -29,9 +34,13 @@
         "provider_name": "alibaba",
         "tag": "alibaba",
         "quantization": null,
-        "max_completion_tokens": 129024,
+        "max_completion_tokens": 32768,
         "max_prompt_tokens": null,
-        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop"
+        ],
         "status": 0,
         "uptime_last_30m": null,
         "supports_implicit_caching": false

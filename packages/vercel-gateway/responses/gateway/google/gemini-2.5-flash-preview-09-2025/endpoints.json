@@ -8,8 +8,14 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text+image+file→text",
-      "input_modalities": ["text", "image", "file"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {
@@ -24,6 +30,7 @@
           "image_output": "0",
           "web_search": "0",
           "internal_reasoning": "0",
+          "input_cache_read": "0.00000003",
           "discount": 0
         },
         "provider_name": "google",

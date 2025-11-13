@@ -8,8 +8,12 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text→text",
-      "input_modalities": ["text"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {
@@ -17,8 +21,8 @@
         "model_name": "GLM 4.6",
         "context_length": 200000,
         "pricing": {
-          "prompt": "0.0000006",
-          "completion": "0.0000022",
+          "prompt": "0.00000045",
+          "completion": "0.0000018",
           "request": "0",
           "image": "0",
           "image_output": "0",

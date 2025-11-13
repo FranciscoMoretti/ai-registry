@@ -8,8 +8,12 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text→text",
-      "input_modalities": ["text"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {
@@ -29,7 +33,7 @@
         "provider_name": "alibaba",
         "tag": "alibaba",
         "quantization": null,
-        "max_completion_tokens": 1000000,
+        "max_completion_tokens": 65536,
         "max_prompt_tokens": null,
         "supported_parameters": [
           "max_tokens",

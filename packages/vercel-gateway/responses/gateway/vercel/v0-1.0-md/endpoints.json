@@ -8,8 +8,13 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text+image→text",
-      "input_modalities": ["text", "image"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {

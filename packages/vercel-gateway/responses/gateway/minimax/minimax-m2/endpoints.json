@@ -1,0 +1,55 @@
+{
+  "data": {
+    "id": "minimax/minimax-m2",
+    "name": "MiniMax M2",
+    "created": 1755815280,
+    "description": "MiniMax-M2 redefines efficiency for agents. It is a compact, fast, and cost-effective MoE model (230 billion total parameters with 10 billion active parameters) built for elite performance in coding and agentic tasks, all while maintaining powerful general intelligence.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "minimax | minimax/minimax-m2",
+        "model_name": "MiniMax M2",
+        "context_length": 205000,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000003",
+          "input_cache_write": "0.000000375",
+          "discount": 0
+        },
+        "provider_name": "minimax",
+        "tag": "minimax",
+        "quantization": null,
+        "max_completion_tokens": 205000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

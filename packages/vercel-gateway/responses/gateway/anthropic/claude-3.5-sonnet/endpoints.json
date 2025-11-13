@@ -3,47 +3,21 @@
     "id": "anthropic/claude-3.5-sonnet",
     "name": "Claude 3.5 Sonnet",
     "created": 1755815280,
-    "description": "Claude 3.5 Sonnet strikes the ideal balance between intelligence and speed—particularly for enterprise workloads. It delivers strong performance at a lower cost compared to its peers, and is engineered for high endurance in large-scale AI deployments.",
+    "description": "The upgraded Claude 3.5 Sonnet is now state-of-the-art for a variety of tasks including real-world software engineering, agentic capabilities and computer use. The new Claude 3.5 Sonnet delivers these advancements at the same price and speed as its predecessor.",
     "architecture": {
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text+image+file→text",
-      "input_modalities": ["text", "image", "file"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
-      {
-        "name": "anthropic | anthropic/claude-3.5-sonnet",
-        "model_name": "Claude 3.5 Sonnet",
-        "context_length": 200000,
-        "pricing": {
-          "prompt": "0.000003",
-          "completion": "0.000015",
-          "request": "0",
-          "image": "0",
-          "image_output": "0",
-          "web_search": "0",
-          "internal_reasoning": "0",
-          "input_cache_read": "0.0000003",
-          "input_cache_write": "0.00000375",
-          "discount": 0
-        },
-        "provider_name": "anthropic",
-        "tag": "anthropic",
-        "quantization": null,
-        "max_completion_tokens": 8192,
-        "max_prompt_tokens": null,
-        "supported_parameters": [
-          "max_tokens",
-          "temperature",
-          "stop",
-          "tools",
-          "tool_choice"
-        ],
-        "status": 0,
-        "uptime_last_30m": null,
-        "supports_implicit_caching": false
-      },
       {
         "name": "bedrock | anthropic/claude-3.5-sonnet",
         "model_name": "Claude 3.5 Sonnet",

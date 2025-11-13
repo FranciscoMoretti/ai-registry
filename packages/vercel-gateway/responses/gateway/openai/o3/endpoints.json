@@ -8,8 +8,14 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text+image+file→text",
-      "input_modalities": ["text", "image", "file"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {

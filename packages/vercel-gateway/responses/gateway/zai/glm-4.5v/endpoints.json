@@ -8,8 +8,13 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text+image→text",
-      "input_modalities": ["text", "image"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {
@@ -68,9 +73,7 @@
           "temperature",
           "stop",
           "tools",
-          "tool_choice",
-          "reasoning",
-          "include_reasoning"
+          "tool_choice"
         ],
         "status": 0,
         "uptime_last_30m": null,

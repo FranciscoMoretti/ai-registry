@@ -8,8 +8,12 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text→text",
-      "input_modalities": ["text"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {

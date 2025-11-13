@@ -60,7 +60,8 @@ async function main() {
 
   await Promise.all(ids.map((id) => limit(() => fetchAndSaveEndpoint(id))));
 
-  // Build models.generated.ts by joining gateway snapshot + endpoints
+  // Build models.generated.ts as a dictionary like fetch-base.ts,
+  // but augmented with input_modalities and output_modalities from endpoints.
   const gatewaySnapshotPath = join(
     ROOT,
     "packages/vercel-gateway/responses/gateway/models.json"
@@ -70,76 +71,10 @@ async function main() {
   ) as AiGatewayModelsResponse;
 
   const nonEmbedding = gateway.data.filter((m) => m.type !== "embedding");
+  const sorted = [...nonEmbedding].sort((a, b) => a.id.localeCompare(b.id));
 
-  const lines: string[] = [];
-  const providers = [...new Set(nonEmbedding.map((m) => m.owned_by))].sort();
-  const modelIds = [...new Set(nonEmbedding.map((m) => m.id))].sort();
-  const allTags = [
-    ...new Set(gateway.data.flatMap((m) => m.tags ?? [])),
-  ].sort();
-
-  lines.push("// List of unique providers extracted from models data");
-  lines.push(
-    `export const providers = ${JSON.stringify(providers, null, 2)} as const;`
-  );
-  lines.push("");
-  lines.push("export type ProviderId = (typeof providers)[number];");
-  lines.push("");
-  lines.push("// List of all model ids extracted from models data");
-  lines.push(
-    `export const models = ${JSON.stringify(modelIds, null, 2)} as const;`
-  );
-  lines.push("");
-  lines.push("export type ModelId = (typeof models)[number];");
-  lines.push("");
-  lines.push("// List of unique tags extracted from models data");
-  lines.push(
-    `export const modelTags = ${JSON.stringify(allTags, null, 2)} as const;`
-  );
-  lines.push("");
-  lines.push("export type ModelTag = (typeof modelTags)[number];");
-  lines.push("");
-  lines.push("export interface ModelData {");
-  lines.push("  id: ModelId;");
-  lines.push("  object: string;");
-  lines.push("  owned_by: ProviderId;");
-  lines.push("  name: string;");
-  lines.push("  description: string;");
-  lines.push("  type: 'language' | 'embedding';");
-  lines.push("  tags?: ModelTag[];");
-  lines.push("  context_window: number; // Max input tokens");
-  lines.push("  max_tokens: number; // Max output tokens");
-  lines.push("  pricing: {");
-  lines.push("    input: string; // Input price per token");
-  lines.push("    output: string; // Output price per token");
-  lines.push(
-    "    input_cache_read?: string; // Input cache read price per token"
-  );
-  lines.push(
-    "    input_cache_write?: string; // Input cache write price per token"
-  );
-  lines.push("  };");
-  lines.push("  // Derived features from endpoints and tags");
-  lines.push("  reasoning: boolean;");
-  lines.push("  toolCall: boolean;");
-  lines.push("  input: {");
-  lines.push("    image: boolean;");
-  lines.push("    text: boolean;");
-  lines.push("    pdf: boolean;");
-  lines.push("    video: boolean;");
-  lines.push("    audio: boolean;");
-  lines.push("  };");
-  lines.push("  output: {");
-  lines.push("    image: boolean;");
-  lines.push("    text: boolean;");
-  lines.push("    audio: boolean;");
-  lines.push("  };");
-  lines.push("}");
-  lines.push("");
-
-  lines.push("// Define the data with proper typing");
-  lines.push("export const modelsData: ModelData[] = [");
-  for (const m of nonEmbedding) {
+  let tsOut = "export const models = {\n";
+  for (const m of sorted) {
     const [provider, ...rest] = m.id.split("/");
     const modelName = rest.join("/");
     const epPath = join(
@@ -149,70 +84,59 @@ async function main() {
       modelName,
       "endpoints.json"
     );
-    let input = {
-      image: false,
-      text: true,
-      pdf: false,
-      video: false,
-      audio: false,
-    };
-    let output = { image: false, text: true, audio: false };
+
+    const tags = m.tags ?? [];
+    const hasReasoningTag = tags.includes("reasoning");
+    const hasToolUseTag = tags.includes("tool-use");
+
+    let inputModalities: string[] = [];
+    let outputModalities: string[] = [];
     let reasoning = false;
     let toolCall = false;
+
     try {
       const ep = AiGatewayEndpointsResponseSchema.parse(
         JSON.parse(readFileSync(epPath, "utf8")) as unknown
       ) as AiGatewayEndpointsResponse;
       const data = ep?.data ?? null;
-      const inMods = new Set(data?.architecture?.input_modalities ?? []);
-      const outMods = new Set(data?.architecture?.output_modalities ?? []);
-      input = {
-        image: inMods.has("image"),
-        text: inMods.has("text"),
-        pdf: inMods.has("file"),
-        video: inMods.has("video"),
-        audio: inMods.has("audio"),
-      };
-      output = {
-        image: outMods.has("image"),
-        text: outMods.has("text"),
-        audio: outMods.has("audio"),
-      };
+      inputModalities = (data?.architecture?.input_modalities ??
+        []) as string[];
+      outputModalities = (data?.architecture?.output_modalities ??
+        []) as string[];
       const params = new Set(
         (data?.endpoints ?? []).flatMap((e) => e.supported_parameters ?? [])
       );
       toolCall = params.has("tools") || params.has("tool_choice");
       reasoning = params.has("reasoning") || params.has("include_reasoning");
     } catch (err) {
-      console.error(`Error fetching endpoints for ${m.id}:`, err);
+      console.error(`Error reading endpoints for ${m.id}:`, err);
     }
 
-    lines.push("  {");
-    lines.push(`    id: '${m.id}',`);
-    lines.push("    object: 'model',");
-    lines.push(`    owned_by: '${provider}',`);
-    lines.push(`    name: ${JSON.stringify(m.name)},`);
-    lines.push(`    description: ${JSON.stringify(m.description)},`);
-    lines.push("    type: 'language',");
-    lines.push(`    tags: ${JSON.stringify(m.tags ?? [])},`);
-    lines.push(`    context_window: ${m.context_window},`);
-    lines.push(`    max_tokens: ${m.max_tokens},`);
-    lines.push(`    pricing: ${JSON.stringify(m.pricing)},`);
-    lines.push(`    reasoning: ${reasoning},`);
-    lines.push(`    toolCall: ${toolCall},`);
-    lines.push(`    input: ${JSON.stringify(input)},`);
-    lines.push(`    output: ${JSON.stringify(output)},`);
-    lines.push("  },");
+    const pricing = { input: m.pricing.input, output: m.pricing.output };
+
+    tsOut += ` ${JSON.stringify(m.id)}: {\n`;
+    tsOut += `    id: ${JSON.stringify(m.id)},\n`;
+    tsOut += `    object: ${JSON.stringify("model")},\n`;
+    tsOut += `    owned_by: ${JSON.stringify(m.owned_by)},\n`;
+    tsOut += `    name: ${JSON.stringify(m.name)},\n`;
+    tsOut += `    description: ${JSON.stringify(m.description)},\n`;
+    tsOut += `    type: ${JSON.stringify(m.type)},\n`;
+    if (tags.length > 0) {
+      tsOut += `    tags: ${JSON.stringify(tags)},\n`;
+    }
+    tsOut += `    context_window: ${m.context_window},\n`;
+    tsOut += `    max_tokens: ${m.max_tokens},\n`;
+    tsOut += `    pricing: ${JSON.stringify(pricing)},\n`;
+    tsOut += `    reasoning: ${reasoning || hasReasoningTag},\n`;
+    tsOut += `    toolCall: ${toolCall || hasToolUseTag},\n`;
+    tsOut += `    input_modalities: ${JSON.stringify(inputModalities)},\n`;
+    tsOut += `    output_modalities: ${JSON.stringify(outputModalities)},\n`;
+    tsOut += "  },\n";
   }
-  lines.push("];");
+  tsOut += "} as const\n";
 
   const outTs = join(ROOT, "packages/vercel-gateway/models.generated.ts");
-  writeFileSync(outTs, lines.join("\n"));
-  try {
-    execSync(`npx biome format --write ${outTs}`);
-  } catch (err) {
-    console.error(`Error formatting ${outTs}:`, err);
-  }
+  writeFileSync(outTs, tsOut);
 }
 
 main().catch((err) => {

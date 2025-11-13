@@ -1148,8 +1148,10 @@
         "tool-use"
       ],
       "pricing": {
-        "input": "0",
-        "output": "0"
+        "input": "0.0000003",
+        "output": "0.0000012",
+        "input_cache_read": "0.00000003",
+        "input_cache_write": "0.000000375"
       }
     },
     {
@@ -1487,8 +1489,7 @@
       ],
       "pricing": {
         "input": "0.0000006",
-        "output": "0.0000025",
-        "input_cache_read": "0.00000015"
+        "output": "0.0000025"
       }
     },
     {
@@ -1753,7 +1754,14 @@
       "context_window": 128000,
       "max_tokens": 16384,
       "type": "language",
-      "tags": [],
+      "tags": [
+        "tool-use",
+        "implicit-caching",
+        "file-input",
+        "image-generation",
+        "vision",
+        "reasoning"
+      ],
       "pricing": {
         "input": "0.00000125",
         "output": "0.00001",

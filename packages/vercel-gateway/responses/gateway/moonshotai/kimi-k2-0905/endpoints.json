@@ -8,8 +8,12 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text→text",
-      "input_modalities": ["text"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {
@@ -31,7 +35,11 @@
         "quantization": null,
         "max_completion_tokens": 16384,
         "max_prompt_tokens": null,
-        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop"
+        ],
         "status": 0,
         "uptime_last_30m": null,
         "supports_implicit_caching": false
@@ -55,7 +63,13 @@
         "quantization": null,
         "max_completion_tokens": 128000,
         "max_prompt_tokens": null,
-        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
         "status": 0,
         "uptime_last_30m": null,
         "supports_implicit_caching": false
@@ -79,7 +93,13 @@
         "quantization": null,
         "max_completion_tokens": 16384,
         "max_prompt_tokens": null,
-        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
         "status": 0,
         "uptime_last_30m": null,
         "supports_implicit_caching": false
@@ -103,10 +123,16 @@
         "quantization": null,
         "max_completion_tokens": 16384,
         "max_prompt_tokens": null,
-        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
         "status": 0,
         "uptime_last_30m": null,
-        "supports_implicit_caching": false
+        "supports_implicit_caching": true
       }
     ]
   }

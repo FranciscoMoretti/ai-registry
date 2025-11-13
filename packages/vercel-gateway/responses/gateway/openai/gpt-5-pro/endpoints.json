@@ -7,9 +7,16 @@
     "architecture": {
       "tokenizer": null,
       "instruct_type": null,
-      "modality": "text+image+file→text",
-      "input_modalities": ["text", "image", "file"],
-      "output_modalities": ["text"]
+      "modality": "text+image+file→text+image",
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text",
+        "image"
+      ]
     },
     "endpoints": [
       {

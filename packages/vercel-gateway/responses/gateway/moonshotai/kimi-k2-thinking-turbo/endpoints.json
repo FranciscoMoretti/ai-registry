@@ -1,0 +1,54 @@
+{
+  "data": {
+    "id": "moonshotai/kimi-k2-thinking-turbo",
+    "name": "Kimi K2 Thinking Turbo",
+    "created": 1755815280,
+    "description": "High-speed version of kimi-k2-thinking, suitable for scenarios requiring both deep reasoning and extremely fast responses",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text→text",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "moonshotai | moonshotai/kimi-k2-thinking-turbo",
+        "model_name": "Kimi K2 Thinking Turbo",
+        "context_length": 262114,
+        "pricing": {
+          "prompt": "0.00000115",
+          "completion": "0.000008",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.00000015",
+          "discount": 0
+        },
+        "provider_name": "moonshotai",
+        "tag": "moonshotai",
+        "quantization": null,
+        "max_completion_tokens": 262114,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": true
+      }
+    ]
+  }
+}

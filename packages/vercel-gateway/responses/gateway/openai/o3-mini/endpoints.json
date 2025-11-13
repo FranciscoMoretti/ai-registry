@@ -8,8 +8,13 @@
       "tokenizer": null,
       "instruct_type": null,
       "modality": "text+file→text",
-      "input_modalities": ["text", "file"],
-      "output_modalities": ["text"]
+      "input_modalities": [
+        "text",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {

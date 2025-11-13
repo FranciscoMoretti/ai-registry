@@ -7,9 +7,15 @@
     "architecture": {
       "tokenizer": null,
       "instruct_type": null,
-      "modality": "text→text",
-      "input_modalities": ["text"],
-      "output_modalities": ["text"]
+      "modality": "text+image+file→text",
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
     },
     "endpoints": [
       {
@@ -33,7 +39,15 @@
         "quantization": null,
         "max_completion_tokens": 64000,
         "max_prompt_tokens": null,
-        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
         "status": 0,
         "uptime_last_30m": null,
         "supports_implicit_caching": false
@@ -59,7 +73,15 @@
         "quantization": null,
         "max_completion_tokens": 64000,
         "max_prompt_tokens": null,
-        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
         "status": 0,
         "uptime_last_30m": null,
         "supports_implicit_caching": false
@@ -85,7 +107,15 @@
         "quantization": null,
         "max_completion_tokens": 64000,
         "max_prompt_tokens": null,
-        "supported_parameters": ["max_tokens", "temperature", "stop"],
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
         "status": 0,
         "uptime_last_30m": null,
         "supports_implicit_caching": false
