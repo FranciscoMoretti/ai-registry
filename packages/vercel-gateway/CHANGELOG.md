@@ -1,5 +1,11 @@
 # @airegistry/vercel-gateway
 
+## 0.0.4
+
+### Patch Changes
+
+- 8dbd14c: Added new models and minimax provider
+
 ## 0.0.3
 
 ### Patch Changes
