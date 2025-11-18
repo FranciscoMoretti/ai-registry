@@ -1,5 +1,11 @@
 # @airegistry/vercel-gateway
 
+## 0.0.6
+
+### Patch Changes
+
+- cca9242: update
+
 ## 0.0.4
 
 ### Patch Changes
