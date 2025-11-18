@@ -1,0 +1,89 @@
+{
+  "data": {
+    "id": "openai/gpt-5.1-codex",
+    "name": "GPT-5.1-Codex",
+    "created": 1755815280,
+    "description": "GPT-5.1-Codex is a version of GPT-5.1 optimized for agentic coding tasks in Codex or similar environments.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text",
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "azure | openai/gpt-5.1-codex",
+        "model_name": "GPT-5.1-Codex",
+        "context_length": 400000,
+        "pricing": {
+          "prompt": "0.00000125",
+          "completion": "0.00001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.000000125",
+          "discount": 0
+        },
+        "provider_name": "azure",
+        "tag": "azure",
+        "quantization": null,
+        "max_completion_tokens": 128000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "openai | openai/gpt-5.1-codex",
+        "model_name": "GPT-5.1-Codex",
+        "context_length": 400000,
+        "pricing": {
+          "prompt": "0.00000125",
+          "completion": "0.00001",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.000000125",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 128000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

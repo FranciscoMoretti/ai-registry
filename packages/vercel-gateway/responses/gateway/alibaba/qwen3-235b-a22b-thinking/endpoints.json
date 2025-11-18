@@ -1,0 +1,85 @@
+{
+  "data": {
+    "id": "alibaba/qwen3-235b-a22b-thinking",
+    "name": "Qwen3 235B A22B Thinking 2507",
+    "created": 1755815280,
+    "description": "Qwen3-235B-A22B-Thinking-2507 is the Qwen3's new model with scaling the thinking capability of Qwen3-235B-A22B, improving both the quality and depth of reasoning.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text",
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "deepinfra | alibaba/qwen3-235b-a22b-thinking",
+        "model_name": "Qwen3 235B A22B Thinking 2507",
+        "context_length": 262114,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000029",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "deepinfra",
+        "tag": "deepinfra",
+        "quantization": null,
+        "max_completion_tokens": 262114,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "novita | alibaba/qwen3-235b-a22b-thinking",
+        "model_name": "Qwen3 235B A22B Thinking 2507",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0.00000098",
+          "completion": "0.00000395",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "novita",
+        "tag": "novita",
+        "quantization": null,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

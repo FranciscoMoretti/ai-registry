@@ -1,0 +1,56 @@
+{
+  "data": {
+    "id": "openai/gpt-5.1-codex-mini",
+    "name": "GPT-5.1 Codex mini",
+    "created": 1755815280,
+    "description": "GPT-5.1 Codex mini is a smaller, faster, and cheaper version of GPT-5.1 Codex.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text",
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "openai | openai/gpt-5.1-codex-mini",
+        "model_name": "GPT-5.1 Codex mini",
+        "context_length": 400000,
+        "pricing": {
+          "prompt": "0.00000025",
+          "completion": "0.000002",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "input_cache_read": "0.000000025",
+          "discount": 0
+        },
+        "provider_name": "openai",
+        "tag": "openai",
+        "quantization": null,
+        "max_completion_tokens": 128000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

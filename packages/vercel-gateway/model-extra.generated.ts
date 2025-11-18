@@ -146,6 +146,9 @@ export const generatedModelExtra = {
   'moonshotai/kimi-k2-thinking': {
     releaseDate: new Date('2025-11-06'),
   },
+  'moonshotai/kimi-k2-thinking-turbo': {
+    releaseDate: new Date('2025-11-06'),
+  },
   'morph/morph-v3-fast': {
     releaseDate: new Date('2024-08-15'),
   },

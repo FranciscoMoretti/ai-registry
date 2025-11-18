@@ -1,0 +1,87 @@
+{
+  "data": {
+    "id": "google/gemini-3-pro-preview",
+    "name": "Gemini 3 Pro Preview",
+    "created": 1755815280,
+    "description": "This model improves upon Gemini 2.5 Pro and is catered towards challenging tasks, especially those involving complex reasoning or agentic workflows. Improvements highlighted include use cases for coding, multi-step function calling, planning, reasoning, deep knowledge tasks, and instruction following.",
+    "architecture": {
+      "tokenizer": null,
+      "instruct_type": null,
+      "modality": "text+image+file→text",
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "google | google/gemini-3-pro-preview",
+        "model_name": "Gemini 3 Pro Preview",
+        "context_length": 1000000,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000012",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "google",
+        "tag": "google",
+        "quantization": null,
+        "max_completion_tokens": 64000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      },
+      {
+        "name": "vertex | google/gemini-3-pro-preview",
+        "model_name": "Gemini 3 Pro Preview",
+        "context_length": 1000000,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000012",
+          "request": "0",
+          "image": "0",
+          "image_output": "0",
+          "web_search": "0",
+          "internal_reasoning": "0",
+          "discount": 0
+        },
+        "provider_name": "vertex",
+        "tag": "vertex",
+        "quantization": null,
+        "max_completion_tokens": 64000,
+        "max_prompt_tokens": null,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "stop",
+          "tools",
+          "tool_choice",
+          "reasoning",
+          "include_reasoning"
+        ],
+        "status": 0,
+        "uptime_last_30m": null,
+        "supports_implicit_caching": false
+      }
+    ]
+  }
+}

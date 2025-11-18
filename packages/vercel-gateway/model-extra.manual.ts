@@ -111,6 +111,12 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   },
 
   // OpenAI
+  "openai/gpt-5.1-codex": {
+    releaseDate: new Date("2025-08-21"),
+  },
+  "openai/gpt-5.1-codex-mini": {
+    releaseDate: new Date("2025-08-21"),
+  },
   "openai/gpt-5.1-instant": {
     releaseDate: new Date("2025-10-01"),
   },
@@ -138,11 +144,6 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   "mistral/magistral-small-2506": {
     releaseDate: new Date("2025-06-25"),
   },
-
-  // Moonshot Kimi
-  "moonshotai/kimi-k2-thinking-turbo": {
-    releaseDate: new Date("2025-11-06"),
-  },
   "moonshotai/kimi-k2-turbo": {
     releaseDate: new Date("2025-09-05"),
   },
@@ -158,5 +159,15 @@ export const manualModelExtra: Record<CustomModelExtraModelId, ModelExtra> = {
   // xAI Grok 4 fast reasoning
   "xai/grok-4-fast-reasoning": {
     releaseDate: new Date("2025-08-30"),
+  },
+
+  // Alibaba Qwen3 235B A22B Thinking
+  "alibaba/qwen3-235b-a22b-thinking": {
+    releaseDate: new Date("2025-08-21"),
+  },
+
+  // Google Gemini 3 Pro Preview
+  "google/gemini-3-pro-preview": {
+    releaseDate: new Date("2025-08-21"),
   },
 };
