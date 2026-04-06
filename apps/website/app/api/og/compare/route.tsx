@@ -1,5 +1,5 @@
-import { allModels } from "@airegistry/vercel-gateway";
 import { ImageResponse } from "@vercel/og";
+import { getModelById } from "@/lib/ai/models";
 import {
   OGCard,
   OGContainer,
@@ -55,10 +55,8 @@ export async function GET(req: Request) {
     );
   }
 
-  const left = allModels.find((m) => m.id === modelId1) || null;
-  const right = modelId2
-    ? allModels.find((m) => m.id === modelId2) || null
-    : null;
+  const left = await getModelById(modelId1);
+  const right = modelId2 ? await getModelById(modelId2) : null;
 
   // modelId1 is required, so no ecosystem summary branch
 

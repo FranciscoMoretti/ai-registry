@@ -1,11 +1,7 @@
 "use client";
 
-import type {
-  ModelDefinition,
-  ModelId,
-  ProviderId,
-} from "@airegistry/vercel-gateway";
 import { ChevronUpIcon, FilterIcon } from "lucide-react";
+import type { ModelData } from "@/lib/ai/model-data";
 import {
   type ComponentProps,
   memo,
@@ -122,7 +118,7 @@ function PureCommandItem<
   isSelected: boolean;
   onSelectModel: (id: TModelId) => void;
 }) {
-  const provider = definition.owned_by as ProviderId;
+  const provider = definition.owned_by;
   const featureIcons = useMemo(() => getFeatureIcons(definition), [definition]);
   const hasReasoning = useMemo(() => definition.reasoning, [definition]);
   const searchValue = useMemo(
@@ -350,8 +346,8 @@ export const ModelSelectorPopoverContent = memo(
 ) as typeof PureModelSelectorPopoverContent;
 
 export type ModelSelectorBaseItem<
-  TModelId extends string = ModelId,
-  TModelDefinition extends ModelDefinitionLike = ModelDefinition,
+  TModelId extends string = string,
+  TModelDefinition extends ModelDefinitionLike = ModelData,
 > = {
   id: TModelId;
   definition: TModelDefinition;
@@ -359,8 +355,8 @@ export type ModelSelectorBaseItem<
 };
 
 export function PureModelSelectorBase<
-  TModelId extends string = ModelId,
-  TModelDefinition extends ModelDefinitionLike = ModelDefinition,
+  TModelId extends string = string,
+  TModelDefinition extends ModelDefinitionLike = ModelData,
 >({
   models,
   selectedModelId,
@@ -433,7 +429,7 @@ export function PureModelSelectorBase<
     if (!selectedItem) {
       return null;
     }
-    const provider = selectedItem.definition.owned_by as ProviderId;
+    const provider = selectedItem.definition.owned_by;
     return getProviderIcon(provider);
   }, [selectedItem]);
 

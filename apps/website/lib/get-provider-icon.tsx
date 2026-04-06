@@ -1,5 +1,4 @@
 "use client";
-import type { ProviderId } from "@airegistry/vercel-gateway";
 import {
   Alibaba,
   Anthropic,
@@ -18,7 +17,7 @@ import {
   ZAI,
 } from "@lobehub/icons";
 
-export function getProviderIcon(provider: ProviderId, size = 16) {
+export function getProviderIcon(provider: string, size = 16) {
   const iconProps = { size };
   switch (provider) {
     case "openai":

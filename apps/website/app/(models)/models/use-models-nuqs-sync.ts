@@ -103,10 +103,22 @@ export const createUseModelsNuqsSync = (store: ModelsStoreApi) => {
           toolCall: qs.tc,
           temperatureControl: qs.tctl,
         },
-        contextLength: [qs.cmin, qs.cmax],
-        maxTokens: [qs.tmin, qs.tmax],
-        inputPricing: [qs.ipmin, qs.ipmax],
-        outputPricing: [qs.opmin, qs.opmax],
+        contextLength: [
+          qs.cmin ?? s.contextLength[0],
+          qs.cmax ?? s.contextLength[1],
+        ],
+        maxTokens: [
+          qs.tmin ?? s.maxTokens[0],
+          qs.tmax ?? s.maxTokens[1],
+        ],
+        inputPricing: [
+          qs.ipmin ?? s.inputPricing[0],
+          qs.ipmax ?? s.inputPricing[1],
+        ],
+        outputPricing: [
+          qs.opmin ?? s.outputPricing[0],
+          qs.opmax ?? s.outputPricing[1],
+        ],
       };
       if (s.searchQuery !== qs.q) s.setSearchQuery(qs.q);
       if (s.sortBy !== qs.sort) s.setSortBy(qs.sort as SortOption);

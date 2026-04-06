@@ -1,38 +1,28 @@
 "use client";
 
-import { allModels, type ModelDefinition } from "@airegistry/vercel-gateway";
-import { createSelectorHooks, type ZustandHookSelectors } from "auto-zustand-selectors-hook";
-import { create } from "zustand";
+import { createContext, useContext, useRef } from "react";
+import { createStore, type StoreApi, useStore } from "zustand";
 import { devtools } from "zustand/middleware";
 import type { FilterState } from "@/app/(models)/models/model-filters";
-import { MODEL_RANGE_LIMITS } from "./models-constants";
+import type { ModelData } from "@/lib/ai/model-data";
+import { computeModelRangeLimits, type ModelRangeLimits } from "./models-constants";
 import type { SortOption } from "./models-types";
 import { createUseModelsNuqsSync } from "./use-models-nuqs-sync";
 
-export { MODEL_RANGE_LIMITS } from "./models-constants";
 export type { SortOption } from "./models-types";
 
-const DEFAULT_FILTERS: FilterState = {
-  inputModalities: [],
-  outputModalities: [],
-  contextLength: MODEL_RANGE_LIMITS.context,
-  inputPricing: MODEL_RANGE_LIMITS.inputPricing,
-  outputPricing: MODEL_RANGE_LIMITS.outputPricing,
-  maxTokens: MODEL_RANGE_LIMITS.maxTokens,
-  providers: [],
-  features: { reasoning: false, toolCall: false, temperatureControl: false },
-  series: [],
-  categories: [],
-  supportedParameters: [],
-};
-
-// SortOption moved to models-types.ts for reuse in parsers
+const defaultSortBy: SortOption = "newest";
 
 export type ModelsStore = {
+  // All models (immutable for the lifetime of this provider)
+  allModels: ModelData[];
+  rangeLimits: ModelRangeLimits;
+
   searchQuery: string;
   setSearchQuery: (v: string) => void;
   sortBy: SortOption;
   setSortBy: (v: SortOption) => void;
+
   // Flattened filter fields (granular)
   inputModalities: string[];
   outputModalities: string[];
@@ -49,6 +39,7 @@ export type ModelsStore = {
   series: string[];
   categories: string[];
   supportedParameters: string[];
+
   // Granular setters
   setInputModalities: (v: string[]) => void;
   setOutputModalities: (v: string[]) => void;
@@ -61,35 +52,18 @@ export type ModelsStore = {
   setSeries: (v: string[]) => void;
   setCategories: (v: string[]) => void;
   setSupportedParameters: (v: string[]) => void;
+
   // Batch compatibility setters
   setFilters: (v: FilterState) => void;
   updateFilters: (v: Partial<FilterState>) => void;
   resetFiltersAndSearch: () => void;
+
   // Derived values (non-function for hook reactivity)
-  resultModels: ModelDefinition[];
+  resultModels: ModelData[];
   activeFiltersCount: number;
   hasActiveFilters: boolean;
 };
 
-const defaultSortBy: SortOption = "newest";
-
-const defaultModelsState = {
-  searchQuery: "",
-  sortBy: defaultSortBy,
-  inputModalities: DEFAULT_FILTERS.inputModalities,
-  outputModalities: DEFAULT_FILTERS.outputModalities,
-  contextLength: DEFAULT_FILTERS.contextLength,
-  inputPricing: DEFAULT_FILTERS.inputPricing,
-  outputPricing: DEFAULT_FILTERS.outputPricing,
-  maxTokens: DEFAULT_FILTERS.maxTokens,
-  providers: DEFAULT_FILTERS.providers,
-  features: DEFAULT_FILTERS.features,
-  series: DEFAULT_FILTERS.series,
-  categories: DEFAULT_FILTERS.categories,
-  supportedParameters: DEFAULT_FILTERS.supportedParameters,
-} as const;
-
-// ----- Equality helpers for granular filter updates -----
 const arrayEquals = <T,>(a: readonly T[], b: readonly T[]): boolean => {
   if (a === b) return true;
   if (a.length !== b.length) return false;
@@ -99,8 +73,10 @@ const arrayEquals = <T,>(a: readonly T[], b: readonly T[]): boolean => {
   return true;
 };
 
-const tupleEquals = (a: readonly [number, number], b: readonly [number, number]): boolean =>
-  a[0] === b[0] && a[1] === b[1];
+const tupleEquals = (
+  a: readonly [number, number],
+  b: readonly [number, number]
+): boolean => a[0] === b[0] && a[1] === b[1];
 
 const featuresEquals = (
   a: NonNullable<FilterState["features"]>,
@@ -123,28 +99,33 @@ const filtersEqual = (a: FilterState, b: FilterState): boolean =>
   arrayEquals(a.categories, b.categories) &&
   arrayEquals(a.supportedParameters, b.supportedParameters);
 
-type StrictFeatures = { reasoning: boolean; toolCall: boolean; temperatureControl: boolean };
+type StrictFeatures = {
+  reasoning: boolean;
+  toolCall: boolean;
+  temperatureControl: boolean;
+};
 const normalizeFeatures = (f?: FilterState["features"]): StrictFeatures => ({
   reasoning: !!f?.reasoning,
   toolCall: !!f?.toolCall,
   temperatureControl: !!f?.temperatureControl,
 });
 
-// Assemble FilterState from flattened store
-const assembleFilters = (s: Pick<
-  ModelsStore,
-  | "inputModalities"
-  | "outputModalities"
-  | "contextLength"
-  | "inputPricing"
-  | "outputPricing"
-  | "maxTokens"
-  | "providers"
-  | "features"
-  | "series"
-  | "categories"
-  | "supportedParameters"
->): FilterState => ({
+const assembleFilters = (
+  s: Pick<
+    ModelsStore,
+    | "inputModalities"
+    | "outputModalities"
+    | "contextLength"
+    | "inputPricing"
+    | "outputPricing"
+    | "maxTokens"
+    | "providers"
+    | "features"
+    | "series"
+    | "categories"
+    | "supportedParameters"
+  >
+): FilterState => ({
   inputModalities: s.inputModalities,
   outputModalities: s.outputModalities,
   contextLength: s.contextLength,
@@ -158,11 +139,14 @@ const assembleFilters = (s: Pick<
   supportedParameters: s.supportedParameters,
 });
 
-// ----- Store implementation (hook-based) -----
-
-const computeActiveFiltersCount = (f: FilterState): number => {
-  const rangeEquals = (a: [number, number], b: [number, number]): boolean =>
-    a[0] === b[0] && a[1] === b[1];
+const computeActiveFiltersCount = (
+  f: FilterState,
+  defaults: FilterState
+): number => {
+  const rangeEquals = (
+    a: [number, number],
+    b: [number, number]
+  ): boolean => a[0] === b[0] && a[1] === b[1];
   let count = 0;
   count += f.inputModalities.length;
   count += f.outputModalities.length;
@@ -173,363 +157,371 @@ const computeActiveFiltersCount = (f: FilterState): number => {
   count += f.features.reasoning ? 1 : 0;
   count += f.features.toolCall ? 1 : 0;
   count += f.features.temperatureControl ? 1 : 0;
-  count += rangeEquals(f.contextLength, DEFAULT_FILTERS.contextLength) ? 0 : 1;
-  count += rangeEquals(f.inputPricing, DEFAULT_FILTERS.inputPricing) ? 0 : 1;
-  count += rangeEquals(f.outputPricing, DEFAULT_FILTERS.outputPricing) ? 0 : 1;
-  count += rangeEquals(f.maxTokens, DEFAULT_FILTERS.maxTokens) ? 0 : 1;
+  count += rangeEquals(f.contextLength, defaults.contextLength) ? 0 : 1;
+  count += rangeEquals(f.inputPricing, defaults.inputPricing) ? 0 : 1;
+  count += rangeEquals(f.outputPricing, defaults.outputPricing) ? 0 : 1;
+  count += rangeEquals(f.maxTokens, defaults.maxTokens) ? 0 : 1;
   return count;
 };
-  const computeResults = (
-    searchQuery: string,
-    filters: FilterState,
-    sortBy: SortOption
-  ): ModelDefinition[] => {
-    let workingList: ModelDefinition[] = allModels;
 
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      workingList = workingList.filter(
-        (m) =>
-          m.name.toLowerCase().includes(q) ||
-          m.owned_by.toLowerCase().includes(q) ||
-          m.description.toLowerCase().includes(q)
-      );
+const computeResults = (
+  allModels: ModelData[],
+  searchQuery: string,
+  filters: FilterState,
+  sortBy: SortOption
+): ModelData[] => {
+  let workingList: ModelData[] = allModels;
+
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    workingList = workingList.filter(
+      (m) =>
+        m.name.toLowerCase().includes(q) ||
+        m.owned_by.toLowerCase().includes(q) ||
+        m.description.toLowerCase().includes(q)
+    );
+  }
+
+  const f = filters;
+  const filteredList = workingList.filter((m) => {
+    if (f.providers.length > 0 && !f.providers.includes(m.owned_by)) {
+      return false;
     }
+    if (f.inputModalities.length > 0) {
+      const fi = m.input;
+      const set = new Set<string>(
+        [
+          fi?.text ? "text" : "",
+          fi?.image ? "image" : "",
+          fi?.audio ? "audio" : "",
+          fi?.pdf ? "pdf" : "",
+          fi?.video ? "video" : "",
+        ].filter(Boolean)
+      );
+      if (!f.inputModalities.some((val) => set.has(val))) {
+        return false;
+      }
+    }
+    if (f.outputModalities.length > 0) {
+      const fo = m.output;
+      const set = new Set<string>(
+        [
+          fo?.text ? "text" : "",
+          fo?.image ? "image" : "",
+          fo?.audio ? "audio" : "",
+        ].filter(Boolean)
+      );
+      if (!f.outputModalities.some((val) => set.has(val))) {
+        return false;
+      }
+    }
+    const contextOk =
+      m.context_window >= f.contextLength[0] &&
+      m.context_window <= f.contextLength[1];
+    if (!contextOk) return false;
 
-    const f = filters;
-    const filteredList = workingList.filter((m) => {
-      if (f.providers.length > 0 && !f.providers.includes(m.owned_by)) {
-        return false;
-      }
-      if (f.inputModalities.length > 0) {
-        const fi = m.input;
-        const set = new Set<string>(
-          [
-            fi?.text ? "text" : "",
-            fi?.image ? "image" : "",
-            fi?.audio ? "audio" : "",
-            fi?.pdf ? "pdf" : "",
-            fi?.video ? "video" : "",
-          ].filter(Boolean)
-        );
-        if (!f.inputModalities.some((val) => set.has(val))) {
-          return false;
-        }
-      }
-      if (f.outputModalities.length > 0) {
-        const fo = m.output;
-        const set = new Set<string>(
-          [
-            fo?.text ? "text" : "",
-            fo?.image ? "image" : "",
-            fo?.audio ? "audio" : "",
-          ].filter(Boolean)
-        );
-        if (!f.outputModalities.some((val) => set.has(val))) {
-          return false;
-        }
-      }
-      const contextOk =
-        m.context_window >= f.contextLength[0] &&
-        m.context_window <= f.contextLength[1];
-      if (!contextOk) {
-        return false;
-      }
-      const maxTokensOk =
-        (m.max_tokens ?? 0) >= f.maxTokens[0] &&
-        (m.max_tokens ?? 0) <= f.maxTokens[1];
-      if (!maxTokensOk) {
-        return false;
-      }
-      const inputPrice = Number.parseFloat(m.pricing.input) * 1_000_000;
-      const outputPrice = Number.parseFloat(m.pricing.output) * 1_000_000;
-      if (inputPrice < f.inputPricing[0] || inputPrice > f.inputPricing[1]) {
-        return false;
-      }
+    const maxTokensOk =
+      (m.max_tokens ?? 0) >= f.maxTokens[0] &&
+      (m.max_tokens ?? 0) <= f.maxTokens[1];
+    if (!maxTokensOk) return false;
+
+    const inputPrice = Number.parseFloat(m.pricing.input ?? "0") * 1_000_000;
+    const outputPrice = Number.parseFloat(m.pricing.output ?? "0") * 1_000_000;
+    if (inputPrice < f.inputPricing[0] || inputPrice > f.inputPricing[1]) {
+      return false;
+    }
     if (outputPrice < f.outputPricing[0] || outputPrice > f.outputPricing[1]) {
-        return false;
-      }
-      if (f.features.reasoning && !m.reasoning) {
-        return false;
-      }
-      if (f.features.toolCall && !m.toolCall) {
-        return false;
-      }
-      if (f.features.temperatureControl && m.fixedTemperature !== undefined) {
-        return false;
-      }
-      return true;
-    });
-
-  const sorted = [...filteredList].sort((a: ModelDefinition, b: ModelDefinition) => {
-        switch (sortBy) {
-          case "newest":
-            return b.releaseDate.getTime() - a.releaseDate.getTime();
-          case "pricing-low":
-            return (
-          (Number.parseFloat(a.pricing.input) + Number.parseFloat(a.pricing.output)) * 1_000_000 -
-          (Number.parseFloat(b.pricing.input) + Number.parseFloat(b.pricing.output)) * 1_000_000
-            );
-          case "pricing-high":
-            return (
-          (Number.parseFloat(b.pricing.input) + Number.parseFloat(b.pricing.output)) * 1_000_000 -
-          (Number.parseFloat(a.pricing.input) + Number.parseFloat(a.pricing.output)) * 1_000_000
-            );
-          case "context-high":
-            return b.context_window - a.context_window;
-          case "max-output-tokens-high":
-            return (b.max_tokens ?? 0) - (a.max_tokens ?? 0);
-          default:
-            return 0;
-        }
+      return false;
+    }
+    if (f.features.reasoning && !m.reasoning) return false;
+    if (f.features.toolCall && !m.toolCall) return false;
+    return true;
   });
 
-    return sorted;
+  const sorted = [...filteredList].sort((a, b) => {
+    switch (sortBy) {
+      case "newest":
+        return (b.created ?? 0) - (a.created ?? 0);
+      case "pricing-low":
+        return (
+          (Number.parseFloat(a.pricing.input ?? "0") +
+            Number.parseFloat(a.pricing.output ?? "0")) *
+            1_000_000 -
+          (Number.parseFloat(b.pricing.input ?? "0") +
+            Number.parseFloat(b.pricing.output ?? "0")) *
+            1_000_000
+        );
+      case "pricing-high":
+        return (
+          (Number.parseFloat(b.pricing.input ?? "0") +
+            Number.parseFloat(b.pricing.output ?? "0")) *
+            1_000_000 -
+          (Number.parseFloat(a.pricing.input ?? "0") +
+            Number.parseFloat(a.pricing.output ?? "0")) *
+            1_000_000
+        );
+      case "context-high":
+        return b.context_window - a.context_window;
+      case "max-output-tokens-high":
+        return (b.max_tokens ?? 0) - (a.max_tokens ?? 0);
+      default:
+        return 0;
+    }
+  });
+
+  return sorted;
+};
+
+function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
+  const rangeLimits = computeModelRangeLimits(allModels);
+  const defaultFilters: FilterState = {
+    inputModalities: [],
+    outputModalities: [],
+    contextLength: rangeLimits.context,
+    inputPricing: rangeLimits.inputPricing,
+    outputPricing: rangeLimits.outputPricing,
+    maxTokens: rangeLimits.maxTokens,
+    providers: [],
+    features: { reasoning: false, toolCall: false, temperatureControl: false },
+    series: [],
+    categories: [],
+    supportedParameters: [],
   };
 
-const initialState = defaultModelsState;
+  const initialState = {
+    allModels,
+    rangeLimits,
+    searchQuery: "",
+    sortBy: defaultSortBy,
+    inputModalities: defaultFilters.inputModalities,
+    outputModalities: defaultFilters.outputModalities,
+    contextLength: defaultFilters.contextLength,
+    inputPricing: defaultFilters.inputPricing,
+    outputPricing: defaultFilters.outputPricing,
+    maxTokens: defaultFilters.maxTokens,
+    providers: defaultFilters.providers,
+    features: normalizeFeatures(defaultFilters.features),
+    series: defaultFilters.series,
+    categories: defaultFilters.categories,
+    supportedParameters: defaultFilters.supportedParameters,
+  };
 
-const useModelsBase = create<ModelsStore>()(
-  devtools(
-    (set, get) => ({
-    ...initialState,
-    resultModels: computeResults(
-      initialState.searchQuery,
-      assembleFilters(initialState as unknown as ModelsStore),
-      initialState.sortBy
-    ),
-    activeFiltersCount: computeActiveFiltersCount(assembleFilters(initialState as unknown as ModelsStore)),
-    hasActiveFilters: computeActiveFiltersCount(assembleFilters(initialState as unknown as ModelsStore)) > 0,
-    setSearchQuery: (v: string) =>
-      set((state) => ({
-        searchQuery: v,
-        resultModels: computeResults(v, assembleFilters(state), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters(state)),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters(state)) > 0,
-      })),
-    setSortBy: (v: SortOption) =>
-      set((state) => ({
-        sortBy: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters(state), v),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters(state)),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters(state)) > 0,
-      })),
-    // Granular setters
-    setInputModalities: (v: string[]) =>
-      set((state) => ({
-        inputModalities: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, inputModalities: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, inputModalities: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, inputModalities: v })) > 0,
-      })),
-    setOutputModalities: (v: string[]) =>
-      set((state) => ({
-        outputModalities: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, outputModalities: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, outputModalities: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, outputModalities: v })) > 0,
-      })),
-    setContextLength: (v: [number, number]) =>
-      set((state) => ({
-        contextLength: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, contextLength: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, contextLength: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, contextLength: v })) > 0,
-      })),
-    setInputPricing: (v: [number, number]) =>
-      set((state) => ({
-        inputPricing: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, inputPricing: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, inputPricing: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, inputPricing: v })) > 0,
-      })),
-    setOutputPricing: (v: [number, number]) =>
-      set((state) => ({
-        outputPricing: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, outputPricing: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, outputPricing: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, outputPricing: v })) > 0,
-      })),
-    setMaxTokens: (v: [number, number]) =>
-      set((state) => ({
-        maxTokens: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, maxTokens: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, maxTokens: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, maxTokens: v })) > 0,
-      })),
-    setProviders: (v: string[]) =>
-      set((state) => ({
-        providers: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, providers: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, providers: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, providers: v })) > 0,
-      })),
-    setFeatures: (v: Partial<ModelsStore["features"]>) =>
-      set((state) => {
-        const next = {
-          reasoning: v.reasoning ?? state.features.reasoning,
-          toolCall: v.toolCall ?? state.features.toolCall,
-          temperatureControl: v.temperatureControl ?? state.features.temperatureControl,
-        };
-        const nextFilters = assembleFilters({ ...state, features: next });
-        const count = computeActiveFiltersCount(nextFilters);
-        return {
-          features: next,
-          resultModels: computeResults(state.searchQuery, nextFilters, state.sortBy),
-          activeFiltersCount: count,
-          hasActiveFilters: count > 0,
-        };
-      }),
-    setSeries: (v: string[]) =>
-      set((state) => ({
-        series: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, series: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, series: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, series: v })) > 0,
-      })),
-    setCategories: (v: string[]) =>
-      set((state) => ({
-        categories: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, categories: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, categories: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, categories: v })) > 0,
-      })),
-    setSupportedParameters: (v: string[]) =>
-      set((state) => ({
-        supportedParameters: v,
-        resultModels: computeResults(state.searchQuery, assembleFilters({ ...state, supportedParameters: v }), state.sortBy),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters({ ...state, supportedParameters: v })),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters({ ...state, supportedParameters: v })) > 0,
-      })),
-    setFilters: (v: FilterState) =>
-      set((state) => {
-          const prev = assembleFilters(state);
-          // Normalize features to explicit booleans
-          const next: FilterState = {
-          ...v,
-          features: normalizeFeatures(v.features),
-          };
-          if (filtersEqual(prev, next)) {
-            return {};
-          }
-          const count = computeActiveFiltersCount(next);
-          return {
-            inputModalities: next.inputModalities,
-            outputModalities: next.outputModalities,
-            contextLength: next.contextLength,
-            inputPricing: next.inputPricing,
-            outputPricing: next.outputPricing,
-            maxTokens: next.maxTokens,
-            providers: next.providers,
-            features: normalizeFeatures(next.features),
-            series: next.series,
-            categories: next.categories,
-            supportedParameters: next.supportedParameters,
-            resultModels: computeResults(state.searchQuery, next, state.sortBy),
-            activeFiltersCount: count,
-            hasActiveFilters: count > 0,
-          } as Partial<ModelsStore>;
-        }),
-      updateFilters: (v: Partial<FilterState>) =>
-        set((state) => {
-          const prev = assembleFilters(state);
-          // Merge with structural sharing: reuse references if unchanged
-          const mergedFeatures: StrictFeatures = normalizeFeatures({
-            reasoning: v.features?.reasoning ?? prev.features?.reasoning,
-            toolCall: v.features?.toolCall ?? prev.features?.toolCall,
-            temperatureControl: v.features?.temperatureControl ?? prev.features?.temperatureControl,
-          });
-          const nextFilters: FilterState = {
-            inputModalities: v.inputModalities && arrayEquals(v.inputModalities, prev.inputModalities)
-              ? prev.inputModalities
-              : v.inputModalities ?? prev.inputModalities,
-            outputModalities: v.outputModalities && arrayEquals(v.outputModalities, prev.outputModalities)
-              ? prev.outputModalities
-              : v.outputModalities ?? prev.outputModalities,
-            contextLength: v.contextLength && tupleEquals(v.contextLength, prev.contextLength)
-              ? prev.contextLength
-              : v.contextLength ?? prev.contextLength,
-            inputPricing: v.inputPricing && tupleEquals(v.inputPricing, prev.inputPricing)
-              ? prev.inputPricing
-              : v.inputPricing ?? prev.inputPricing,
-            outputPricing: v.outputPricing && tupleEquals(v.outputPricing, prev.outputPricing)
-              ? prev.outputPricing
-              : v.outputPricing ?? prev.outputPricing,
-            maxTokens: v.maxTokens && tupleEquals(v.maxTokens, prev.maxTokens)
-              ? prev.maxTokens
-              : v.maxTokens ?? prev.maxTokens,
-            providers: v.providers && arrayEquals(v.providers, prev.providers)
-              ? prev.providers
-              : v.providers ?? prev.providers,
-            features: featuresEquals(mergedFeatures, prev.features ?? {})
-              ? (prev.features ?? mergedFeatures)
-              : mergedFeatures,
-            series: v.series && arrayEquals(v.series, prev.series) ? prev.series : v.series ?? prev.series,
-            categories: v.categories && arrayEquals(v.categories, prev.categories)
-              ? prev.categories
-              : v.categories ?? prev.categories,
-            supportedParameters:
-              v.supportedParameters && arrayEquals(v.supportedParameters, prev.supportedParameters)
-                ? prev.supportedParameters
-                : v.supportedParameters ?? prev.supportedParameters,
-          };
+  const recompute = (state: ModelsStore, partial: Partial<ModelsStore>) => {
+    const next = { ...state, ...partial } as ModelsStore;
+    const filters = assembleFilters(next);
+    const count = computeActiveFiltersCount(filters, defaultFilters);
+    return {
+      ...partial,
+      resultModels: computeResults(
+        allModels,
+        next.searchQuery,
+        filters,
+        next.sortBy
+      ),
+      activeFiltersCount: count,
+      hasActiveFilters: count > 0,
+    } as Partial<ModelsStore>;
+  };
 
-          if (filtersEqual(prev, nextFilters)) {
-            return {};
-          }
-          const count = computeActiveFiltersCount(nextFilters);
-        return {
-          inputModalities: nextFilters.inputModalities,
-          outputModalities: nextFilters.outputModalities,
-          contextLength: nextFilters.contextLength,
-          inputPricing: nextFilters.inputPricing,
-          outputPricing: nextFilters.outputPricing,
-          maxTokens: nextFilters.maxTokens,
-          providers: nextFilters.providers,
-          features: normalizeFeatures(nextFilters.features),
-          series: nextFilters.series,
-          categories: nextFilters.categories,
-          supportedParameters: nextFilters.supportedParameters,
-          resultModels: computeResults(state.searchQuery, nextFilters, state.sortBy),
-          activeFiltersCount: count,
-          hasActiveFilters: count > 0,
-          } as Partial<ModelsStore>;
-        }),
-      resetFiltersAndSearch: () =>
-        set({
-          searchQuery: initialState.searchQuery,
-          sortBy: initialState.sortBy,
-          inputModalities: initialState.inputModalities,
-          outputModalities: initialState.outputModalities,
-          contextLength: initialState.contextLength,
-          inputPricing: initialState.inputPricing,
-          outputPricing: initialState.outputPricing,
-          maxTokens: initialState.maxTokens,
-          providers: initialState.providers,
-          features: initialState.features,
-          series: initialState.series,
-          categories: initialState.categories,
-          supportedParameters: initialState.supportedParameters,
-          resultModels: computeResults(
-            initialState.searchQuery,
+  return createStore<ModelsStore>()(
+    devtools(
+      (set, get) => ({
+        ...initialState,
+        resultModels: computeResults(
+          allModels,
+          initialState.searchQuery,
+          assembleFilters(initialState as unknown as ModelsStore),
+          initialState.sortBy
+        ),
+        activeFiltersCount: computeActiveFiltersCount(
+          assembleFilters(initialState as unknown as ModelsStore),
+          defaultFilters
+        ),
+        hasActiveFilters:
+          computeActiveFiltersCount(
             assembleFilters(initialState as unknown as ModelsStore),
-            initialState.sortBy
+            defaultFilters
+          ) > 0,
+
+        setSearchQuery: (v) => set((s) => recompute(s, { searchQuery: v })),
+        setSortBy: (v) => set((s) => recompute(s, { sortBy: v })),
+        setInputModalities: (v) =>
+          set((s) => recompute(s, { inputModalities: v })),
+        setOutputModalities: (v) =>
+          set((s) => recompute(s, { outputModalities: v })),
+        setContextLength: (v) => set((s) => recompute(s, { contextLength: v })),
+        setInputPricing: (v) => set((s) => recompute(s, { inputPricing: v })),
+        setOutputPricing: (v) => set((s) => recompute(s, { outputPricing: v })),
+        setMaxTokens: (v) => set((s) => recompute(s, { maxTokens: v })),
+        setProviders: (v) => set((s) => recompute(s, { providers: v })),
+        setFeatures: (v) =>
+          set((s) =>
+            recompute(s, {
+              features: {
+                reasoning: v.reasoning ?? s.features.reasoning,
+                toolCall: v.toolCall ?? s.features.toolCall,
+                temperatureControl:
+                  v.temperatureControl ?? s.features.temperatureControl,
+              },
+            })
           ),
-        activeFiltersCount: computeActiveFiltersCount(assembleFilters(initialState as unknown as ModelsStore)),
-        hasActiveFilters: computeActiveFiltersCount(assembleFilters(initialState as unknown as ModelsStore)) > 0,
-        } as Partial<ModelsStore>),
-    // derived values are kept up to date in each setter
-  }), { name: "models-store" })
+        setSeries: (v) => set((s) => recompute(s, { series: v })),
+        setCategories: (v) => set((s) => recompute(s, { categories: v })),
+        setSupportedParameters: (v) =>
+          set((s) => recompute(s, { supportedParameters: v })),
+
+        setFilters: (v) =>
+          set((s) => {
+            const prev = assembleFilters(s);
+            const next: FilterState = {
+              ...v,
+              features: normalizeFeatures(v.features),
+            };
+            if (filtersEqual(prev, next)) return {};
+            return recompute(s, {
+              inputModalities: next.inputModalities,
+              outputModalities: next.outputModalities,
+              contextLength: next.contextLength,
+              inputPricing: next.inputPricing,
+              outputPricing: next.outputPricing,
+              maxTokens: next.maxTokens,
+              providers: next.providers,
+              features: normalizeFeatures(next.features),
+              series: next.series,
+              categories: next.categories,
+              supportedParameters: next.supportedParameters,
+            });
+          }),
+
+        updateFilters: (v) =>
+          set((s) => {
+            const prev = assembleFilters(s);
+            const mergedFeatures: StrictFeatures = normalizeFeatures({
+              reasoning: v.features?.reasoning ?? prev.features?.reasoning,
+              toolCall: v.features?.toolCall ?? prev.features?.toolCall,
+              temperatureControl:
+                v.features?.temperatureControl ??
+                prev.features?.temperatureControl,
+            });
+            const nextFilters: FilterState = {
+              inputModalities: v.inputModalities ?? prev.inputModalities,
+              outputModalities: v.outputModalities ?? prev.outputModalities,
+              contextLength: v.contextLength ?? prev.contextLength,
+              inputPricing: v.inputPricing ?? prev.inputPricing,
+              outputPricing: v.outputPricing ?? prev.outputPricing,
+              maxTokens: v.maxTokens ?? prev.maxTokens,
+              providers: v.providers ?? prev.providers,
+              features: mergedFeatures,
+              series: v.series ?? prev.series,
+              categories: v.categories ?? prev.categories,
+              supportedParameters:
+                v.supportedParameters ?? prev.supportedParameters,
+            };
+            if (filtersEqual(prev, nextFilters)) return {};
+            return recompute(s, {
+              inputModalities: nextFilters.inputModalities,
+              outputModalities: nextFilters.outputModalities,
+              contextLength: nextFilters.contextLength,
+              inputPricing: nextFilters.inputPricing,
+              outputPricing: nextFilters.outputPricing,
+              maxTokens: nextFilters.maxTokens,
+              providers: nextFilters.providers,
+              features: normalizeFeatures(nextFilters.features),
+              series: nextFilters.series,
+              categories: nextFilters.categories,
+              supportedParameters: nextFilters.supportedParameters,
+            });
+          }),
+
+        resetFiltersAndSearch: () =>
+          set((s) =>
+            recompute(s, {
+              searchQuery: initialState.searchQuery,
+              sortBy: initialState.sortBy,
+              inputModalities: initialState.inputModalities,
+              outputModalities: initialState.outputModalities,
+              contextLength: initialState.contextLength,
+              inputPricing: initialState.inputPricing,
+              outputPricing: initialState.outputPricing,
+              maxTokens: initialState.maxTokens,
+              providers: initialState.providers,
+              features: initialState.features,
+              series: initialState.series,
+              categories: initialState.categories,
+              supportedParameters: initialState.supportedParameters,
+            })
+          ),
+      }),
+      { name: "models-store" }
+    )
   );
-
-export const useModels = createSelectorHooks(
-  useModelsBase
-  
-) as typeof useModelsBase & ZustandHookSelectors<ModelsStore>;
-
-const useModelsNuqsSync = createUseModelsNuqsSync(useModels);
-
-export function ModelsProvider({ children }: { children: React.ReactNode }) {
-  useModelsNuqsSync();
-  return children;
 }
+
+const ModelsStoreContext = createContext<StoreApi<ModelsStore> | null>(null);
+
+export function ModelsProvider({
+  children,
+  allModels,
+}: {
+  children: React.ReactNode;
+  allModels: ModelData[];
+}) {
+  const storeRef = useRef<StoreApi<ModelsStore> | null>(null);
+  if (storeRef.current === null) {
+    storeRef.current = createModelsStore(allModels);
+  }
+  return (
+    <ModelsStoreContext.Provider value={storeRef.current}>
+      <NuqsSync />
+      {children}
+    </ModelsStoreContext.Provider>
+  );
+}
+
+function NuqsSync() {
+  const store = useContext(ModelsStoreContext);
+  if (!store) throw new Error("ModelsStoreContext not found");
+  const useNuqsSync = createUseModelsNuqsSync(store);
+  useNuqsSync();
+  return null;
+}
+
+function useModelsStore<T>(selector: (s: ModelsStore) => T): T {
+  const store = useContext(ModelsStoreContext);
+  if (!store) {
+    throw new Error("useModels must be used within a ModelsProvider");
+  }
+  return useStore(store, selector);
+}
+
+// Public hooks API. Mirrors the previous auto-zustand-selectors-hook surface
+// but reads from a per-Provider store via context.
+export const useModels = {
+  useAllModels: () => useModelsStore((s) => s.allModels),
+  useRangeLimits: () => useModelsStore((s) => s.rangeLimits),
+  useSearchQuery: () => useModelsStore((s) => s.searchQuery),
+  useSetSearchQuery: () => useModelsStore((s) => s.setSearchQuery),
+  useSortBy: () => useModelsStore((s) => s.sortBy),
+  useSetSortBy: () => useModelsStore((s) => s.setSortBy),
+  useInputModalities: () => useModelsStore((s) => s.inputModalities),
+  useSetInputModalities: () => useModelsStore((s) => s.setInputModalities),
+  useOutputModalities: () => useModelsStore((s) => s.outputModalities),
+  useSetOutputModalities: () => useModelsStore((s) => s.setOutputModalities),
+  useContextLength: () => useModelsStore((s) => s.contextLength),
+  useSetContextLength: () => useModelsStore((s) => s.setContextLength),
+  useMaxTokens: () => useModelsStore((s) => s.maxTokens),
+  useSetMaxTokens: () => useModelsStore((s) => s.setMaxTokens),
+  useInputPricing: () => useModelsStore((s) => s.inputPricing),
+  useSetInputPricing: () => useModelsStore((s) => s.setInputPricing),
+  useOutputPricing: () => useModelsStore((s) => s.outputPricing),
+  useSetOutputPricing: () => useModelsStore((s) => s.setOutputPricing),
+  useProviders: () => useModelsStore((s) => s.providers),
+  useSetProviders: () => useModelsStore((s) => s.setProviders),
+  useFeatures: () => useModelsStore((s) => s.features),
+  useSetFeatures: () => useModelsStore((s) => s.setFeatures),
+  useResultModels: () => useModelsStore((s) => s.resultModels),
+  useActiveFiltersCount: () => useModelsStore((s) => s.activeFiltersCount),
+  useHasActiveFilters: () => useModelsStore((s) => s.hasActiveFilters),
+  useResetFiltersAndSearch: () =>
+    useModelsStore((s) => s.resetFiltersAndSearch),
+};

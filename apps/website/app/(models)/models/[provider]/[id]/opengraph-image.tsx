@@ -1,5 +1,5 @@
-import { allModels } from "@airegistry/vercel-gateway";
 import { ImageResponse } from "@vercel/og";
+import { getModelById } from "@/lib/ai/models";
 import {
   OGCard,
   OGContainer,
@@ -34,7 +34,7 @@ export default async function OGImage(
 ) {
   const { provider, id } = await props.params;
   const modelId = `${provider}/${id}`;
-  const model = allModels.find((m) => m.id === modelId) || null;
+  const model = await getModelById(modelId);
 
   if (!model) {
     return new ImageResponse(
@@ -61,20 +61,6 @@ export default async function OGImage(
 
   const baseUrl = getBaseUrl();
   const iconUrl = getProviderIconUrl(model.owned_by, baseUrl);
-
-  // Extra data for richer OG card
-  const _contextWindow = model?.context_window || null;
-  const _maxOut = model?.max_tokens || null;
-  const _pricingIn = model?.pricing?.input || null;
-  const _pricingOut = model?.pricing?.output || null;
-  const releaseDate = model?.releaseDate || null;
-  const _releaseDateDisplay = releaseDate
-    ? releaseDate.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      })
-    : null;
 
   const bulletItems = buildBulletItems(model);
 

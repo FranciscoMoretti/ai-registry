@@ -1,6 +1,4 @@
-import type { ProviderId } from "@airegistry/vercel-gateway";
-
-function getProviderIconSlug(provider: ProviderId): string | null {
+function getProviderIconSlug(provider: string): string | null {
   // Best-effort mapping to Simple Icons slugs. Unknown providers fall back to null.
   switch (provider) {
     case "openai":
@@ -35,15 +33,12 @@ function getProviderIconSlug(provider: ProviderId): string | null {
       return "minimax";
     case "stealth":
       return "stealth";
-    // Slug with no images (yet)
-    case "inception":
-    case "morph":
-    case "meituan":
+    default:
       return null;
   }
 }
 export function getProviderIconUrl(
-  provider: ProviderId,
+  provider: string,
   baseUrl: string
 ): string | null {
   const iconSlug = getProviderIconSlug(provider);

@@ -1,6 +1,6 @@
 // Shared utilities and constants for Open Graph image generation
 
-import type { ModelDefinition } from "@airegistry/vercel-gateway";
+import type { ModelData } from "@/lib/ai/model-data";
 import { formatNumberCompact } from "@/lib/format-number-compact";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
@@ -53,7 +53,7 @@ export function prettyUsdPerMTokens(value?: string | null): string | null {
   return `$${perMillion.toFixed(digits)}/M`;
 }
 
-export function buildBulletItems(model: ModelDefinition | null | undefined) {
+export function buildBulletItems(model: ModelData | null | undefined) {
   if (!model) {
     return [] as Array<{ label: string; value: string }>;
   }
@@ -61,19 +61,8 @@ export function buildBulletItems(model: ModelDefinition | null | undefined) {
   const maxOut = model?.max_tokens || null;
   const pricingIn = model?.pricing?.input || null;
   const pricingOut = model?.pricing?.output || null;
-  const releaseDate = model?.releaseDate || null;
-  const releaseDateDisplay = releaseDate
-    ? releaseDate.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      })
-    : null;
 
   const bulletItems: Array<{ label: string; value: string }> = [];
-  if (releaseDateDisplay) {
-    bulletItems.push({ label: "Released", value: releaseDateDisplay });
-  }
   if (contextWindow) {
     bulletItems.push({
       label: "Context",

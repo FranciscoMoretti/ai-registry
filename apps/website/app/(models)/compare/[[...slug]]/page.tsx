@@ -1,5 +1,6 @@
-import { allModels } from "@airegistry/vercel-gateway";
 import type { Metadata } from "next";
+import { ModelsProvider } from "@/app/(models)/models/models-store-context";
+import { fetchModels, getModelById } from "@/lib/ai/models";
 import ComparePage from "../compare-page";
 
 // Toggle to include/exclude "Performance" related copy
@@ -11,8 +12,13 @@ const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 export const revalidate = 31536000;
 
-export default function Page(_props: PageProps<"/compare/[[...slug]]">) {
-  return <ComparePage />;
+export default async function Page(_props: PageProps<"/compare/[[...slug]]">) {
+  const allModels = await fetchModels();
+  return (
+    <ModelsProvider allModels={allModels}>
+      <ComparePage />
+    </ModelsProvider>
+  );
 }
 
 export async function generateMetadata(
@@ -31,19 +37,18 @@ export async function generateMetadata(
   const leftId = toId(segments.slice(0, 2));
   const rightId = toId(segments.slice(2, 4));
 
-  const findModel = (id: string | null) =>
-    id ? allModels.find((m) => m.id === id) || null : null;
-
-  const left = findModel(leftId);
-  const right = findModel(rightId);
+  const left = leftId ? await getModelById(leftId) : null;
+  const right = rightId ? await getModelById(rightId) : null;
 
   const capProv = (p?: string) =>
     (p || "").slice(0, 1).toUpperCase() + (p || "").slice(1);
 
-  const displayName = (id: string | null) => {
-    const model = findModel(id);
+  const displayName = (
+    model: Awaited<ReturnType<typeof getModelById>>,
+    fallback: string
+  ) => {
     if (!model) {
-      return id ?? "";
+      return fallback;
     }
     const provider = capProv(model.owned_by);
     return `${provider} ${model.name}`.trim();
@@ -81,8 +86,8 @@ export async function generateMetadata(
   let keywords = [...keywordsBase, ...perfKeywords];
 
   if (left && right) {
-    const a = displayName(left.id);
-    const b = displayName(right.id);
+    const a = displayName(left, left.id);
+    const b = displayName(right, right.id);
     title = `${a} vs ${b}: Pricing, Specs${perfSuffix} | ${siteName}`;
     description = `Compare ${a} vs ${b}: ${compareList}.`;
     keywords = [
@@ -93,7 +98,7 @@ export async function generateMetadata(
       `${b} comparison`,
     ];
   } else if (left) {
-    const a = displayName(left.id);
+    const a = displayName(left, left.id);
     title = `${a} Comparison: Pricing, Specs${perfSuffix} | ${siteName}`;
     description = `Compare ${a} with other AI models: ${compareList}.`;
     keywords = [
@@ -156,6 +161,7 @@ export async function generateMetadata(
 
 
 export async function generateStaticParamsForSitemap() {
+  const allModels = await fetchModels();
   // Sort deterministically to keep generated paths stable if in-memory order changes
   const sortedIds = [...allModels.map((m) => m.id)].sort((a, b) =>
     a.localeCompare(b)
