@@ -32,7 +32,7 @@ export default async function OGImage() {
   const topProviderIcons = providers
     .map((p) => ({
       name: p,
-      iconUrl: getProviderIconUrl(p, getBaseUrl()),
+      iconUrl: getProviderIconUrl(p),
     }))
     .filter((p) => p.iconUrl);
 

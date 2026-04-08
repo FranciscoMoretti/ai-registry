@@ -4,13 +4,19 @@ const nextConfig: NextConfig = {
   /* config options here */
   transpilePackages: ["shiki"],
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "models.dev",
+        pathname: "/logos/**",
+      },
+    ],
+  },
   experimental: {
-    optimizePackageImports: [
-       "@lobehub/icons",
-       "lucide-react"
-     ],
+    optimizePackageImports: ["lucide-react"],
     turbopackFileSystemCacheForDev: true,
-  }
+  },
 };
 
 export default nextConfig;

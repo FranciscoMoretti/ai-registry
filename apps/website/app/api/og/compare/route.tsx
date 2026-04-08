@@ -77,8 +77,8 @@ export async function GET(req: Request) {
     ? truncate(`${right?.name || modelId2?.split("/")?.[1] || ""}`.trim(), 30)
     : "Other Models";
   const baseUrl = getBaseUrl();
-  const leftIcon = left ? getProviderIconUrl(left.owned_by, baseUrl) : null;
-  const rightIcon = right ? getProviderIconUrl(right.owned_by, baseUrl) : null;
+  const leftIcon = left ? getProviderIconUrl(left.owned_by) : null;
+  const rightIcon = right ? getProviderIconUrl(right.owned_by) : null;
   const appIcon = getAppIconUrl(baseUrl);
   const arrowRight = getArrowRightUrl(baseUrl);
   const capabilityIcons = getCapabilityIcons(baseUrl);

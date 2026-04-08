@@ -60,7 +60,7 @@ export default async function OGImage(
       : titleRaw;
 
   const baseUrl = getBaseUrl();
-  const iconUrl = getProviderIconUrl(model.owned_by, baseUrl);
+  const iconUrl = getProviderIconUrl(model.owned_by);
 
   const bulletItems = buildBulletItems(model);
 
