@@ -79,7 +79,7 @@ export async function GET(req: Request) {
         <OGFooter
           appIconUrl={appIcon}
           containerTw="mt-auto"
-          siteName={"Sparka AI"}
+          siteName={"ChatJS"}
         />
       </OGCard>
     </OGContainer>,
