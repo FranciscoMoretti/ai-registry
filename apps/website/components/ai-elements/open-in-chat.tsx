@@ -26,10 +26,10 @@ const providers = {
       </svg>
     ),
   },
-  sparka: {
-    title: "Open in Sparka",
+  chatjs: {
+    title: "Open in ChatJS",
     createUrl: (modelId: string) =>
-      `https://www.sparka.ai/?${new URLSearchParams({
+      `https://www.demo.chatjs.dev/?${new URLSearchParams({
         modelId,
       })}`,
     icon: <MessageCircleIcon />,
@@ -330,20 +330,20 @@ export const OpenInScira = (props: OpenInSciraProps) => {
   );
 };
 
-export type OpenInSparkaProps = ComponentProps<typeof DropdownMenuItem>;
+export type OpenInChatJSProps = ComponentProps<typeof DropdownMenuItem>;
 
-export const OpenInSparka = (props: OpenInSparkaProps) => {
+export const OpenInChatJS = (props: OpenInChatJSProps) => {
   const { query } = useOpenInContext();
   return (
     <DropdownMenuItem asChild {...props}>
       <a
         className="flex items-center gap-2"
-        href={providers.sparka.createUrl(query)}
+        href={providers.chatjs.createUrl(query)}
         rel="noopener"
         target="_blank"
       >
-        <span className="shrink-0">{providers.sparka.icon}</span>
-        <span className="flex-1">{providers.sparka.title}</span>
+        <span className="shrink-0">{providers.chatjs.icon}</span>
+        <span className="flex-1">{providers.chatjs.title}</span>
         <ExternalLinkIcon className="size-4 shrink-0" />
       </a>
     </DropdownMenuItem>

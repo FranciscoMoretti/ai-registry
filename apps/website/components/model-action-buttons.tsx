@@ -6,8 +6,8 @@ import type { ComponentProps } from "react";
 import { useMemo } from "react";
 import {
   OpenIn,
+  OpenInChatJS,
   OpenInContent,
-  OpenInSparka,
   OpenInTrigger,
 } from "@/components/ai-elements/open-in-chat";
 import { LinkButton } from "@/components/link-button";
@@ -34,7 +34,7 @@ export function ChatModelButton({
     <OpenIn query={query}>
       <OpenInTrigger />
       <OpenInContent>
-        <OpenInSparka />
+        <OpenInChatJS />
       </OpenInContent>
     </OpenIn>
   );
