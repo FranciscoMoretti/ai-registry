@@ -2,30 +2,30 @@ import type { MetadataRoute } from "next";
 import { generateStaticParamsForSitemap as generateCompareStaticParams } from "@/app/(models)/compare/[[...slug]]/page";
 import { generateStaticParams as generateModelStaticParams } from "@/app/(models)/models/[provider]/[id]/page";
 
+const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
+const PRIORITY_HOME = 1;
+const PRIORITY_COMPARE_ROOT = 0.8;
+const PRIORITY_COMPARE_DYNAMIC = 0.5;
+const PRIORITY_MODEL_DETAIL = 0.6;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = `http://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "localhost:3000"}`;
   const now = new Date();
-  const PRIORITY_COMPARE = 0.8;
-  const PRIORITY_COMPARE_SEGMENTED = 0.5;
 
   const staticEntries: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/`,
+      url: `${SITE_URL}/`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 1,
+      priority: PRIORITY_HOME,
     },
     {
-      url: `${baseUrl}/models`,
+      url: `${SITE_URL}/compare`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/compare`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
+      priority: PRIORITY_COMPARE_ROOT,
     },
   ];
 
@@ -35,10 +35,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const modelParams = await generateModelStaticParams();
     for (const { provider, id } of modelParams) {
       dynamicEntries.push({
-        url: `${baseUrl}/models/${provider}/${id}`,
+        url: `${SITE_URL}/models/${provider}/${id}`,
         lastModified: now,
         changeFrequency: "monthly",
-        priority: 0.6,
+        priority: PRIORITY_MODEL_DETAIL,
       });
     }
   } catch {
@@ -54,12 +54,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ? `/compare/${segments.join("/")}`
         : "/compare";
       dynamicEntries.push({
-        url: `${baseUrl}${path}`,
+        url: `${SITE_URL}${path}`,
         lastModified: now,
         changeFrequency: "weekly",
         priority: segments.length
-          ? PRIORITY_COMPARE_SEGMENTED
-          : PRIORITY_COMPARE,
+          ? PRIORITY_COMPARE_DYNAMIC
+          : PRIORITY_COMPARE_ROOT,
       });
     }
   } catch {
