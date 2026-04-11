@@ -1,5 +1,6 @@
 "use client";
 
+import type { SortOption } from "@/app/(models)/models/models-types";
 import { RotateCcw, Search, X } from "lucide-react";
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
@@ -11,13 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-type SortOption =
-  | "newest"
-  | "pricing-low"
-  | "pricing-high"
-  | "context-high"
-  | "context-low";
 
 export const PureModelsToolbar = memo(function PureModelsToolbar({
   searchQuery,
@@ -63,11 +57,14 @@ export const PureModelsToolbar = memo(function PureModelsToolbar({
           <SelectValue placeholder="Sort" />
         </SelectTrigger>
         <SelectContent className="text-sm">
-          <SelectItem value="newest">Newest</SelectItem>
+          <SelectItem value="name-asc">A-Z</SelectItem>
+          <SelectItem value="name-desc">Z-A</SelectItem>
           <SelectItem value="pricing-low">$ Low → High</SelectItem>
           <SelectItem value="pricing-high">$ High → Low</SelectItem>
           <SelectItem value="context-high">Context High → Low</SelectItem>
-          <SelectItem value="context-low">Context Low → High</SelectItem>
+          <SelectItem value="max-output-tokens-high">
+            Max Output High → Low
+          </SelectItem>
         </SelectContent>
       </Select>
       <Button className="shrink-0" onClick={onClearAll} variant="ghost">

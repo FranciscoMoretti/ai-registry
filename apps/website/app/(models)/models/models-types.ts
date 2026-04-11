@@ -1,8 +1,8 @@
 export type SortOption =
-  | "newest"
+  | "name-asc"
+  | "name-desc"
   | "pricing-low"
   | "pricing-high"
   | "context-high"
   | "max-output-tokens-high";
-
 

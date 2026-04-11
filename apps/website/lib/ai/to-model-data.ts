@@ -10,7 +10,7 @@ export function toModelData(model: AiGatewayModel): ModelData {
     toolCall: tags.includes("tool-use"),
     input: {
       image: tags.includes("vision") || model.type === "image",
-      text: model.type === "language",
+      text: model.type === "language" || model.type === "embedding",
       pdf: tags.includes("file-input"),
       audio: false,
       video: false,

@@ -9,6 +9,7 @@ import {
 } from "@/components/model-action-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import { formatNumberCompact } from "@/lib/format-number-compact";
+import { formatUsdPerMTokens } from "@/lib/format-usd-per-m-tokens";
 import { getProviderIcon } from "@/lib/get-provider-icon";
 import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
 import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
@@ -89,19 +90,11 @@ export function WideModelDetails({
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
           <KeyValue
             label="Pricing (Input)"
-            value={
-              model
-                ? `$${(Number.parseFloat(model.pricing.input ?? "0") * 1_000_000).toFixed(2)}/M tokens`
-                : "--"
-            }
+            value={model ? formatUsdPerMTokens(model.pricing.input) : "--"}
           />
           <KeyValue
             label="Pricing (Output)"
-            value={
-              model
-                ? `$${(Number.parseFloat(model.pricing.output ?? "0") * 1_000_000).toFixed(2)}/M tokens`
-                : "--"
-            }
+            value={model ? formatUsdPerMTokens(model.pricing.output) : "--"}
           />
           <KeyValue
             label="Caching"

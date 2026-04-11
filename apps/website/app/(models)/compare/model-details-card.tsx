@@ -27,6 +27,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { getProviderIcon } from "@/lib/get-provider-icon";
+import { formatUsdPerMTokens } from "@/lib/format-usd-per-m-tokens";
 import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
 import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
 import { formatNumberCompact } from "../../../lib/format-number-compact";
@@ -236,11 +237,7 @@ export function ModelDetailsCard({
                 Pricing (Input)
               </span>
               <span className="font-medium text-sm">
-                $
-                {(
-                  Number.parseFloat(model.pricing.input ?? "0") * 1_000_000
-                ).toFixed(2)}
-                /M tokens
+                {formatUsdPerMTokens(model.pricing.input)}
               </span>
             </div>
             <div className="flex items-center justify-between">
@@ -248,11 +245,7 @@ export function ModelDetailsCard({
                 Pricing (Output)
               </span>
               <span className="font-medium text-sm">
-                $
-                {(
-                  Number.parseFloat(model.pricing.output ?? "0") * 1_000_000
-                ).toFixed(2)}
-                /M tokens
+                {formatUsdPerMTokens(model.pricing.output)}
               </span>
             </div>
             <div className="flex items-center justify-between">

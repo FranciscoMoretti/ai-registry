@@ -10,6 +10,14 @@ export type ModelRangeLimits = {
 export function computeModelRangeLimits(
   allModels: readonly ModelData[]
 ): ModelRangeLimits {
+  const toPerMillionPrice = (value?: string): number | null => {
+    if (value === undefined) {
+      return null;
+    }
+    const price = Number.parseFloat(value) * 1_000_000;
+    return Number.isFinite(price) ? price : null;
+  };
+
   const contextWindows = allModels
     .map((m) => m.context_window)
     .filter((n): n is number => typeof n === "number" && Number.isFinite(n));
@@ -17,11 +25,11 @@ export function computeModelRangeLimits(
     .map((m) => m.max_tokens)
     .filter((n): n is number => typeof n === "number" && Number.isFinite(n));
   const inputPrices = allModels
-    .map((m) => Number.parseFloat(m.pricing.input ?? "0") * 1_000_000)
-    .filter((n) => Number.isFinite(n));
+    .map((m) => toPerMillionPrice(m.pricing.input))
+    .filter((n): n is number => n !== null);
   const outputPrices = allModels
-    .map((m) => Number.parseFloat(m.pricing.output ?? "0") * 1_000_000)
-    .filter((n) => Number.isFinite(n));
+    .map((m) => toPerMillionPrice(m.pricing.output))
+    .filter((n): n is number => n !== null);
 
   const minContext =
     contextWindows.length > 0 ? Math.min(...contextWindows) : 0;
