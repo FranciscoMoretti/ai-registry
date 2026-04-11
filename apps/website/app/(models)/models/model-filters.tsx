@@ -25,7 +25,6 @@ export type FilterState = {
   features: {
     reasoning?: boolean;
     toolCall?: boolean;
-    temperatureControl?: boolean; // true => supports adjustable temperature
   };
   // legacy fields kept for compatibility
   series: string[];
@@ -36,8 +35,6 @@ export type FilterState = {
 function InputModalitiesFilter() {
   const inputModalities = useModels.useInputModalities();
   const setInputModalities = useModels.useSetInputModalities();
-  console.log("inputModalities", inputModalities);
-
   const toggle = (modality: string, checked: boolean) => {
     const next = checked
       ? [...inputModalities, modality]
@@ -230,10 +227,7 @@ function PricingFilter() {
 function FeaturesFilter() {
   const features = useModels.useFeatures();
   const setFeatures = useModels.useSetFeatures();
-  const toggle = (
-    key: "reasoning" | "toolCall" | "temperatureControl",
-    checked: boolean
-  ) => {
+  const toggle = (key: "reasoning" | "toolCall", checked: boolean) => {
     setFeatures({ [key]: !!checked });
   };
   return (
@@ -241,21 +235,13 @@ function FeaturesFilter() {
       {[
         { key: "reasoning", label: "Reasoning" },
         { key: "toolCall", label: "Tools" },
-        { key: "temperatureControl", label: "Temperature control" },
       ].map((f) => (
         <div className="flex items-center space-x-2" key={f.key}>
           <Checkbox
-            checked={
-              !!features[
-                f.key as "reasoning" | "toolCall" | "temperatureControl"
-              ]
-            }
+            checked={!!features[f.key as "reasoning" | "toolCall"]}
             id={`feature-${f.key}`}
             onCheckedChange={(checked) =>
-              toggle(
-                f.key as "reasoning" | "toolCall" | "temperatureControl",
-                !!checked
-              )
+              toggle(f.key as "reasoning" | "toolCall", !!checked)
             }
           />
           <label

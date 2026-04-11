@@ -13,7 +13,8 @@ import {
 } from "@/components/ui/select";
 
 type SortOption =
-  | "newest"
+  | "name-asc"
+  | "name-desc"
   | "pricing-low"
   | "pricing-high"
   | "context-high"
@@ -63,7 +64,8 @@ export const PureModelsToolbar = memo(function PureModelsToolbar({
           <SelectValue placeholder="Sort" />
         </SelectTrigger>
         <SelectContent className="text-sm">
-          <SelectItem value="newest">Newest</SelectItem>
+          <SelectItem value="name-asc">A-Z</SelectItem>
+          <SelectItem value="name-desc">Z-A</SelectItem>
           <SelectItem value="pricing-low">$ Low → High</SelectItem>
           <SelectItem value="pricing-high">$ High → Low</SelectItem>
           <SelectItem value="context-high">Context High → Low</SelectItem>

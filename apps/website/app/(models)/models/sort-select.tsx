@@ -20,11 +20,14 @@ export function SortSelect({
 }) {
   return (
     <Select onValueChange={(v: SortOption) => onChangeAction(v)} value={value}>
-      <SelectTrigger className={`data-[size=default]:h-10 data-[size=sm]:h-10 max-w-40 ${className ?? ""}`}>
-        <SelectValue  placeholder="Sort" />
+      <SelectTrigger
+        className={`data-[size=default]:h-10 data-[size=sm]:h-10 w-full sm:w-64 ${className ?? ""}`}
+      >
+        <SelectValue placeholder="Sort" />
       </SelectTrigger>
-      <SelectContent className="text-sm">
-        <SelectItem value="newest">Newest</SelectItem>
+      <SelectContent className="min-w-[var(--radix-select-trigger-width)] text-sm">
+        <SelectItem value="name-asc">A-Z</SelectItem>
+        <SelectItem value="name-desc">Z-A</SelectItem>
         <SelectItem value="pricing-high">Pricing (High → Low)</SelectItem>
         <SelectItem value="pricing-low">Pricing (Low → High)</SelectItem>
         <SelectItem value="context-high">Context (High → Low)</SelectItem>

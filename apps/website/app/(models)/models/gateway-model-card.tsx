@@ -197,14 +197,14 @@ function ModelMetaRow({ model }: { model: ModelData }) {
       <span>
         Input{" "}
         <span className="font-medium text-foreground">
-          {formatUsdPerMTokens(model.pricing.input ?? "0")}
+          {formatUsdPerMTokens(model.pricing.input)}
         </span>
       </span>
       <span>•</span>
       <span>
         Output{" "}
         <span className="font-medium text-foreground">
-          {formatUsdPerMTokens(model.pricing.output ?? "0")}
+          {formatUsdPerMTokens(model.pricing.output)}
         </span>
       </span>
     </div>

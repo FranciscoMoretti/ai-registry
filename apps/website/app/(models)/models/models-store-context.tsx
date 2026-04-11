@@ -11,7 +11,7 @@ import { createUseModelsNuqsSync } from "./use-models-nuqs-sync";
 
 export type { SortOption } from "./models-types";
 
-const defaultSortBy: SortOption = "newest";
+const defaultSortBy: SortOption = "name-asc";
 
 export type ModelsStore = {
   // All models (immutable for the lifetime of this provider)
@@ -34,7 +34,6 @@ export type ModelsStore = {
   features: {
     reasoning: boolean;
     toolCall: boolean;
-    temperatureControl: boolean;
   };
   series: string[];
   categories: string[];
@@ -83,8 +82,7 @@ const featuresEquals = (
   b: NonNullable<FilterState["features"]>
 ): boolean =>
   !!a.reasoning === !!b.reasoning &&
-  !!a.toolCall === !!b.toolCall &&
-  !!a.temperatureControl === !!b.temperatureControl;
+  !!a.toolCall === !!b.toolCall;
 
 const filtersEqual = (a: FilterState, b: FilterState): boolean =>
   arrayEquals(a.inputModalities, b.inputModalities) &&
@@ -102,12 +100,10 @@ const filtersEqual = (a: FilterState, b: FilterState): boolean =>
 type StrictFeatures = {
   reasoning: boolean;
   toolCall: boolean;
-  temperatureControl: boolean;
 };
 const normalizeFeatures = (f?: FilterState["features"]): StrictFeatures => ({
   reasoning: !!f?.reasoning,
   toolCall: !!f?.toolCall,
-  temperatureControl: !!f?.temperatureControl,
 });
 
 const assembleFilters = (
@@ -156,7 +152,6 @@ const computeActiveFiltersCount = (
   count += f.supportedParameters.length;
   count += f.features.reasoning ? 1 : 0;
   count += f.features.toolCall ? 1 : 0;
-  count += f.features.temperatureControl ? 1 : 0;
   count += rangeEquals(f.contextLength, defaults.contextLength) ? 0 : 1;
   count += rangeEquals(f.inputPricing, defaults.inputPricing) ? 0 : 1;
   count += rangeEquals(f.outputPricing, defaults.outputPricing) ? 0 : 1;
@@ -168,8 +163,22 @@ const computeResults = (
   allModels: ModelData[],
   searchQuery: string,
   filters: FilterState,
-  sortBy: SortOption
+  sortBy: SortOption,
+  rangeLimits: ModelRangeLimits
 ): ModelData[] => {
+  const isDefaultRange = (
+    range: [number, number],
+    defaults: [number, number]
+  ): boolean => range[0] === defaults[0] && range[1] === defaults[1];
+
+  const parsePrice = (value?: string): number | null => {
+    if (value === undefined) {
+      return null;
+    }
+    const price = Number.parseFloat(value) * 1_000_000;
+    return Number.isFinite(price) ? price : null;
+  };
+
   let workingList: ModelData[] = allModels;
 
   if (searchQuery) {
@@ -225,12 +234,29 @@ const computeResults = (
       (m.max_tokens ?? 0) <= f.maxTokens[1];
     if (!maxTokensOk) return false;
 
-    const inputPrice = Number.parseFloat(m.pricing.input ?? "0") * 1_000_000;
-    const outputPrice = Number.parseFloat(m.pricing.output ?? "0") * 1_000_000;
-    if (inputPrice < f.inputPricing[0] || inputPrice > f.inputPricing[1]) {
+    const inputPrice = parsePrice(m.pricing.input);
+    const outputPrice = parsePrice(m.pricing.output);
+    const inputPricingAtDefault = isDefaultRange(
+      f.inputPricing,
+      rangeLimits.inputPricing
+    );
+    const outputPricingAtDefault = isDefaultRange(
+      f.outputPricing,
+      rangeLimits.outputPricing
+    );
+
+    if (
+      inputPrice === null
+        ? !inputPricingAtDefault
+        : inputPrice < f.inputPricing[0] || inputPrice > f.inputPricing[1]
+    ) {
       return false;
     }
-    if (outputPrice < f.outputPricing[0] || outputPrice > f.outputPricing[1]) {
+    if (
+      outputPrice === null
+        ? !outputPricingAtDefault
+        : outputPrice < f.outputPricing[0] || outputPrice > f.outputPricing[1]
+    ) {
       return false;
     }
     if (f.features.reasoning && !m.reasoning) return false;
@@ -240,8 +266,10 @@ const computeResults = (
 
   const sorted = [...filteredList].sort((a, b) => {
     switch (sortBy) {
-      case "newest":
-        return (b.created ?? 0) - (a.created ?? 0);
+      case "name-asc":
+        return a.name.localeCompare(b.name);
+      case "name-desc":
+        return b.name.localeCompare(a.name);
       case "pricing-low":
         return (
           (Number.parseFloat(a.pricing.input ?? "0") +
@@ -282,7 +310,7 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
     outputPricing: rangeLimits.outputPricing,
     maxTokens: rangeLimits.maxTokens,
     providers: [],
-    features: { reasoning: false, toolCall: false, temperatureControl: false },
+    features: { reasoning: false, toolCall: false },
     series: [],
     categories: [],
     supportedParameters: [],
@@ -316,7 +344,8 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
         allModels,
         next.searchQuery,
         filters,
-        next.sortBy
+        next.sortBy,
+        rangeLimits
       ),
       activeFiltersCount: count,
       hasActiveFilters: count > 0,
@@ -331,7 +360,8 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
           allModels,
           initialState.searchQuery,
           assembleFilters(initialState as unknown as ModelsStore),
-          initialState.sortBy
+          initialState.sortBy,
+          rangeLimits
         ),
         activeFiltersCount: computeActiveFiltersCount(
           assembleFilters(initialState as unknown as ModelsStore),
@@ -360,8 +390,6 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
               features: {
                 reasoning: v.reasoning ?? s.features.reasoning,
                 toolCall: v.toolCall ?? s.features.toolCall,
-                temperatureControl:
-                  v.temperatureControl ?? s.features.temperatureControl,
               },
             })
           ),
@@ -399,9 +427,6 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
             const mergedFeatures: StrictFeatures = normalizeFeatures({
               reasoning: v.features?.reasoning ?? prev.features?.reasoning,
               toolCall: v.features?.toolCall ?? prev.features?.toolCall,
-              temperatureControl:
-                v.features?.temperatureControl ??
-                prev.features?.temperatureControl,
             });
             const nextFilters: FilterState = {
               inputModalities: v.inputModalities ?? prev.inputModalities,

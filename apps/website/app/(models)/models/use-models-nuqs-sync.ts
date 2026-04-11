@@ -16,7 +16,7 @@ type ModelsStore = {
   outputPricing: [number, number];
   maxTokens: [number, number];
   providers: string[];
-  features: { reasoning: boolean; toolCall: boolean; temperatureControl: boolean };
+  features: { reasoning: boolean; toolCall: boolean };
   series: string[];
   categories: string[];
   supportedParameters: string[];
@@ -45,7 +45,7 @@ const tupleEquals = (a: readonly [number, number], b: readonly [number, number])
 const featuresEquals = (
   a: NonNullable<FilterState["features"]>,
   b: NonNullable<FilterState["features"]>
-): boolean => !!a.reasoning === !!b.reasoning && !!a.toolCall === !!b.toolCall && !!a.temperatureControl === !!b.temperatureControl;
+): boolean => !!a.reasoning === !!b.reasoning && !!a.toolCall === !!b.toolCall;
 
 const filtersEqual = (a: FilterState, b: FilterState): boolean =>
   arrayEquals(a.inputModalities, b.inputModalities) &&
@@ -60,11 +60,10 @@ const filtersEqual = (a: FilterState, b: FilterState): boolean =>
   arrayEquals(a.categories, b.categories) &&
   arrayEquals(a.supportedParameters, b.supportedParameters);
 
-type StrictFeatures = { reasoning: boolean; toolCall: boolean; temperatureControl: boolean };
+type StrictFeatures = { reasoning: boolean; toolCall: boolean };
 const normalizeFeatures = (f?: FilterState["features"]): StrictFeatures => ({
   reasoning: !!f?.reasoning,
   toolCall: !!f?.toolCall,
-  temperatureControl: !!f?.temperatureControl,
 });
 
 const assembleFiltersFromStore = (s: ModelsStore): FilterState => ({
@@ -101,7 +100,6 @@ export const createUseModelsNuqsSync = (store: ModelsStoreApi) => {
         features: {
           reasoning: qs.rz,
           toolCall: qs.tc,
-          temperatureControl: qs.tctl,
         },
         contextLength: [
           qs.cmin ?? s.contextLength[0],
@@ -143,7 +141,6 @@ export const createUseModelsNuqsSync = (store: ModelsStoreApi) => {
           params: s.supportedParameters,
           rz: s.features.reasoning,
           tc: s.features.toolCall,
-          tctl: s.features.temperatureControl,
           cmin: s.contextLength[0],
           cmax: s.contextLength[1],
           tmin: s.maxTokens[0],
@@ -159,5 +156,4 @@ export const createUseModelsNuqsSync = (store: ModelsStoreApi) => {
     }, [setQs]);
   };
 };
-
 

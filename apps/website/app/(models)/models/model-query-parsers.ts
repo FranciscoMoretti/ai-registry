@@ -12,7 +12,8 @@ const sortParser = createParser<SortOption>({
   parse: (v) =>
     (
       [
-        "newest",
+        "name-asc",
+        "name-desc",
         "pricing-low",
         "pricing-high",
         "context-high",
@@ -20,13 +21,13 @@ const sortParser = createParser<SortOption>({
       ] as const
     ).includes(v as SortOption)
       ? (v as SortOption)
-      : "newest",
+      : "name-asc",
   serialize: (v) => v,
 });
 
 export const queryParsers = {
   q: parseAsString.withDefault(""),
-  sort: sortParser.withDefault("newest"),
+  sort: sortParser.withDefault("name-asc"),
   im: parseAsArrayOf(parseAsString).withDefault([]),
   om: parseAsArrayOf(parseAsString).withDefault([]),
   prov: parseAsArrayOf(parseAsString).withDefault([]),
@@ -35,7 +36,6 @@ export const queryParsers = {
   params: parseAsArrayOf(parseAsString).withDefault([]),
   rz: parseAsBoolean.withDefault(false),
   tc: parseAsBoolean.withDefault(false),
-  tctl: parseAsBoolean.withDefault(false),
   cmin: parseAsInteger,
   cmax: parseAsInteger,
   tmin: parseAsInteger,
@@ -48,5 +48,3 @@ export const queryParsers = {
 
 export const useModelsQueryStates = () =>
   useQueryStates(queryParsers);
-
-
