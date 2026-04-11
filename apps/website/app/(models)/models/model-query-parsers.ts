@@ -6,7 +6,6 @@ import {
   parseAsString,
   useQueryStates,
 } from "nuqs";
-import { MODEL_RANGE_LIMITS } from "./models-constants";
 import type { SortOption } from "./models-types";
 
 const sortParser = createParser<SortOption>({
@@ -37,14 +36,14 @@ export const queryParsers = {
   rz: parseAsBoolean.withDefault(false),
   tc: parseAsBoolean.withDefault(false),
   tctl: parseAsBoolean.withDefault(false),
-  cmin: parseAsInteger.withDefault(MODEL_RANGE_LIMITS.context[0]),
-  cmax: parseAsInteger.withDefault(MODEL_RANGE_LIMITS.context[1]),
-  tmin: parseAsInteger.withDefault(MODEL_RANGE_LIMITS.maxTokens[0]),
-  tmax: parseAsInteger.withDefault(MODEL_RANGE_LIMITS.maxTokens[1]),
-  ipmin: parseAsInteger.withDefault(MODEL_RANGE_LIMITS.inputPricing[0]),
-  ipmax: parseAsInteger.withDefault(MODEL_RANGE_LIMITS.inputPricing[1]),
-  opmin: parseAsInteger.withDefault(MODEL_RANGE_LIMITS.outputPricing[0]),
-  opmax: parseAsInteger.withDefault(MODEL_RANGE_LIMITS.outputPricing[1]),
+  cmin: parseAsInteger,
+  cmax: parseAsInteger,
+  tmin: parseAsInteger,
+  tmax: parseAsInteger,
+  ipmin: parseAsInteger,
+  ipmax: parseAsInteger,
+  opmin: parseAsInteger,
+  opmax: parseAsInteger,
 };
 
 export const useModelsQueryStates = () =>

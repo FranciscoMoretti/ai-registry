@@ -1,5 +1,3 @@
-import { Anthropic, Gemini, Groq, OpenAI, XAI } from "@lobehub/icons";
-
 export const BotIcon = () => (
   <svg
     height="16"
@@ -159,30 +157,6 @@ export const InvoiceIcon = ({ size = 16 }: { size: number }) => (
       fillRule="evenodd"
     />
   </svg>
-);
-
-export const OpenAIIcon = ({ size = 16 }: { size?: number }) => (
-  <OpenAI name="openai" size={size} />
-);
-
-export const GeminiIcon = ({ size = 16 }: { size?: number }) => (
-  <Gemini.Color name="gemini" size={size} />
-);
-
-export const GroqIcon = ({ size = 16 }: { size?: number }) => (
-  <Groq name="groq" size={size} />
-);
-
-export const XAIIcon = ({ size = 16 }: { size?: number }) => (
-  <XAI name="xai" size={size} />
-);
-
-export const GoogleIcon = ({ size = 16 }: { size?: number }) => (
-  <Gemini name="google" size={size} />
-);
-
-export const AnthropicIcon = ({ size = 16 }: { size?: number }) => (
-  <Anthropic name="anthropic" size={size} />
 );
 
 export const RouteIcon = ({ size = 16 }: { size?: number }) => (

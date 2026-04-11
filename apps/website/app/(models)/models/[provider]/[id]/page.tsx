@@ -1,8 +1,8 @@
-import { allModels } from "@airegistry/vercel-gateway";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { WideModelDetails } from "@/app/(models)/models/wide-model-details";
 import { Container } from "@/components/container";
+import { fetchModels, getModelById } from "@/lib/ai/models";
 
 // Toggle to include/exclude performance-related copy
 const ENABLE_PERFORMANCE_COPY = false;
@@ -12,7 +12,7 @@ export default async function SingleModelPage(
 ) {
   const { provider, id } = await props.params;
   const modelId = `${provider}/${id}`;
-  const model = allModels.find((m) => m.id === modelId);
+  const model = await getModelById(modelId);
   if (!model) {
     return notFound();
   }
@@ -39,21 +39,20 @@ export async function generateMetadata(
   const id = resolved.id;
 
   const modelId = `${provider}/${id}`;
-  const model = allModels.find((m) => m.id === modelId) || null;
+  const model = await getModelById(modelId);
 
   const capProv = (p?: string) =>
     (p || "").slice(0, 1).toUpperCase() + (p || "").slice(1);
-  const displayName = (mId: string | null) => {
-    const m = mId ? allModels.find((x) => x.id === mId) || null : null;
+  const displayName = (m: typeof model, fallback: string) => {
     if (!m) {
-      return mId ?? "";
+      return fallback;
     }
     const prov = capProv(m.owned_by);
     return `${prov} ${m.name}`.trim();
   };
 
   const siteName = "AI Registry";
-  const a = displayName(model?.id ?? modelId);
+  const a = displayName(model, modelId);
 
   const benchmarksSuffix = ENABLE_PERFORMANCE_COPY ? " & Benchmarks" : "";
   const buildDetailsList = () => {
@@ -125,6 +124,7 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
+  const allModels = await fetchModels();
   const sortedIds = [...allModels.map((m) => m.id)].sort((a, b) =>
     a.localeCompare(b)
   );

@@ -1,5 +1,5 @@
-import { allModels } from "@airegistry/vercel-gateway";
 import { ImageResponse } from "@vercel/og";
+import { getModelById } from "@/lib/ai/models";
 import {
   OGCard,
   OGContainer,
@@ -55,10 +55,8 @@ export async function GET(req: Request) {
     );
   }
 
-  const left = allModels.find((m) => m.id === modelId1) || null;
-  const right = modelId2
-    ? allModels.find((m) => m.id === modelId2) || null
-    : null;
+  const left = await getModelById(modelId1);
+  const right = modelId2 ? await getModelById(modelId2) : null;
 
   // modelId1 is required, so no ecosystem summary branch
 
@@ -79,8 +77,8 @@ export async function GET(req: Request) {
     ? truncate(`${right?.name || modelId2?.split("/")?.[1] || ""}`.trim(), 30)
     : "Other Models";
   const baseUrl = getBaseUrl();
-  const leftIcon = left ? getProviderIconUrl(left.owned_by, baseUrl) : null;
-  const rightIcon = right ? getProviderIconUrl(right.owned_by, baseUrl) : null;
+  const leftIcon = left ? getProviderIconUrl(left.owned_by) : null;
+  const rightIcon = right ? getProviderIconUrl(right.owned_by) : null;
   const appIcon = getAppIconUrl(baseUrl);
   const arrowRight = getArrowRightUrl(baseUrl);
   const capabilityIcons = getCapabilityIcons(baseUrl);

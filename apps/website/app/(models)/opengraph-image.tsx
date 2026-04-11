@@ -1,7 +1,5 @@
-import type { ProviderId } from "@airegistry/vercel-gateway";
-
-import { allModels } from "@airegistry/vercel-gateway";
 import { ImageResponse } from "@vercel/og";
+import { fetchModels } from "@/lib/ai/models";
 import { formatNumberCompact } from "@/lib/format-number-compact";
 import { OGCard, OGContainer, OGFooter, OGTitle } from "@/lib/og/components";
 import {
@@ -19,7 +17,8 @@ export const dynamic = 'force-static'
 export const contentType = "image/png";
 export const size = OG_SIZE;
 
-export default function OGImage() {
+export default async function OGImage() {
+  const allModels = await fetchModels();
   const numModels = allModels.length;
   const providers = Array.from(
     new Set(
@@ -33,7 +32,7 @@ export default function OGImage() {
   const topProviderIcons = providers
     .map((p) => ({
       name: p,
-      iconUrl: getProviderIconUrl(p as ProviderId, getBaseUrl()),
+      iconUrl: getProviderIconUrl(p),
     }))
     .filter((p) => p.iconUrl);
 

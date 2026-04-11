@@ -1,7 +1,7 @@
 "use client";
 
-import type { ModelDefinition, ProviderId } from "@airegistry/vercel-gateway";
 import { Check, ChevronDown, Minus, SquareDashed, X } from "lucide-react";
+import type { ModelData } from "@/lib/ai/model-data";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -32,7 +32,7 @@ import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
 import { formatNumberCompact } from "../../../lib/format-number-compact";
 
 type ModelComparisonCardProps = {
-  model: ModelDefinition | null;
+  model: ModelData | null;
 
   enabledActions?: {
     goToModel?: boolean;
@@ -150,7 +150,7 @@ export function ModelDetailsCard({
     );
   }
 
-  const provider = model.owned_by as ProviderId;
+  const provider = model.owned_by;
   const contextCompact = formatNumberCompact(model.context_window);
   const actions = {
     goToModel: true,
@@ -168,14 +168,6 @@ export function ModelDetailsCard({
             {getProviderIcon(provider, 18)}
             <span className="capitalize">{provider}</span>
           </div>
-        </div>
-        <div className="mt-1 text-muted-foreground text-sm">
-          Released{" "}
-          {model.releaseDate.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          })}
         </div>
         <Separator className="my-2" />
         <Collapsible className="w-full [&[data-state=closed]_.trigger-open]:hidden [&[data-state=open]_.clamped]:hidden [&[data-state=open]_.trigger-closed]:hidden">
@@ -245,9 +237,9 @@ export function ModelDetailsCard({
               </span>
               <span className="font-medium text-sm">
                 $
-                {(Number.parseFloat(model.pricing.input) * 1_000_000).toFixed(
-                  2
-                )}
+                {(
+                  Number.parseFloat(model.pricing.input ?? "0") * 1_000_000
+                ).toFixed(2)}
                 /M tokens
               </span>
             </div>
@@ -257,9 +249,9 @@ export function ModelDetailsCard({
               </span>
               <span className="font-medium text-sm">
                 $
-                {(Number.parseFloat(model.pricing.output) * 1_000_000).toFixed(
-                  2
-                )}
+                {(
+                  Number.parseFloat(model.pricing.output ?? "0") * 1_000_000
+                ).toFixed(2)}
                 /M tokens
               </span>
             </div>
@@ -432,14 +424,10 @@ export function ModelDetailsCard({
               <span className="text-muted-foreground text-sm">
                 {MODEL_CAPABILITIES.temperature.label}
               </span>
-              {model.fixedTemperature === undefined ? (
-                (() => {
-                  const { Icon, label } = MODEL_CAPABILITIES.temperature;
-                  return <CapabilityIcon Icon={Icon} label={label} />;
-                })()
-              ) : (
-                <NotAvailableIcon />
-              )}
+              {(() => {
+                const { Icon, label } = MODEL_CAPABILITIES.temperature;
+                return <CapabilityIcon Icon={Icon} label={label} />;
+              })()}
             </div>
           </Section>
         </div>

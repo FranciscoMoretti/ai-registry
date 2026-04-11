@@ -1,9 +1,8 @@
 "use client";
 
-import { providers } from "@airegistry/vercel-gateway";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
-import { MODEL_RANGE_LIMITS, useModels } from "@/app/(models)/models/models-store-context";
+import { useMemo, useState } from "react";
+import { useModels } from "@/app/(models)/models/models-store-context";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Collapsible,
@@ -104,6 +103,7 @@ function LimitsFilter() {
   const maxTokens = useModels.useMaxTokens();
   const setContextLength = useModels.useSetContextLength();
   const setMaxTokens = useModels.useSetMaxTokens();
+  const rangeLimits = useModels.useRangeLimits();
   return (
     <CollapsibleContent className="space-y-4 pt-3 pb-2">
       <div className="space-y-2">
@@ -112,8 +112,8 @@ function LimitsFilter() {
         </div>
         <Slider
           className="w-full"
-          max={MODEL_RANGE_LIMITS.context[1]}
-          min={MODEL_RANGE_LIMITS.context[0]}
+          max={rangeLimits.context[1]}
+          min={rangeLimits.context[0]}
           onValueChange={(value) => setContextLength(value as [number, number])}
           step={1000}
           value={contextLength}
@@ -129,8 +129,8 @@ function LimitsFilter() {
         </div>
         <Slider
           className="w-full"
-          max={MODEL_RANGE_LIMITS.maxTokens[1]}
-          min={MODEL_RANGE_LIMITS.maxTokens[0]}
+          max={rangeLimits.maxTokens[1]}
+          min={rangeLimits.maxTokens[0]}
           onValueChange={(value) => setMaxTokens(value as [number, number])}
           step={512}
           value={maxTokens}
@@ -147,6 +147,14 @@ function LimitsFilter() {
 function ProvidersFilter() {
   const selectedProviders = useModels.useProviders();
   const setProviders = useModels.useSetProviders();
+  const allModels = useModels.useAllModels();
+  const providers = useMemo(
+    () =>
+      Array.from(new Set(allModels.map((m) => m.owned_by)))
+        .filter(Boolean)
+        .sort(),
+    [allModels]
+  );
   return (
     <CollapsibleContent className="space-y-2 pt-3 pb-2">
       {providers.map((provider) => (
@@ -178,6 +186,7 @@ function PricingFilter() {
   const outputPricing = useModels.useOutputPricing();
   const setInputPricing = useModels.useSetInputPricing();
   const setOutputPricing = useModels.useSetOutputPricing();
+  const rangeLimits = useModels.useRangeLimits();
   return (
     <CollapsibleContent className="space-y-4 pt-3 pb-2">
       <div className="space-y-2">
@@ -186,8 +195,8 @@ function PricingFilter() {
         </div>
         <Slider
           className="w-full"
-          max={MODEL_RANGE_LIMITS.inputPricing[1]}
-          min={MODEL_RANGE_LIMITS.inputPricing[0]}
+          max={rangeLimits.inputPricing[1]}
+          min={rangeLimits.inputPricing[0]}
           onValueChange={(value) => setInputPricing(value as [number, number])}
           step={0.01}
           value={inputPricing}
@@ -203,8 +212,8 @@ function PricingFilter() {
         </div>
         <Slider
           className="w-full"
-          max={MODEL_RANGE_LIMITS.outputPricing[1]}
-          min={MODEL_RANGE_LIMITS.outputPricing[0]}
+          max={rangeLimits.outputPricing[1]}
+          min={rangeLimits.outputPricing[0]}
           onValueChange={(value) => setOutputPricing(value as [number, number])}
           step={0.01}
           value={outputPricing}

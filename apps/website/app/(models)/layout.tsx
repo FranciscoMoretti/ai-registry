@@ -1,12 +1,9 @@
-import { allModels, providers } from "@airegistry/vercel-gateway";
 import type { Metadata } from "next";
 import { ModelsHeader } from "./models-header";
 
-const totalModels = allModels.length;
-const totalProviders = providers.length;
-
 const pageTitle = "Models | AI Registry";
-const pageDescription = `Browse ${totalModels} models across ${totalProviders} providers from Vercel AI Gateway. Filter and compare by provider, context window, and pricing.`;
+const pageDescription =
+  "Browse models across providers from Vercel AI Gateway. Filter and compare by provider, context window, and pricing.";
 
 export const metadata: Metadata = {
   title: pageTitle,

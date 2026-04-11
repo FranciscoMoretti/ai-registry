@@ -1,6 +1,6 @@
 "use client";
-import type { ModelDefinition, ProviderId } from "@airegistry/vercel-gateway";
 import Link from "next/link";
+import type { ModelData } from "@/lib/ai/model-data";
 import { type ComponentType, memo, type SVGProps } from "react";
 import { ButtonCopy } from "@/components/button-copy";
 import { LazyTooltip } from "@/components/lazy-tooltip";
@@ -58,7 +58,7 @@ function CapabilityIcon({
 
 const PROVIDER_ICON_SIZE = 28;
 
-function ModelInputOutputSection({ model }: { model: ModelDefinition }) {
+function ModelInputOutputSection({ model }: { model: ModelData }) {
   const hasInput = Boolean(
     model.input?.text ||
       model.input?.image ||
@@ -135,10 +135,8 @@ function ModelInputOutputSection({ model }: { model: ModelDefinition }) {
   );
 }
 
-function ModelFeaturesSection({ model }: { model: ModelDefinition }) {
-  if (
-    !(model.reasoning || model.toolCall || model.fixedTemperature === undefined)
-  ) {
+function ModelFeaturesSection({ model }: { model: ModelData }) {
+  if (!(model.reasoning || model.toolCall)) {
     return null;
   }
   return (
@@ -158,18 +156,12 @@ function ModelFeaturesSection({ model }: { model: ModelDefinition }) {
             label={MODEL_CAPABILITIES.tools.label}
           />
         )}
-        {model.fixedTemperature === undefined && (
-          <CapabilityIcon
-            Icon={MODEL_CAPABILITIES.temperature.Icon}
-            label={MODEL_CAPABILITIES.temperature.label}
-          />
-        )}
       </div>
     </div>
   );
 }
 
-function ModelCapabilitiesRow({ model }: { model: ModelDefinition }) {
+function ModelCapabilitiesRow({ model }: { model: ModelData }) {
   return (
     <div className="flex flex-col justify-start gap-3 sm:flex-row sm:items-center sm:gap-2">
       <ModelInputOutputSection model={model} />
@@ -178,7 +170,7 @@ function ModelCapabilitiesRow({ model }: { model: ModelDefinition }) {
   );
 }
 
-function ModelMetaRow({ model }: { model: ModelDefinition }) {
+function ModelMetaRow({ model }: { model: ModelData }) {
   return (
     <div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
       <span>
@@ -205,33 +197,22 @@ function ModelMetaRow({ model }: { model: ModelDefinition }) {
       <span>
         Input{" "}
         <span className="font-medium text-foreground">
-          {formatUsdPerMTokens(model.pricing.input)}
+          {formatUsdPerMTokens(model.pricing.input ?? "0")}
         </span>
       </span>
       <span>•</span>
       <span>
         Output{" "}
         <span className="font-medium text-foreground">
-          {formatUsdPerMTokens(model.pricing.output)}
-        </span>
-      </span>
-      <span>•</span>
-      <span>
-        Released{" "}
-        <span className="font-medium text-foreground">
-          {model.releaseDate.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          })}
+          {formatUsdPerMTokens(model.pricing.output ?? "0")}
         </span>
       </span>
     </div>
   );
 }
 
-function PureModelCard({ model }: { model: ModelDefinition }) {
-  const provider = model.owned_by as ProviderId;
+function PureModelCard({ model }: { model: ModelData }) {
+  const provider = model.owned_by;
 
   return (
     <Card className="group relative cursor-pointer gap-4 transition-all duration-200 hover:border-primary/20 hover:shadow-lg">

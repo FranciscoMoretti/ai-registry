@@ -1,5 +1,4 @@
 "use client";
-import type { ModelId } from "@airegistry/vercel-gateway";
 import { ExternalLink, MessageSquare, Scale } from "lucide-react";
 import type React from "react";
 import type { ComponentProps } from "react";
@@ -21,7 +20,7 @@ export function ChatModelButton({
   size,
   variant = "default",
 }: {
-  modelId?: ModelId | string | null;
+  modelId?: string | null;
   className?: string;
   children?: React.ReactNode;
   hideIcon?: boolean;
@@ -48,7 +47,7 @@ export function CompareModelButton({
   hideIcon,
   ...props
 }: {
-  modelId: string | ModelId;
+  modelId: string;
   className?: string;
   size?: ComponentProps<typeof LinkButton>["size"];
   children?: React.ReactNode;
@@ -76,7 +75,7 @@ export function GoToModelButton({
   variant = "outline",
   ...props
 }: {
-  modelId: string | ModelId;
+  modelId: string;
   className?: string;
   children?: React.ReactNode;
   hideIcon?: boolean;

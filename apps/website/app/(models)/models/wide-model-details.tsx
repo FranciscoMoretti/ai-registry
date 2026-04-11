@@ -1,7 +1,7 @@
 "use client";
 
-import type { ModelDefinition, ProviderId } from "@airegistry/vercel-gateway";
 import { useMemo } from "react";
+import type { ModelData } from "@/lib/ai/model-data";
 import { ButtonCopy } from "@/components/button-copy";
 import {
   ChatModelButton,
@@ -17,14 +17,14 @@ export function WideModelDetails({
   model,
   enabledActions,
 }: {
-  model: ModelDefinition;
+  model: ModelData;
   enabledActions?: {
     goToModel?: boolean;
     chat?: boolean;
     compare?: boolean;
   };
 }) {
-  const provider = model?.owned_by as ProviderId | undefined;
+  const provider = model?.owned_by;
   const contextCompact = useMemo(
     () => (model ? formatNumberCompact(model.context_window) : "--"),
     [model?.id, model?.context_window, model]
@@ -70,21 +70,12 @@ export function WideModelDetails({
         </div>
       </div>
 
-      {/* Release date + description */}
+      {/* Description */}
       <div className="space-y-1">
         <div className="flex items-center gap-2">
           <span className="flex items-center gap-1 text-muted-foreground text-xs">
             <code className="truncate font-mono">{model.id}</code>
             <ButtonCopy className="h-6 w-6" code={model.id} />
-          </span>
-          <span className="text-muted-foreground text-xs">|</span>
-          <span className="text-muted-foreground text-xs">
-            Released{" "}
-            {model.releaseDate.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
           </span>
         </div>
         <p className="text-foreground text-sm leading-6">{model.description}</p>
@@ -100,7 +91,7 @@ export function WideModelDetails({
             label="Pricing (Input)"
             value={
               model
-                ? `$${(Number.parseFloat(model.pricing.input) * 1_000_000).toFixed(2)}/M tokens`
+                ? `$${(Number.parseFloat(model.pricing.input ?? "0") * 1_000_000).toFixed(2)}/M tokens`
                 : "--"
             }
           />
@@ -108,7 +99,7 @@ export function WideModelDetails({
             label="Pricing (Output)"
             value={
               model
-                ? `$${(Number.parseFloat(model.pricing.output) * 1_000_000).toFixed(2)}/M tokens`
+                ? `$${(Number.parseFloat(model.pricing.output ?? "0") * 1_000_000).toFixed(2)}/M tokens`
                 : "--"
             }
           />
@@ -213,7 +204,7 @@ export function WideModelDetails({
             label={MODEL_CAPABILITIES.tools.label}
           />
           <ModalityRow
-            enabled={model?.fixedTemperature === undefined}
+            enabled={true}
             Icon={MODEL_CAPABILITIES.temperature.Icon}
             label={MODEL_CAPABILITIES.temperature.label}
           />

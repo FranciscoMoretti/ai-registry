@@ -1,12 +1,14 @@
 "use client";
 
-import { allModels, type ModelDefinition } from "@airegistry/vercel-gateway";
 import { useParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import { ModelDetails } from "@/app/(models)/models/model-details";
+import { useModels } from "@/app/(models)/models/models-store-context";
 import { Container } from "@/components/container";
+import type { ModelData } from "@/lib/ai/model-data";
 
 export default function ComparePage() {
+  const allModels = useModels.useAllModels();
   const params = useParams<{ slug?: string[] | string }>();
 
   const segments = useMemo(() => {
@@ -28,19 +30,19 @@ export default function ComparePage() {
     segments.length >= 4 ? `${segments[2]}/${segments[3]}` : null
   );
 
-  const leftModel: ModelDefinition | null = useMemo(() => {
+  const leftModel: ModelData | null = useMemo(() => {
     if (!leftModelId) {
       return null;
     }
     return allModels.find((m) => m.id === leftModelId) || null;
-  }, [leftModelId]);
+  }, [leftModelId, allModels]);
 
-  const rightModel: ModelDefinition | null = useMemo(() => {
+  const rightModel: ModelData | null = useMemo(() => {
     if (!rightModelId) {
       return null;
     }
     return allModels.find((m) => m.id === rightModelId) || null;
-  }, [rightModelId]);
+  }, [rightModelId, allModels]);
 
   function pushCompareUrl(leftId: string | null, rightId: string | null) {
     const parts: string[] = [];

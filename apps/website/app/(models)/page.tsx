@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ModelFilters } from "@/app/(models)/models/model-filters";
 import { ModelsProvider } from "@/app/(models)/models/models-store-context";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { fetchModels } from "@/lib/ai/models";
 import { ModelsResults } from "./models/models-results";
 
 const pageTitle = "Models | AI Registry";
@@ -39,9 +40,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const allModels = await fetchModels();
   return (
-    <ModelsProvider>
+    <ModelsProvider allModels={allModels}>
       <ModelsPageContent />
     </ModelsProvider>
   );

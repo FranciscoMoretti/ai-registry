@@ -1,10 +1,9 @@
 "use client";
-import type { ModelDefinition } from "@airegistry/vercel-gateway";
-import { allModels, getModelDefinition } from "@airegistry/vercel-gateway";
 import { ModelDetailsCard } from "@/app/(models)/compare/model-details-card";
-import { ChatModelButton } from "@/components/model-action-buttons";
 import { ModelSelectorBase } from "@/components/model-selector-base";
+import type { ModelData } from "@/lib/ai/model-data";
 import { cn } from "@/lib/utils";
+import { useModels } from "./models-store-context";
 
 export function ModelDetails({
   className,
@@ -13,7 +12,7 @@ export function ModelDetails({
   enabledActions,
 }: {
   className?: string;
-  modelDefinition: ModelDefinition | null;
+  modelDefinition: ModelData | null;
   onModelChangeAction: (nextId: string) => void;
   enabledActions?: {
     goToModel?: boolean;
@@ -21,6 +20,7 @@ export function ModelDetails({
     compare?: boolean;
   };
 }) {
+  const allModels = useModels.useAllModels();
   return (
     <div
       className={cn("mb-6 flex w-full max-w-[450px] flex-col gap-4", className)}
@@ -32,7 +32,7 @@ export function ModelDetails({
           initialChevronDirection="down"
           models={allModels.map((m) => ({
             id: m.id,
-            definition: getModelDefinition(m.id),
+            definition: m,
           }))}
           onModelChange={onModelChangeAction}
           selectedModelId={modelDefinition?.id}
