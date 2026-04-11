@@ -272,7 +272,7 @@ export function ModelFilters({ className }: { className?: string }) {
   };
 
   return (
-    <div className={cn("h-full w-full border-r bg-sidebar p-4", className)}>
+    <div className={cn("h-full w-full border-r bg-background p-4", className)}>
       <div className="sticky top-4 space-y-4 pr-2">
         <Collapsible
           onOpenChange={() => toggleSection("inputModalities")}

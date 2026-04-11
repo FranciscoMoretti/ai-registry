@@ -52,7 +52,7 @@ export default async function HomePage() {
 function ModelsPageContent() {
   return (
     <div className="grid h-full min-h-0 grid-cols-1 md:grid-cols-[auto_1fr]">
-      <aside className="hidden min-h-0 w-full bg-sidebar md:block md:h-full md:w-64">
+      <aside className="hidden min-h-0 w-full bg-background md:block md:h-full md:w-64">
         <ScrollArea className="h-full">
           <ModelFilters className="overflow-y-auto p-4" />
         </ScrollArea>
