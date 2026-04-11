@@ -179,6 +179,17 @@ const computeResults = (
     return Number.isFinite(price) ? price : null;
   };
 
+  const totalPrice = (model: ModelData): number | null => {
+    const inputPrice = parsePrice(model.pricing.input);
+    const outputPrice = parsePrice(model.pricing.output);
+
+    if (inputPrice === null || outputPrice === null) {
+      return null;
+    }
+
+    return inputPrice + outputPrice;
+  };
+
   let workingList: ModelData[] = allModels;
 
   if (searchQuery) {
@@ -270,24 +281,16 @@ const computeResults = (
         return a.name.localeCompare(b.name);
       case "name-desc":
         return b.name.localeCompare(a.name);
-      case "pricing-low":
-        return (
-          (Number.parseFloat(a.pricing.input ?? "0") +
-            Number.parseFloat(a.pricing.output ?? "0")) *
-            1_000_000 -
-          (Number.parseFloat(b.pricing.input ?? "0") +
-            Number.parseFloat(b.pricing.output ?? "0")) *
-            1_000_000
-        );
-      case "pricing-high":
-        return (
-          (Number.parseFloat(b.pricing.input ?? "0") +
-            Number.parseFloat(b.pricing.output ?? "0")) *
-            1_000_000 -
-          (Number.parseFloat(a.pricing.input ?? "0") +
-            Number.parseFloat(a.pricing.output ?? "0")) *
-            1_000_000
-        );
+      case "pricing-low": {
+        const aPrice = totalPrice(a) ?? Number.POSITIVE_INFINITY;
+        const bPrice = totalPrice(b) ?? Number.POSITIVE_INFINITY;
+        return aPrice - bPrice;
+      }
+      case "pricing-high": {
+        const aPrice = totalPrice(a) ?? Number.NEGATIVE_INFINITY;
+        const bPrice = totalPrice(b) ?? Number.NEGATIVE_INFINITY;
+        return bPrice - aPrice;
+      }
       case "context-high":
         return b.context_window - a.context_window;
       case "max-output-tokens-high":
