@@ -30,9 +30,9 @@ Thank you for your interest in contributing to AI Registry! We welcome contribut
 
 ### Project Structure
 
-This is a monorepo managed with Turbo. The main package is located at:
+This is a monorepo managed with Turbo. The main app is located at:
 
-- `packages/vercel-gateway/` - The core Vercel AI Gateway library
+- `apps/website/` - The AI Registry website
 
 ### Available Scripts
 
@@ -62,13 +62,7 @@ This is a monorepo managed with Turbo. The main package is located at:
 
 3. Write or update tests for your changes
 
-4. Create a changeset for your changes:
-   ```bash
-   pnpm changeset
-   ```
-   - Select the package(s) affected
-   - Choose the appropriate version bump (patch/minor/major)
-   - Write a concise description of the changes
+4. Update any relevant documentation when behavior or developer workflows change
 
 ## Commit Guidelines
 
@@ -95,7 +89,6 @@ docs: update README with new API examples
 1. Ensure your PR:
 
    - Has a clear, descriptive title
-   - Includes a changeset (run `pnpm changeset` if you haven't)
    - Passes all CI checks
    - Includes tests for new functionality
    - Updates documentation if needed
@@ -108,14 +101,6 @@ docs: update README with new API examples
    - Screenshots/demos for UI changes
 
 3. Link any related issues using keywords like `Fixes #123` or `Closes #456`
-
-## Release Process
-
-Releases are automated through GitHub Actions and changesets:
-
-1. When PRs with changesets are merged to `main`, a "Version Packages" PR is automatically created
-2. This PR updates package versions and changelogs
-3. When the Version Packages PR is merged, packages are automatically published to npm
 
 ## Code Style
 
