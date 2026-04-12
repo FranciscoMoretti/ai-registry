@@ -9,10 +9,14 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Slider } from "@/components/ui/slider";
+import { LogRangeSlider } from "@/components/ui/log-range-slider";
 import { formatNumberCompact } from "@/lib/format-number-compact";
 import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
 import { cn } from "@/lib/utils";
+
+const roundTokens = (v: number) => Math.max(0, Math.round(v / 1000) * 1000);
+const roundCents = (v: number) => Math.max(0, Math.round(v * 100) / 100);
+const formatPrice = (v: number) => (v <= 0 ? "FREE" : `$${v.toFixed(2)}`);
 
 export type FilterState = {
   inputModalities: string[];
@@ -107,35 +111,27 @@ function LimitsFilter() {
         <div className="text-muted-foreground text-xs">
           Context length (tokens)
         </div>
-        <Slider
-          className="w-full"
+        <LogRangeSlider
+          formatLabel={formatNumberCompact}
           max={rangeLimits.context[1]}
           min={rangeLimits.context[0]}
-          onValueChange={(value) => setContextLength(value as [number, number])}
-          step={1000}
+          onValueChange={setContextLength}
+          roundValue={roundTokens}
           value={contextLength}
         />
-        <div className="flex justify-between text-muted-foreground text-xs">
-          <span>{formatNumberCompact(contextLength[0])}</span>
-          <span>{formatNumberCompact(contextLength[1])}</span>
-        </div>
       </div>
       <div className="space-y-2">
         <div className="text-muted-foreground text-xs">
           Max output tokens (tokens)
         </div>
-        <Slider
-          className="w-full"
+        <LogRangeSlider
+          formatLabel={formatNumberCompact}
           max={rangeLimits.maxTokens[1]}
           min={rangeLimits.maxTokens[0]}
-          onValueChange={(value) => setMaxTokens(value as [number, number])}
-          step={512}
+          onValueChange={setMaxTokens}
+          roundValue={roundTokens}
           value={maxTokens}
         />
-        <div className="flex justify-between text-muted-foreground text-xs">
-          <span>{formatNumberCompact(maxTokens[0])}</span>
-          <span>{formatNumberCompact(maxTokens[1])}</span>
-        </div>
       </div>
     </CollapsibleContent>
   );
@@ -190,35 +186,27 @@ function PricingFilter() {
         <div className="text-muted-foreground text-xs">
           Input price ($/1M tokens)
         </div>
-        <Slider
-          className="w-full"
+        <LogRangeSlider
+          formatLabel={formatPrice}
           max={rangeLimits.inputPricing[1]}
           min={rangeLimits.inputPricing[0]}
-          onValueChange={(value) => setInputPricing(value as [number, number])}
-          step={0.01}
+          onValueChange={setInputPricing}
+          roundValue={roundCents}
           value={inputPricing}
         />
-        <div className="flex justify-between text-muted-foreground text-xs">
-          <span>${inputPricing[0].toFixed(2)}</span>
-          <span>${inputPricing[1].toFixed(2)}</span>
-        </div>
       </div>
       <div className="space-y-2">
         <div className="text-muted-foreground text-xs">
           Output price ($/1M tokens)
         </div>
-        <Slider
-          className="w-full"
+        <LogRangeSlider
+          formatLabel={formatPrice}
           max={rangeLimits.outputPricing[1]}
           min={rangeLimits.outputPricing[0]}
-          onValueChange={(value) => setOutputPricing(value as [number, number])}
-          step={0.01}
+          onValueChange={setOutputPricing}
+          roundValue={roundCents}
           value={outputPricing}
         />
-        <div className="flex justify-between text-muted-foreground text-xs">
-          <span>${outputPricing[0].toFixed(2)}</span>
-          <span>${outputPricing[1].toFixed(2)}</span>
-        </div>
       </div>
     </CollapsibleContent>
   );
@@ -323,22 +311,6 @@ export function ModelFilters({ className }: { className?: string }) {
         </Collapsible>
 
         <Collapsible
-          onOpenChange={() => toggleSection("providers")}
-          open={openSections.providers}
-        >
-          <CollapsibleTrigger className="flex w-full items-center justify-between border-b py-2 font-medium text-sm transition-colors hover:text-primary">
-            <div className="flex items-center gap-2">
-              <MODEL_CATEGORIES.providers.Icon className="h-4 w-4 text-muted-foreground" />
-              <span>Providers</span>
-            </div>
-            <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${openSections.providers ? "rotate-180" : ""}`}
-            />
-          </CollapsibleTrigger>
-          <ProvidersFilter />
-        </Collapsible>
-
-        <Collapsible
           onOpenChange={() => toggleSection("pricing")}
           open={openSections.pricing}
         >
@@ -368,6 +340,22 @@ export function ModelFilters({ className }: { className?: string }) {
             />
           </CollapsibleTrigger>
           <FeaturesFilter />
+        </Collapsible>
+
+        <Collapsible
+          onOpenChange={() => toggleSection("providers")}
+          open={openSections.providers}
+        >
+          <CollapsibleTrigger className="flex w-full items-center justify-between border-b py-2 font-medium text-sm transition-colors hover:text-primary">
+            <div className="flex items-center gap-2">
+              <MODEL_CATEGORIES.providers.Icon className="h-4 w-4 text-muted-foreground" />
+              <span>Providers</span>
+            </div>
+            <ChevronDown
+              className={`h-4 w-4 transition-transform duration-200 ${openSections.providers ? "rotate-180" : ""}`}
+            />
+          </CollapsibleTrigger>
+          <ProvidersFilter />
         </Collapsible>
       </div>
     </div>

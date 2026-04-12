@@ -60,7 +60,7 @@ export async function generateMetadata(
     if (ENABLE_PERFORMANCE_COPY) {
       parts.push("speed");
     }
-    parts.push("limits", "release date");
+    parts.push("limits");
     return parts.length > 1
       ? `${parts.slice(0, -1).join(", ")}, and ${parts.at(-1)}`
       : parts[0];
@@ -93,7 +93,6 @@ export async function generateMetadata(
     `${a} pricing`,
     `${a} context window`,
     `${a} limits`,
-    `${a} release date`,
     `${a} features`,
     `${a} alternatives`,
   ];
