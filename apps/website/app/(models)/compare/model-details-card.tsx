@@ -33,8 +33,10 @@ import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
 import { formatNumberCompact } from "../../../lib/format-number-compact";
 
 const COLLAPSED_DESCRIPTION_LINES = 2;
+const DESCRIPTION_LINE_HEIGHT_MULTIPLIER = 1.625;
+const DESCRIPTION_FONT_SIZE_REM = 0.875;
 const COLLAPSED_DESCRIPTION_MIN_HEIGHT =
-  "calc(2 * 1.625 * 0.875rem)";
+  `calc(${COLLAPSED_DESCRIPTION_LINES} * ${DESCRIPTION_LINE_HEIGHT_MULTIPLIER} * ${DESCRIPTION_FONT_SIZE_REM}rem)`;
 
 function getLineHeightPx(styles: CSSStyleDeclaration) {
   const lineHeightPx = Number.parseFloat(styles.lineHeight);
@@ -43,7 +45,9 @@ function getLineHeightPx(styles: CSSStyleDeclaration) {
   }
 
   const fontSizePx = Number.parseFloat(styles.fontSize);
-  return Number.isFinite(fontSizePx) ? fontSizePx * 1.625 : 0;
+  return Number.isFinite(fontSizePx)
+    ? fontSizePx * DESCRIPTION_LINE_HEIGHT_MULTIPLIER
+    : 0;
 }
 
 type ModelComparisonCardProps = {
@@ -132,6 +136,7 @@ export function ModelDetailsCard({
     if (!model) {
       return;
     }
+    let cancelled = false;
 
     const clampedEl = clampedRef.current;
     const measureEl = measureRef.current;
@@ -140,9 +145,14 @@ export function ModelDetailsCard({
     }
 
     const measure = () => {
+      if (cancelled) {
+        return;
+      }
+
       const styles = window.getComputedStyle(measureEl);
       const lineHeight = getLineHeightPx(styles);
       if (lineHeight <= 0) {
+        setIsDescriptionOverflowing(false);
         return;
       }
 
@@ -155,9 +165,17 @@ export function ModelDetailsCard({
     measure();
     const ro = new ResizeObserver(measure);
     ro.observe(clampedEl);
+    ro.observe(measureEl);
     window.addEventListener("resize", measure);
-    document.fonts?.ready.then(measure).catch(() => {});
+    document.fonts?.ready
+      .then(() => {
+        if (!cancelled) {
+          measure();
+        }
+      })
+      .catch(() => {});
     return () => {
+      cancelled = true;
       ro.disconnect();
       window.removeEventListener("resize", measure);
     };
