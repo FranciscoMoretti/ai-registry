@@ -1,9 +1,8 @@
 "use client";
 
 import { Check, ChevronDown, Minus, SquareDashed, X } from "lucide-react";
-import type { ModelData } from "@/lib/ai/model-data";
 import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   ChatModelButton,
   CompareModelButton,
@@ -26,11 +25,30 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { getProviderIcon } from "@/lib/get-provider-icon";
+import type { ModelData } from "@/lib/ai/model-data";
 import { formatUsdPerMTokens } from "@/lib/format-usd-per-m-tokens";
+import { getProviderIcon } from "@/lib/get-provider-icon";
 import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
 import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
 import { formatNumberCompact } from "../../../lib/format-number-compact";
+
+const COLLAPSED_DESCRIPTION_LINES = 2;
+const DESCRIPTION_LINE_HEIGHT_MULTIPLIER = 1.625;
+const DESCRIPTION_FONT_SIZE_REM = 0.875;
+const COLLAPSED_DESCRIPTION_MIN_HEIGHT =
+  `calc(${COLLAPSED_DESCRIPTION_LINES} * ${DESCRIPTION_LINE_HEIGHT_MULTIPLIER} * ${DESCRIPTION_FONT_SIZE_REM}rem)`;
+
+function getLineHeightPx(styles: CSSStyleDeclaration) {
+  const lineHeightPx = Number.parseFloat(styles.lineHeight);
+  if (Number.isFinite(lineHeightPx)) {
+    return lineHeightPx;
+  }
+
+  const fontSizePx = Number.parseFloat(styles.fontSize);
+  return Number.isFinite(fontSizePx)
+    ? fontSizePx * DESCRIPTION_LINE_HEIGHT_MULTIPLIER
+    : 0;
+}
 
 type ModelComparisonCardProps = {
   model: ModelData | null;
@@ -112,25 +130,56 @@ export function ModelDetailsCard({
   const [isDescriptionOverflowing, setIsDescriptionOverflowing] =
     useState(false);
   const clampedRef = useRef<HTMLParagraphElement | null>(null);
+  const measureRef = useRef<HTMLParagraphElement | null>(null);
 
-  useEffect(() => {
-    const el = clampedRef.current;
-    if (!el) {
+  useLayoutEffect(() => {
+    if (!model) {
       return;
     }
+    let cancelled = false;
+
+    const clampedEl = clampedRef.current;
+    const measureEl = measureRef.current;
+    if (!clampedEl || !measureEl) {
+      return;
+    }
+
     const measure = () => {
-      const overflowing = el.scrollHeight > el.clientHeight + 1;
+      if (cancelled) {
+        return;
+      }
+
+      const styles = window.getComputedStyle(measureEl);
+      const lineHeight = getLineHeightPx(styles);
+      if (lineHeight <= 0) {
+        setIsDescriptionOverflowing(false);
+        return;
+      }
+
+      const collapsedHeight = lineHeight * COLLAPSED_DESCRIPTION_LINES;
+      const measuredHeight = measureEl.getBoundingClientRect().height;
+      const overflowing = measuredHeight > collapsedHeight + 1;
       setIsDescriptionOverflowing(overflowing);
     };
+
     measure();
     const ro = new ResizeObserver(measure);
-    ro.observe(el);
+    ro.observe(clampedEl);
+    ro.observe(measureEl);
     window.addEventListener("resize", measure);
+    document.fonts?.ready
+      .then(() => {
+        if (!cancelled) {
+          measure();
+        }
+      })
+      .catch(() => {});
     return () => {
+      cancelled = true;
       ro.disconnect();
       window.removeEventListener("resize", measure);
     };
-  }, []);
+  }, [model]);
 
   if (!model) {
     return (
@@ -171,13 +220,26 @@ export function ModelDetailsCard({
           </div>
         </div>
         <Separator className="my-2" />
-        <Collapsible className="w-full [&[data-state=closed]_.trigger-open]:hidden [&[data-state=open]_.clamped]:hidden [&[data-state=open]_.trigger-closed]:hidden">
-          <p
-            className="clamped mt-2 line-clamp-2 text-pretty text-muted-foreground text-sm leading-relaxed"
-            ref={clampedRef}
-          >
-            {model.description}
-          </p>
+        <Collapsible
+          className="w-full [&[data-state=closed]_.trigger-open]:hidden [&[data-state=open]_.clamped]:hidden [&[data-state=open]_.trigger-closed]:hidden"
+          key={model.id}
+        >
+          <div className="relative mt-2">
+            <p
+              className="clamped line-clamp-2 text-pretty text-muted-foreground text-sm leading-relaxed"
+              ref={clampedRef}
+              style={{ minHeight: COLLAPSED_DESCRIPTION_MIN_HEIGHT }}
+            >
+              {model.description}
+            </p>
+            <p
+              aria-hidden="true"
+              className="pointer-events-none invisible absolute inset-x-0 top-0 w-full text-pretty text-muted-foreground text-sm leading-relaxed"
+              ref={measureRef}
+            >
+              {model.description}
+            </p>
+          </div>
           <CollapsibleContent className="pb-0">
             <p className="mt-2 text-pretty text-muted-foreground text-sm leading-relaxed">
               {model.description}
