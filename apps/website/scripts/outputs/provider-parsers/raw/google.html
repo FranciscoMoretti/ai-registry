@@ -1,0 +1,3302 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com"><meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty"><meta property="og:site_name" content="Google AI for Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#1967d2"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/googledevai/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Inter:400,500|Inter+Tight:300,500,600&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/images/favicon-new.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/images/touchicon-180-new.png"><link rel="canonical" href="https://ai.google.dev/gemini-api/docs/models"><link rel="search" type="application/opensearchdescription+xml"
+            title="Google AI for Developers" href="https://ai.google.dev/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://ai.google.dev/gemini-api/docs/models" /><link rel="alternate" hreflang="x-default" href="https://ai.google.dev/gemini-api/docs/models" /><link rel="alternate" hreflang="ar"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=vi" /><link rel="alternate" hreflang="sq"
+          href="https://ai.google.dev/gemini-api/docs/models?hl=sq" /><title>Models &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers</title>
+
+<meta property="og:title" content="Models &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers"><meta name="description" content="Learn about all of Google&amp;#39;s most advanced AI models">
+  <meta property="og:description" content="Learn about all of Google&amp;#39;s most advanced AI models"><meta property="og:url" content="https://ai.google.dev/gemini-api/docs/models"><meta property="og:image" content="https://ai.google.dev/static/site-assets/images/share-gemini-api-2.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    
+    "headline": "Models"
+  }
+</script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Gemini API",
+      "item": "https://ai.google.dev/gemini-api"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Models",
+      "item": "https://ai.google.dev/gemini-api/docs/models"
+    }]
+  }
+  </script>
+  
+
+  
+
+  
+
+  
+
+
+    </head>
+  <body class="gemini-api color-scheme--light"
+        template="page"
+        theme="googledevai-theme"
+        type="article"
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+        <devsite-header role="banner" keep-tabs-visible>
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="geminiAPI" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://ai.google.dev/_static/googledevai/images/gemini-api-logo-dark-theme.svg"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://ai.google.dev/_static/googledevai/images/gemini-api-logo.svg" class="devsite-site-logo" alt="Gemini API">
+  </picture>
+  
+</a>
+
+
+
+  
+  
+  <span class="devsite-product-name">
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+  </span>
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    project-name="Gemini API"
+    tenant-name="Google AI for Developers"
+    project-scope="/gemini-api"
+    url-scoped="https://ai.google.dev/s/results/gemini-api"
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://ai.google.dev/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="sq"
+        >Shqip</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://aistudio.google.com/apikey"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Get API key"
+    
+      
+        target="_blank"
+      
+    >
+  Get API key
+</a>
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://github.com/google-gemini/cookbook"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Cookbook"
+    
+      
+        target="_blank"
+      
+    >
+  Cookbook
+</a>
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://discuss.ai.google.dev/c/gemini-api/"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Community"
+    
+      
+        target="_blank"
+      
+    >
+  Community
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="devsite-collapsible-section
+    ">
+    <div class="devsite-header-background">
+      
+        
+      
+      
+        <div class="devsite-doc-set-nav-row">
+          
+          
+            
+            
+  <devsite-tabs class="lower-tabs">
+
+    <nav class="devsite-tabs-wrapper" aria-label="Lower tabs">
+      
+        
+          <tab  class="devsite-active">
+            
+    <a href="https://ai.google.dev/gemini-api/docs"
+    class="devsite-tabs-content gc-analytics-event "
+      track-metadata-eventdetail="https://ai.google.dev/gemini-api/docs"
+    
+       track-type="nav"
+       track-metadata-position="nav - docs"
+       track-metadata-module="primary nav"
+       aria-label="Docs, selected" 
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Docs"
+         
+           track-name="docs"
+         
+       >
+    Docs
+  
+    </a>
+    
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/api"
+    class="devsite-tabs-content gc-analytics-event "
+      track-metadata-eventdetail="https://ai.google.dev/api"
+    
+       track-type="nav"
+       track-metadata-position="nav - api reference"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: API reference"
+         
+           track-name="api reference"
+         
+       >
+    API reference
+  
+    </a>
+    
+  
+          </tab>
+        
+      
+    </nav>
+
+  </devsite-tabs>
+
+          
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+
+  
+</devsite-header>
+        <devsite-book-nav scrollbars >
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" data-nosnippet
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="geminiAPI" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://ai.google.dev/_static/googledevai/images/gemini-api-logo-dark-theme.svg"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://ai.google.dev/_static/googledevai/images/gemini-api-logo.svg" class="devsite-site-logo" alt="Gemini API">
+  </picture>
+  
+</a>
+
+
+  
+      <span class="devsite-product-name">
+        
+        
+        <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+      </span>
+    
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/gemini-api/docs"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              devsite-nav-active"
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Gemini API"
+      
+        track-name="gemini api"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Gemini API"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Gemini API
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+                <ul class="devsite-nav-responsive-tabs">
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/gemini-api/docs"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              devsite-nav-active"
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Docs"
+      
+        track-name="docs"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Docs"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip menu="_book">
+      Docs
+   </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/api"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: API reference"
+      
+        track-name="api reference"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: API reference"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      API reference
+   </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="https://aistudio.google.com/apikey"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+      
+        target="_blank"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Get API key"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Get API key
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="https://github.com/google-gemini/cookbook"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+      
+        target="_blank"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Cookbook"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Cookbook
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="https://discuss.ai.google.dev/c/gemini-api/"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+      
+        target="_blank"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Community"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Community
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+      <div class="devsite-mobile-nav-bottom">
+        
+          
+          <ul class="devsite-nav-list" menu="_book">
+            <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Get started</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/quickstart"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Quickstart</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/api-key"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>API keys</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/libraries"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Libraries</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/pricing"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Pricing</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-beta"><a href="/gemini-api/docs/interactions"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Interactions API</span><span class="devsite-nav-icon material-icons"
+        data-icon="beta"
+        data-title="Beta"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/coding-agents"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Coding agent setup</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Models</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/models"
+        class="devsite-nav-title"
+      
+        alt-paths=" /gemini-api/docs/models/veo-3.1-lite-generate-preview /gemini-api/docs/models/gemini-3.1-flash-live-preview /gemini-api/docs/models/gemini-3.1-flash-lite-preview /gemini-api/docs/models/gemini-3.1-flash-image-preview /gemini-api/docs/models/gemini-3.1-pro-preview /gemini-api/docs/models/gemini-3-pro-preview /gemini-api/docs/models/gemini-3-pro-image-preview /gemini-api/docs/models/gemini-3-flash-preview /gemini-api/docs/models/gemini-2.5-flash /gemini-api/docs/models/gemini-2.5-flash-preview-09-2025 /gemini-api/docs/models/gemini-2.5-flash-image /gemini-api/docs/models/gemini-2.5-flash-native-audio-preview-12-2025 /gemini-api/docs/models/gemini-2.5-flash-preview-tts /gemini-api/docs/models/gemini-2.5-flash-lite /gemini-api/docs/models/gemini-2.5-flash-lite-preview-09-2025 /gemini-api/docs/models/gemini-2.5-pro /gemini-api/docs/models/gemini-2.5-pro-preview-tts /gemini-api/docs/models/gemini-2.0-flash /gemini-api/docs/models/gemini-2.0-flash-lite /gemini-api/docs/models/imagen /gemini-api/docs/models/veo-3.1-generate-preview /gemini-api/docs/models/veo-2.0-generate-001 /gemini-api/docs/models/gemini-embedding-2-preview /gemini-api/docs/models/gemini-embedding-001 /gemini-api/docs/models/gemini-robotics-er-1.5-preview /gemini-api/docs/models/gemini-2.5-computer-use-preview-10-2025 /gemini-api/docs/models/deep-research-pro-preview-12-2025 /gemini-api/docs/models/lyria-realtime-exp /gemini-api/docs/models/lyria-3-clip-preview /gemini-api/docs/models/lyria-3-pro-preview "><span class="devsite-nav-text" tooltip>All models</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/gemini-3"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Gemini 3</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/image-generation"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Nano Banana</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/video"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Veo</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/music-generation"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Lyria 3</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-experimental"><a href="/gemini-api/docs/realtime-music-generation"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Lyria RealTime</span><span class="devsite-nav-icon material-icons"
+        data-icon="experimental"
+        data-title="Experimental!"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/imagen"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Imagen</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/speech-generation"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Text-to-speech</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/embeddings"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Embeddings</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/robotics-overview"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Robotics</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Core capabilities</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/text-generation"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Text</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Image</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/image-generation"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Image generation 🍌</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/image-understanding"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Image understanding</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Video</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/video"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Video generation</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/video-understanding"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Video understanding</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/document-processing"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Documents</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Speech and audio</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/speech-generation"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Speech generation</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/audio"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Audio understanding</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Thinking</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/thinking"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Thinking</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/thought-signatures"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Thought signatures</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/structured-output"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Structured outputs</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/function-calling"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Function calling</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/long-context"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Long context</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Agents</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/agents"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/deep-research"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Deep Research Agent</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Tools</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/tools"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/google-search"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Google Search</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/maps-grounding"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Google Maps</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/code-execution"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Code execution</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/url-context"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>URL context</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/computer-use"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Computer Use</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/file-search"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>File Search</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/tool-combination"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Combine Tools and Function calling</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Live API</span>
+      </div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/live-api"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Overview</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Get started</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/live-api/get-started-sdk"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Get started using the GenAI SDK</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/live-api/get-started-websocket"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Get started using raw WebSockets</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/live-api/capabilities"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Capabilities</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/live-api/tools"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Tool use</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/live-api/session-management"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Session management</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/live-api/ephemeral-tokens"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Ephemeral tokens</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/live-api/best-practices"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Best practices</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Optimization</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/optimization"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/batch-api"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Batch API</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/flex-inference"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Flex inference</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/priority-inference"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Priority inference</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/caching"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Context caching</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Guides</span>
+      </div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>File input</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/file-input-methods"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Input methods</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/files"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Files API</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/openai"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>OpenAI compatibility</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/media-resolution"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Media resolution</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/tokens"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Token counting</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/prompting-strategies"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Prompt engineering</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Logs and datasets</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/logs-datasets"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Get started with logs</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/logs-policy"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Data logging and sharing</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Safety</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/safety-settings"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Safety settings</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/safety-guidance"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Safety guidance</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Frameworks</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/langgraph-example"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>LangChain &amp; LangGraph</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/crewai-example"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>CrewAI</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/llama-index"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>LlamaIndex</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/vercel-ai-sdk-example"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Vercel AI SDK</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/temporal-example"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Temporal</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Resources</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/changelog"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Release notes</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/deprecations"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Deprecations</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/rate-limits"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Rate limits</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/billing"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Billing info</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/migrate"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Migrate to Gen AI SDK</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/troubleshooting"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>API troubleshooting</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/partner-integration"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Partner and library integrations</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Google AI Studio</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/ai-studio-quickstart"
+        class="devsite-nav-title"
+      
+        alt-paths=" /gemini-api/docs/learnlm "><span class="devsite-nav-text" tooltip>Quickstart</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/aistudio-build-mode"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Vibe code in Build mode</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/aistudio-fullstack"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Developing Full-Stack Apps</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/troubleshoot-ai-studio"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Troubleshooting</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/workspace"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Access for Workspace users</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Google Cloud Platform</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/migrate-to-cloud"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>VertexAI Gemini API</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/oauth"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>OAuth authentication</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Policies</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/terms"
+        class="devsite-nav-title"
+      
+        alt-paths=" /gemini-api/docs/zdr "><span class="devsite-nav-text" tooltip>Terms of service</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/available-regions"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Available regions</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/usage-policies"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Abuse monitoring</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/feedback-policies"
+        class="devsite-nav-title"
+      ><span class="devsite-nav-text" tooltip>Feedback information</span></a></li>
+          </ul>
+        
+        
+          
+    
+  
+        
+        
+          
+    
+  
+    
+  
+        
+      </div>
+    
+  </div>
+</nav>
+          
+        </devsite-book-nav>
+      
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              has-book-nav
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="2"
+                            scrollbars
+                            data-nosnippet
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav" data-nosnippet>
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      /* Styles inlined from /site-assets/css/models.css */
+:root {
+  --gemini-api-table-font-color: #3c4043;
+  --gemini-api-model-font: 'Google Sans Text', Roboto, sans-serif;
+  --gemini-api-card-width: 17rem;
+  --gemini-api-elevation-1dp: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+                              0 2px 1px -1px rgba(0, 0, 0, 0.12),
+                              0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  --gemini-api-elevation-3dp: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+                              0 3px 3px -2px rgba(0, 0, 0, 0.12),
+                              0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+body[theme="googledevai-theme"] {
+  --googledevai-button-gradient: var(--googledevai-button-gradient-light);
+}
+
+body[theme="googledevai-theme"].color-scheme--dark {
+  --googledevai-button-gradient: var(--googledevai-button-gradient-dark);
+}
+
+.google-symbols {
+  background: -webkit-linear-gradient(45deg, var(--googledevai-blue), var(--googledevai-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+  vertical-align: bottom;
+}
+
+
+/* Cards */
+@media only screen and (min-width: 625px) {
+  .gemini-api-recommended {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Three equal-width columns */
+    grid-column-gap: 3rem;  /* Keep the gap between columns */
+  }
+}
+
+.gemini-api-recommended {
+  width: 100%;  /* Take full width of parent */
+  margin: 0 auto;
+}
+
+.gemini-api-card {
+  background: var(--devsite-background-1);
+  border: 1px solid var(--googledevai-border-color);
+  border-radius: 9px;
+  box-shadow: var(--gemini-api-elevation-1dp);
+  height: 23rem;
+  margin: 1rem .5rem;
+  padding: 1rem;
+  transition: box-shadow 0.3s ease-in-out;
+  width: var(--gemini-api-card-width);
+}
+
+.color-scheme--dark .gemini-api-card {
+  background: #131314;
+  border-color: #444746;
+}
+
+.gemini-api-card:hover {
+  box-shadow: var(--gemini-api-elevation-3dp);
+}
+
+.gemini-api-card a:empty {
+  display: block;
+  position: relative;
+  height: 23rem;
+  width: var(--gemini-api-card-width);
+  top: -22.8rem;
+  left: -1rem;
+}
+
+.gemini-api-card a:empty:focus {
+  border: 2px solid var(--devsite-primary-color);
+  border-radius: 9px;
+}
+
+.gemini-api-card-title {
+  font-family: "Google Sans", Roboto, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  height: 1.5rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.3rem;
+}
+
+.gemini-api-card-description {
+  font-size: .9rem;
+  height: 7.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.gemini-api-card-bulletpoints {
+  color: #757575;
+  font-size: .8rem;
+  height: 8.2rem;
+  margin-left: 1rem;
+  padding: 0;
+}
+
+.color-scheme--dark .gemini-api-card-bulletpoints {
+  color: var(--devsite-primary-text-color);
+}
+
+.gemini-api-card-description,
+.gemini-api-card-bulletpoints {
+  font-family: var(--gemini-api-model-font);
+}
+
+.gemini-api-card-bulletpoints li {
+  line-height: 1rem;
+  margin: .3rem 0;
+}
+
+/* Tables */
+.gemini-api-model-table,
+.gemini-api-model-table th {
+  color: var(--gemini-api-table-font-color);
+  font: .95rem var(--gemini-api-model-font);
+}
+
+.color-scheme--dark .gemini-api-model-table,
+.color-scheme--dark .gemini-api-model-table th {
+  color: var(--devsite-primary-text-color);
+}
+
+.gemini-api-model-table th {
+  font-weight: 500;
+}
+
+.gemini-api-model-table td:first-child {
+  max-width: 0;
+}
+
+.gemini-api-model-table-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1rem .5rem;
+}
+
+.gemini-api-model-table section {
+  display: inline-grid;
+}
+
+.gemini-api-model-table p {
+  margin: 0 0 .5rem;
+}
+
+.gemini-api-model-table li {
+  margin: 0;
+}
+
+.gemini-api-model-table ul {
+  margin-top: .5rem;
+}
+
+.gemini-api-model-table .google-symbols {
+  margin-right: .7rem;
+  vertical-align: middle;
+}
+
+.gemini-api-supported,
+.gemini-api-not-supported,
+.gemini-api-experimental,
+.gemini-api-new {
+  border-radius: 8px;
+  display: inline-block;
+  font-size: .9rem;
+  font-weight: 500;
+  line-height: 1rem;
+  padding: .3rem 0.5em;
+}
+
+.gemini-api-supported {
+  background: #e6f4ea; /* GM3 Green 50 */
+  color: #177d37; /* GM3 Green 700 */
+}
+
+.gemini-api-not-supported {
+  background: #fce8e6; /* GM3 Red 50 */
+  color: #c5221f; /* GM3 Red 700 */
+}
+
+.gemini-api-experimental {
+  background: #e8def8;
+  color: #4a4458;
+}
+
+.gemini-api-new {
+  background: #c2e7ff; /* GM3 Blue 100 */
+  color: #001d35; /* GM3 Blue 900 */
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+.color-scheme--dark .gemini-api-supported {
+  background: #177d37; /* GM3 Green 700 */
+  color: #e6f4ea; /* GM3 Green 50 */
+}
+
+.color-scheme--dark .gemini-api-not-supported {
+  background: #c5221f; /* GM3 Red 700 */
+  color: #fce8e6; /* GM3 Red 50 */
+}
+
+.color-scheme--dark .gemini-api-new {
+  background: #004a77; /* GM3 Blue 800 */
+  color: #c2e7ff; /* GM3 Blue 100 */
+}
+
+/* Buttons */
+.gemini-api-model-button {
+  background: var(--googledevai-button-gradient);
+  background-size: 300% 300%;
+  border-radius: 20rem;
+  color: #001d35;
+  font-family: var(--gemini-api-model-font);
+  font-size: .9rem;
+  font-weight: 500;
+  padding: .6rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: filter .2s ease-in-out,
+              box-shadow .2s ease-in-out;
+}
+
+.gemini-api-model-button:hover{
+  animation: gradient 5s ease infinite;
+  filter: brightness(.98);
+  box-shadow: var(--gemini-api-elevation-1dp);
+}
+
+.gemini-api-model-button:focus {
+  filter: brightness(.95);
+  outline: #00639b solid 3px;
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+.gemini-api-model-button::before {
+  content: 'spark';
+  font-family: 'Google Symbols';
+  padding-right: 0.5rem;
+  vertical-align: middle;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.model-card {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.color-scheme--dark .model-card {
+  background-color: #3c4043;
+}
+
+.model-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    padding: 2.5rem;
+    flex: 1;
+}
+
+.sub-heading-model {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 0.5rem 0;
+}
+
+.color-scheme--dark .sub-heading-model {
+  color: var(--devsite-primary-text-color);
+}
+
+.card-content h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #3c4043;
+    margin: 0 0 1.5rem 0;
+}
+
+.color-scheme--dark .description {
+  color: var(--devsite-primary-text-color);
+}
+
+.card-content a:not(.gemini-api-model-button) {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .model-card {
+        flex-direction: column;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* --- COMPACT MODEL GRID (2 Columns) --- */
+
+/* Grid container to create the two-column layout */
+.gemini-model-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  grid-column-gap: 2rem;
+  grid-row-gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Individual row styling with stretched-link support */
+.gemini-model-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative; /* Essential for containing the stretched link */
+  padding: 0.75rem;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+/* Row hover effect to indicate clickability */
+.gemini-model-row:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.color-scheme--dark .gemini-model-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* The small square icon card with gradient background */
+.gemini-icon-card-small {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--googledevai-button-gradient-light); /* [cite: 77] */
+  border-radius: 12px;
+  box-shadow: var(--gemini-api-elevation-1dp); /* [cite: 120] */
+  z-index: 2; /* Keeps icon above the clickable link layer */
+}
+
+.color-scheme--dark .gemini-icon-card-small {
+  background: var(--googledevai-button-gradient-dark); /* [cite: 77] */
+}
+
+/* Icon styling */
+.gemini-icon-card-small .google-symbols {
+  font-size: 20px;
+  color: #001d35; /* Dark text for contrast against gradient */
+  -webkit-text-fill-color: initial; /* Override transparent fill [cite: 123] */
+}
+
+/* Text details container */
+.gemini-model-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.gemini-model-name {
+  font-family: var(--gemini-api-model-font); /* [cite: 119] */
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 2px 0;
+}
+
+/* Stretched Link Logic */
+.gemini-model-name a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gemini-model-name a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1; /* Expands click area to the entire .gemini-model-row */
+}
+
+/* Style for optional status text (e.g., experimental, preview) */
+.gemini-model-name .model-status,
+.title-large h3 .model-status {
+  color: #bdc1c6; /* Very light gray */
+  font-style: italic;
+  margin-left: 0.4rem;
+}
+
+/* Dark mode adjustment to ensure it stays "light" relative to the background */
+.color-scheme--dark .gemini-model-name .model-status {
+  color: #70757a;
+}
+
+.gemini-model-desc {
+  font-family: var(--gemini-api-model-font); /* [cite: 133] */
+  font-size: 0.85rem;
+  line-height: 1.3;
+  color: #5f6368;
+  margin: 0;
+}
+
+.color-scheme--dark .gemini-model-desc {
+  color: var(--devsite-primary-text-color); /* [cite: 54] */
+}
+
+/* --- CENTERED MODEL GRID (3 Cards) --- */
+
+.gemini-centered-model-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.gemini-card-centered {
+  background: var(--devsite-background-1); /* [cite: 53] */
+  border: 1px solid var(--googledevai-border-color); /* [cite: 76] */
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease-in-out; /* [cite: 54] */
+  flex: 0 1 calc(33.333% - 1rem);
+  box-sizing: border-box;
+}
+
+.gemini-card-centered:hover {
+  box-shadow: var(--gemini-api-elevation-3dp); /* [cite: 121] */
+}
+
+.gemini-card-centered:active,
+.gemini-card-centered:focus {
+  text-decoration: none;
+}
+
+.gemini-card-centered .title-large {
+  font-family: var(--devsite-primary-font-family); /* [cite: 75] */
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--devsite-primary-text-color);
+  margin: 0.5rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Prevents the double-bananas from stacking */
+.gemini-card-centered .title-large span.nano-banana {
+  flex-shrink: 0;
+}
+
+.gemini-card-centered .description-centered {
+  font-family: var(--gemini-api-model-font); /* [cite: 133] */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #3c4043;
+  margin: 0;
+}
+
+.color-scheme--dark .gemini-card-centered .description-centered {
+  color: var(--devsite-primary-text-color);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+@media (max-width: 840px) {
+  .gemini-card-centered {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .gemini-model-grid-compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ensure H3 tags within the model row don't use default large heading styles */
+.gemini-model-details h3.gemini-model-name {
+  font-family: var(--gemini-api-model-font);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 0 0;
+  border: none; /* Removes default devsite heading borders if any */
+  padding: 0;
+  line-height: 1.3;
+}
+
+/* Maintain clickability for the heading */
+.gemini-model-details h3.gemini-model-name a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Normalizes the H3 within centered cards to match your existing design */
+.gemini-card-centered .title-large h3 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  margin: 0;
+  display: inline; /* Keeps it on the same line as the icon */
+  border: none;
+  padding: 0;
+}
+
+.status-subtext {
+  font-family: var(--gemini-api-model-font);
+  font-style: italic;
+  color: #bdc1c6; /* Light gray to match model-status */
+  text-align: center;
+  margin: 0.25rem 0 0 0; /* Minimal top margin to stay close to description */
+}
+
+/* Dark mode adjustment */
+.color-scheme--dark .status-subtext {
+  color: #70757a;
+}
+      </style><style>
+      /* Styles inlined from /site-assets/css/overview.css */
+.button-primary {
+  border-radius: 0.375rem;
+}
+
+.code-snippet {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.code-snippet code {
+  font-family: monospace;
+}
+
+.quickstart {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1rem;
+}
+
+.quickstart p {
+  margin: 0;
+}
+
+.quickstart-blurb {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--googledevai-border-color);
+}
+
+.gemini-api-card-overview {
+  background: var(--devsite-background-1);
+  border: 1px solid var(--googledevai-border-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: var(--devsite-primary-text-color);
+  padding: 1rem;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.gemini-api-card-overview:active,
+.gemini-api-card-overview:focus {
+  text-decoration: none;
+  border-color: var(--devsite-primary-color);
+}
+
+.gemini-api-card-overview:hover {
+  box-shadow: var(--gemini-api-elevation-3dp);
+}
+
+.gemini-api-card-title {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  height: auto; /* Override the setting for now in models.css */
+  margin: 0 0 0.75rem 0;
+}
+
+.gemini-api-card-overview .google-symbols {
+  font-size: 18px;
+}
+
+.gemini-api-card-overview .google-symbols.spark {
+  font-size: 16px;
+}
+
+.gemini-api-card-overview .ais-logo {
+  height: 16px;
+  user-select: none;
+}
+
+.gemini-api-card-overview .ais-logo,
+.gemini-api-card-overview .google-symbols,
+.gemini-api-card-overview .nano-banana {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.gemini-api-card-overview.with-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gemini-api-card-description {
+  margin: 0;
+  height: auto; /* Override the setting for now in models.css */
+}
+
+.gemini-api-card-description-cta {
+  color: var(--devsite-link-color);
+  margin: 1rem 0 0 0;
+}
+
+.blue-bold-card {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.icon-background {
+  display: flex;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background-color: rgb(from var(--devsite-link-background) r g b / 40%);
+}
+
+.icon-background .google-symbols {
+  margin: 0;
+}
+
+/* Add this to prevent the button from getting squashed on any screen size */
+.quickstart .button-primary {
+  flex-shrink: 0;      /* Critical: Never let this element shrink */
+  white-space: nowrap; /* Critical: Keep text on one line */
+  min-width: max-content; /* Ensure it takes up as much space as the text needs */
+}
+
+
+@media only screen and (min-width: 625px) {
+  .gemini-api-recommended {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  /* 1. Standard Card Resets for Mobile */
+  .gemini-api-card-overview {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .gemini-api-card-title {
+    margin: 0 0 0.25rem 0;
+  }
+
+  .blue-bold-card {
+    display: flex;
+  }
+
+  /* 2. Quickstart Split Layout (Text -> Button -> Text) */
+  .quickstart {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* "Unwrap" the text container so we can reorder paragraphs individually */
+  .quickstart-blurb {
+    display: contents;
+  }
+
+  /* Order 1: The first paragraph ("Follow our Quickstart...") */
+  .quickstart-blurb p:first-child {
+    order: 1;
+  }
+
+  /* Order 2: The Button */
+  .quickstart .button-primary {
+    order: 2;
+  }
+
+  /* Order 3: The second paragraph ("For most models...") */
+  .quickstart-blurb p:last-child {
+    order: 3;
+  }
+}
+
+/* Resources Footer Section */
+.gemini-api-header-with-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gemini-api-header-with-cta h2 {
+  margin: 0;
+}
+
+.gemini-api-cta-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #5f6368;
+}
+
+.gemini-api-cta-link:hover {
+  text-decoration: underline;
+  color: var(--devsite-link-color);
+}
+
+.color-scheme--dark .gemini-api-cta-link {
+  color: #9aa0a6;
+}
+
+.gemini-api-resources-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 4rem 0 2rem;
+  padding-top: 0;
+}
+
+.gemini-api-resource-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 0 1rem;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.gemini-api-resource-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.gemini-api-resource-item:hover {
+  text-decoration: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  background-color: var(--devsite-background-1);
+}
+
+.color-scheme--dark .gemini-api-resource-item:hover {
+  background-color: #1f1f1f;
+  box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.gemini-api-resource-item .icon-container {
+  margin-bottom: 1rem;
+  color: var(--devsite-primary-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+}
+
+.gemini-api-resource-item .google-symbols {
+  font-size: 24px;
+}
+
+.gemini-api-resource-item .ais-logo {
+  height: 24px;
+  width: auto;
+}
+
+.gemini-api-resource-item .resource-title {
+  font-family: "Google Sans", Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--devsite-primary-text-color);
+}
+
+.gemini-api-resource-item .resource-description {
+  font-size: 0.875rem;
+  color: #5f6368;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.color-scheme--dark .gemini-api-resource-item .resource-description {
+  color: #9aa0a6;
+}
+
+@media (max-width: 900px) {
+  .gemini-api-resources-footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .gemini-api-resources-footer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+      </style>
+  
+  
+  
+    <div class="devsite-banner devsite-banner-announcement nocontent" data-nosnippet
+      
+        
+    background="google-blue"
+  
+      >
+      <div class="devsite-banner-message">
+        <div class="devsite-banner-message-text">
+          Try the new high-speed, cost-effective <a href="/gemini-api/docs/models/veo-3.1-lite-generate-preview" style="color: black;">Veo 3.1 Lite</a> model for video generation at scale.
+        </div>
+      </div>
+    </div>
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation" data-nosnippet>
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  
+    aria-label="Breadcrumb">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+        
+  <a href="https://ai.google.dev/"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="1"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="1"
+      
+        track-metadata-eventdetail=""
+      
+    >
+    
+          Home
+        
+  </a>
+  
+      
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+        
+  <a href="https://ai.google.dev/gemini-api"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="2"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="2"
+      
+        track-metadata-eventdetail="Gemini API"
+      
+    >
+    
+          Gemini API
+        
+  </a>
+  
+      
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+        
+  <a href="https://ai.google.dev/gemini-api/docs"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="3"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="3"
+      
+        track-metadata-eventdetail=""
+      
+    >
+    
+          Docs
+        
+  </a>
+  
+      
+    
+  </li>
+  
+</ul>
+    
+      
+    <devsite-thumb-rating position="header">
+    </devsite-thumb-rating>
+  
+    
+    <devsite-gemini-api-switcher class="nocontent"></devsite-gemini-api-switcher>
+  </div>
+  
+    <devsite-feedback
+  position="header"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20260407-r00-rc01.476664030472430875"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="header"
+  class="nocontent"
+  data-nosnippet
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/images/touchicon-180-new.png"
+  
+  
+  
+  >
+
+  <button>
+  
+    
+    Send feedback
+  
+  </button>
+</devsite-feedback>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Models<devsite-actions hidden data-nosnippet>
+    <devsite-llm-tools></devsite-llm-tools></devsite-actions>
+  
+      
+    </h1>
+  <div class="devsite-page-title-meta"><devsite-view-release-notes></devsite-view-release-notes></div>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="2"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+<p>
+</p>
+
+<p>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<aside class="special" style="margin: 20px 0;">
+  <p>We have updated our <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Terms of Service</a>.
+  </p>
+</aside>
+
+<hr />
+
+<h2 id="gemini-3" data-text="Gemini 3" tabindex="-1">Gemini 3</h2>
+
+<div class="gemini-centered-model-grid">
+  <a href="/gemini-api/docs/models/gemini-3.1-pro-preview" class="gemini-card-centered">
+    <div class="title-large">
+      <span class="google-symbols spark" translate="no" aria-hidden="true">auto_awesome</span>
+      <h3 class="hide-from-toc" id="gemini-3.1-pro" data-text="Gemini 3.1 Pro" tabindex="-1">Gemini 3.1 Pro</h3>
+    </div>
+    <p class="description-centered">
+      Advanced intelligence, complex problem-solving skills, and powerful agentic and vibe coding capabilities.
+    </p>
+    <p class="status-subtext"><span class="gemini-api-new">New</span> Preview</p>
+  </a>
+  <a href="/gemini-api/docs/models/gemini-3-flash-preview" class="gemini-card-centered">
+    <div class="title-large">
+      <span class="google-symbols spark" translate="no" aria-hidden="true">spark</span>
+      <h3 class="hide-from-toc" id="gemini-3-flash" data-text="Gemini 3 Flash" tabindex="-1">Gemini 3 Flash</h3>
+    </div>
+    <p class="description-centered">
+      Frontier-class performance rivaling larger models at a fraction of the cost.
+    </p>
+    <p class="status-subtext">Preview</p>
+  </a>
+  <a href="/gemini-api/docs/models/gemini-3.1-flash-lite-preview" class="gemini-card-centered">
+    <div class="title-large">
+      <span class="google-symbols spark" translate="no" aria-hidden="true">bolt</span>
+      <h3 class="hide-from-toc" id="gemini-3.1-flash-lite-preview" data-text="Gemini 3.1 Flash-Lite" tabindex="-1">Gemini 3.1 Flash-Lite</h3>
+    </div>
+    <p class="description-centered">
+      Frontier-class performance rivaling larger models at a fraction of the cost.
+    </p>
+    <p class="status-subtext"><span class="gemini-api-new">New</span> Preview</p>
+  </a>
+  <a href="/gemini-api/docs/models/gemini-3.1-flash-image-preview" class="gemini-card-centered">
+    <div class="title-large">
+      <span class="nano-banana" translate="no" aria-hidden="true">🍌🍌</span>
+      <h3 class="hide-from-toc" id="nano-banana-2" data-text="Nano Banana 2" tabindex="-1">Nano Banana 2</h3>
+    </div>
+    <p class="description-centered">
+      Powerful, high-efficiency image generation and editing, optimized for speed and high-volume use cases.
+    </p>
+    <p class="status-subtext">Preview</p>
+  </a>
+  <a href="/gemini-api/docs/models/gemini-3-pro-image-preview" class="gemini-card-centered">
+    <div class="title-large">
+      <span class="nano-banana" translate="no" aria-hidden="true">🍌</span>
+      <h3 class="hide-from-toc" id="nano-banana-pro" data-text="Nano Banana Pro" tabindex="-1">Nano Banana Pro</h3>
+    </div>
+    <p class="description-centered">
+      State-of-the-art image generation and editing models for highly contextual native image creation.
+    </p>
+    <p class="status-subtext">Preview</p>
+  </a>
+  <a href="/gemini-api/docs/models/gemini-3.1-flash-live-preview" class="gemini-card-centered">
+    <div class="title-large">
+      <span class="google-symbols spark" translate="no" aria-hidden="true">settings_voice</span>
+      <h3 class="hide-from-toc" id="gemini-3.1-flash-live-preview" data-text="Gemini 3.1 Flash Live" tabindex="-1">Gemini 3.1 Flash Live</h3>
+    </div>
+    <p class="description-centered">
+      High-quality, low-latency Live API model for real-time dialogue and voice-first AI applications.
+    </p>
+    <p class="status-subtext"><span class="gemini-api-new">New</span> Preview</p>
+  </a>
+</div>
+
+<aside class="warning">
+  <b>Warning:</b> Gemini 3 Pro Preview is <a href="/gemini-api/docs/deprecations">
+  deprecated</a> and has been shut down March 9, 2026. Migrate to
+  <a href="/gemini-api/docs/models/gemini-3.1-pro-preview">Gemini 3.1 Pro Preview</a>
+  to avoid service disruption.
+</aside>
+
+<hr />
+
+<h2 id="gemini_25_flash" data-text="Gemini 2.5 Flash" tabindex="-1">Gemini 2.5 Flash</h2>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">bolt</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-flash" data-text="Gemini 2.5 Flash" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-flash">Gemini 2.5 Flash</a></h3>
+      <p class="gemini-model-desc">Our best price-performance model for low-latency, high-volume tasks that require reasoning.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">image_search</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="nano-banana" data-text="Nano Banana" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-flash-image">Nano Banana</a></h3>
+      <p class="gemini-model-desc">State-of-the-art native image generation and editing designed for fast, creative workflows.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">settings_voice</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-flash-live-preview" data-text="Gemini 2.5 Flash Live Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-flash-native-audio-preview-12-2025">Gemini 2.5 Flash Live <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Optimized for real-time conversational agents with sub-second native audio streaming.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">record_voice_over</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-flash-tts-preview" data-text="Gemini 2.5 Flash TTS Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-flash-preview-tts">Gemini 2.5 Flash TTS <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Controllable text-to-speech audio generation with fine control over style and pacing.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="gemini_25_flash-lite" data-text="Gemini 2.5 Flash-Lite" tabindex="-1">Gemini 2.5 Flash-Lite</h2>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">speed</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-flash-lite" data-text="Gemini 2.5 Flash-Lite" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-flash-lite">Gemini 2.5 Flash-Lite</a></h3>
+      <p class="gemini-model-desc">The fastest and most budget-friendly multimodal model in the 2.5 family.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="gemini_25_pro" data-text="Gemini 2.5 Pro" tabindex="-1">Gemini 2.5 Pro</h2>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">psychology</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-pro" data-text="Gemini 2.5 Pro" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-pro">Gemini 2.5 Pro</a></h3>
+      <p class="gemini-model-desc">Our most advanced model for complex tasks, featuring deep reasoning and coding capabilities.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">record_voice_over</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-pro-tts-preview" data-text="Gemini 2.5 Pro TTS Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-pro-preview-tts">Gemini 2.5 Pro TTS <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">High-fidelity speech synthesis optimized for quality in structured workflows like podcasts and audiobooks.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="audio_models" data-text="Audio models" tabindex="-1">Audio models</h2>
+
+<p class="gemini-model-desc"><i>This section contains all audio models,
+including ones that may already be listed in other sections</i></p>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">settings_input_antenna</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-3-1-flash-live-preview-2" data-text="Gemini 3.1 Flash Live Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-3.1-flash-live-preview">Gemini 3.1 Flash Live <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Our high-quality, low-latency audio-to-audio (A2A) model designed for real-time dialogue and voice-first AI applications.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">settings_voice</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-flash-live-preview-2" data-text="Gemini 2.5 Flash Live Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-flash-native-audio-preview-12-2025">Gemini 2.5 Flash Live <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Our flagship Live API model for low-latency, bidirectional voice and video agents with native audio reasoning.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">bolt</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-flash-tts-preview-2" data-text="Gemini 2.5 Flash TTS Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-flash-preview-tts">Gemini 2.5 Flash TTS <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Fast and controllable text-to-speech for low-latency, cost-efficient applications and real-time assistants.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">record_voice_over</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-5-pro-tts-preview-2" data-text="Gemini 2.5 Pro TTS Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-pro-preview-tts">Gemini 2.5 Pro TTS <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">High-fidelity speech synthesis optimized for quality in structured workflows like podcasts and audiobooks.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="generative_media_models" data-text="Generative media models" tabindex="-1">Generative media models</h2>
+
+<p class="gemini-model-desc"><i>This section contains all generative media models,
+including ones that may already be listed in other sections</i></p>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols spark" translate="no" aria-hidden="true">blur_on</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="nano-banana-2-preview" data-text="Nano Banana 2 Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-3.1-flash-image-preview">Nano Banana 2 <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">High-efficiency production-scale visual creation, combining the intelligence of the Gemini 3 series with lightning-fast generation speeds.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">movie_filter</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="veo-3-1-preview" data-text="Veo 3.1 Preview" tabindex="-1"><a href="/gemini-api/docs/models/veo-3.1-generate-preview">Veo 3.1 <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">State-of-the-art cinematic video generation with advanced creative controls and natively synchronized audio.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">image_edit</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="nano-banana-pro-preview" data-text="Nano Banana Pro Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-3-pro-image-preview">Nano Banana Pro <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">A professional design engine with a reasoning core for studio-quality 4K visuals, complex layouts, and precise text rendering.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">movie_edit</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="veo-3.1-lite" data-text="Veo 3.1 Lite Preview" tabindex="-1"><a href="/gemini-api/docs/models/veo-3.1-lite-generate-preview">Veo 3.1 Lite <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">High-efficiency, low-cost, developer-first video generation, editing, and cinematic control from the Veo 3.1 family.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">image_search</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="nano-banana-gen" data-text="Nano Banana" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-flash-image">Nano Banana</a></h3>
+      <p class="gemini-model-desc">State-of-the-art native image generation and editing designed for fast, creative workflows.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">palette</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="imagen-4" data-text="Imagen 4" tabindex="-1"><a href="/gemini-api/docs/models/imagen">Imagen 4</a></h3>
+      <p class="gemini-model-desc">Text-to-image model yet, featuring fast and ultra-fast generation and exceptional clarity up to 2K resolution.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="music-models" data-text="Music generation models" tabindex="-1">Music generation models</h2>
+
+<p class="gemini-model-desc"><i>This section contains all music generation models,
+including ones that may already be listed in other sections</i></p>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">music_note</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="lyria-3-pro" data-text="Lyria 3 Pro Preview" tabindex="-1"><a href="/gemini-api/docs/models/lyria-3-pro-preview">Lyria 3 Pro <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Our flagship music generation model, optimized for full-length songs with complex structural coherence.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">music_note_2</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="lyria-3-clip" data-text="Lyria 3 Clip Preview" tabindex="-1"><a href="/gemini-api/docs/models/lyria-3-clip-preview">Lyria 3 Clip <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Optimized for generating short musical clips, loops, and previews up to 30 seconds.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">music_history</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="lyria-realtime" data-text="Lyria RealTime Experimental" tabindex="-1"><a href="/gemini-api/docs/models/lyria-realtime-exp">Lyria RealTime <span class="model-status">Experimental</span></a></h3>
+      <p class="gemini-model-desc">High-fidelity music generation model providing granular creative control and real-time streaming capabilities.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="tool_and_agent_models" data-text="Tool and agent models" tabindex="-1">Tool and agent models</h2>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">desktop_windows</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="computer-use-preview" data-text="Computer Use Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.5-computer-use-preview-10-2025">Computer Use <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">A specialized model that can "see" a digital screen and perform UI actions like clicking, typing, and navigating to automate complex browser tasks.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">travel_explore</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-deep-research-preview" data-text="Gemini Deep Research Preview" tabindex="-1"><a href="/gemini-api/docs/models/deep-research-pro-preview-12-2025">Gemini Deep Research <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">An agentic model that autonomously plans and executes multi-step research across hundreds of sources to produce cited, interactive reports.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="specialized_task_models" data-text="Specialized task models" tabindex="-1">Specialized task models</h2>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">hub</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-embedding-2" data-text="Gemini Embedding 2 Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-embedding-2-preview">Gemini Embedding 2 <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Our first multimodal embedding model, mapping text, images, video, audio, and PDFs into a unified embedding space for advanced semantic search and RAG systems.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">hub</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-embeddings" data-text="Gemini Embedding" tabindex="-1"><a href="/gemini-api/docs/models/gemini-embedding-001">Gemini Embedding</a></h3>
+      <p class="gemini-model-desc">High-dimensional vector representations for advanced semantic search, text classification, and RAG systems.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">precision_manufacturing</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-robotics-preview" data-text="Gemini Robotics Preview" tabindex="-1"><a href="/gemini-api/docs/models/gemini-robotics-er-1.5-preview">Gemini Robotics <span class="model-status">Preview</span></a></h3>
+      <p class="gemini-model-desc">Advanced embodied reasoning model that understands physical spaces and plans multi-step tasks for robotic agents.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="previous_models" data-text="Previous models" tabindex="-1">Previous models</h2>
+
+<aside class="deprecated">
+  These models are <a href="/gemini-api/docs/deprecations">deprecated</a> and will be shut down soon; migrate to newer models to prevent service interruptions.
+</aside>
+
+<div class="gemini-model-grid-compact">
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">history</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-0-flash-deprecated" data-text="Gemini 2.0 Flash Deprecated" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.0-flash">Gemini 2.0 Flash <span class="model-status">Deprecated</span></a></h3>
+      <p class="gemini-model-desc">Our second generation workhorse model, with next-gen features and improved capabilities, including superior speed, native tool use, and a 1M token context window.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">restore</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-2-0-flash-lite-deprecated" data-text="Gemini 2.0 Flash-Lite Deprecated" tabindex="-1"><a href="/gemini-api/docs/models/gemini-2.0-flash-lite">Gemini 2.0 Flash-Lite <span class="model-status">Deprecated</span></a></h3>
+      <p class="gemini-model-desc">Our fastest second generation model, optimized for cost efficiency and low latency.</p>
+    </div>
+  </div>
+  <div class="gemini-model-row">
+    <div class="gemini-icon-card-small">
+      <span class="google-symbols" translate="no" aria-hidden="true">restore</span>
+    </div>
+    <div class="gemini-model-details">
+      <h3 class="gemini-model-name hide-from-toc" id="gemini-3-pro-preview-deprecated" data-text="Gemini 3 Pro Preview Shut down" tabindex="-1"><a href="/gemini-api/docs/models/gemini-3-pro-preview">Gemini 3 Pro Preview <span class="model-status">Shut down</span></a></h3>
+      <p class="gemini-model-desc">Our state-of-the-art reasoning model, with advanced multimodal understanding.</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="model-versions" data-text="Model version name patterns" tabindex="-1">Model version name patterns</h2>
+
+<p>Gemini models are available in either <em>stable</em>, <em>preview</em>, <em>latest</em>, or
+<em>experimental</em> versions.</p>
+<aside class="note"><strong>Note:</strong><span> The following list refers to the model string naming convention as of
+September, 2025. Models released prior to that may have different naming
+conventions. Refer to the exact model string if you are using an older model.</span></aside>
+<h3 id="stable" class="hide-from-toc" data-text="Stable" tabindex="-1">Stable</h3>
+
+<p>Points to a specific stable model. Stable models usually don&#39;t change. Most
+production apps should use a specific stable model.</p>
+
+<p>For example: <code translate="no" dir="ltr">gemini-2.5-flash</code>.</p>
+
+<h3 id="preview" class="hide-from-toc" data-text="Preview" tabindex="-1">Preview</h3>
+
+<p>Points to a preview model which may be used for production. Preview models will
+typically have billing enabled, might come with more restrictive rate limits and
+will be deprecated with at least 2 weeks notice.</p>
+
+<p>For example: <code translate="no" dir="ltr">gemini-2.5-flash-preview-09-2025</code>.</p>
+
+<h3 id="latest" class="hide-from-toc" data-text="Latest" tabindex="-1">Latest</h3>
+
+<p>Points to the latest release for a specific model variation. This can be a
+stable, preview or experimental release. This alias will get hot-swapped with
+every new release of a specific model variation. A <strong>2-week notice</strong> will
+be provided through email before the version behind latest is changed.</p>
+
+<p>For example: <code translate="no" dir="ltr">gemini-flash-latest</code>.</p>
+
+<h3 id="experimental" class="hide-from-toc" data-text="Experimental" tabindex="-1">Experimental</h3>
+
+<p>Points to an experimental model which will typically be not be suitable for
+production use and come with more restrictive rate limits. We release
+experimental models to gather feedback and get our latest updates into the hands
+of developers quickly.</p>
+
+<p>Experimental models are not stable and availability of model endpoints is
+subject to change.</p>
+
+<h2 id="model_deprecations" data-text="Model deprecations" tabindex="-1">Model deprecations</h2>
+
+<p>For information about model deprecations, visit the <a href="/gemini-api/docs/deprecations">Gemini deprecations</a> page.</p>
+<link href="/site-assets/css/style.css?v=4" rel="stylesheet" data-page-link><link href="https://fonts.googleapis.com/css2?family=Google+Symbols:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" data-page-link>
+  
+
+  
+</div>
+
+  
+    
+    
+      
+    <devsite-thumb-rating position="footer">
+    </devsite-thumb-rating>
+  
+       
+         <devsite-feedback
+  position="footer"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20260407-r00-rc01.476664030472430875"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="footer"
+  class="nocontent"
+  data-nosnippet
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/images/touchicon-180-new.png"
+  
+  
+  
+  >
+
+  <button>
+  
+    
+    Send feedback
+  
+  </button>
+</devsite-feedback>
+       
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent" data-nosnippet>
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  <p>Last updated 2026-03-31 UTC.</p>
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+    
+    
+    <template class="devsite-thumb-rating-feedback">
+      <devsite-feedback
+  position="thumb-rating"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20260407-r00-rc01.476664030472430875"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="thumb-rating"
+  class="nocontent"
+  data-nosnippet
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/images/touchicon-180-new.png"
+  
+  
+  
+  >
+
+  <button>
+  
+    Need to tell us more?
+  
+  </button>
+</devsite-feedback>
+    </template>
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-31 UTC."],[],[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent"
+     aria-label="Footer links"
+     data-nosnippet>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent" data-nosnippet>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="sq"
+        >Shqip</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section>
+      </section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [{&#34;id&#34;: &#34;GTM-TC2MQKS8&#34;, &#34;purpose&#34;: 0}], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;article&#34;, &#34;projectName&#34;: &#34;Gemini API&#34;, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;googledevai&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+    
+<script nonce="jt+SCAmQe4Qum9usjBWDL/MmfeYGUT">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/js/app_loader.js', '[59,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4","https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai","https://googledevai-dot-devsite-v2-prod-3p.appspot.com",1,null,["/_pwa/googledevai/manifest.json","https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/va0c14339cfd6d9ab177114d5825fc3f29dc166d5e178822c1d1efe7d037760a4/googledevai/images/favicon-new.png","/_static/googledevai/images/gemini-api-logo.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Inter:400,500|Inter+Tight:300,500,600&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyCNm9YxQumEXwGJgTDjxoxXK6m1F-9720Q","AIzaSyCc76DZePGtoyUjqKrLdsMGk_ry7sljLbY","ai.google.dev","AIzaSyB9bqgQ2t11WJsOX8qNsCQ6U-w91mmqF-I","AIzaSyAdYnStPdzjcJJtQ0mvIaeaMKj7_t6J_Fg",null,null,null,["Profiles__enable_developer_profile_benefits_ui_redesign","Experiments__reqs_query_experiments","Search__enable_dynamic_content_confidential_banner","DevPro__enable_cloud_innovators_plus","Profiles__enable_user_type","Concierge__enable_devsite_llm_tools","Analytics__enable_clearcut_logging","DevPro__enable_credits_banner","CloudShell__cloud_code_overflow_menu","MiscFeatureFlags__enable_appearance_cookies","Search__enable_suggestions_from_borg","Profiles__enable_awarding_url","MiscFeatureFlags__fix_lower_breadcrumbs","Profiles__enable_callout_notifications","Profiles__enable_completequiz_endpoint","Profiles__require_profile_eligibility_for_signin","DevPro__enable_nvidia_credits_card","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__developers_footer_image","MiscFeatureFlags__enable_variable_operator","Profiles__enable_profile_collections","CloudShell__cloud_shell_button","Profiles__enable_page_saving","TpcFeatures__enable_unmirrored_page_left_nav","DevPro__remove_eu_tax_intake_form","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__enable_explicit_template_dependencies","MiscFeatureFlags__enable_explain_this_code","MiscFeatureFlags__enable_firebase_utm","Concierge__enable_actions_menu","DevPro__enable_developer_subscriptions","MiscFeatureFlags__enable_llms_txt","MiscFeatureFlags__enable_variable_operator_index_yaml","Profiles__enable_completecodelab_endpoint","Profiles__enable_dashboard_curated_recommendations","Cloud__fast_free_trial","Cloud__enable_cloud_shell","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_release_notes_notifications","MiscFeatureFlags__gdp_dashboard_reskin_enabled","MiscFeatureFlags__remove_cross_domain_tracking_params","Profiles__enable_playlist_community_acl","Profiles__enable_recognition_badges","EngEduTelemetry__enable_engedu_telemetry","DevPro__enable_embed_profile_creation","Profiles__enable_targeted_hero","DevPro__enable_devpro_offers","Search__enable_ai_search_summaries_for_all","SignIn__enable_l1_signup_flow","Search__enable_page_map","Analytics__enable_devpro_interaction_logging","DevPro__enable_firebase_workspaces_card","Cloud__enable_legacy_calculator_redirect","Profiles__enable_public_developer_profiles","DevPro__enable_devsite_captcha","Cloud__enable_cloud_shell_fte_user_flow","TpcFeatures__proxy_prod_host","Cloud__cache_serialized_dynamic_content","DevPro__enable_payments_first_batch","MiscFeatureFlags__enable_project_variables","MiscFeatureFlags__enable_view_transitions","Concierge__enable_pushui","DevPro__enable_code_assist","DevPro__enable_enterprise","DevPro__enable_vertex_credit_card","DevPro__enable_google_one_card","OnSwitch__enable","Cloud__enable_llm_concierge_chat","Profiles__enable_purchase_prompts","Cloud__enable_free_trial_server_call","DevPro__enable_google_payments_buyflow","Profiles__enable_join_program_group_endpoint","Profiles__enable_auto_apply_credits","BookNav__enable_tenant_cache_key","Profiles__enable_complete_playlist_endpoint","Search__enable_ai_eligibility_checks","Concierge__enable_remove_info_panel_tags","Profiles__enable_developer_profiles_callout","Profiles__enable_developer_profile_pages_as_content","DevPro__enable_free_benefits","DevPro__enable_g1_integration","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_stripe_subscription_management"],null,null,"AIzaSyA58TaKli1DculwmAmbpzLVGuWc8eCQgQc","https://developerscontentserving-pa.googleapis.com","AIzaSyDWBU60w0P9hEkr29kkksYs8Z7gvZ8u_wc","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[59,"googledevai","Google AI for Developers","ai.google.dev",null,"googledevai-dot-devsite-v2-prod-3p.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1],[1,1,null,1,1],null,null,null,null,null,[1]],null,[73,null,null,null,null,null,"/images/lockup-new.svg","/images/touchicon-180-new.png",null,null,null,null,1,1,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme-new.svg",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[44,2,4,6,7,12,14,15,17,18,20,21,22,23,28,29,32,37,39,40,43],null,[[],[1,1],null,1],[[null,null,null,null,null,["GTM-TC2MQKS8"],null,null,null,null,null,[["GTM-TC2MQKS8",1]],1]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[]],1,null,1,1,"https://developerscontentinsights-pa.googleapis.com","AIzaSyC11xEGtFhkmSh_iF6l_itbxnFz2GrIBOg","AIzaSyAXJ10nRF73mmdSDINgkCNX5bbd2KPcWm8","https://developers.googleapis.com",["https://aistudio.google.com"],null,"AIzaSyCjP0KOnHfv8mwe38sfzZJMOnqE3HvrD4A",null,null,"https://developers.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

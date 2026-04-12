@@ -1,0 +1,52 @@
+{
+  "provider": "deepseek",
+  "parsedModelCount": 2,
+  "normalizedModelCount": 1,
+  "aliasCount": 2,
+  "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+  "fetchedAt": "2026-04-12T09:32:47.324Z",
+  "models": [
+    {
+      "providerSlug": "deepseek",
+      "normalizedModelId": "deepseek-v3.2",
+      "displayName": "Deepseek Chat",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": "128K",
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "deepseek-chat",
+        "deepseek-reasoner"
+      ],
+      "aliases": [
+        {
+          "alias": "deepseek-chat",
+          "aliasType": "official_alias",
+          "sourceModelId": "deepseek-chat",
+          "lifecycle": "stable",
+          "reasoningMode": "non-thinking",
+          "snapshotDate": null,
+          "metadata": {}
+        },
+        {
+          "alias": "deepseek-reasoner",
+          "aliasType": "official_alias",
+          "sourceModelId": "deepseek-reasoner",
+          "lifecycle": "stable",
+          "reasoningMode": "thinking",
+          "snapshotDate": null,
+          "metadata": {}
+        }
+      ],
+      "evidence": {
+        "maxOutputTokensConflict": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,1730 @@
+{
+  "provider": "openai",
+  "parsedModelCount": 81,
+  "normalizedModelCount": 80,
+  "aliasCount": 10,
+  "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+  "fetchedAt": "2026-04-12T09:32:46.105Z",
+  "models": [
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "babbage-002",
+      "displayName": "babbage-002",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "babbage-002"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "chatgpt-4o",
+      "displayName": "ChatGPT-4o",
+      "identityKind": "conceptual",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": false,
+      "apiRecommended": false,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "chatgpt-4o-latest"
+      ],
+      "aliases": [
+        {
+          "alias": "chatgpt-4o-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "chatgpt-4o-latest",
+          "lifecycle": "deprecated",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "chatgpt-image",
+      "displayName": "chatgpt-image-latest",
+      "identityKind": "conceptual",
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": false,
+      "apiRecommended": false,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "chatgpt-image-latest"
+      ],
+      "aliases": [
+        {
+          "alias": "chatgpt-image-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "chatgpt-image-latest",
+          "lifecycle": "latest",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "codex-mini",
+      "displayName": "codex-mini-latest",
+      "identityKind": "conceptual",
+      "lifecycle": "deprecated",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "codex-mini-latest"
+      ],
+      "aliases": [
+        {
+          "alias": "codex-mini-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "codex-mini-latest",
+          "lifecycle": "deprecated",
+          "reasoningMode": "optional",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "computer-use-preview",
+      "displayName": "computer-use-preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "computer-use-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "dall-e-2",
+      "displayName": "DALL·E 2",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "dall-e-2"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "dall-e-3",
+      "displayName": "DALL·E 3",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "dall-e-3"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "davinci-002",
+      "displayName": "davinci-002",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "davinci-002"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-3.5-turbo",
+      "displayName": "GPT-3.5 Turbo",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-3.5-turbo"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4",
+      "displayName": "GPT-4",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4-turbo",
+      "displayName": "GPT-4 Turbo",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4-turbo"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4-turbo-preview",
+      "displayName": "GPT-4 Turbo Preview",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4-turbo-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4.1",
+      "displayName": "GPT-4.1",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "non-thinking",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4.1"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4.1-mini",
+      "displayName": "GPT-4.1 mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4.1-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4.1-nano",
+      "displayName": "GPT-4.1 nano",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4.1-nano"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4.5-preview",
+      "displayName": "GPT-4.5 Preview (Deprecated)",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4.5-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o",
+      "displayName": "GPT-4o",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-audio-preview",
+      "displayName": "GPT-4o Audio",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-audio-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-mini",
+      "displayName": "GPT-4o mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-mini-audio-preview",
+      "displayName": "GPT-4o mini Audio",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-mini-audio-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-mini-realtime-preview",
+      "displayName": "GPT-4o mini Realtime",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-mini-realtime-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-mini-search-preview",
+      "displayName": "GPT-4o mini Search Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-mini-search-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-mini-transcribe",
+      "displayName": "GPT-4o mini Transcribe",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-mini-transcribe"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-mini-tts",
+      "displayName": "GPT-4o mini TTS",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-mini-tts"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-realtime-preview",
+      "displayName": "GPT-4o Realtime",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-realtime-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-search-preview",
+      "displayName": "GPT-4o Search Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-search-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-transcribe",
+      "displayName": "GPT-4o Transcribe",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-transcribe"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-4o-transcribe-diarize",
+      "displayName": "GPT-4o Transcribe Diarize",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-4o-transcribe-diarize"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5",
+      "displayName": "GPT-5",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5-chat",
+      "displayName": "GPT-5 Chat",
+      "identityKind": "conceptual",
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": false,
+      "apiRecommended": false,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5-chat-latest"
+      ],
+      "aliases": [
+        {
+          "alias": "gpt-5-chat-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "gpt-5-chat-latest",
+          "lifecycle": "latest",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5-codex",
+      "displayName": "GPT-5-Codex",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5-codex"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5-mini",
+      "displayName": "GPT-5 mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5-nano",
+      "displayName": "GPT-5 nano",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5-nano"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5-pro",
+      "displayName": "GPT-5 pro",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5-pro"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.1",
+      "displayName": "GPT-5.1",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.1"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.1-chat",
+      "displayName": "GPT-5.1 Chat",
+      "identityKind": "conceptual",
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": false,
+      "apiRecommended": false,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.1-chat-latest"
+      ],
+      "aliases": [
+        {
+          "alias": "gpt-5.1-chat-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "gpt-5.1-chat-latest",
+          "lifecycle": "latest",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.1-codex",
+      "displayName": "GPT-5.1 Codex",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.1-codex"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.1-codex-max",
+      "displayName": "GPT-5.1-Codex-Max",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.1-codex-max"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.1-codex-mini",
+      "displayName": "GPT-5.1 Codex mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.1-codex-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.2",
+      "displayName": "GPT-5.2",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.2"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.2-chat",
+      "displayName": "GPT-5.2 Chat",
+      "identityKind": "conceptual",
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": false,
+      "apiRecommended": false,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.2-chat-latest"
+      ],
+      "aliases": [
+        {
+          "alias": "gpt-5.2-chat-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "gpt-5.2-chat-latest",
+          "lifecycle": "latest",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.2-codex",
+      "displayName": "GPT-5.2-Codex",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.2-codex"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.2-pro",
+      "displayName": "GPT-5.2 pro",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.2-pro"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.3-chat",
+      "displayName": "GPT-5.3 Chat",
+      "identityKind": "conceptual",
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": false,
+      "apiRecommended": false,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.3-chat-latest"
+      ],
+      "aliases": [
+        {
+          "alias": "gpt-5.3-chat-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "gpt-5.3-chat-latest",
+          "lifecycle": "latest",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.3-codex",
+      "displayName": "GPT-5.3-Codex",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.3-codex"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.4",
+      "displayName": "GPT-5.4",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.4"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.4-mini",
+      "displayName": "GPT-5.4 mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.4-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.4-nano",
+      "displayName": "GPT-5.4 nano",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.4-nano"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-5.4-pro",
+      "displayName": "GPT-5.4 pro",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-5.4-pro"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-audio",
+      "displayName": "gpt-audio",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-audio"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-audio-1.5",
+      "displayName": "gpt-audio-1.5",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-audio-1.5"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-audio-mini",
+      "displayName": "gpt-audio-mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-audio-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-image-1",
+      "displayName": "GPT Image 1",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-image-1"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-image-1-mini",
+      "displayName": "gpt-image-1-mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-image-1-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-image-1.5",
+      "displayName": "GPT Image 1.5",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-image-1.5"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-oss-120b",
+      "displayName": "gpt-oss-120b",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-oss-120b"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-oss-20b",
+      "displayName": "gpt-oss-20b",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-oss-20b"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-realtime",
+      "displayName": "gpt-realtime",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-realtime"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-realtime-1.5",
+      "displayName": "gpt-realtime-1.5",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-realtime-1.5"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "gpt-realtime-mini",
+      "displayName": "gpt-realtime-mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gpt-realtime-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o1",
+      "displayName": "o1",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o1"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o1-mini",
+      "displayName": "o1-mini",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o1-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o1-preview",
+      "displayName": "o1 Preview",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o1-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o1-pro",
+      "displayName": "o1-pro",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o1-pro"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o3",
+      "displayName": "o3",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o3"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o3-deep-research",
+      "displayName": "o3-deep-research",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o3-deep-research"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o3-mini",
+      "displayName": "o3-mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o3-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o3-pro",
+      "displayName": "o3-pro",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o3-pro"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o4-mini",
+      "displayName": "o4-mini",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o4-mini"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "o4-mini-deep-research",
+      "displayName": "o4-mini-deep-research",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "o4-mini-deep-research"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "omni-moderation",
+      "displayName": "omni-moderation",
+      "identityKind": "conceptual",
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "omni-moderation-latest"
+      ],
+      "aliases": [
+        {
+          "alias": "omni-moderation-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "omni-moderation-latest",
+          "lifecycle": "latest",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "sora-2",
+      "displayName": "Sora 2",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "sora-2"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "sora-2-pro",
+      "displayName": "Sora 2 Pro",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "sora-2-pro"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "text-embedding-3-large",
+      "displayName": "text-embedding-3-large",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "text-embedding-3-large"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "text-embedding-3-small",
+      "displayName": "text-embedding-3-small",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "text-embedding-3-small"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "text-embedding-ada-002",
+      "displayName": "text-embedding-ada-002",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "text-embedding-ada-002"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "text-moderation",
+      "displayName": "text-moderation-stable",
+      "identityKind": "conceptual",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "text-moderation-latest",
+        "text-moderation-stable"
+      ],
+      "aliases": [
+        {
+          "alias": "text-moderation-latest",
+          "aliasType": "latest_alias",
+          "sourceModelId": "text-moderation-latest",
+          "lifecycle": "deprecated",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        },
+        {
+          "alias": "text-moderation-stable",
+          "aliasType": "official_alias",
+          "sourceModelId": "text-moderation-stable",
+          "lifecycle": "deprecated",
+          "reasoningMode": "unknown",
+          "snapshotDate": null,
+          "metadata": {
+            "surface": "provider_catalog"
+          }
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "tts-1",
+      "displayName": "TTS-1",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "tts-1"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "tts-1-hd",
+      "displayName": "TTS-1 HD",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "tts-1-hd"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "openai",
+      "normalizedModelId": "whisper-1",
+      "displayName": "Whisper",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "whisper-1"
+      ],
+      "aliases": [],
+      "evidence": {}
+    }
+  ]
+}

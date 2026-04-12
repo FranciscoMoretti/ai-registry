@@ -1,0 +1,68 @@
+{
+  "provider": "anthropic",
+  "reportPath": "docs/provider-reports/anthropic.md",
+  "sourceUrl": "https://platform.claude.com/docs/en/about-claude/models/overview",
+  "fetchedAt": "2026-04-12T09:32:46.557Z",
+  "modelCount": 3,
+  "models": [
+    {
+      "providerSlug": "anthropic",
+      "sourceModelId": "claude-haiku-4-5-20251001",
+      "canonicalModelId": "claude-haiku-4-5-20251001",
+      "displayName": "Claude Haiku 4.5",
+      "aliases": [
+        "claude-haiku-4-5",
+        "anthropic.claude-haiku-4-5-20251001-v1:0",
+        "claude-haiku-4-5@20251001"
+      ],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": "2025-10-01",
+      "releaseDate": null,
+      "contextWindow": "200k tokens",
+      "maxOutputTokens": "64k tokens",
+      "sourceUrl": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "evidence": {
+        "knowledgeCutoff": "Feb 2025"
+      }
+    },
+    {
+      "providerSlug": "anthropic",
+      "sourceModelId": "claude-opus-4-6",
+      "canonicalModelId": "claude-opus-4-6",
+      "displayName": "Claude Opus 4.6",
+      "aliases": [
+        "anthropic.claude-opus-4-6-v1"
+      ],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": "1M tokens",
+      "maxOutputTokens": "128k tokens",
+      "sourceUrl": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "evidence": {
+        "knowledgeCutoff": "May 2025 2"
+      }
+    },
+    {
+      "providerSlug": "anthropic",
+      "sourceModelId": "claude-sonnet-4-6",
+      "canonicalModelId": "claude-sonnet-4-6",
+      "displayName": "Claude Sonnet 4.6",
+      "aliases": [
+        "anthropic.claude-sonnet-4-6"
+      ],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": "1M tokens",
+      "maxOutputTokens": "64k tokens",
+      "sourceUrl": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "evidence": {
+        "knowledgeCutoff": "Aug 2025 2"
+      }
+    }
+  ]
+}

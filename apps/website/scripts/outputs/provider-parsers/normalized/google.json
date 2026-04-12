@@ -1,0 +1,550 @@
+{
+  "provider": "google",
+  "parsedModelCount": 27,
+  "normalizedModelCount": 27,
+  "aliasCount": 0,
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+  "fetchedAt": "2026-04-12T09:32:46.858Z",
+  "models": [
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "deep-research-pro-preview-12-2025",
+      "displayName": "Gemini Deep Research Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-12",
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "deep-research-pro-preview-12-2025"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.0-flash",
+      "displayName": "Gemini 2.0 Flash Deprecated",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.0-flash"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.0-flash-lite",
+      "displayName": "Gemini 2.0 Flash-Lite Deprecated",
+      "identityKind": "concrete",
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.0-flash-lite"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.5-computer-use-preview-10-2025",
+      "displayName": "Computer Use Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-10",
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.5-computer-use-preview-10-2025"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.5-flash",
+      "displayName": "Gemini 2.5 Flash",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.5-flash"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.5-flash-image",
+      "displayName": "Nano Banana",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.5-flash-image"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.5-flash-lite",
+      "displayName": "Gemini 2.5 Flash-Lite",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.5-flash-lite"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "displayName": "Gemini 2.5 Flash Live Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-12",
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.5-flash-native-audio-preview-12-2025"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.5-flash-preview-tts",
+      "displayName": "Gemini 2.5 Flash TTS Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.5-flash-preview-tts"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.5-pro",
+      "displayName": "Gemini 2.5 Pro",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.5-pro"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-2.5-pro-preview-tts",
+      "displayName": "Gemini 2.5 Pro TTS Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-2.5-pro-preview-tts"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-3-flash-preview",
+      "displayName": "Gemini 3 Flash Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-3-flash-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-3-pro-image-preview",
+      "displayName": "Nano Banana Pro",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-3-pro-image-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-3-pro-preview",
+      "displayName": "Gemini 3 Pro Preview Shut down",
+      "identityKind": "concrete",
+      "lifecycle": "shut_down",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-3-pro-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-3.1-flash-image-preview",
+      "displayName": "Nano Banana 2",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-3.1-flash-image-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-3.1-flash-lite-preview",
+      "displayName": "Gemini 3.1 Flash Lite Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-3.1-flash-lite-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-3.1-flash-live-preview",
+      "displayName": "Gemini 3.1 Flash Live Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-3.1-flash-live-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-3.1-pro-preview",
+      "displayName": "Gemini 3",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-3.1-pro-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-embedding-001",
+      "displayName": "Gemini Embedding",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-embedding-001"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-embedding-2-preview",
+      "displayName": "Gemini Embedding 2 Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-embedding-2-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "gemini-robotics-er-1.5-preview",
+      "displayName": "Gemini Robotics Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "gemini-robotics-er-1.5-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "imagen",
+      "displayName": "Imagen 4",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "imagen"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "lyria-3-clip-preview",
+      "displayName": "Lyria 3 Clip Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "lyria-3-clip-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "lyria-3-pro-preview",
+      "displayName": "Lyria 3 Pro Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "lyria-3-pro-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "lyria-realtime-exp",
+      "displayName": "Lyria RealTime Experimental",
+      "identityKind": "concrete",
+      "lifecycle": "experimental",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "lyria-realtime-exp"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "veo-3.1-generate-preview",
+      "displayName": "Veo 3.1 Preview",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "veo-3.1-generate-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "google",
+      "normalizedModelId": "veo-3.1-lite-generate-preview",
+      "displayName": "Veo 3.1 Lite",
+      "identityKind": "concrete",
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "veo-3.1-lite-generate-preview"
+      ],
+      "aliases": [],
+      "evidence": {}
+    }
+  ]
+}

@@ -1,0 +1,610 @@
+{
+  "provider": "mistral",
+  "parsedModelCount": 30,
+  "normalizedModelCount": 30,
+  "aliasCount": 0,
+  "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+  "fetchedAt": "2026-04-12T09:32:46.931Z",
+  "models": [
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "codestral-2405",
+      "displayName": "Codestral 2405",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-05",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "codestral-2405"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "codestral-2501",
+      "displayName": "Codestral 2501",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-01",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "codestral-2501"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "devstral-medium-2507",
+      "displayName": "Devstral Medium 2507",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-07",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "devstral-medium-2507"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "devstral-small-2505",
+      "displayName": "Devstral Small 2505",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-05",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "devstral-small-2505"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "devstral-small-2507",
+      "displayName": "Devstral Small 2507",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-07",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "devstral-small-2507"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "devstral-small-2512",
+      "displayName": "Devstral Small 2512",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-12",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "devstral-small-2512"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "magistral-medium-2506",
+      "displayName": "Magistral Medium 2506",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": "2025-06",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "magistral-medium-2506"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "magistral-medium-2507",
+      "displayName": "Magistral Medium 2507",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": "2025-07",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "magistral-medium-2507"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "magistral-small-2506",
+      "displayName": "Magistral Small 2506",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": "2025-06",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "magistral-small-2506"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "magistral-small-2507",
+      "displayName": "Magistral Small 2507",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "releaseDate": null,
+      "snapshotDate": "2025-07",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "magistral-small-2507"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "ministral-3b-2410",
+      "displayName": "Ministral 3b 2410",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-10",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "ministral-3b-2410"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "ministral-8b-2410",
+      "displayName": "Ministral 8b 2410",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-10",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "ministral-8b-2410"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-large-2402",
+      "displayName": "Mistral Large 2402",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-02",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-large-2402"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-large-2407",
+      "displayName": "Mistral Large 2407",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-07",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-large-2407"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-large-2411",
+      "displayName": "Mistral Large 2411",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-11",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-large-2411"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-medium-2312",
+      "displayName": "Mistral Medium 2312",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2023-12",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-medium-2312"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-moderation-2411",
+      "displayName": "Mistral Moderation 2411",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-11",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-moderation-2411"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-ocr-2503",
+      "displayName": "Mistral OCR 2503",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-03",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-ocr-2503"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-ocr-2505",
+      "displayName": "Mistral OCR 2505",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-05",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-ocr-2505"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-saba-2502",
+      "displayName": "Mistral Saba 2502",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-02",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-saba-2502"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-small-2402",
+      "displayName": "Mistral Small 2402",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-02",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-small-2402"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-small-2409",
+      "displayName": "Mistral Small 2409",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-09",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-small-2409"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-small-2501",
+      "displayName": "Mistral Small 2501",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-01",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-small-2501"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "mistral-small-2503",
+      "displayName": "Mistral Small 2503",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2025-03",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "mistral-small-2503"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "open-codestral-mamba",
+      "displayName": "Open Codestral Mamba",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "open-codestral-mamba"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "open-mistral-7b",
+      "displayName": "Open Mistral 7b",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "open-mistral-7b"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "open-mixtral-8x22b",
+      "displayName": "Open Mixtral 8x22b",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "open-mixtral-8x22b"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "open-mixtral-8x7b",
+      "displayName": "Open Mixtral 8x7b",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "open-mixtral-8x7b"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "pixtral-12b-2409",
+      "displayName": "Pixtral 12b 2409",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-09",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "pixtral-12b-2409"
+      ],
+      "aliases": [],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "mistral",
+      "normalizedModelId": "pixtral-large-2411",
+      "displayName": "Pixtral Large 2411",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "releaseDate": null,
+      "snapshotDate": "2024-11",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceModelIds": [
+        "pixtral-large-2411"
+      ],
+      "aliases": [],
+      "evidence": {}
+    }
+  ]
+}

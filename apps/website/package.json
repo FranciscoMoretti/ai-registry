@@ -8,7 +8,8 @@
     "start": "next start",
     "eslint": "eslint .",
     "check-types": "tsc --noEmit",
-    "fetch:models": "tsx scripts/fetch-models.ts"
+    "fetch:models": "tsx scripts/fetch-models.ts",
+    "parse:providers": "tsx scripts/run-provider-parsers.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

@@ -1,0 +1,47 @@
+{
+  "provider": "deepseek",
+  "reportPath": "docs/provider-reports/deepseek.md",
+  "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+  "fetchedAt": "2026-04-12T09:32:47.324Z",
+  "modelCount": 2,
+  "models": [
+    {
+      "providerSlug": "deepseek",
+      "sourceModelId": "deepseek-chat",
+      "canonicalModelId": "deepseek-v3.2",
+      "displayName": "Deepseek Chat",
+      "aliases": [
+        "deepseek-chat"
+      ],
+      "lifecycle": "stable",
+      "reasoningMode": "non-thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": "128K",
+      "maxOutputTokens": "DEFAULT: 4K MAXIMUM: 8K",
+      "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+      "evidence": {
+        "modelVersion": "DeepSeek-V3.2 (Non-thinking Mode)"
+      }
+    },
+    {
+      "providerSlug": "deepseek",
+      "sourceModelId": "deepseek-reasoner",
+      "canonicalModelId": "deepseek-v3.2",
+      "displayName": "Deepseek Reasoner",
+      "aliases": [
+        "deepseek-reasoner"
+      ],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": "128K",
+      "maxOutputTokens": "DEFAULT: 32K MAXIMUM: 64K",
+      "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+      "evidence": {
+        "modelVersion": "DeepSeek-V3.2 (Thinking Mode)"
+      }
+    }
+  ]
+}

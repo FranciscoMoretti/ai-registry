@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-04-12T09:32:47.325Z",
+  "providers": [
+    {
+      "provider": "openai",
+      "reportPath": "docs/provider-reports/openai.md",
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "modelCount": 81,
+      "normalizedModelCount": 80,
+      "aliasCount": 10
+    },
+    {
+      "provider": "anthropic",
+      "reportPath": "docs/provider-reports/anthropic.md",
+      "sourceUrl": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "modelCount": 3,
+      "normalizedModelCount": 3,
+      "aliasCount": 5
+    },
+    {
+      "provider": "google",
+      "reportPath": "docs/provider-reports/google-gemini.md",
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "modelCount": 27,
+      "normalizedModelCount": 27,
+      "aliasCount": 0
+    },
+    {
+      "provider": "mistral",
+      "reportPath": "docs/provider-reports/mistral.md",
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "modelCount": 30,
+      "normalizedModelCount": 30,
+      "aliasCount": 0
+    },
+    {
+      "provider": "deepseek",
+      "reportPath": "docs/provider-reports/deepseek.md",
+      "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+      "modelCount": 2,
+      "normalizedModelCount": 1,
+      "aliasCount": 2
+    }
+  ]
+}

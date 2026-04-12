@@ -1,0 +1,1629 @@
+{
+  "provider": "openai",
+  "reportPath": "docs/provider-reports/openai.md",
+  "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+  "fetchedAt": "2026-04-12T09:32:46.105Z",
+  "modelCount": 81,
+  "models": [
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "babbage-002",
+      "canonicalModelId": "babbage-002",
+      "displayName": "babbage-002",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/babbage-002",
+        "description": "Replacement for the GPT-3 ada and babbage base models",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "chatgpt-4o-latest",
+      "canonicalModelId": "chatgpt-4o-latest",
+      "displayName": "ChatGPT-4o",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/chatgpt-4o-latest",
+        "description": "GPT-4o model used in ChatGPT",
+        "catalogSection": "chatgpt",
+        "apiRecommended": false
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "chatgpt-image-latest",
+      "canonicalModelId": "chatgpt-image-latest",
+      "displayName": "chatgpt-image-latest",
+      "aliases": [],
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/chatgpt-image-latest",
+        "description": "Image model used in ChatGPT.",
+        "catalogSection": "chatgpt",
+        "apiRecommended": false
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "codex-mini-latest",
+      "canonicalModelId": "codex-mini-latest",
+      "displayName": "codex-mini-latest",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/codex-mini-latest",
+        "description": "Fast reasoning model optimized for the Codex CLI",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "computer-use-preview",
+      "canonicalModelId": "computer-use-preview",
+      "displayName": "computer-use-preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/computer-use-preview",
+        "description": "Specialized model for computer use tool",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "dall-e-2",
+      "canonicalModelId": "dall-e-2",
+      "displayName": "DALL·E 2",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/dall-e-2",
+        "description": "Our first image generation model",
+        "catalogSection": "image",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "dall-e-3",
+      "canonicalModelId": "dall-e-3",
+      "displayName": "DALL·E 3",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/dall-e-3",
+        "description": "Previous generation image generation model",
+        "catalogSection": "image",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "davinci-002",
+      "canonicalModelId": "davinci-002",
+      "displayName": "davinci-002",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/davinci-002",
+        "description": "Replacement for the GPT-3 curie and davinci base models",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-3.5-turbo",
+      "canonicalModelId": "gpt-3.5-turbo",
+      "displayName": "GPT-3.5 Turbo",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-3.5-turbo",
+        "description": "Legacy GPT model for cheaper chat and non-chat tasks",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4",
+      "canonicalModelId": "gpt-4",
+      "displayName": "GPT-4",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4",
+        "description": "An older high-intelligence GPT model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4-turbo",
+      "canonicalModelId": "gpt-4-turbo",
+      "displayName": "GPT-4 Turbo",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4-turbo",
+        "description": "An older high-intelligence GPT model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4-turbo-preview",
+      "canonicalModelId": "gpt-4-turbo-preview",
+      "displayName": "GPT-4 Turbo Preview",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4-turbo-preview",
+        "description": "An older fast GPT model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4.1",
+      "canonicalModelId": "gpt-4.1",
+      "displayName": "GPT-4.1",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "non-thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4.1",
+        "description": "Smartest non-reasoning model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4.1-mini",
+      "canonicalModelId": "gpt-4.1-mini",
+      "displayName": "GPT-4.1 mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4.1-mini",
+        "description": "Smaller, faster version of GPT-4.1",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4.1-nano",
+      "canonicalModelId": "gpt-4.1-nano",
+      "displayName": "GPT-4.1 nano",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4.1-nano",
+        "description": "Fastest, most cost-efficient version of GPT-4.1",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4.5-preview",
+      "canonicalModelId": "gpt-4.5-preview",
+      "displayName": "GPT-4.5 Preview (Deprecated)",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4.5-preview",
+        "description": "Deprecated large model.",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o",
+      "canonicalModelId": "gpt-4o",
+      "displayName": "GPT-4o",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o",
+        "description": "Fast, intelligent, flexible GPT model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-audio-preview",
+      "canonicalModelId": "gpt-4o-audio-preview",
+      "displayName": "GPT-4o Audio",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-audio-preview",
+        "description": "GPT-4o models capable of audio inputs and outputs",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-mini",
+      "canonicalModelId": "gpt-4o-mini",
+      "displayName": "GPT-4o mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-mini",
+        "description": "Fast, affordable small model for focused tasks",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-mini-audio-preview",
+      "canonicalModelId": "gpt-4o-mini-audio-preview",
+      "displayName": "GPT-4o mini Audio",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-mini-audio-preview",
+        "description": "Smaller model capable of audio inputs and outputs",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-mini-realtime-preview",
+      "canonicalModelId": "gpt-4o-mini-realtime-preview",
+      "displayName": "GPT-4o mini Realtime",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-mini-realtime-preview",
+        "description": "Smaller realtime model for text and audio inputs and outputs",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-mini-search-preview",
+      "canonicalModelId": "gpt-4o-mini-search-preview",
+      "displayName": "GPT-4o mini Search Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-mini-search-preview",
+        "description": "Fast, affordable small model for web search",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-mini-transcribe",
+      "canonicalModelId": "gpt-4o-mini-transcribe",
+      "displayName": "GPT-4o mini Transcribe",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-mini-transcribe",
+        "description": "Speech-to-text model powered by GPT-4o mini",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-mini-tts",
+      "canonicalModelId": "gpt-4o-mini-tts",
+      "displayName": "GPT-4o mini TTS",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-mini-tts",
+        "description": "Text-to-speech model powered by GPT-4o mini",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-realtime-preview",
+      "canonicalModelId": "gpt-4o-realtime-preview",
+      "displayName": "GPT-4o Realtime",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-realtime-preview",
+        "description": "Model capable of realtime text and audio inputs and outputs",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-search-preview",
+      "canonicalModelId": "gpt-4o-search-preview",
+      "displayName": "GPT-4o Search Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-search-preview",
+        "description": "GPT model for web search in Chat Completions",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-transcribe",
+      "canonicalModelId": "gpt-4o-transcribe",
+      "displayName": "GPT-4o Transcribe",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-transcribe",
+        "description": "Speech-to-text model powered by GPT-4o",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-4o-transcribe-diarize",
+      "canonicalModelId": "gpt-4o-transcribe-diarize",
+      "displayName": "GPT-4o Transcribe Diarize",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-4o-transcribe-diarize",
+        "description": "Transcription model that identifies who's speaking when",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5",
+      "canonicalModelId": "gpt-5",
+      "displayName": "GPT-5",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5",
+        "description": "Previous intelligent reasoning model for coding and agentic tasks with configurable reasoning effort",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5-chat-latest",
+      "canonicalModelId": "gpt-5-chat-latest",
+      "displayName": "GPT-5 Chat",
+      "aliases": [],
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5-chat-latest",
+        "description": "GPT-5 model used in ChatGPT",
+        "catalogSection": "chatgpt",
+        "apiRecommended": false
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5-codex",
+      "canonicalModelId": "gpt-5-codex",
+      "displayName": "GPT-5-Codex",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5-codex",
+        "description": "A version of GPT-5 optimized for agentic coding in Codex",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5-mini",
+      "canonicalModelId": "gpt-5-mini",
+      "displayName": "GPT-5 mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5-mini",
+        "description": "Near-frontier intelligence for cost sensitive, low latency, high volume workloads",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5-nano",
+      "canonicalModelId": "gpt-5-nano",
+      "displayName": "GPT-5 nano",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5-nano",
+        "description": "Fastest, most cost-efficient version of GPT-5",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5-pro",
+      "canonicalModelId": "gpt-5-pro",
+      "displayName": "GPT-5 pro",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5-pro",
+        "description": "Version of GPT-5 that produces smarter and more precise responses",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.1",
+      "canonicalModelId": "gpt-5.1",
+      "displayName": "GPT-5.1",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.1",
+        "description": "The best model for coding and agentic tasks with configurable reasoning effort",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.1-chat-latest",
+      "canonicalModelId": "gpt-5.1-chat-latest",
+      "displayName": "GPT-5.1 Chat",
+      "aliases": [],
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.1-chat-latest",
+        "description": "GPT-5.1 model used in ChatGPT",
+        "catalogSection": "chatgpt",
+        "apiRecommended": false
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.1-codex",
+      "canonicalModelId": "gpt-5.1-codex",
+      "displayName": "GPT-5.1 Codex",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.1-codex",
+        "description": "A version of GPT-5.1 optimized for agentic coding in Codex.",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.1-codex-max",
+      "canonicalModelId": "gpt-5.1-codex-max",
+      "displayName": "GPT-5.1-Codex-Max",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.1-codex-max",
+        "description": "A version of GPT-5.1-codex optimized for long running tasks.",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.1-codex-mini",
+      "canonicalModelId": "gpt-5.1-codex-mini",
+      "displayName": "GPT-5.1 Codex mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.1-codex-mini",
+        "description": "Smaller, more cost-effective, less-capable version of GPT-5.1-Codex",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.2",
+      "canonicalModelId": "gpt-5.2",
+      "displayName": "GPT-5.2",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.2",
+        "description": "Previous frontier model for professional work with configurable reasoning effort",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.2-chat-latest",
+      "canonicalModelId": "gpt-5.2-chat-latest",
+      "displayName": "GPT-5.2 Chat",
+      "aliases": [],
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.2-chat-latest",
+        "description": "GPT-5.2 model used in ChatGPT",
+        "catalogSection": "chatgpt",
+        "apiRecommended": false
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.2-codex",
+      "canonicalModelId": "gpt-5.2-codex",
+      "displayName": "GPT-5.2-Codex",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.2-codex",
+        "description": "Our most intelligent coding model optimized for long-horizon, agentic coding tasks.",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.2-pro",
+      "canonicalModelId": "gpt-5.2-pro",
+      "displayName": "GPT-5.2 pro",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.2-pro",
+        "description": "Previous pro model for professional work that produces smarter and more precise responses.",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.3-chat-latest",
+      "canonicalModelId": "gpt-5.3-chat-latest",
+      "displayName": "GPT-5.3 Chat",
+      "aliases": [],
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.3-chat-latest",
+        "description": "GPT-5.3 Instant model used in ChatGPT",
+        "catalogSection": "chatgpt",
+        "apiRecommended": false
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.3-codex",
+      "canonicalModelId": "gpt-5.3-codex",
+      "displayName": "GPT-5.3-Codex",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.3-codex",
+        "description": "The most capable agentic coding model to date.",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.4",
+      "canonicalModelId": "gpt-5.4",
+      "displayName": "GPT-5.4",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.4",
+        "description": "Best intelligence at scale for agentic, coding, and professional workflows",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.4-mini",
+      "canonicalModelId": "gpt-5.4-mini",
+      "displayName": "GPT-5.4 mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.4-mini",
+        "description": "Our strongest mini model yet for coding, computer use, and subagents",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.4-nano",
+      "canonicalModelId": "gpt-5.4-nano",
+      "displayName": "GPT-5.4 nano",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.4-nano",
+        "description": "Our cheapest GPT-5.4-class model for simple high-volume tasks",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-5.4-pro",
+      "canonicalModelId": "gpt-5.4-pro",
+      "displayName": "GPT-5.4 pro",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-5.4-pro",
+        "description": "Version of GPT-5.4 that produces smarter and more precise responses.",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-audio",
+      "canonicalModelId": "gpt-audio",
+      "displayName": "gpt-audio",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-audio",
+        "description": "For audio inputs and outputs with Chat Completions API",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-audio-1.5",
+      "canonicalModelId": "gpt-audio-1.5",
+      "displayName": "gpt-audio-1.5",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-audio-1.5",
+        "description": "The best voice model for audio in, audio out with Chat Completions.",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-audio-mini",
+      "canonicalModelId": "gpt-audio-mini",
+      "displayName": "gpt-audio-mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-audio-mini",
+        "description": "A cost-efficient version of GPT Audio",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-image-1",
+      "canonicalModelId": "gpt-image-1",
+      "displayName": "GPT Image 1",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-image-1",
+        "description": "Our previous image generation model",
+        "catalogSection": "image",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-image-1-mini",
+      "canonicalModelId": "gpt-image-1-mini",
+      "displayName": "gpt-image-1-mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-image-1-mini",
+        "description": "A cost-efficient version of GPT Image 1",
+        "catalogSection": "image",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-image-1.5",
+      "canonicalModelId": "gpt-image-1.5",
+      "displayName": "GPT Image 1.5",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-image-1.5",
+        "description": "State-of-the-art image generation model",
+        "catalogSection": "image",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-oss-120b",
+      "canonicalModelId": "gpt-oss-120b",
+      "displayName": "gpt-oss-120b",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-oss-120b",
+        "description": "Most powerful open-weight model, fits into an H100 GPU",
+        "catalogSection": "open-weight",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-oss-20b",
+      "canonicalModelId": "gpt-oss-20b",
+      "displayName": "gpt-oss-20b",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-oss-20b",
+        "description": "Medium-sized open-weight model for low latency",
+        "catalogSection": "open-weight",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-realtime",
+      "canonicalModelId": "gpt-realtime",
+      "displayName": "gpt-realtime",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-realtime",
+        "description": "Model capable of realtime text and audio inputs and outputs",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-realtime-1.5",
+      "canonicalModelId": "gpt-realtime-1.5",
+      "displayName": "gpt-realtime-1.5",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-realtime-1.5",
+        "description": "The best voice model for audio in, audio out",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "gpt-realtime-mini",
+      "canonicalModelId": "gpt-realtime-mini",
+      "displayName": "gpt-realtime-mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/gpt-realtime-mini",
+        "description": "A cost-efficient version of GPT Realtime",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o1",
+      "canonicalModelId": "o1",
+      "displayName": "o1",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o1",
+        "description": "Previous full o-series reasoning model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o1-mini",
+      "canonicalModelId": "o1-mini",
+      "displayName": "o1-mini",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o1-mini",
+        "description": "A small model alternative to o1",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o1-preview",
+      "canonicalModelId": "o1-preview",
+      "displayName": "o1 Preview",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o1-preview",
+        "description": "Preview of our first o-series reasoning model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o1-pro",
+      "canonicalModelId": "o1-pro",
+      "displayName": "o1-pro",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o1-pro",
+        "description": "Version of o1 with more compute for better responses",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o3",
+      "canonicalModelId": "o3",
+      "displayName": "o3",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o3",
+        "description": "Reasoning model for complex tasks, succeeded by GPT-5",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o3-deep-research",
+      "canonicalModelId": "o3-deep-research",
+      "displayName": "o3-deep-research",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o3-deep-research",
+        "description": "Our most powerful deep research model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o3-mini",
+      "canonicalModelId": "o3-mini",
+      "displayName": "o3-mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o3-mini",
+        "description": "A small model alternative to o3",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o3-pro",
+      "canonicalModelId": "o3-pro",
+      "displayName": "o3-pro",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o3-pro",
+        "description": "Version of o3 with more compute for better responses",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o4-mini",
+      "canonicalModelId": "o4-mini",
+      "displayName": "o4-mini",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o4-mini",
+        "description": "Fast, cost-efficient reasoning model, succeeded by GPT-5 mini",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "o4-mini-deep-research",
+      "canonicalModelId": "o4-mini-deep-research",
+      "displayName": "o4-mini-deep-research",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/o4-mini-deep-research",
+        "description": "Faster, more affordable deep research model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "omni-moderation-latest",
+      "canonicalModelId": "omni-moderation-latest",
+      "displayName": "omni-moderation",
+      "aliases": [],
+      "lifecycle": "latest",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/omni-moderation-latest",
+        "description": "Identify potentially harmful content in text and images",
+        "catalogSection": "moderation",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "sora-2",
+      "canonicalModelId": "sora-2",
+      "displayName": "Sora 2",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/sora-2",
+        "description": "Flagship video generation with synced audio",
+        "catalogSection": "video",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "sora-2-pro",
+      "canonicalModelId": "sora-2-pro",
+      "displayName": "Sora 2 Pro",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/sora-2-pro",
+        "description": "Most advanced synced-audio video generation",
+        "catalogSection": "video",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "text-embedding-3-large",
+      "canonicalModelId": "text-embedding-3-large",
+      "displayName": "text-embedding-3-large",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/text-embedding-3-large",
+        "description": "Most capable embedding model",
+        "catalogSection": "embeddings",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "text-embedding-3-small",
+      "canonicalModelId": "text-embedding-3-small",
+      "displayName": "text-embedding-3-small",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/text-embedding-3-small",
+        "description": "Small embedding model",
+        "catalogSection": "embeddings",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "text-embedding-ada-002",
+      "canonicalModelId": "text-embedding-ada-002",
+      "displayName": "text-embedding-ada-002",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/text-embedding-ada-002",
+        "description": "Older embedding model",
+        "catalogSection": "embeddings",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "text-moderation-latest",
+      "canonicalModelId": "text-moderation-latest",
+      "displayName": "text-moderation",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/text-moderation-latest",
+        "description": "Previous generation text-only moderation model",
+        "catalogSection": "moderation",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "text-moderation-stable",
+      "canonicalModelId": "text-moderation-stable",
+      "displayName": "text-moderation-stable",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/text-moderation-stable",
+        "description": "Previous generation text-only moderation model",
+        "catalogSection": "moderation",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "tts-1",
+      "canonicalModelId": "tts-1",
+      "displayName": "TTS-1",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/tts-1",
+        "description": "Text-to-speech model optimized for speed",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "tts-1-hd",
+      "canonicalModelId": "tts-1-hd",
+      "displayName": "TTS-1 HD",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/tts-1-hd",
+        "description": "Text-to-speech model optimized for quality",
+        "catalogSection": "audio",
+        "apiRecommended": null
+      }
+    },
+    {
+      "providerSlug": "openai",
+      "sourceModelId": "whisper-1",
+      "canonicalModelId": "whisper-1",
+      "displayName": "Whisper",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://developers.openai.com/api/docs/models/all",
+      "evidence": {
+        "href": "/api/docs/models/whisper-1",
+        "description": "General-purpose speech recognition model",
+        "catalogSection": null,
+        "apiRecommended": null
+      }
+    }
+  ]
+}

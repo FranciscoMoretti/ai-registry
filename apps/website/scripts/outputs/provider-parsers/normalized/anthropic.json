@@ -1,0 +1,118 @@
+{
+  "provider": "anthropic",
+  "parsedModelCount": 3,
+  "normalizedModelCount": 3,
+  "aliasCount": 5,
+  "sourceUrl": "https://platform.claude.com/docs/en/about-claude/models/overview",
+  "fetchedAt": "2026-04-12T09:32:46.557Z",
+  "models": [
+    {
+      "providerSlug": "anthropic",
+      "normalizedModelId": "claude-haiku-4-5-20251001",
+      "displayName": "Claude Haiku 4.5",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": "2025-10-01",
+      "isSnapshot": true,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": "200k tokens",
+      "maxOutputTokens": "64k tokens",
+      "sourceModelIds": [
+        "claude-haiku-4-5-20251001"
+      ],
+      "aliases": [
+        {
+          "alias": "anthropic.claude-haiku-4-5-20251001-v1:0",
+          "aliasType": "platform_alias",
+          "sourceModelId": "claude-haiku-4-5-20251001",
+          "lifecycle": "stable",
+          "reasoningMode": "optional",
+          "snapshotDate": "2025-10-01",
+          "metadata": {}
+        },
+        {
+          "alias": "claude-haiku-4-5",
+          "aliasType": "official_alias",
+          "sourceModelId": "claude-haiku-4-5-20251001",
+          "lifecycle": "stable",
+          "reasoningMode": "optional",
+          "snapshotDate": "2025-10-01",
+          "metadata": {}
+        },
+        {
+          "alias": "claude-haiku-4-5@20251001",
+          "aliasType": "platform_alias",
+          "sourceModelId": "claude-haiku-4-5-20251001",
+          "lifecycle": "stable",
+          "reasoningMode": "optional",
+          "snapshotDate": "2025-10-01",
+          "metadata": {}
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "anthropic",
+      "normalizedModelId": "claude-opus-4-6",
+      "displayName": "Claude Opus 4.6",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": "1M tokens",
+      "maxOutputTokens": "128k tokens",
+      "sourceModelIds": [
+        "claude-opus-4-6"
+      ],
+      "aliases": [
+        {
+          "alias": "anthropic.claude-opus-4-6-v1",
+          "aliasType": "platform_alias",
+          "sourceModelId": "claude-opus-4-6",
+          "lifecycle": "stable",
+          "reasoningMode": "optional",
+          "snapshotDate": null,
+          "metadata": {}
+        }
+      ],
+      "evidence": {}
+    },
+    {
+      "providerSlug": "anthropic",
+      "normalizedModelId": "claude-sonnet-4-6",
+      "displayName": "Claude Sonnet 4.6",
+      "identityKind": "concrete",
+      "lifecycle": "stable",
+      "reasoningMode": "optional",
+      "releaseDate": null,
+      "snapshotDate": null,
+      "isSnapshot": false,
+      "userFacing": true,
+      "apiRecommended": null,
+      "contextWindow": "1M tokens",
+      "maxOutputTokens": "64k tokens",
+      "sourceModelIds": [
+        "claude-sonnet-4-6"
+      ],
+      "aliases": [
+        {
+          "alias": "anthropic.claude-sonnet-4-6",
+          "aliasType": "platform_alias",
+          "sourceModelId": "claude-sonnet-4-6",
+          "lifecycle": "stable",
+          "reasoningMode": "optional",
+          "snapshotDate": null,
+          "metadata": {}
+        }
+      ],
+      "evidence": {}
+    }
+  ]
+}

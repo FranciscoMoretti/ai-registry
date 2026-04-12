@@ -1,0 +1,519 @@
+{
+  "provider": "mistral",
+  "reportPath": "docs/provider-reports/mistral.md",
+  "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+  "fetchedAt": "2026-04-12T09:32:46.931Z",
+  "modelCount": 30,
+  "models": [
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "codestral-2405",
+      "canonicalModelId": "codestral-2405",
+      "displayName": "Codestral 2405",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-05",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "codestral-2501",
+      "canonicalModelId": "codestral-2501",
+      "displayName": "Codestral 2501",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-01",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "devstral-medium-2507",
+      "canonicalModelId": "devstral-medium-2507",
+      "displayName": "Devstral Medium 2507",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-07",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "devstral-small-2505",
+      "canonicalModelId": "devstral-small-2505",
+      "displayName": "Devstral Small 2505",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-05",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "devstral-small-2507",
+      "canonicalModelId": "devstral-small-2507",
+      "displayName": "Devstral Small 2507",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-07",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "devstral-small-2512",
+      "canonicalModelId": "devstral-small-2512",
+      "displayName": "Devstral Small 2512",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-12",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "magistral-medium-2506",
+      "canonicalModelId": "magistral-medium-2506",
+      "displayName": "Magistral Medium 2506",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": "2025-06",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "magistral-medium-2507",
+      "canonicalModelId": "magistral-medium-2507",
+      "displayName": "Magistral Medium 2507",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": "2025-07",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "magistral-small-2506",
+      "canonicalModelId": "magistral-small-2506",
+      "displayName": "Magistral Small 2506",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": "2025-06",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "magistral-small-2507",
+      "canonicalModelId": "magistral-small-2507",
+      "displayName": "Magistral Small 2507",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "thinking",
+      "snapshotDate": "2025-07",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "ministral-3b-2410",
+      "canonicalModelId": "ministral-3b-2410",
+      "displayName": "Ministral 3b 2410",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-10",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "ministral-8b-2410",
+      "canonicalModelId": "ministral-8b-2410",
+      "displayName": "Ministral 8b 2410",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-10",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-large-2402",
+      "canonicalModelId": "mistral-large-2402",
+      "displayName": "Mistral Large 2402",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-02",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-large-2407",
+      "canonicalModelId": "mistral-large-2407",
+      "displayName": "Mistral Large 2407",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-07",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-large-2411",
+      "canonicalModelId": "mistral-large-2411",
+      "displayName": "Mistral Large 2411",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-11",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-medium-2312",
+      "canonicalModelId": "mistral-medium-2312",
+      "displayName": "Mistral Medium 2312",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2023-12",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-moderation-2411",
+      "canonicalModelId": "mistral-moderation-2411",
+      "displayName": "Mistral Moderation 2411",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-11",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-ocr-2503",
+      "canonicalModelId": "mistral-ocr-2503",
+      "displayName": "Mistral OCR 2503",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-03",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-ocr-2505",
+      "canonicalModelId": "mistral-ocr-2505",
+      "displayName": "Mistral OCR 2505",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-05",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-saba-2502",
+      "canonicalModelId": "mistral-saba-2502",
+      "displayName": "Mistral Saba 2502",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-02",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-small-2402",
+      "canonicalModelId": "mistral-small-2402",
+      "displayName": "Mistral Small 2402",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-02",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-small-2409",
+      "canonicalModelId": "mistral-small-2409",
+      "displayName": "Mistral Small 2409",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-09",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-small-2501",
+      "canonicalModelId": "mistral-small-2501",
+      "displayName": "Mistral Small 2501",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-01",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "mistral-small-2503",
+      "canonicalModelId": "mistral-small-2503",
+      "displayName": "Mistral Small 2503",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-03",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "open-codestral-mamba",
+      "canonicalModelId": "open-codestral-mamba",
+      "displayName": "Open Codestral Mamba",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "open"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "open-mistral-7b",
+      "canonicalModelId": "open-mistral-7b",
+      "displayName": "Open Mistral 7b",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "open"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "open-mixtral-8x22b",
+      "canonicalModelId": "open-mixtral-8x22b",
+      "displayName": "Open Mixtral 8x22b",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "open"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "open-mixtral-8x7b",
+      "canonicalModelId": "open-mixtral-8x7b",
+      "displayName": "Open Mixtral 8x7b",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "open"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "pixtral-12b-2409",
+      "canonicalModelId": "pixtral-12b-2409",
+      "displayName": "Pixtral 12b 2409",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-09",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    },
+    {
+      "providerSlug": "mistral",
+      "sourceModelId": "pixtral-large-2411",
+      "canonicalModelId": "pixtral-large-2411",
+      "displayName": "Pixtral Large 2411",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2024-11",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://docs.mistral.ai/getting-started/models",
+      "evidence": {
+        "sourceKind": "hosted"
+      }
+    }
+  ]
+}

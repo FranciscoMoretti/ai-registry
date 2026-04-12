@@ -1,0 +1,495 @@
+{
+  "provider": "google",
+  "reportPath": "docs/provider-reports/google-gemini.md",
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+  "fetchedAt": "2026-04-12T09:32:46.858Z",
+  "modelCount": 27,
+  "models": [
+    {
+      "providerSlug": "google",
+      "sourceModelId": "deep-research-pro-preview-12-2025",
+      "canonicalModelId": "deep-research-pro-preview-12-2025",
+      "displayName": "Gemini Deep Research Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-12",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/deep-research-pro-preview-12-2025",
+        "lifecycleText": "Gemini Deep Research Preview > Gemini Deep Research Preview An agentic model that autonomously plans and executes multi-step research across hundreds of sources to p"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.0-flash",
+      "canonicalModelId": "gemini-2.0-flash",
+      "displayName": "Gemini 2.0 Flash Deprecated",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.0-flash",
+        "lifecycleText": "Gemini 2.0 Flash Deprecated iv> Gemini 2.0 Flash Deprecated Our second generation workhorse model, with next-gen features and improved capabilities, including superior speed, native t"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.0-flash-lite",
+      "canonicalModelId": "gemini-2.0-flash-lite",
+      "displayName": "Gemini 2.0 Flash-Lite Deprecated",
+      "aliases": [],
+      "lifecycle": "deprecated",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.0-flash-lite",
+        "lifecycleText": "Gemini 2.0 Flash-Lite Deprecated iv class=\"gemini-model-details\"> Gemini 2.0 Flash-Lite Deprecated Our fastest second generation model, optimized for cost efficiency and low latency. <di"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.5-computer-use-preview-10-2025",
+      "canonicalModelId": "gemini-2.5-computer-use-preview-10-2025",
+      "displayName": "Computer Use Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-10",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.5-computer-use-preview-10-2025",
+        "lifecycleText": "Computer Use Preview /span> Computer Use Preview A specialized model that can \"see\" a digital screen and perform UI actions like clicking, typing, and navig"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.5-flash",
+      "canonicalModelId": "gemini-2.5-flash",
+      "displayName": "Gemini 2.5 Flash",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.5-flash",
+        "lifecycleText": "Gemini 2.5 Flash e\">bolt Gemini 2.5 Flash Our best price-performance model for low-latency, high-volume tasks that require reasoning. <div class=\"gem"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.5-flash-image",
+      "canonicalModelId": "gemini-2.5-flash-image",
+      "displayName": "Nano Banana",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.5-flash-image",
+        "lifecycleText": "Nano Banana rue\">image_search Nano Banana State-of-the-art native image generation and editing designed for fast, creative workflows. <div class=\"ge"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.5-flash-lite",
+      "canonicalModelId": "gemini-2.5-flash-lite",
+      "displayName": "Gemini 2.5 Flash-Lite",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.5-flash-lite",
+        "lifecycleText": "Gemini 2.5 Flash-Lite pan> Gemini 2.5 Flash-Lite The fastest and most budget-friendly multimodal model in the 2.5 family. <h2 id=\"gemini_25_pro\" data-text=\"Gemini 2.5"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "canonicalModelId": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "displayName": "Gemini 2.5 Flash Live Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": "2025-12",
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.5-flash-native-audio-preview-12-2025",
+        "lifecycleText": "Gemini 2.5 Flash Live Preview Gemini 2.5 Flash Live Preview Optimized for real-time conversational agents with sub-second native audio streaming."
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.5-flash-preview-tts",
+      "canonicalModelId": "gemini-2.5-flash-preview-tts",
+      "displayName": "Gemini 2.5 Flash TTS Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.5-flash-preview-tts",
+        "lifecycleText": "Gemini 2.5 Flash TTS Preview > Gemini 2.5 Flash TTS Preview Controllable text-to-speech audio generation with fine control over style and pacing."
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.5-pro",
+      "canonicalModelId": "gemini-2.5-pro",
+      "displayName": "Gemini 2.5 Pro",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.5-pro",
+        "lifecycleText": "Gemini 2.5 Pro >psychology Gemini 2.5 Pro Our most advanced model for complex tasks, featuring deep reasoning and coding capabilities. <div class=\"gemini"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-2.5-pro-preview-tts",
+      "canonicalModelId": "gemini-2.5-pro-preview-tts",
+      "displayName": "Gemini 2.5 Pro TTS Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-2.5-pro-preview-tts",
+        "lifecycleText": "Gemini 2.5 Pro TTS Preview /div> Gemini 2.5 Pro TTS Preview High-fidelity speech synthesis optimized for quality in structured workflows like podcasts and audiobooks."
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-3-flash-preview",
+      "canonicalModelId": "gemini-3-flash-preview",
+      "displayName": "Gemini 3 Flash Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-3-flash-preview",
+        "lifecycleText": "spark Gemini 3 Flash Frontier-class performance rivaling larger models at a fraction of the cost. Preview plex problem-solving skills, and powerful agentic and vibe coding capabilities. New Preview spark <h3 class=\"hide-from-toc\" id=\"gemini"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-3-pro-image-preview",
+      "canonicalModelId": "gemini-3-pro-image-preview",
+      "displayName": "Nano Banana Pro",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-3-pro-image-preview",
+        "lifecycleText": "🍌 Nano Banana Pro State-of-the-art image generation and editing models for highly contextual native image creation. Preview centered\"> Powerful, high-efficiency image generation and editing, optimized for speed and high-volume use cases. P"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-3-pro-preview",
+      "canonicalModelId": "gemini-3-pro-preview",
+      "displayName": "Gemini 3 Pro Preview Shut down",
+      "aliases": [],
+      "lifecycle": "shut_down",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-3-pro-preview",
+        "lifecycleText": "Gemini 3 Pro Preview Shut down Gemini 3 Pro Preview Shut down Our state-of-the-art reasoning model, with advanced multimodal understanding."
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-3.1-flash-image-preview",
+      "canonicalModelId": "gemini-3.1-flash-image-preview",
+      "displayName": "Nano Banana 2",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-3.1-flash-image-preview",
+        "lifecycleText": "🍌🍌 Nano Banana 2 Powerful, high-efficiency image generation and editing, optimized for speed and high-volume use cases. Preview Frontier-class performance rivaling larger models at a fraction of the cost. New Preview 🍌🍌 <h3 class=\"hide-"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-3.1-flash-lite-preview",
+      "canonicalModelId": "gemini-3.1-flash-lite-preview",
+      "displayName": "Gemini 3.1 Flash Lite Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-3.1-flash-lite-preview",
+        "lifecycleText": "bolt Gemini 3.1 Flash-Lite Frontier-class performance rivaling larger models at a fraction of the cost. New Preview Frontier-class performance rivaling larger models at a fraction of the cost. Preview bolt <h3 class=\"hide-from-toc\" id=\"gemi"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-3.1-flash-live-preview",
+      "canonicalModelId": "gemini-3.1-flash-live-preview",
+      "displayName": "Gemini 3.1 Flash Live Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-3.1-flash-live-preview",
+        "lifecycleText": "settings_voice Gemini 3.1 Flash Live High-quality, low-latency Live API model for real-time dialogue and voice-first AI applications. New Preview tion-centered\"> State-of-the-art image generation and editing models for highly contextual nat"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-3.1-pro-preview",
+      "canonicalModelId": "gemini-3.1-pro-preview",
+      "displayName": "Gemini 3",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-3.1-pro-preview",
+        "lifecycleText": "auto_awesome Gemini 3.1 Pro Advanced intelligence, complex problem-solving skills, and powerful agentic and vibe coding capabilities. New Preview blank\" rel=\"noopener\">Terms of Service . Gemini 3 auto_awesome <h3 class=\"hide-from-toc\" id=\"g"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-embedding-001",
+      "canonicalModelId": "gemini-embedding-001",
+      "displayName": "Gemini Embedding",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-embedding-001",
+        "lifecycleText": "Gemini Embedding e\">hub Gemini Embedding High-dimensional vector representations for advanced semantic search, text classification, and RAG systems."
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-embedding-2-preview",
+      "canonicalModelId": "gemini-embedding-2-preview",
+      "displayName": "Gemini Embedding 2 Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-embedding-2-preview",
+        "lifecycleText": "Gemini Embedding 2 Preview n> Gemini Embedding 2 Preview Our first multimodal embedding model, mapping text, images, video, audio, and PDFs into a unified embedding space"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "gemini-robotics-er-1.5-preview",
+      "canonicalModelId": "gemini-robotics-er-1.5-preview",
+      "displayName": "Gemini Robotics Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/gemini-robotics-er-1.5-preview",
+        "lifecycleText": "Gemini Robotics Preview Gemini Robotics Preview Advanced embodied reasoning model that understands physical spaces and plans multi-step tasks for robotic agents."
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "imagen",
+      "canonicalModelId": "imagen",
+      "displayName": "Imagen 4",
+      "aliases": [],
+      "lifecycle": "stable",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/imagen",
+        "lifecycleText": "Imagen 4 a-hidden=\"true\">palette Imagen 4 Text-to-image model yet, featuring fast and ultra-fast generation and exceptional clarity up to 2K resolution. <h2 id=\"music-models\" data-text=\"Mu"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "lyria-3-clip-preview",
+      "canonicalModelId": "lyria-3-clip-preview",
+      "displayName": "Lyria 3 Clip Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/lyria-3-clip-preview",
+        "lifecycleText": "Lyria 3 Clip Preview _note_2 Lyria 3 Clip Preview Optimized for generating short musical clips, loops, and previews up to 30 seconds. <div class=\"gemi"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "lyria-3-pro-preview",
+      "canonicalModelId": "lyria-3-pro-preview",
+      "displayName": "Lyria 3 Pro Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/lyria-3-pro-preview",
+        "lifecycleText": "Lyria 3 Pro Preview usic_note Lyria 3 Pro Preview Our flagship music generation model, optimized for full-length songs with complex structural coherence."
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "lyria-realtime-exp",
+      "canonicalModelId": "lyria-realtime-exp",
+      "displayName": "Lyria RealTime Experimental",
+      "aliases": [],
+      "lifecycle": "experimental",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/lyria-realtime-exp",
+        "lifecycleText": "Lyria RealTime Experimental span> Lyria RealTime Experimental High-fidelity music generation model providing granular creative control and real-time streaming capabilities. </"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "veo-3.1-generate-preview",
+      "canonicalModelId": "veo-3.1-generate-preview",
+      "displayName": "Veo 3.1 Preview",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/veo-3.1-generate-preview",
+        "lifecycleText": "Veo 3.1 Preview ie_filter Veo 3.1 Preview State-of-the-art cinematic video generation with advanced creative controls and natively synchronized audio. <"
+      }
+    },
+    {
+      "providerSlug": "google",
+      "sourceModelId": "veo-3.1-lite-generate-preview",
+      "canonicalModelId": "veo-3.1-lite-generate-preview",
+      "displayName": "Veo 3.1 Lite",
+      "aliases": [],
+      "lifecycle": "preview",
+      "reasoningMode": "unknown",
+      "snapshotDate": null,
+      "releaseDate": null,
+      "contextWindow": null,
+      "maxOutputTokens": null,
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models?hl=en",
+      "evidence": {
+        "href": "/gemini-api/docs/models/veo-3.1-lite-generate-preview",
+        "lifecycleText": "Veo 3.1 Lite background=\"google-blue\" > Try the new high-speed, cost-effective Veo 3.1 Lite model for video generation at scale."
+      }
+    }
+  ]
+}
