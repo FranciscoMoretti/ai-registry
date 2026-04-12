@@ -69,6 +69,7 @@ export async function generateMetadata(
   };
 
   const compareList = buildCompareList();
+  const isParameterizedCompare = Boolean(leftId || rightId);
 
   let title = `AI Model Comparison: Pricing, Specs${perfSuffix} | AI Registry`;
   let description = `Compare AI models by ${compareList}.`;
@@ -153,7 +154,7 @@ export async function generateMetadata(
       canonical: path,
     },
     robots: {
-      index: true,
+      index: !isParameterizedCompare,
       follow: true,
     },
   };
