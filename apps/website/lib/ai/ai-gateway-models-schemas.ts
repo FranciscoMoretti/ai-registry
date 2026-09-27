@@ -20,23 +20,17 @@ export const supportedAiGatewayModelTypes = [
 
 export type AiGatewayModelType = (typeof supportedAiGatewayModelTypes)[number];
 
-const aiGatewayModelTypeInputSchema = z.union([
-  z.literal("language"),
-  z.literal("embedding"),
-  z.literal("image"),
-  z.string(),
-]);
-
 const aiGatewayModelSchema = z.object({
   id: z.string(),
   object: z.literal("model"),
   created: z.number(),
+  released: z.number().int().positive().optional(),
   owned_by: z.string(),
   name: z.string(),
   description: z.string(),
   context_window: z.number(),
   max_tokens: z.number(),
-  type: aiGatewayModelTypeInputSchema,
+  type: z.enum(supportedAiGatewayModelTypes),
   tags: z.array(tagSchema).optional(),
   pricing: z.object({
     input: z.string().optional(),
@@ -49,7 +43,7 @@ const aiGatewayModelSchema = z.object({
       .array(
         z.object({
           cost: z.string(),
-          min: z.number(),
+          min: z.number().optional(),
           max: z.number().optional(),
         })
       )
@@ -58,7 +52,7 @@ const aiGatewayModelSchema = z.object({
       .array(
         z.object({
           cost: z.string(),
-          min: z.number(),
+          min: z.number().optional(),
           max: z.number().optional(),
         })
       )
@@ -67,7 +61,7 @@ const aiGatewayModelSchema = z.object({
       .array(
         z.object({
           cost: z.string(),
-          min: z.number(),
+          min: z.number().optional(),
           max: z.number().optional(),
         })
       )
@@ -75,11 +69,7 @@ const aiGatewayModelSchema = z.object({
   }),
 });
 
-type ParsedAiGatewayModel = z.infer<typeof aiGatewayModelSchema>;
-
-export type AiGatewayModel = Omit<ParsedAiGatewayModel, "type"> & {
-  type: AiGatewayModelType;
-};
+export type AiGatewayModel = z.infer<typeof aiGatewayModelSchema>;
 
 export function isAiGatewayModelType(type: string): type is AiGatewayModelType {
   return supportedAiGatewayModelTypes.includes(type as AiGatewayModelType);
@@ -87,5 +77,12 @@ export function isAiGatewayModelType(type: string): type is AiGatewayModelType {
 
 export const aiGatewayModelsResponseSchema = z.object({
   object: z.literal("list"),
-  data: z.array(aiGatewayModelSchema),
+  // New model types may not have language-model limits. Ignore them before
+  // applying the schema for the types this app supports.
+  data: z
+    .array(z.object({ type: z.string() }).passthrough())
+    .transform((models) =>
+      models.filter((model) => isAiGatewayModelType(model.type))
+    )
+    .pipe(z.array(aiGatewayModelSchema)),
 });

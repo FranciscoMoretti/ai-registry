@@ -5,6 +5,7 @@ import { createStore, type StoreApi, useStore } from "zustand";
 import { devtools } from "zustand/middleware";
 import type { FilterState } from "@/app/(models)/models/model-filters";
 import type { ModelData } from "@/lib/ai/model-data";
+import { compareReleaseDates, isRecentlyReleased } from "@/lib/release-date";
 import { computeModelRangeLimits, type ModelRangeLimits } from "./models-constants";
 import type { SortOption } from "./models-types";
 import { createUseModelsNuqsSync } from "./use-models-nuqs-sync";
@@ -18,6 +19,8 @@ export type ModelsStore = {
   allModels: ModelData[];
   rangeLimits: ModelRangeLimits;
 
+  releasedWithin: FilterState["releasedWithin"];
+  setReleasedWithin: (value: FilterState["releasedWithin"]) => void;
   searchQuery: string;
   setSearchQuery: (v: string) => void;
   sortBy: SortOption;
@@ -85,6 +88,7 @@ const featuresEquals = (
   !!a.toolCall === !!b.toolCall;
 
 const filtersEqual = (a: FilterState, b: FilterState): boolean =>
+  a.releasedWithin === b.releasedWithin &&
   arrayEquals(a.inputModalities, b.inputModalities) &&
   arrayEquals(a.outputModalities, b.outputModalities) &&
   tupleEquals(a.contextLength, b.contextLength) &&
@@ -109,6 +113,7 @@ const normalizeFeatures = (f?: FilterState["features"]): StrictFeatures => ({
 const assembleFilters = (
   s: Pick<
     ModelsStore,
+    | "releasedWithin"
     | "inputModalities"
     | "outputModalities"
     | "contextLength"
@@ -122,6 +127,7 @@ const assembleFilters = (
     | "supportedParameters"
   >
 ): FilterState => ({
+  releasedWithin: s.releasedWithin,
   inputModalities: s.inputModalities,
   outputModalities: s.outputModalities,
   contextLength: s.contextLength,
@@ -143,7 +149,7 @@ const computeActiveFiltersCount = (
     a: [number, number],
     b: [number, number]
   ): boolean => a[0] === b[0] && a[1] === b[1];
-  let count = 0;
+  let count = f.releasedWithin === "all" ? 0 : 1;
   count += f.inputModalities.length;
   count += f.outputModalities.length;
   count += f.providers.length;
@@ -203,7 +209,13 @@ const computeResults = (
   }
 
   const f = filters;
+  const now = Date.now();
   const filteredList = workingList.filter((m) => {
+    if (!isRecentlyReleased(
+      m.released,
+      f.releasedWithin === "all" ? 0 : Number(f.releasedWithin),
+      now,
+    )) return false;
     if (f.providers.length > 0 && !f.providers.includes(m.owned_by)) {
       return false;
     }
@@ -277,6 +289,8 @@ const computeResults = (
 
   const sorted = [...filteredList].sort((a, b) => {
     switch (sortBy) {
+      case "released-desc":
+        return compareReleaseDates(a, b);
       case "name-asc":
         return a.name.localeCompare(b.name);
       case "name-desc":
@@ -303,9 +317,10 @@ const computeResults = (
   return sorted;
 };
 
-function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
+export function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
   const rangeLimits = computeModelRangeLimits(allModels);
   const defaultFilters: FilterState = {
+    releasedWithin: "all",
     inputModalities: [],
     outputModalities: [],
     contextLength: rangeLimits.context,
@@ -322,6 +337,7 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
   const initialState = {
     allModels,
     rangeLimits,
+    releasedWithin: defaultFilters.releasedWithin,
     searchQuery: "",
     sortBy: defaultSortBy,
     inputModalities: defaultFilters.inputModalities,
@@ -376,6 +392,7 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
             defaultFilters
           ) > 0,
 
+        setReleasedWithin: (v) => set((s) => recompute(s, { releasedWithin: v })),
         setSearchQuery: (v) => set((s) => recompute(s, { searchQuery: v })),
         setSortBy: (v) => set((s) => recompute(s, { sortBy: v })),
         setInputModalities: (v) =>
@@ -410,6 +427,7 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
             };
             if (filtersEqual(prev, next)) return {};
             return recompute(s, {
+              releasedWithin: next.releasedWithin,
               inputModalities: next.inputModalities,
               outputModalities: next.outputModalities,
               contextLength: next.contextLength,
@@ -432,6 +450,7 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
               toolCall: v.features?.toolCall ?? prev.features?.toolCall,
             });
             const nextFilters: FilterState = {
+              releasedWithin: v.releasedWithin ?? prev.releasedWithin,
               inputModalities: v.inputModalities ?? prev.inputModalities,
               outputModalities: v.outputModalities ?? prev.outputModalities,
               contextLength: v.contextLength ?? prev.contextLength,
@@ -447,6 +466,7 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
             };
             if (filtersEqual(prev, nextFilters)) return {};
             return recompute(s, {
+              releasedWithin: nextFilters.releasedWithin,
               inputModalities: nextFilters.inputModalities,
               outputModalities: nextFilters.outputModalities,
               contextLength: nextFilters.contextLength,
@@ -466,6 +486,7 @@ function createModelsStore(allModels: ModelData[]): StoreApi<ModelsStore> {
             recompute(s, {
               searchQuery: initialState.searchQuery,
               sortBy: initialState.sortBy,
+              releasedWithin: initialState.releasedWithin,
               inputModalities: initialState.inputModalities,
               outputModalities: initialState.outputModalities,
               contextLength: initialState.contextLength,
@@ -529,6 +550,8 @@ export const useModels = {
   useRangeLimits: () => useModelsStore((s) => s.rangeLimits),
   useSearchQuery: () => useModelsStore((s) => s.searchQuery),
   useSetSearchQuery: () => useModelsStore((s) => s.setSearchQuery),
+  useReleasedWithin: () => useModelsStore((s) => s.releasedWithin),
+  useSetReleasedWithin: () => useModelsStore((s) => s.setReleasedWithin),
   useSortBy: () => useModelsStore((s) => s.sortBy),
   useSetSortBy: () => useModelsStore((s) => s.setSortBy),
   useInputModalities: () => useModelsStore((s) => s.inputModalities),

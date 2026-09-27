@@ -30,6 +30,7 @@ import { formatUsdPerMTokens } from "@/lib/format-usd-per-m-tokens";
 import { getProviderIcon } from "@/lib/get-provider-icon";
 import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
 import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
+import { formatReleaseDate } from "@/lib/release-date";
 import { formatNumberCompact } from "../../../lib/format-number-compact";
 
 const COLLAPSED_DESCRIPTION_LINES = 2;
@@ -218,6 +219,10 @@ export function ModelDetailsCard({
             {getProviderIcon(provider, 18)}
             <span className="capitalize">{provider}</span>
           </div>
+        </div>
+        <div className="flex items-center justify-between text-sm">
+          <span className="text-muted-foreground">Released</span>
+          <span>{formatReleaseDate(model.released)}</span>
         </div>
         <Separator className="my-2" />
         <Collapsible

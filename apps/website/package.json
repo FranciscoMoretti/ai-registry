@@ -8,6 +8,7 @@
     "start": "next start",
     "eslint": "eslint .",
     "check-types": "tsc --noEmit",
+    "test": "tsx --test lib/ai/gateways/*.test.ts lib/*.test.ts",
     "fetch:models": "tsx scripts/fetch-models.ts"
   },
   "dependencies": {
