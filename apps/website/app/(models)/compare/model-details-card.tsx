@@ -4,7 +4,6 @@ import { Check, ChevronDown, Minus, SquareDashed, X } from "lucide-react";
 import type React from "react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
-  ChatModelButton,
   CompareModelButton,
   GoToModelButton,
 } from "@/components/model-action-buttons";
@@ -56,7 +55,6 @@ type ModelComparisonCardProps = {
 
   enabledActions?: {
     goToModel?: boolean;
-    chat?: boolean;
     compare?: boolean;
   };
 };
@@ -205,7 +203,6 @@ export function ModelDetailsCard({
   const contextCompact = formatNumberCompact(model.context_window);
   const actions = {
     goToModel: true,
-    chat: true,
     compare: true,
     ...(enabledActions ?? {}),
   };
@@ -507,7 +504,6 @@ export function ModelDetailsCard({
               variant="outline"
             />
           ) : null}
-          {actions.chat ? <ChatModelButton modelId={model.id} /> : null}
         </div>
       </CardFooter>
     </Card>

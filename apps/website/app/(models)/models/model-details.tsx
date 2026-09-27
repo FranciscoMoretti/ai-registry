@@ -16,7 +16,6 @@ export function ModelDetails({
   onModelChangeAction: (nextId: string) => void;
   enabledActions?: {
     goToModel?: boolean;
-    chat?: boolean;
     compare?: boolean;
   };
 }) {
