@@ -2,10 +2,7 @@
 
 import { useMemo } from "react";
 import { ButtonCopy } from "@/components/button-copy";
-import {
-  ChatModelButton,
-  CompareModelButton,
-} from "@/components/model-action-buttons";
+import { CompareModelButton } from "@/components/model-action-buttons";
 import { Card, CardContent } from "@/components/ui/card";
 import type { ModelData } from "@/lib/ai/model-data";
 import { formatNumberCompact } from "@/lib/format-number-compact";
@@ -22,7 +19,6 @@ export function WideModelDetails({
   model: ModelData;
   enabledActions?: {
     goToModel?: boolean;
-    chat?: boolean;
     compare?: boolean;
   };
 }) {
@@ -33,7 +29,6 @@ export function WideModelDetails({
   );
 
   const actions = {
-    chat: true,
     compare: true,
     ...(enabledActions ?? {}),
   };
@@ -63,11 +58,6 @@ export function WideModelDetails({
               size="lg"
               variant="outline"
             />
-          ) : null}
-          {actions.chat && model ? (
-            <ChatModelButton className="h-9 px-3" modelId={model.id} size="lg">
-              Chat
-            </ChatModelButton>
           ) : null}
         </div>
       </div>

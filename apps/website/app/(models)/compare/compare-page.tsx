@@ -82,13 +82,13 @@ export default function ComparePage() {
       <div className="mx-auto grid grid-cols-1 gap-6 lg:grid-cols-2">
         <ModelDetails
           className="mx-auto"
-          enabledActions={{ goToModel: true, chat: true, compare: false }}
+          enabledActions={{ goToModel: true, compare: false }}
           modelDefinition={leftModel}
           onModelChangeAction={handleLeftChange}
         />
         <ModelDetails
           className="mx-auto"
-          enabledActions={{ goToModel: true, chat: true, compare: false }}
+          enabledActions={{ goToModel: true, compare: false }}
           modelDefinition={rightModel}
           onModelChangeAction={handleRightChange}
         />

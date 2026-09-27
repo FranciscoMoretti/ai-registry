@@ -22,7 +22,6 @@ export default async function SingleModelPage(
       <WideModelDetails
         enabledActions={{
           goToModel: false,
-          chat: true,
           compare: true,
         }}
         model={model}

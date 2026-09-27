@@ -1,43 +1,9 @@
 "use client";
-import { ExternalLink, MessageSquare, Scale } from "lucide-react";
+import { ExternalLink, Scale } from "lucide-react";
 import type React from "react";
 import type { ComponentProps } from "react";
-import { useMemo } from "react";
-import {
-  OpenIn,
-  OpenInChatJS,
-  OpenInContent,
-  OpenInTrigger,
-} from "@/components/ai-elements/open-in-chat";
 import { LinkButton } from "@/components/link-button";
 import { cn } from "@/lib/utils";
-
-export function ChatModelButton({
-  modelId,
-  className,
-  children,
-  hideIcon,
-  size,
-  variant = "default",
-}: {
-  modelId?: string | null;
-  className?: string;
-  children?: React.ReactNode;
-  hideIcon?: boolean;
-  size?: ComponentProps<typeof LinkButton>["size"];
-  variant?: "default" | "outline";
-}) {
-  const query = useMemo(() => String(modelId ?? ""), [modelId]);
-
-  return (
-    <OpenIn query={query}>
-      <OpenInTrigger />
-      <OpenInContent>
-        <OpenInChatJS />
-      </OpenInContent>
-    </OpenIn>
-  );
-}
 
 export function CompareModelButton({
   modelId,
