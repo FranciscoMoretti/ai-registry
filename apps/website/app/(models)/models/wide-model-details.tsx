@@ -1,18 +1,19 @@
 "use client";
 
 import { useMemo } from "react";
-import type { ModelData } from "@/lib/ai/model-data";
 import { ButtonCopy } from "@/components/button-copy";
 import {
   ChatModelButton,
   CompareModelButton,
 } from "@/components/model-action-buttons";
 import { Card, CardContent } from "@/components/ui/card";
+import type { ModelData } from "@/lib/ai/model-data";
 import { formatNumberCompact } from "@/lib/format-number-compact";
 import { formatUsdPerMTokens } from "@/lib/format-usd-per-m-tokens";
 import { getProviderIcon } from "@/lib/get-provider-icon";
 import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
 import { MODEL_CATEGORIES } from "@/lib/model-explorer/model-categories";
+import { formatReleaseDate } from "@/lib/release-date";
 
 export function WideModelDetails({
   model,
@@ -80,6 +81,11 @@ export function WideModelDetails({
           </span>
         </div>
         <p className="text-foreground text-sm leading-6">{model.description}</p>
+      </div>
+
+      <div className="flex items-center gap-2 text-sm">
+        <span className="text-muted-foreground">Released</span>
+        <span>{formatReleaseDate(model.released)}</span>
       </div>
 
       {/* Pricing */}

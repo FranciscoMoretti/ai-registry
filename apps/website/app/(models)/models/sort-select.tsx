@@ -26,6 +26,7 @@ export function SortSelect({
         <SelectValue placeholder="Sort" />
       </SelectTrigger>
       <SelectContent className="min-w-[var(--radix-select-trigger-width)] text-sm">
+        <SelectItem value="released-desc">Newest releases</SelectItem>
         <SelectItem value="name-asc">A-Z</SelectItem>
         <SelectItem value="name-desc">Z-A</SelectItem>
         <SelectItem value="pricing-high">Pricing (High → Low)</SelectItem>

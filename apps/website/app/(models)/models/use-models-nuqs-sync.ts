@@ -7,6 +7,7 @@ import type { SortOption } from "./models-types";
 
 // Accept a store-like to avoid circular imports
 type ModelsStore = {
+  releasedWithin: FilterState["releasedWithin"];
   searchQuery: string;
   sortBy: SortOption;
   inputModalities: string[];
@@ -48,6 +49,7 @@ const featuresEquals = (
 ): boolean => !!a.reasoning === !!b.reasoning && !!a.toolCall === !!b.toolCall;
 
 const filtersEqual = (a: FilterState, b: FilterState): boolean =>
+  a.releasedWithin === b.releasedWithin &&
   arrayEquals(a.inputModalities, b.inputModalities) &&
   arrayEquals(a.outputModalities, b.outputModalities) &&
   tupleEquals(a.contextLength, b.contextLength) &&
@@ -67,6 +69,7 @@ const normalizeFeatures = (f?: FilterState["features"]): StrictFeatures => ({
 });
 
 const assembleFiltersFromStore = (s: ModelsStore): FilterState => ({
+  releasedWithin: s.releasedWithin,
   inputModalities: s.inputModalities,
   outputModalities: s.outputModalities,
   contextLength: s.contextLength,
@@ -91,6 +94,7 @@ export const createUseModelsNuqsSync = (store: ModelsStoreApi) => {
       syncingRef.current = true;
       const s = store.getState();
       const nextFilters: FilterState = {
+        releasedWithin: qs.released,
         inputModalities: qs.im,
         outputModalities: qs.om,
         providers: qs.prov,
@@ -131,6 +135,7 @@ export const createUseModelsNuqsSync = (store: ModelsStoreApi) => {
         if (syncingRef.current) return;
         syncingRef.current = true;
         void setQs({
+          released: s.releasedWithin,
           q: s.searchQuery,
           sort: s.sortBy,
           im: s.inputModalities,

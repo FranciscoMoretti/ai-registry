@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import { useModels } from "@/app/(models)/models/models-store-context";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -19,6 +19,7 @@ const roundCents = (v: number) => Math.max(0, Math.round(v * 100) / 100);
 const formatPrice = (v: number) => (v <= 0 ? "FREE" : `$${v.toFixed(2)}`);
 
 export type FilterState = {
+  releasedWithin: "all" | "30" | "90";
   inputModalities: string[];
   outputModalities: string[];
   contextLength: [number, number];
@@ -244,6 +245,29 @@ function FeaturesFilter() {
   );
 }
 
+function ReleaseDateFilter() {
+  const groupName = useId();
+  const releasedWithin = useModels.useReleasedWithin();
+  const setReleasedWithin = useModels.useSetReleasedWithin();
+  return (
+    <fieldset className="space-y-2 border-b pb-4">
+      <legend className="mb-2 font-medium text-sm">Release date</legend>
+      {(["all", "30", "90"] as const).map((value) => (
+        <label className="flex cursor-pointer items-center gap-2 text-sm" key={value}>
+          <input
+            checked={releasedWithin === value}
+            name={groupName}
+            onChange={() => setReleasedWithin(value)}
+            type="radio"
+            value={value}
+          />
+          {value === "all" ? "Any time" : `Last ${value} days`}
+        </label>
+      ))}
+    </fieldset>
+  );
+}
+
 export function ModelFilters({ className }: { className?: string }) {
   const [openSections, setOpenSections] = useState({
     inputModalities: true,
@@ -262,6 +286,7 @@ export function ModelFilters({ className }: { className?: string }) {
   return (
     <div className={cn("h-full w-full border-r bg-background p-4", className)}>
       <div className="sticky top-4 space-y-4 pr-2">
+        <ReleaseDateFilter />
         <Collapsible
           onOpenChange={() => toggleSection("inputModalities")}
           open={openSections.inputModalities}

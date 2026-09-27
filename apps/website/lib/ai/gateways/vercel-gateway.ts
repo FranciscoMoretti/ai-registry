@@ -1,7 +1,6 @@
 import {
   type AiGatewayModel,
   aiGatewayModelsResponseSchema,
-  isAiGatewayModelType,
 } from "../ai-gateway-models-schemas";
 import { getFallbackModels } from "./fallback-models";
 import type { GatewayProvider } from "./gateway-provider";
@@ -47,24 +46,7 @@ export class VercelGateway implements GatewayProvider<"vercel"> {
         return [...getFallbackModels(this.type)];
       }
 
-      const models: AiGatewayModel[] = [];
-      const unsupportedTypes = new Set<string>();
-
-      for (const model of parsed.data.data) {
-        if (!isAiGatewayModelType(model.type)) {
-          unsupportedTypes.add(model.type);
-          continue;
-        }
-        models.push({ ...model, type: model.type });
-      }
-
-      if (unsupportedTypes.size > 0) {
-        console.warn(
-          `[ai/gateways/vercel] Skipping models with unsupported types: ${[...unsupportedTypes].join(", ")}`
-        );
-      }
-
-      return models;
+      return parsed.data.data;
     } catch (error) {
       console.error(
         "[ai/gateways/vercel] Error fetching models, using fallback:",

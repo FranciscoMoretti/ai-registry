@@ -4,6 +4,7 @@ import {
   parseAsBoolean,
   parseAsInteger,
   parseAsString,
+  parseAsStringLiteral,
   useQueryStates,
 } from "nuqs";
 import type { SortOption } from "./models-types";
@@ -12,6 +13,7 @@ const sortParser = createParser<SortOption>({
   parse: (v) =>
     (
       [
+        "released-desc",
         "name-asc",
         "name-desc",
         "pricing-low",
@@ -26,6 +28,7 @@ const sortParser = createParser<SortOption>({
 });
 
 export const queryParsers = {
+  released: parseAsStringLiteral(["all", "30", "90"] as const).withDefault("all"),
   q: parseAsString.withDefault(""),
   sort: sortParser.withDefault("name-asc"),
   im: parseAsArrayOf(parseAsString).withDefault([]),

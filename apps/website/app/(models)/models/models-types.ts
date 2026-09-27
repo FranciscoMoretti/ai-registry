@@ -1,4 +1,5 @@
 export type SortOption =
+  | "released-desc"
   | "name-asc"
   | "name-desc"
   | "pricing-low"
