@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import type { ModelData } from "@/lib/ai/model-data";
 import { type ComponentType, memo, type SVGProps } from "react";
 import { ButtonCopy } from "@/components/button-copy";
 import { LazyTooltip } from "@/components/lazy-tooltip";
@@ -11,9 +10,11 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import type { ModelData } from "@/lib/ai/model-data";
 import { formatUsdPerMTokens } from "@/lib/format-usd-per-m-tokens";
 import { getProviderIcon } from "@/lib/get-provider-icon";
 import { MODEL_CAPABILITIES } from "@/lib/model-explorer/model-capabilities";
+import { formatReleaseDate } from "@/lib/release-date";
 import { cn } from "@/lib/utils";
 import { formatNumberCompact } from "../../../lib/format-number-compact";
 
@@ -177,6 +178,13 @@ function ModelMetaRow({ model }: { model: ModelData }) {
         by {""}
         <span className="font-medium text-foreground">
           {model.owned_by.toLowerCase()}
+        </span>
+      </span>
+      <span>•</span>
+      <span>
+        Released{" "}
+        <span className="font-medium text-foreground">
+          {formatReleaseDate(model.released)}
         </span>
       </span>
       <span>•</span>
