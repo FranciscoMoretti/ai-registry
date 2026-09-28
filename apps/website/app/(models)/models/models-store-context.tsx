@@ -12,7 +12,7 @@ import { createUseModelsNuqsSync } from "./use-models-nuqs-sync";
 
 export type { SortOption } from "./models-types";
 
-const defaultSortBy: SortOption = "name-asc";
+const defaultSortBy: SortOption = "released-desc";
 
 export type ModelsStore = {
   // All models (immutable for the lifetime of this provider)

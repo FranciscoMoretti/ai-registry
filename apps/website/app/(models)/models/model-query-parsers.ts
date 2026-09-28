@@ -23,14 +23,14 @@ const sortParser = createParser<SortOption>({
       ] as const
     ).includes(v as SortOption)
       ? (v as SortOption)
-      : "name-asc",
+      : "released-desc",
   serialize: (v) => v,
 });
 
 export const queryParsers = {
   released: parseAsStringLiteral(["all", "30", "90"] as const).withDefault("all"),
   q: parseAsString.withDefault(""),
-  sort: sortParser.withDefault("name-asc"),
+  sort: sortParser.withDefault("released-desc"),
   im: parseAsArrayOf(parseAsString).withDefault([]),
   om: parseAsArrayOf(parseAsString).withDefault([]),
   prov: parseAsArrayOf(parseAsString).withDefault([]),

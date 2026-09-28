@@ -34,20 +34,26 @@ test("store sorts dates, filters releases, counts active filters and resets", (t
     toModelData({ ...base, id: "older", released: (now - 60 * 86400000) / 1000 }),
     toModelData({ ...base, id: "recent", released: (now - 10 * 86400000) / 1000 }),
   ]);
-  store.getState().setSortBy("released-desc");
+  assert.equal(store.getState().sortBy, "released-desc");
   assert.deepEqual(store.getState().resultModels.map((m) => m.id), ["recent", "older", "unknown"]);
   store.getState().setReleasedWithin("30");
   assert.deepEqual(store.getState().resultModels.map((m) => m.id), ["recent"]);
   assert.equal(store.getState().activeFiltersCount, 1);
   store.getState().setReleasedWithin("90");
   assert.equal(store.getState().resultModels.length, 2);
+  store.getState().setSortBy("name-asc");
   store.getState().resetFiltersAndSearch();
+  assert.equal(store.getState().sortBy, "released-desc");
+  assert.deepEqual(store.getState().resultModels.map((m) => m.id), ["recent", "older", "unknown"]);
   assert.equal(store.getState().releasedWithin, "all");
   assert.equal(store.getState().resultModels.length, 3);
   assert.equal(store.getState().activeFiltersCount, 0);
 });
 
 test("URL parsers preserve release sorting and reject unsupported windows", () => {
+  assert.equal(queryParsers.sort.defaultValue, "released-desc");
+  assert.equal(queryParsers.sort.parse("invalid"), "released-desc");
+  assert.equal(queryParsers.sort.parse("name-asc"), "name-asc");
   assert.equal(queryParsers.sort.parse("released-desc"), "released-desc");
   assert.equal(queryParsers.released.parse("30"), "30");
   assert.equal(queryParsers.released.parse("90"), "90");
