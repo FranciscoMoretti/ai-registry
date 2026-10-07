@@ -38,7 +38,7 @@ export default async function OGImage(
 
   if (!model) {
     return new ImageResponse(
-      <div>
+      <div style={{ display: "flex" }}>
         <h1>Model not found</h1>
       </div>,
       {
