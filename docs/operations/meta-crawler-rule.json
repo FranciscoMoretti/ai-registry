@@ -1,0 +1,44 @@
+{
+  "name": "Block Meta bulk crawlers",
+  "active": true,
+  "description": "Block Meta external-agent and web-indexer crawling while preserving Facebook link previews and robots.txt access.",
+  "action": {
+    "mitigate": {
+      "redirect": null,
+      "action": "deny",
+      "rateLimit": null,
+      "actionDuration": null
+    }
+  },
+  "id": "rule_block_meta_external_agent_f6febr",
+  "conditionGroup": [
+    {
+      "conditions": [
+        {
+          "type": "user_agent",
+          "op": "sub",
+          "value": "meta-externalagent"
+        },
+        {
+          "type": "path",
+          "op": "neq",
+          "value": "/robots.txt"
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "type": "user_agent",
+          "op": "sub",
+          "value": "meta-webindexer"
+        },
+        {
+          "type": "path",
+          "op": "neq",
+          "value": "/robots.txt"
+        }
+      ]
+    }
+  ]
+}

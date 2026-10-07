@@ -160,32 +160,7 @@ export async function generateMetadata(
   };
 }
 
-
-export async function generateStaticParamsForSitemap() {
-  const allModels = await fetchModels();
-  // Sort deterministically to keep generated paths stable if in-memory order changes
-  const sortedIds = [...allModels.map((m) => m.id)].sort((a, b) =>
-    a.localeCompare(b)
-  );
-
-  // Singles: all ids
-  const singles = sortedIds.map((id) => {
-    const [provider, model] = id.split("/");
-    return { slug: [provider, model] };
-  });
-
-  // Pairs: all unique combos i<j (avoid left/right duplicates)
-  const pairs = [];
-  for (let i = 0; i < sortedIds.length; i++) {
-    for (let j = i + 1; j < sortedIds.length; j++) {
-      const [p1, m1] = sortedIds[i].split("/");
-      const [p2, m2] = sortedIds[j].split("/");
-      pairs.push({ slug: [p1, m1, p2, m2] });
-    }
-  }
-
-  // Include the base route `/compare` (optional catch-all allows empty slug)
-  const root: { slug: string[] } = { slug: [] };
-
-  return [root, ...singles, ...pairs];
+// Generate and cache comparisons on first request without building every model pair.
+export function generateStaticParams(): { slug: string[] }[] {
+  return [];
 }

@@ -1,4 +1,5 @@
 User-agent: meta-externalagent
+User-agent: meta-webindexer
 Disallow: /
 
 User-agent: *
