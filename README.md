@@ -4,6 +4,8 @@ https://github.com/user-attachments/assets/bfc21467-2d39-47fd-8667-cc359269175d
 
 A model explorer website for AI gateways. Auto-fetches the latest models from Vercel AI Gateway and lets you browse, compare, and filter them.
 
+**Live site:** [ai-registry-website.vercel.app](https://ai-registry-website.vercel.app)
+
 ## Monorepo Info
 
 This monorepo contains:
